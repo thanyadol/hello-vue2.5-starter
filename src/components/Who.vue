@@ -1,0 +1,317 @@
+<template>
+  <div class="who">
+    <header class="project__header | ctn">
+      <div class="project__header__inner">
+        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="1">{{ title }}</h2>
+        <div class="project__info | col-8 mlg-1 | m-ml-0 m-100 black">
+          <h3 class="project__intro">{{ sub }}</h3>
+        </div>
+      </div>
+    </header>
+
+    <div class="project__inner scrollarea" data-scrollbar id="my-scrollbar">
+      <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
+
+        <div class="project__content">
+          <div class="project__body">
+              <section class="project__description | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+                  <h3 class="hidden-visually">Project</h3>
+                  <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
+                    <p class="title bold black">{{ p.title }}</p>
+                    <p class="sub bold black">{{ p.sub }}</p>
+                    <p class="project__text">     
+                      <span class="sub bold black">{{ p.bold }}</span>  
+                      <span class="sub black">{{ p.regular }}</span>   
+                    </p> 
+                    <p class="sub black" v-for="d in p.detail" :key="d">{{ d }}</p>  
+                  </div>
+              </section>
+            </div>
+        </div>
+        <div class="project__body pt-0">
+          <section class="project__description pt-0 | ctn white">
+              <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
+                <p class="title bold black"><a class="btn btn--cta" href="#"> About Us</a></p>
+              </div>
+          </section>
+        </div>
+
+         <div class="project__body pt-0">
+          <section class="project__description pt-0 | ctn white">
+              <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">  
+                <buttom></buttom>
+              </div>
+          </section>
+        </div>
+        </div>
+      <!-- end scroll content -->
+      <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
+    </div>
+  </div>
+</template>
+
+<script>
+import Scrollbar from "smooth-scrollbar";
+export default {
+  name: "Who",
+  data() {
+    return {
+      title: 'Who We Are',
+      sub: 'Partnering With Startups',
+      show: false,
+      posts: [
+        { 
+          id: 1,
+          title: 'You Inovate, We Scale', 
+          sub: 'We are partnering with startups and transfrom industries together',
+          bold: 'At Addventure',
+          regular: 'we aim to accelerate and scale technologies, inovations and companies with strategic fit and share our core value',
+          detail: [],
+          background: 'red'
+        },
+        { 
+          id: 2,
+          title: '', 
+          sub: 'More Than Just a Capital Partner',
+          bold: '',
+          regular: '',
+          detail: [ 
+            'Addenture provides unrivaled access to a global network of SCG experies and resources.',
+            'We partner and invest in the best digital innovations in Industrial - Enterprise - B2B verticals.'
+          ],
+          background: 'white'
+        },
+        { 
+          id: 3,
+          title: '', 
+          sub: 'Corporate Venture of SCG',
+          bold: '',
+          regular: '',
+          detail: [
+            'AddVentures is subsidiary of SCG (The Siam Cement PLC).',
+            "Southeast Asia's leading Industrial conglomerate estabilished in 1913.",
+            'We believe open innovation is part of our roadmap to success in the next centernnial.'
+          ],
+          background: 'white'
+        }
+      ]
+      // scrolled: false,
+      // scrolling: false
+      // deg: 0
+    };
+  },
+  // life cycle of component
+  created() {},
+  mounted: function() {
+    var options = {
+      wheelEventTarget: EventTarget,
+    };
+    var div = document.getElementById("my-scrollbar");
+    Scrollbar.init(div);
+
+    // alert("scrolling")
+  },
+  beforeMount() {
+    // window.addEventListener('scroll', this.handleScroll)
+    var scrolled = 0
+    // var scrolling
+    var vm = this
+
+    window.addEventListener('wheel', function (event) {
+
+      var div = document.getElementById("my-scrollbar");
+      const scrollbar = Scrollbar.init(div);
+      if(scrollbar.scrollTop > 400)
+      {
+        // console.log(scrollbar.scrollTop)
+        // console.log(scrollbar.offset.y)
+        vm.show = true
+      }
+      else
+      {
+        vm.show = false
+      }
+
+      if (event.deltaY < 0) {
+        scrolled++
+        // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
+
+        // vm.scrolling = scrolling
+        // console.log('scrolling up hanlde : ' + event.deltaY)
+      }
+      if (event.deltaY > 0) {
+        scrolled--
+        // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
+        // vm.scrolling = scrolling
+        // console.log('scrolling down hanlde : ' + event.deltaY)
+      }
+    })
+
+    /* var scrollTop = $(this).scrollTop();
+    $('.borders-container').css({
+      opacity: function() {
+        var elementHeight = $(this).height();
+        return 1 - (elementHeight - scrollTop) / elementHeight;
+      }
+    }) */
+  },
+  beforeDestroy() {
+    // window.removeEventListener('wheel', this.handleScroll)
+  }
+};
+</script>
+<style scoped>
+
+.ctn-cu {
+  padding-left: 9.1%;
+  padding-right: 9.1%;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+.red 
+{
+  background-color: #f0f0f0;
+}
+
+.white 
+{
+  background-color: #ffff;
+}
+
+.index
+{
+  z-index: unset;
+}
+
+.bold
+{
+  font-weight: bold;
+}
+
+.black {
+  color: #2f3c47;
+}
+
+.t
+{
+  position: relative;
+  font-size: 8vw;
+  font-weight: bold;
+  line-height: 1;
+  opacity: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*.project__text
+{
+  color: #2f3c47;
+  font-size: 2.1rem;
+  line-height: 1.62;
+}*/
+
+.scrollarea {
+  height: 100vh;
+  display: block;
+}
+
+.project__header__inner {
+  top: -6.75vw;
+}
+
+.project__body
+{
+  border-left: solid 15px #ffff;
+  border-right: solid 15px #ffff;
+}
+
+.border {
+  border: none !important;
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+  background-color: #2f3c47;
+}
+
+project__title::before {
+  content: "0" attr(data-i);
+  position: absolute;
+  top: 0;
+  left: -80px;
+  font-size: 3.4rem;
+}
+
+.project__description
+{
+  padding-bottom: 30px;
+}
+
+.project__description .title,  .project__description .sub
+{
+  font-size: 5.5rem;
+}
+
+.project__description .sub
+{
+  font-size: 3.1rem;
+}
+
+.project__text p:not(:last-of-type) {
+    margin-bottom: 2.0rem;
+}
+
+/* for iphone x*/
+@media only screen and (max-width: 720px)
+{
+  .project__description .title,  .project__description .sub
+  {
+    font-size: 2.5rem;
+  }
+
+  .project__description .sub
+  {
+    font-size: 2.1rem;
+  }
+  .m-ml-0 {
+      margin-left: 25.6342857143%;
+  }
+  .btn {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width: 960px)
+{
+  .ctn {
+      padding-left: 5%;
+      padding-right: 2%;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to
+/* .fade-leave-active in <2.1.8 */
+{
+  opacity: 0;
+}
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn--cta {
+    padding: none;
+    color: #495057;
+    background: #fff;
+    border-radius: 0;
+    border: 1px solid;
+}
+
+</style>

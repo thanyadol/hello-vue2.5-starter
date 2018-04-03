@@ -1,0 +1,138 @@
+<template>
+  <div>
+    <div class="container-fluid custom">
+      <!--<img src="./assets/logo.png">-->
+      <div class="nave wrapper">
+        <nav-bar></nav-bar>
+      </div>
+      <!-- main component -->
+      <div class="row">
+        <div class="col-md-12">
+          <router-view class="container middle mt-5 ml-5 wrapper"></router-view>
+        </div>
+      </div>
+      <div class="footer wrapper">
+         <social></social>
+         <foot-bar :next="chevron().next" :prev="chevron().prev" ></foot-bar>
+      </div>
+    </div>
+    <div class="lines-container">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <!-- slider -->
+    <router-view name="slide"></router-view>
+
+  </div>
+</template>
+
+<script>
+// import your components here
+// import RightHref from '@/components/RightHref'
+
+export default {
+  name: 'App',
+  data () {
+    return {
+      // helloMessage: 'Hello World with VueJS at ' + new Date().toLocaleString(),
+      scrolled: false
+    }
+  },
+  // life cycle of component
+  created () {
+    console.log('I was born')
+  },
+  mounted () {
+    console.log('I was blinded with HTML')
+  },
+  beforeMount () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  // define methods under the `methods` object
+  methods: {
+    chevron: function () {
+      // add new page here
+      var pages = {
+        index: { next: 'hello', prev: 'home' },
+        home: { next: 'hello', prev: 'about' },
+        hello: { next: 'home', prev: 'about' },
+        nave: { next: 'nave', prev: 'about' },
+        about: { next: 'about', prev: 'home' },
+        whoweare: { next: 'about', prev: 'home' }
+      }
+      return pages[this.$route.path.substring(1, this.$route.path.length)]
+    },
+    handleScroll (event) {
+      // Any code to be executed
+      // when the window is scrolled
+      this.scrolled = window.scrollY > 0
+      console.log('scrolling')
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+.middle
+{
+  margin-top : 10vh;
+}
+
+.custom
+{
+  height: 101vh;
+  border: 15px solid crimson;
+  /*background: url('./assets/3.png');
+  background-position: center;*/
+}
+
+/* fixed buttom footer */
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: auto;
+  z-index: 99;
+}
+
+.lines-container {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: -20px;
+    right: -70%;
+    bottom: 0;
+    left: 5%;
+    z-index: -99;
+    height: 100%;
+}
+
+.line {
+    transform: rotate(-20deg);
+    width: 1px;
+    height: 110%;
+    background: gray;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  color: #2c3e50;
+  /*margin-top: 60px;*/
+}
+
+</style>
