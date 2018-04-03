@@ -2,7 +2,7 @@
   <div class="project">
     <header id="header" class="ctn noselect">
 			<h1 class="header__title">
-				<a href="/">#home</a>
+				<a href="/">home</a>
 			</h1>
       <div class="nav">
         <button class="menu-btn pickdeck" aria-label="Pickdeck" href="#">
