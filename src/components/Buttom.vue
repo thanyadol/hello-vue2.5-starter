@@ -69,6 +69,12 @@ div svg {
   padding: 0 20px 0 20px;
 }
 
+div svg.arrow-right, div svg.arrow-left
+{
+  top: 20px;
+  position: relative;
+}
+
 div svg polygon, div svg path {
   transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }

@@ -205,7 +205,9 @@ export default {
       var pages = {
         index: { next: 'whoweare', prev: 'index' },
         whoweare: { next: 'whatweinvest', prev: 'index' },
-        whatweinvest: { next: 'whatweinvest', prev: 'whoweare' }
+        whatweinvest: { next: 'whereweinvest', prev: 'whoweare' },
+        whereweinvest: { next: 'howweinvest', prev: 'whatweinvest' },
+        howweinvest: { next: 'index', prev: 'whereweinvest' }
       }
       return pages[this.$route.path.substring(1, this.$route.path.length)]
     },
@@ -307,7 +309,6 @@ a:hover
   transition: opacity 2s ease-in;
   background-color: #2f3c47;
 }
-
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

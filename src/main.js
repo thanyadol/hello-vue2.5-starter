@@ -7,21 +7,21 @@ import router from './router'
 import './assets/css/app.scss'
 
 // custom component
-import RightHref from '@/components/RightHref'
+/* import RightHref from '@/components/RightHref'
 import NavBar from '@/components/NavBar'
 import FootBar from '@/components/FootBar'
 import PageNave from '@/components/PageNave'
 import Social from '@/components/Social'
-import Background from '@/components/Background'
+import Background from '@/components/Background' */
 import Buttom from '@/components/Buttom'
 
 // register DOM tag
-Vue.component('right-href', RightHref)
+/* Vue.component('right-href', RightHref)
 Vue.component('nav-bar', NavBar)
 Vue.component('page-nave', PageNave)
 Vue.component('foot-bar', FootBar)
 Vue.component('social', Social)
-Vue.component('background', Background)
+Vue.component('background', Background) */
 
 Vue.component('buttom', Buttom)
 

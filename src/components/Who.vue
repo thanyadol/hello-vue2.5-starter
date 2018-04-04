@@ -102,58 +102,7 @@ export default {
   },
   // life cycle of component
   created() {},
-  mounted: function() {
-    var options = {
-      wheelEventTarget: EventTarget,
-    };
-    var div = document.getElementById("my-scrollbar");
-    Scrollbar.init(div);
-
-    // alert("scrolling")
-  },
   beforeMount() {
-    // window.addEventListener('scroll', this.handleScroll)
-    var scrolled = 0
-    // var scrolling
-    var vm = this
-
-    window.addEventListener('wheel', function (event) {
-
-      var div = document.getElementById("my-scrollbar");
-      const scrollbar = Scrollbar.init(div);
-      if(scrollbar.scrollTop > 400)
-      {
-        // console.log(scrollbar.scrollTop)
-        // console.log(scrollbar.offset.y)
-        vm.show = true
-      }
-      else
-      {
-        vm.show = false
-      }
-
-      if (event.deltaY < 0) {
-        scrolled++
-        // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
-
-        // vm.scrolling = scrolling
-        // console.log('scrolling up hanlde : ' + event.deltaY)
-      }
-      if (event.deltaY > 0) {
-        scrolled--
-        // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
-        // vm.scrolling = scrolling
-        // console.log('scrolling down hanlde : ' + event.deltaY)
-      }
-    })
-
-    /* var scrollTop = $(this).scrollTop();
-    $('.borders-container').css({
-      opacity: function() {
-        var elementHeight = $(this).height();
-        return 1 - (elementHeight - scrollTop) / elementHeight;
-      }
-    }) */
   },
   beforeDestroy() {
     // window.removeEventListener('wheel', this.handleScroll)
@@ -191,17 +140,6 @@ export default {
 
 .black {
   color: #2f3c47;
-}
-
-.t
-{
-  position: relative;
-  font-size: 8vw;
-  font-weight: bold;
-  line-height: 1;
-  opacity: 1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 /*.project__text

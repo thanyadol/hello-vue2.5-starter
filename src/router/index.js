@@ -2,18 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // component
-import Hello from '@/components/Hello'
-import HelloSlide from '@/components/HelloSlide'
-
 import About from '@/components/About'
-import Nave from '@/components/Nave'
 
+// import IndexSlide from '@/components/IndexSlide'
 import Index from '@/components/Index'
-import IndexSlide from '@/components/IndexSlide'
-
 import Who from '@/components/Who'
 import What from '@/components/What'
-
+import Where from '@/components/Where'
+import How from '@/components/How'
 // import './style.css';
 
 // Vue.use(BootstrapVue);
@@ -22,25 +18,9 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/hello',
-      name: 'Hello',
-      components: {
-        default: Hello,
-        slide: HelloSlide
-      },
-      props: {
-        slide: true
-      }
-    },
-    {
       path: '/about',
       name: 'About',
       component: About
-    },
-    {
-      path: '/nave',
-      name: 'Nave',
-      component: Nave
     },
     {
       path: '/index',
@@ -69,6 +49,28 @@ export default new Router({
       name: 'What',
       components: {
         default: What,
+        slide: null
+      },
+      props: {
+        slide: true
+      }
+    },
+    {
+      path: '/whereweinvest',
+      name: 'Where',
+      components: {
+        default: Where,
+        slide: null
+      },
+      props: {
+        slide: true
+      }
+    },
+    {
+      path: '/howweinvest',
+      name: 'How',
+      components: {
+        default: How,
         slide: null
       },
       props: {

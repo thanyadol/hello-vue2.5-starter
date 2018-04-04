@@ -1,8 +1,8 @@
 <template>
-  <div class="what">
+  <div class="how">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="2">{{ title }}</h2>
+        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="4">{{ title }}</h2>
         <div class="project__info | col-8 mlg-1 | m-ml-0 m-100 black">
           <h3 class="project__intro">
               <ul>
@@ -14,65 +14,59 @@
     </header>
 
     <div class="project__inner scrollarea" data-scrollbar id="my-scrollbar">
-      <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
+ 
+        <div class="project__content">
+          <div class="project__body row white">
 
-          <div class="project__content">
-            <div class="project__body white">
-                <section class="project__description col-7 pd-1 | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
-                    <h3 class="hidden-visually">Project</h3>
-                    <div class="project__text | mrg-2 | m-100 m-mr-0">
-                      <p class="title bold black">{{ p.title }}</p>
-                      <p class="sub bold black">{{ p.sub }}</p>
-                      <p class="project__text">     
-                        <span class="sub bold black">{{ p.bold }}</span>  
-                        <span class="sub black">{{ p.regular }}</span>   
-                      </p> 
-                      <p class="sub black" v-for="d in p.detail" :key="d">{{ d }}</p>  
-                    </div>
-                </section>
-
-                <!-- loop with invests -->
-                <section class="project__body pb-6 pt-5 row | ctn red" v-for="i in invests" :key="i.id" >
-                  <div class="col-7" v-bind:class="{ right: i.id%2 == 0 }">
-                    <img class="project__image" :src="i.image" >
-                  </div>
-                  <div class="col" v-bind:class="{ left: i.id%2 == 0 }">
-                    <h1 class="tr"> {{ i.title }} </h1> <span> </span>
-                    <ul class="black">
-                      <li v-for="l in i.lists" :key="l.list"> {{ l }}</li>
-                    </ul>
+              <section class="project__description col-12 | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+                  <h3 class="hidden-visually">Project</h3>
+                  <div class="project__text | mrg-2 | m-100 m-mr-0">
+                    <p class="title bold black">{{ p.title }}</p>
+                    <p class="sub black">{{ p.sub }}</p>
                   </div>
                 </section>
-              </div>
-          </div>
-          <div class="pb-5 pt-5 red"></div>
-          <div class="project__body pt-0">
-            <section class="project__description pt-0 | ctn red">
-                <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">  
-                  <buttom></buttom>
-                </div>
-            </section>
-          </div>
+
+
+                <section class="project__description col-12 pd-1 tr | ctn" >
+                  <ul class="black">
+                      <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
+                        <span class="title">{{ v.title }}</span>
+                        <p class="sub">{{ v.sub }}</p>
+                      </li>
+                  </ul>
+                </section>
+
+
+
+            </div>
         </div>
+
+        <div class="project__body pt-0">
+          <section class="project__description pt-0 | ctn red">
+              <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">  
+                <buttom></buttom>
+              </div>
+          </section>
+        </div>
+     </div>
+
       <!-- end scroll content -->
       <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </div>
-  </div>
 </template>
 
 <script>
-import Scrollbar from "smooth-scrollbar";
 export default {
-  name: "What",
+  name: "How",
   data() {
     return {
-      title: 'What We Invest',
-      subs: [ 'Industrail',  'B2B',  'Enterprise' ],
+      title: 'How We Invest',
+      subs: [ 'Stages of Startups'],
       show: false,
       posts: [
         { 
           id: 1,
-          title: 'What we invest in 3 verticals', 
+          title: 'Stages of Startups', 
           sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
           bold: '',
           regular: '',
@@ -83,27 +77,35 @@ export default {
       invests: [
         {
           id: 1,
-          title: 'Industrail',
-          lists: [ 'Smart Manufacturing', 'Robotics', 'Automation', 'Energy  Technology'],
+          title: 'Seed',
+          sub : 'Accessories',
           image: './static/img/img3.jpg',
-          float: 'left'
+          class: 'indent-4'
         },
         {
           id: 2,
-          title: 'B2B',
-          lists: [ 'Marketplace and platform for', 'Construction product', 'Chemicals', 'Packaging', 'Logistics and Industrail supply'],
-          image: './static/img/img3.jpg',
-          float: 'right',
+          title: 'Series A',
+          sub : 'Accessories',
+          image: '',
+          class: 'indent-3',
         },
-         {
+        {
           id: 3,
-          title: 'Enterprise',
-          lists: [ 'E-commerce enablement', 'Predictive analystics', 'Chemicals', 'Omni channel', 'Construction efficiency management'],
-          image: './static/img/img3.jpg',
-          float: 'left'
+          title: 'Series B',
+          sub : 'Accessories',
+          image: '',
+          class: 'indent-2',
+        },
+        {
+          id: 4,
+          title: 'Growth',
+          sub : 'Accessories',
+          image: '',
+          class: 'indent-1',
         }
       ],
 
+      // separator: './static/img/separator.',
       // sample: './static/img/img3.jpg'
       // scrolled: false,
       // scrolling: false
@@ -123,6 +125,35 @@ export default {
 };
 </script>
 <style scoped>
+
+svg.rectang
+{
+  opacity: 0.6;
+  left: 47%;
+  position: absolute;
+  z-index: 3;
+  height: 160vh;
+}
+
+ul li.indent-1
+{
+  left: 0;
+}
+
+ul li.indent-2
+{
+  left: 200%;
+}
+
+ul li.indent-3
+{
+  left: 400%;
+}
+
+ul li.indent-4
+{
+  left: 600%;
+}
 
 .pb-6
 {
@@ -281,6 +312,13 @@ project__title::before {
   .btn {
     font-size: 3vw;
   }
+
+  svg.rectang
+  {
+    width: 10px;
+    height: 450px;
+  }
+
 }
 
 @media only screen and (max-width: 960px)
