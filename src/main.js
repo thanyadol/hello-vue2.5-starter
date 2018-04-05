@@ -14,6 +14,7 @@ import PageNave from '@/components/PageNave'
 import Social from '@/components/Social'
 import Background from '@/components/Background' */
 import Buttom from '@/components/Buttom'
+import Nave from '@/components/Nave'
 
 // register DOM tag
 /* Vue.component('right-href', RightHref)
@@ -24,6 +25,7 @@ Vue.component('social', Social)
 Vue.component('background', Background) */
 
 Vue.component('buttom', Buttom)
+Vue.component('nave', Nave)
 
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // require('../node_modules/bootstrap/dist/css/bootstrap.min.css')

@@ -1,5 +1,5 @@
 <template>
-    <div class=""> 
+    <div class="project__text | col-12 mrg-2 | m-100 m-mr-0 mt-6">  
         <div class="mlg-2 | m-mr-0">    
             <router-link :to="prev.url" class="href">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03">
@@ -35,6 +35,10 @@ export default {
 </script>
 <style scoped>
 
+.mt-6
+{
+  margin-top: 10rem !important;
+}
 
 .nav-wrapper
 {

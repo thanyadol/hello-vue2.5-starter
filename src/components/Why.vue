@@ -1,8 +1,8 @@
 <template>
-  <div class="who">
+  <div class="Why">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="1">{{ title }}</h2>
+        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="5">{{ title }}</h2>
         <div class="project__info | col-8 mlg-1 | m-ml-0 m-100 black">
           <h3 class="project__intro">{{ sub }}</h3>
         </div>
@@ -13,34 +13,29 @@
       <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
 
         <div class="project__content">
-          <div class="project__body">
-              <section class="project__description | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+          <div class="project__body white">
+              <section class="project__description col-8 | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
                   <h3 class="hidden-visually">Project</h3>
-                  <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
+                  <div class="project__text |  mrg-2c | m-100 m-mr-0">
                     <p class="title bold black">{{ p.title }}</p>
                     <p class="sub bold black">{{ p.sub }}</p>
                     <p class="project__text">     
-                      <span class="sub bold black">{{ p.bold }}</span>  
                       <span class="sub black">{{ p.regular }}</span>   
                     </p> 
-                    <p class="sub black" v-for="d in p.detail" :key="d">{{ d }}</p>  
+                    <ol>
+                        <li class="ml-5 sub black" v-for="d in p.detail" :key="d">{{ d }}</li>
+                    </ol>
                   </div>
               </section>
             </div>
         </div>
-        <div class="project__body pt-0">
-          <section class="project__description pt-0 | ctn white">
-              <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
-                <p class="title bold black"><a class="btn btn--cta" href="#"> About Us</a></p>
-              </div>
-          </section>
-        </div>
 
          <div class="project__body pt-0">
           <section class="project__description pt-0 | ctn white">
-                <buttom></buttom>
+            <buttom></buttom>
           </section>
         </div>
+
         </div>
       <!-- end scroll content -->
       <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
@@ -49,48 +44,43 @@
 </template>
 
 <script>
-import Scrollbar from "smooth-scrollbar";
 export default {
-  name: "Who",
+  name: "Why",
   data() {
     return {
-      title: 'Who We Are',
-      sub: 'Partnering With Startups',
+      title: 'Why Work With Us',
+      sub: 'Our resources and network',
       show: false,
       posts: [
         { 
           id: 1,
-          title: 'You Inovate, We Scale', 
-          sub: 'We are partnering with startups and transfrom industries together',
-          bold: 'At Addventure',
-          regular: 'we aim to accelerate and scale technologies, inovations and companies with strategic fit and share our core value',
-          detail: [],
-          background: 'red'
+          title: 'Vertical Focus', 
+          sub: 'More Than Just a Capital Partner',
+          bold: '',
+          regular: 'At AddVentures, we look for the investment and partnership opportunities in the areas of B2B, Industrial, and Enterprise. With the support from SCG and our goal to build the portfolio companies in highly related verticals, we believe we can offer substantial synergies in 2 dimensions',
+          detail: ['Direct-synergybetween SCG & startup',  'Cross-synergy among startups in the portfolio'],
+          background: 'red',
+          image: ''
         },
         { 
           id: 2,
-          title: '', 
-          sub: 'More Than Just a Capital Partner',
+          title: 'Platform to scale up', 
+          sub: 'USD 18 Billion market capitalization more than 50,000 employee',
           bold: '',
-          regular: '',
-          detail: [ 
-            'Addenture provides unrivaled access to a global network of SCG experies and resources.',
-            'We partner and invest in the best digital innovations in Industrial - Enterprise - B2B verticals.'
-          ],
-          background: 'white'
+          regular: 'With our resources and extensive business network along SCG business value chain, We believe that we can help startups scale fast through our proprietary resources and access to 300+ SCG subsidiaries and 1,000+ business partners across Southeast Asia Region. We are flexible and open to various collaborationPrograms ranging from commercial partnership,Licensing, JV, minority investment or M&A.',
+          detail: [],
+          background: 'red right',
+          image: ''
         },
         { 
           id: 3,
-          title: '', 
-          sub: 'Corporate Venture of SCG',
-          bold: '',
-          regular: '',
-          detail: [
-            'AddVentures is subsidiary of SCG (The Siam Cement PLC).',
-            "Southeast Asia's leading Industrial conglomerate estabilished in 1913.",
-            'We believe open innovation is part of our roadmap to success in the next centernnial.'
-          ],
-          background: 'white'
+          title: 'Long term partnerships', 
+          sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          bold: 'Corperate & Startups',
+          regular: 'As a strategic investor, we do not only provide financing but we also commit to long - term success of startups in our portfolio. Unlike traditional VC funds, we do not rush for short term financial result and investment exit. with this long term support, startups can focus on building a great company to reach their full potential fastest possible.',
+          detail: [],
+          background: 'red',
+          image: ''
         }
       ]
       // scrolled: false,
@@ -116,20 +106,23 @@ export default {
   padding-top: 3rem;
 }
 
+.right
+{
+  left: 33.333333%;
+}
+
+.left
+{
+  left: -50%;
+}
+
+ol {
+    list-style: decimal;
+}
+
 .red 
 {
   background-color: #f0f0f0;
-}
-
-.t
-{
-  position: relative;
-  font-size: 8vw;
-  font-weight: bold;
-  line-height: 1;
-  opacity: 1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .white 
@@ -171,6 +164,17 @@ export default {
 {
   border-left: solid 15px #ffff;
   border-right: solid 15px #ffff;
+}
+
+.t
+{
+  position: relative;
+  font-size: 8vw;
+  font-weight: bold;
+  line-height: 1;
+  opacity: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .border {

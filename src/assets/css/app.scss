@@ -1,5 +1,6 @@
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Pragati+Narrow');
 
 //@charset "UTF-8";
 
@@ -189,7 +190,8 @@ mark {
 
 .menu-btn,
 body {
-    font-family: Circular, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    //font-family: Circular, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-family: 'Pragati Narrow', sans-serif;
     color: #fff
 }
 

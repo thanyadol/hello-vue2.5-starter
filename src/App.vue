@@ -4,17 +4,7 @@
 			<h1 class="header__title">
 				<a href="/">home</a>
 			</h1>
-      <div class="nav">
-        <button class="menu-btn pickdeck" aria-label="Pickdeck" href="#">
-          <span class="menu-btn__text">Pick Deck</span>
-        </button>
-        <button class="menu-btn career" aria-label="Career" href="#">
-          <span class="menu-btn__text">Career</span>
-        </button>
-        <button class="menu-btn menu" aria-label="Menu" href="#">
-          <span class="menu-btn__text">Menu</span>
-        </button>
-      </div>
+      <nave></nave>
 
    <!-- should move to component -->
     <aside id="frame">
@@ -207,7 +197,8 @@ export default {
         whoweare: { next: 'whatweinvest', prev: 'index' },
         whatweinvest: { next: 'whereweinvest', prev: 'whoweare' },
         whereweinvest: { next: 'howweinvest', prev: 'whatweinvest' },
-        howweinvest: { next: 'index', prev: 'whereweinvest' }
+        howweinvest: { next: 'whyworkwithus', prev: 'whereweinvest' },
+        whyworkwithus: { next: 'index', prev: 'howweinvest' },
       }
       return pages[this.$route.path.substring(1, this.$route.path.length)]
     },
@@ -221,37 +212,10 @@ export default {
 </script>
 
 <style scoped>
+
 /* remove reboot*/
 button:focus {
   outline: none;
-}
-
-/*top button*/
-a:hover
-{ 
-  text-decoration: none;
-}
-
-.menu-btn
-{
-  color: #2f3c47;
-  padding: 0;
-  z-index: 2;
-}
-
-.pickdeck
-{
-  right: calc(5vw + 144px);
-}
-
-.career
-{
-  right: calc(5vw + 60px);
-}
-
-.menu
-{
-  right: calc(5vw - 12px);
 }
 
 /* arrow nav */
@@ -308,15 +272,6 @@ a:hover
   -webkit-transition: opacity 2s ease-in;
   transition: opacity 2s ease-in;
   background-color: #2f3c47;
-}
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: left;
-  color: #2c3e50;
-  /*margin-top: 60px;*/
 }
 
 .fade-enter-active,

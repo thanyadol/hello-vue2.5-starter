@@ -10,6 +10,7 @@ import Who from '@/components/Who'
 import What from '@/components/What'
 import Where from '@/components/Where'
 import How from '@/components/How'
+import Why from '@/components/Why'
 // import './style.css';
 
 // Vue.use(BootstrapVue);
@@ -71,6 +72,17 @@ export default new Router({
       name: 'How',
       components: {
         default: How,
+        slide: null
+      },
+      props: {
+        slide: true
+      }
+    },
+    {
+      path: '/whyworkwithus',
+      name: 'Why',
+      components: {
+        default: Why,
         slide: null
       },
       props: {

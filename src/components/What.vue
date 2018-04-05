@@ -45,12 +45,9 @@
                 </section>
               </div>
           </div>
-          <div class="pb-5 pt-5 red"></div>
           <div class="project__body pt-0">
-            <section class="project__description pt-0 | ctn red">
-                <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">  
-                  <buttom></buttom>
-                </div>
+            <section class="project__description pt-0 | ctn red"> 
+                <buttom></buttom>
             </section>
           </div>
         </div>
