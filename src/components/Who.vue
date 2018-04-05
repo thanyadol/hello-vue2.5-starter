@@ -38,7 +38,7 @@
 
          <div class="project__body pt-0">
           <section class="project__description pt-0 | ctn white">
-                <buttom></buttom>
+            <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
         </div>
@@ -92,10 +92,10 @@ export default {
           ],
           background: 'white'
         }
-      ]
-      // scrolled: false,
-      // scrolling: false
-      // deg: 0
+      ],
+      prev:  { title : 'Home', url : 'index'},
+      next: { title : 'What We Invest', url : 'whatweinvest'},
+
     };
   },
   // life cycle of component

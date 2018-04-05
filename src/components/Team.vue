@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="team">
     <header class="project__header | ctn">
       <div class="project__header__inner">
         <h2 class="project__title | mlg-2 | m-mr-0 t black" data-i="8">{{ title }}</h2>
@@ -18,7 +18,8 @@ export default {
     return {
       title: 'The Team',
       sub: 'Our resources and network',
-      show: false,
+      prev:  { title : 'Insign', url : 'insign'},
+      next: { title : 'Our Partners', url : 'ourpartners'}
     };
   }
 };

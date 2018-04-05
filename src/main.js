@@ -29,7 +29,7 @@ Vue.component('background', Background) */
 Vue.component('buttom', Buttom)
 Vue.component('nave', Nave)
 Vue.component('axiom', Axiom)
-Vue.component('frame', Frame)
+Vue.component('framed', Frame)
 
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // require('../node_modules/bootstrap/dist/css/bootstrap.min.css')

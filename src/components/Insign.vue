@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="insign">
     <header class="project__header | ctn">
       <div class="project__header__inner">
         <h2 class="project__title | mlg-2 | m-mr-0 t black" data-i="7">{{ title }}</h2>
@@ -18,7 +18,10 @@ export default {
     return {
       title: 'Insign',
       sub: 'Our resources and network',
-      show: false,
+      
+      // config route here
+      prev: { title : 'Why Work With Us', url : 'whyworkwithus'},
+      next:  { title : 'The Team', url : 'theteam'}
     };
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="Why">
+  <div class="partner">
     <header class="project__header | ctn">
       <div class="project__header__inner">
         <h2 class="project__title | mlg-2 | m-mr-0 t black" data-i="6">{{ title }}</h2>
@@ -13,56 +13,6 @@
       </div>
     </header>
 
-    <div class="project__inner scrollarea" data-scrollbar id="my-scrollbar">
-      <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
-
-        <div class="project__content">
-          <div class="project__body white row" v-for="p in posts" :key="p.id">
-              <section class="project__description col-8 red | ctn" v-bind:class="p.class">
-                  <h3 class="hidden-visually">Project</h3>
-                  <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                    <p class="title bold tr">{{ p.title }}</p>
-                    <p class="sub bold black">{{ p.sub }}</p>
-                    <p class="project__text">     
-                      <span class="sub black">{{ p.regular }}</span>   
-                    </p> 
-                    <ol>
-                        <li class="ml-5 sub black" v-for="d in p.detail" :key="d">{{ d }}</li>
-                    </ol>
-                  </div>
-              </section>
-              <section class="project__description col box" v-bind:class="p.box">
-                  <div class="project__text bet |  mrg-2c | m-100 m-mr-0">
-                    <span class="title bold tr mr-5">{{ p.bold }}</span>
-                  </div>
-              </section>
-            </div>
-        </div>
-
-        <!-- should move to component -->
-        <div class="project__body white row pt-6">
-          <section class="project__description col-4 red | ctn"  v-for="r in res.list" :key="r.id" v-bind:class="r.class">
-              <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                <p class="title bold black">{{ r.country }}</p>
-                <p class="sub bold black">{{ r.year }}</p>
-                <ul>
-                    <li class="ml-5 sub black" v-for="d in r.detail" :key="d">{{ d }}</li>
-                </ul>
-              </div>
-          </section>
-        </div>
-
-        <div class="project__body pt-0">
-          <section class="project__description pt-0 | ctn white">
-            <buttom></buttom>
-          </section>
-        </div>
-
-        </div>
-      <!-- end scroll content -->
-      <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
-    </div>
-
   </div>
 </template>
 
@@ -73,87 +23,8 @@ export default {
     return {
       title: 'Our Partners',
       subs: [ 'Funding', 'Startups' ],
-      show: false,
-      posts: [
-        { 
-          id: 1,
-          title: 'Vertical Focus', 
-          sub: 'More Than Just a Capital Partner',
-          bold: '',
-          regular: 'At AddVentures, we look for the investment and partnership opportunities in the areas of B2B, Industrial, and Enterprise. With the support from SCG and our goal to build the portfolio companies in highly related verticals, we believe we can offer substantial synergies in 2 dimensions',
-          detail: ['Direct-synergybetween SCG & startup',  'Cross-synergy among startups in the portfolio'],
-          class: 'red',
-          box: '',
-          image: ''
-        },
-        { 
-          id: 2,
-          title: 'Platform to scale up', 
-          sub: 'USD 18 Billion market capitalization more than 50,000 employee',
-          bold: '',
-          regular: 'With our resources and extensive business network along SCG business value chain, We believe that we can help startups scale fast through our proprietary resources and access to 300+ SCG subsidiaries and 1,000+ business partners across Southeast Asia Region. We are flexible and open to various collaborationPrograms ranging from commercial partnership,Licensing, JV, minority investment or M&A.',
-          detail: [],
-          class: 'white right',
-          box: '',
-          image: ''
-        },
-        { 
-          id: 3,
-          title: 'Long term <br/> partnerships', 
-          sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-          bold: 'Corperate & Startups',
-          regular: 'As a strategic investor, we do not only provide financing but we also commit to long - term success of startups in our portfolio. Unlike traditional VC funds, we do not rush for short term financial result and investment exit. with this long term support, startups can focus on building a great company to reach their full potential fastest possible.',
-          detail: [],
-          class: 'white',
-          box: 'red',
-          image: ''
-        }
-      ],
-      res: {
-        title: 'Our resources and network',
-        sub: 'USD 18 Billion market capitalization more than 50,000 employee',
-        list: [
-          { 
-            id: 1,
-            country: 'Myanmar', 
-            year: '1994',
-            bold: '',
-            regular: '',
-            title: [],
-            sub : [],
-            bu: [ 'SCG Cement - Building Materials' ],
-            class: 'white',
-            image: ''
-          },
-           { 
-            id: 2,
-            country: 'Vietnam', 
-            year: '1992',
-            bold: '',
-            regular: '',
-            title: [],
-            sub : [],
-            bu: [ 'SCG Cement - Building Materials' ],
-            class: 'white',
-            image: ''
-          },
-          { 
-            id: 3,
-            country: '', 
-            year: '',
-            bold: '',
-            regular: '',
-            title: [ '18 Billions', '50k Employee' ],
-            sub : [ 'Market capitalizayion', 'More than' ],
-            bu: [ 'SCG Cement - Building Materials' ],
-            class: 'red',
-            image: ''
-          }
-        ]
-      }
-      // scrolled: false,
-      // scrolling: false
-      // deg: 0
+      prev: { title : 'Why Work With', url : 'whyworkwithus'},
+      next:  { title : 'Insign', url : 'insign'}
     };
   },
 };

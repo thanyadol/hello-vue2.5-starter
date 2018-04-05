@@ -47,7 +47,7 @@
           </div>
           <div class="project__body pt-0">
             <section class="project__description pt-0 | ctn red"> 
-                <buttom></buttom>
+                <buttom :next="next" :prev="prev"></buttom>
             </section>
           </div>
         </div>
@@ -100,11 +100,8 @@ export default {
           float: 'left'
         }
       ],
-
-      // sample: './static/img/img3.jpg'
-      // scrolled: false,
-      // scrolling: false
-      // deg: 0
+      prev: { title : 'Who We Are', url : 'whoweare'},
+      next:  { title : 'Where We Invest', url : 'whereweinvest'}
     };
   },
   // life cycle of component

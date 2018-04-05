@@ -43,7 +43,7 @@
 
         <div class="project__body pt-0">
           <section class="project__description pt-0 | ctn red">
-              <buttom></buttom>
+             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
      </div>
@@ -102,23 +102,9 @@ export default {
           class: 'indent-1',
         }
       ],
-
-      // separator: './static/img/separator.',
-      // sample: './static/img/img3.jpg'
-      // scrolled: false,
-      // scrolling: false
-      // deg: 0
+      prev: { title : 'Where We Invest', url : 'whereweinvest'},
+      next:  { title : 'Why Work With Us', url : 'whyworkwithus'}
     };
-  },
-  // life cycle of component
-  created() {},
-  mounted: function() {
-  },
-  beforeMount() {
-
-  },
-  beforeDestroy() {
-    // window.removeEventListener('wheel', this.handleScroll)
   }
 };
 </script>

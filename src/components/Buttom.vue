@@ -26,11 +26,10 @@ export default {
   name: 'Buttom',
     data() {
       return {
-        prev:  { title : 'What We Invest', url : 'whatweinvest'},
-        next: { title : 'Contact', url : 'contact'},
         foot: 'Copyright 2018 AddVenture'
       }
-    }
+    },
+    props: ['next', 'prev']
 }
 </script>
 <style scoped>

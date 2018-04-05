@@ -48,7 +48,7 @@
 
         <div class="project__body pt-0">
           <section class="project__description pt-0 | ctn red">
-              <buttom></buttom>
+            <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
      </div>
@@ -95,10 +95,10 @@ export default {
       ],
 
       separator: './static/img/separator.',
-      sample: './static/img/img3.jpg'
-      // scrolled: false,
-      // scrolling: false
-      // deg: 0
+      sample: './static/img/img3.jpg',
+      prev:  { title : 'What We Invest', url : 'whatweinvest'},
+      next: { title : 'How We Invest', url : 'howweinvest'},
+
     };
   },
   // life cycle of component

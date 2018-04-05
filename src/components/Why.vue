@@ -1,5 +1,5 @@
 <template>
-  <div class="Why">
+  <div class="why">
     <header class="project__header | ctn">
       <div class="project__header__inner">
         <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="5">{{ title }}</h2>
@@ -50,7 +50,7 @@
 
         <div class="project__body pt-0">
           <section class="project__description pt-0 | ctn white">
-            <buttom></buttom>
+            <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
 
@@ -145,10 +145,9 @@ export default {
             image: ''
           }
         ]
-      }
-      // scrolled: false,
-      // scrolling: false
-      // deg: 0
+      },
+      prev: { title : 'How We Invest', url : 'howweinvest'},
+      next:  { title : 'Our Partners', url : 'ourpartners'}
     };
   },
 };

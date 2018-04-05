@@ -7,7 +7,7 @@
     <nave></nave>
 
    <!-- should move to component -->
-    <frame :display="!show"> </frame>
+    <framed :display="!show"> </framed>
 
 		</header>
 		<!-- header -->
@@ -179,7 +179,10 @@ export default {
         whatweinvest: { next: 'whereweinvest', prev: 'whoweare' },
         whereweinvest: { next: 'howweinvest', prev: 'whatweinvest' },
         howweinvest: { next: 'whyworkwithus', prev: 'whereweinvest' },
-        whyworkwithus: { next: 'index', prev: 'howweinvest' },
+        whyworkwithus: { next: 'ourpartners', prev: 'howweinvest' },
+        ourpartners: { next: 'insign', prev: 'whyworkwithus' },
+        insign: { next: 'theteam', prev: 'ourpartners' },
+        theteam: { next: 'index', prev: 'insign' }
       }
       return pages[this.$route.path.substring(1, this.$route.path.length)]
     },
