@@ -2,9 +2,13 @@
   <div class="Why">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="5">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-1 | m-ml-0 m-100 black">
-          <h3 class="project__intro">{{ sub }}</h3>
+        <h2 class="project__title | mlg-2 | m-mr-0 t black" data-i="6">{{ title }}</h2>
+        <div class="project__info | col-8 mlg-2 | m-ml-0 m-100 black">
+           <h3 class="project__intro">
+              <ul>
+                  <li v-for="s in subs" :key="s" >{{ s }}</li>
+              </ul>
+          </h3>
         </div>
       </div>
     </header>
@@ -58,16 +62,17 @@
       <!-- end scroll content -->
       <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </div>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: "Why",
+  name: "Partner",
   data() {
     return {
-      title: 'Why Work With Us',
-      sub: 'Our resources and network',
+      title: 'Our Partners',
+      subs: [ 'Funding', 'Startups' ],
       show: false,
       posts: [
         { 
@@ -154,6 +159,23 @@ export default {
 };
 </script>
 <style scoped>
+
+.t
+{
+  position: relative;
+  font-size: 8vw;
+  font-weight: bold;
+  line-height: 1;
+  opacity: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h3 > ul > li
+{
+    display: inline;
+    padding-left: 30px;
+}
 
 .ctn-cu {
   padding-left: 9.1%;

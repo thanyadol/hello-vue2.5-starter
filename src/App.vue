@@ -1,22 +1,13 @@
 <template>
   <div class="project">
     <header id="header" class="ctn noselect">
-			<h1 class="header__title">
-				<a href="/">home</a>
-			</h1>
-      <nave></nave>
+    <h1 class="header__title">
+      <a href="/">home</a>
+    </h1>
+    <nave></nave>
 
    <!-- should move to component -->
-    <aside id="frame">
-      <transition name="fade" mode="out-in">
-        <div class="borders-container"  v-show="!show">
-          <div class="border border--t"></div>
-          <div class="border border--r"></div>
-          <div class="border border--b"></div>
-          <div class="border border--l"></div>
-        </div>
-      </transition>
-    </aside>
+    <frame :display="!show"> </frame>
 
 		</header>
 		<!-- header -->
@@ -98,17 +89,7 @@
 
 		<canvas id="stage" width="1828" height="1332" style="touch-action: none; cursor: inherit;"></canvas>
 		
-		<div class="lines-container">
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
-		</div>
+	  <axiom> </axiom>
 	</div>
 	<!-- wrapper -->
 </template>
@@ -240,23 +221,6 @@ button:focus {
     top: 0;
 }
 
-/* line */
-.lines-container {
-    top: 0;
-    right: -20%;
-    bottom: 0;
-    left: -20%;
-    height: 100%;
-    z-index: auto;
-}
-
-.line {
-    width: 1px;
-    height: 100%;
-    background: #f0f0f0;
-    transform: rotate(-200deg);
-}
-
 .red
 {
   background-color: #2c3e50;
@@ -267,37 +231,5 @@ button:focus {
   background-color: #fcfcfc;
 }
 
-.border {
-  border: none !important;
-  -webkit-transition: opacity 2s ease-in;
-  transition: opacity 2s ease-in;
-  background-color: #2f3c47;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to
-/* .fade-leave-active in <2.1.8 */
-{
-  opacity: 0;
-}
-
-/* animate fade */
-.fade-enter-active, .fade-leave-active {
-  transition-property: opacity;
-  transition-duration: 2s;
-}
-
-.fade-enter-active {
-  transition-delay: 1s;
-}
-
-.fade-enter, .fade-leave-active {
-  opacity: 0
-}
 
 </style>

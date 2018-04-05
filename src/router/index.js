@@ -11,6 +11,10 @@ import What from '@/components/What'
 import Where from '@/components/Where'
 import How from '@/components/How'
 import Why from '@/components/Why'
+
+import Partner from '@/components/Partner'
+import Insign from '@/components/Insign'
+import Team from '@/components/Team'
 // import './style.css';
 
 // Vue.use(BootstrapVue);
@@ -83,6 +87,39 @@ export default new Router({
       name: 'Why',
       components: {
         default: Why,
+        slide: null
+      },
+      props: {
+        slide: true
+      }
+    },
+    {
+      path: '/ourpartners',
+      name: 'Partner',
+      components: {
+        default: Partner,
+        slide: null
+      },
+      props: {
+        slide: true
+      }
+    },
+    {
+      path: '/insign',
+      name: 'Insign',
+      components: {
+        default: Insign,
+        slide: null
+      },
+      props: {
+        slide: true
+      }
+    },
+    {
+      path: '/theteam',
+      name: 'Team',
+      components: {
+        default: Team,
         slide: null
       },
       props: {
