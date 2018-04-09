@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 // component
 import About from '@/components/About'
+import Career from '@/components/Career'
 
 // import IndexSlide from '@/components/IndexSlide'
 import Index from '@/components/Index'
@@ -23,9 +24,14 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/about',
+      path: '/contact',
       name: 'About',
       component: About
+    },
+    {
+      path: '/career',
+      name: 'Career',
+      component: Career
     },
     {
       path: '/index',

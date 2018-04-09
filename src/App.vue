@@ -117,7 +117,7 @@ export default {
     var options = {
       wheelEventTarget: EventTarget,
     };
-    var div = document.getElementById("my-scrollbar");
+    var div = document.getElementById("scrollbar");
     Scrollbar.init(div);
 
     // alert("scrolling")
@@ -130,9 +130,9 @@ export default {
 
     window.addEventListener('wheel', function (event) {
 
-    var div = document.getElementById("my-scrollbar");
+    var div = document.getElementById("scrollbar");
     const scrollbar = Scrollbar.init(div);
-    if(scrollbar.scrollTop > 400)
+    if(scrollbar.scrollTop > 50)
     {
       // console.log(scrollbar.scrollTop)
       // console.log(scrollbar.offset.y)

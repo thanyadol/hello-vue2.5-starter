@@ -2,14 +2,14 @@
   <div class="who">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="1">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-1 | m-ml-0 m-100 black">
-          <h3 class="project__intro">{{ sub }}</h3>
+        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t black" data-i="1">{{ title }}</h2>
+        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 black">
+          <h3 v-bind:class="slide__sub" class="project__intro">{{ sub }}</h3>
         </div>
       </div>
     </header>
 
-    <div class="project__inner scrollarea" data-scrollbar id="my-scrollbar">
+    <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
       <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
 
         <div class="project__content">
@@ -56,7 +56,8 @@ export default {
     return {
       title: 'Who We Are',
       sub: 'Partnering With Startups',
-      show: false,
+      slide__title: false,
+      slide__sub: false,
       posts: [
         { 
           id: 1,
@@ -101,6 +102,40 @@ export default {
   // life cycle of component
   created() {},
   beforeMount() {
+      var scrolled = 0
+      var vm = this
+
+      window.addEventListener('wheel', function (event) {
+      var div = document.getElementById("scrollbar");
+      const scrollbar = Scrollbar.init(div);
+     
+      //slide title
+      if(scrollbar.scrollTop > 50)
+      {
+        vm.slide__title = 'slide__title__active'
+      }
+      else
+      {
+        vm.slide__title = 'slide__title__leave'
+      }
+
+      //slide sub
+      if(scrollbar.scrollTop > 55)
+      {
+        vm.slide__sub = 'slide__sub__active'
+      }
+      else
+      {
+         vm.slide__sub = 'slide__sub__leave'
+      }
+
+      if (event.deltaY < 0) {
+        scrolled++
+      }
+      if (event.deltaY > 0) {
+        scrolled--
+      }
+    })
   },
   beforeDestroy() {
     // window.removeEventListener('wheel', this.handleScroll)
@@ -108,6 +143,33 @@ export default {
 };
 </script>
 <style scoped>
+
+/* alider class*/
+.slide__title__active
+{
+  transform: translate3d(-296px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__active
+{
+  transform: translate3d(-476px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__title__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+/***/
 
 .ctn-cu {
   padding-left: 9.1%;

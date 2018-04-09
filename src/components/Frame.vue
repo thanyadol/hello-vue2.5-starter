@@ -22,8 +22,8 @@ export default {
 
 .border {
   border: none !important;
-  -webkit-transition: opacity 2s ease-in;
-  transition: opacity 2s ease-in;
+  -webkit-transition: opacity 1600ms ease-in;
+  transition: opacity 1600ms ease-in;
   background-color: #2f3c47;
 }
 
@@ -42,11 +42,11 @@ export default {
 /* animate fade */
 .fade-enter-active, .fade-leave-active {
   transition-property: opacity;
-  transition-duration: 2s;
+  transition-duration: 1600ms;
 }
 
 .fade-enter-active {
-  transition-delay: 1s;
+  transition-delay: 0;
 }
 
 .fade-enter, .fade-leave-active {

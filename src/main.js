@@ -17,6 +17,7 @@ import Buttom from '@/components/Buttom'
 import Nave from '@/components/Nave'
 import Axiom from '@/components/Axiom'
 import Frame from '@/components/Frame'
+import Flip from '@/components/Flip'
 
 // register DOM tag
 /* Vue.component('right-href', RightHref)
@@ -30,6 +31,7 @@ Vue.component('buttom', Buttom)
 Vue.component('nave', Nave)
 Vue.component('axiom', Axiom)
 Vue.component('framed', Frame)
+Vue.component('flip', Flip)
 
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // require('../node_modules/bootstrap/dist/css/bootstrap.min.css')
