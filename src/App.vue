@@ -63,25 +63,15 @@
             <a href="#">#</a>
 				</li>
         <li class="social-list__item">
-				  <svg viewBox="0 50 512 512" class="icon icon--li" >
-            <path d="M150.65,100.682c0,27.992-22.508,50.683-50.273,50.683c-27.765,0-50.273-22.691-50.273-50.683
-            C50.104,72.691,72.612,50,100.377,50C128.143,50,150.65,72.691,150.65,100.682z M143.294,187.333H58.277V462h85.017V187.333z
-            M279.195,187.333h-81.541V462h81.541c0,0,0-101.877,0-144.181c0-38.624,17.779-61.615,51.807-61.615
-            c31.268,0,46.289,22.071,46.289,61.615c0,39.545,0,144.181,0,144.181h84.605c0,0,0-100.344,0-173.915
-            s-41.689-109.131-99.934-109.131s-82.768,45.369-82.768,45.369V187.333z"/>
-          </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_Medium</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,0V28H28V0ZM23.33,9.42h-1c-.27,0-1,.29-1,.54v9c0,.25.7.45,1,.45h1v2H16.66v-2H18V10.09h-.23L14.56,21.41H12.08L8.91,10.09H8.67v9.32H10v2H4.67v-2h.74c.29,0,.6-.2.6-.45V10a.64.64,0,0,0-.6-.54H4.67v-2h6.91l2.26,8h.06l2.27-8h7.16Z"/></g></g></svg>
 					<a href="https://medium.com/" target="_blank">Medium</a>
 				</li>
 				<li class="social-list__item">
-					<svg class="icon icon--li" viewBox="0 0 16 16" aria-hidden="true">
-						<path d="M16,3c-0.6,0.3-1.2,0.4-1.9,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2.1,0.8c-0.6-0.6-1.5-1-2.4-1C9.3,1.5,7.8,3,7.8,4.8c0,0.3,0,0.5,0.1,0.7C5.2,5.4,2.7,4.1,1.1,2.1c-0.3,0.5-0.4,1-0.4,1.7c0,1.1,0.6,2.1,1.5,2.7c-0.5,0-1-0.2-1.5-0.4c0,0,0,0,0,0c0,1.6,1.1,2.9,2.6,3.2C3,9.4,2.7,9.4,2.4,9.4c-0.2,0-0.4,0-0.6-0.1c0.4,1.3,1.6,2.3,3.1,2.3c-1.1,0.9-2.5,1.4-4.1,1.4c-0.3,0-0.5,0-0.8,0c1.5,0.9,3.2,1.5,5,1.5c6,0,9.3-5,9.3-9.3c0-0.1,0-0.3,0-0.4C15,4.3,15.6,3.7,16,3z"></path>
-					</svg>
-					<a href="https://twitter.com/" target="_blank">Twitter</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_LinkIedn</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,0V28H28V0ZM9.64,21.44H6.31v-10H9.64ZM8,10.13H8A1.72,1.72,0,1,1,8,6.7a1.72,1.72,0,1,1,0,3.43ZM21.64,21.44H18.31V16.12c0-1.34-.48-2.25-1.69-2.25a1.81,1.81,0,0,0-1.7,1.21,2.2,2.2,0,0,0-.12.81v5.55H11.48s0-9,0-10h3.33V12.9a3.31,3.31,0,0,1,3-1.64c2.19,0,3.84,1.42,3.84,4.48Z"/></g></g></svg>
+					<a href="https://twitter.com/" target="_blank">Linkedin</a>
 				</li>
 				<li class="social-list__item">
-					<svg class="icon icon--fb" viewBox="0 0 16 16" aria-hidden="true">
-						<path d="M14,0H2C0.9,0,0,0.9,0,2v12c0,1.1,0.9,2,2,2h6V9.6H6.6V7.3H8c0,0,0-1.5,0-1.9c0-0.3-0.1-2.6,2.9-2.6h2.1v2.4h-1.5c-0.3,0-0.6,0.3-0.6,0.5c0,0.2,0,1.5,0,1.5s1.9,0,2.1,0c-0.1,1.2-0.3,2.3-0.3,2.3h-1.9V16H14c1.1,0,2-0.9,2-2V2C16,0.9,15.1,0,14,0z"></path>
-					</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_Facebook</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M28,0H0V28H13.94V16.68H11.65V12.87h2.29V9.76c0-.57-.12-4.39,4.8-4.38h3.47v4H19.66a1.1,1.1,0,0,0-1,.91v2.61h3.57c-.14,2-.44,3.82-.44,3.82H18.63V28H28Z"/></g></g></svg>
 					<a href="https://www.facebook.com//" target="_blank">Facebook</a>
 				</li>
 			</ul>
@@ -196,6 +186,8 @@ export default {
 </script>
 
 <style scoped>
+
+.cls-1{fill:#2f3c47;}
 
 /* remove reboot*/
 button:focus {

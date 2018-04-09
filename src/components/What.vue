@@ -2,9 +2,9 @@
   <div class="what">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="2">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-1 | m-ml-0 m-100 black">
-          <h3 class="project__intro">
+        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t black" data-i="2">{{ title }}</h2>
+        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 black">
+          <h3 v-bind:class="slide__sub" class="project__intro">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
               </ul>
@@ -13,7 +13,7 @@
       </div>
     </header>
 
-    <div class="project__inner scrollarea" data-scrollbar id="my-scrollbar">
+    <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
       <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
 
           <div class="project__content">
@@ -21,32 +21,34 @@
                 <section class="project__description col-7 pd-1 | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
                     <h3 class="hidden-visually">Project</h3>
                     <div class="project__text | mrg-2 | m-100 m-mr-0">
-                      <p class="title bold black">{{ p.title }}</p>
-                      <p class="sub bold black">{{ p.sub }}</p>
+                      <p class="title bold">{{ p.title }}</p>
+                      <p class="sub bold">{{ p.sub }}</p>
                       <p class="project__text">     
-                        <span class="sub bold black">{{ p.bold }}</span>  
-                        <span class="sub black">{{ p.regular }}</span>   
+                        <span class="sub bold">{{ p.bold }}</span>  
+                        <span class="sub">{{ p.regular }}</span>   
                       </p> 
                       <p class="sub black" v-for="d in p.detail" :key="d">{{ d }}</p>  
                     </div>
                 </section>
 
                 <!-- loop with invests -->
-                <section class="project__body pb-6 pt-5 row | ctn red" v-for="i in invests" :key="i.id" >
+                <section class="mt-ne-1">
+                <div class="project__body pb-6 pt-5 row | ctn" v-for="i in invests" :key="i.id" >
                   <div class="col-7" v-bind:class="{ right: i.id%2 == 0 }">
                     <img class="project__image" :src="i.image" >
                   </div>
                   <div class="col" v-bind:class="{ left: i.id%2 == 0 }">
-                    <h1 class="tr"> {{ i.title }} </h1> <span> </span>
+                    <h1 class="tr title" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
                     <ul class="black">
                       <li v-for="l in i.lists" :key="l.list"> {{ l }}</li>
                     </ul>
                   </div>
+                </div>
                 </section>
               </div>
           </div>
           <div class="project__body pt-0">
-            <section class="project__description pt-0 | ctn red"> 
+            <section class="project__description pt-0 | ctn white"> 
                 <buttom :next="next" :prev="prev"></buttom>
             </section>
           </div>
@@ -65,7 +67,8 @@ export default {
     return {
       title: 'What We Invest',
       subs: [ 'Industrail',  'B2B',  'Enterprise' ],
-      show: false,
+      slide__title: false,
+      slide__sub: false,
       posts: [
         { 
           id: 1,
@@ -83,21 +86,29 @@ export default {
           title: 'Industrail',
           lists: [ 'Smart Manufacturing', 'Robotics', 'Automation', 'Energy  Technology'],
           image: './static/img/img3.jpg',
-          float: 'left'
+          imageIcon: './static/img/industrail.svg',
+          imageClass: 'bg indust',
+          float: 'left red',
+      
         },
         {
           id: 2,
           title: 'B2B',
           lists: [ 'Marketplace and platform for', 'Construction product', 'Chemicals', 'Packaging', 'Logistics and Industrail supply'],
           image: './static/img/img3.jpg',
-          float: 'right',
+          imageIcon: './static/img/b2b.svg',
+          imageClass: 'bg b2b',
+          float: 'right white',
+          titleAlign: 'text-right'
         },
          {
           id: 3,
           title: 'Enterprise',
           lists: [ 'E-commerce enablement', 'Predictive analystics', 'Chemicals', 'Omni channel', 'Construction efficiency management'],
           image: './static/img/img3.jpg',
-          float: 'left'
+          imageIcon: './static/img/b2b.svg',
+          imageClass: 'bg enterprise',
+          float: 'left red'
         }
       ],
       prev: { title : 'Who We Are', url : 'whoweare'},
@@ -106,10 +117,41 @@ export default {
   },
   // life cycle of component
   created() {},
-  mounted: function() {
-  },
   beforeMount() {
+      var scrolled = 0
+      var vm = this
 
+      window.addEventListener('wheel', function (event) {
+      var div = document.getElementById("scrollbar");
+      const scrollbar = Scrollbar.init(div);
+     
+      //slide title
+      if(scrollbar.scrollTop > 50)
+      {
+        vm.slide__title = 'slide__title__active'
+      }
+      else
+      {
+        vm.slide__title = 'slide__title__leave'
+      }
+
+      //slide sub
+      if(scrollbar.scrollTop > 55)
+      {
+        vm.slide__sub = 'slide__sub__active'
+      }
+      else
+      {
+         vm.slide__sub = 'slide__sub__leave'
+      }
+
+      if (event.deltaY < 0) {
+        scrolled++
+      }
+      if (event.deltaY > 0) {
+        scrolled--
+      }
+    })
   },
   beforeDestroy() {
     // window.removeEventListener('wheel', this.handleScroll)
@@ -117,6 +159,74 @@ export default {
 };
 </script>
 <style scoped>
+
+/* alider class*/
+.slide__title__active
+{
+  transform: translate3d(-296px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__active
+{
+  transform: translate3d(-546px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__title__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+/***/
+
+.mt-ne-1
+{
+  margin-top: -200px;
+}
+
+.indust
+{
+  top: 20px;
+  left: -20px;
+}
+
+.b2b
+{
+  top: 40px;
+  right: 120px;
+}
+
+.enterprise
+{
+  top: 40px;
+  left: -10px;
+}
+
+.project__body .bg
+{
+    position: absolute;
+    width: 10%;
+    z-index: 2;
+}
+
+.project__body .title
+{
+    z-index: 1;
+    position: relative;
+}
+
+.mlg-2
+{
+  margin-left: 22.6342857143%
+}
 
 .pb-6
 {
@@ -148,7 +258,7 @@ h3 > ul > li
 
 .red 
 {
-  background-color: #f0f0f0;
+  background-color: #ee2524;
 }
 
 .tr
@@ -206,12 +316,10 @@ h3 > ul > li
 }
 
 
-/*.project__text
+.project__text
 {
-  color: #2f3c47;
-  font-size: 2.1rem;
-  line-height: 1.62;
-}*/
+  margin-bottom: 70px;
+}
 
 .scrollarea {
   height: 100vh;
@@ -257,37 +365,9 @@ project__title::before {
     margin-bottom: 2.0rem;
 }
 
-/* for iphone x*/
-@media only screen and (max-width: 720px)
-{
-  .project__description .title,  .project__description .sub
-  {
-    font-size: 2.5rem;
-  }
-
-  .project__description .sub
-  {
-    font-size: 2.1rem;
-  }
-  .m-ml-0 {
-      margin-left: 25.6342857143%;
-  }
-  .btn {
-    font-size: 3vw;
-  }
-}
-
-@media only screen and (max-width: 960px)
-{
-  .ctn {
-      padding-left: 5%;
-      padding-right: 2%;
-  }
-}
-
 .project__image
 {
-  top: -100px;
+  /*top: -180px;*/
   width: 90%;
   position: relative;
 }

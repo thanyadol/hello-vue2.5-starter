@@ -178,6 +178,11 @@ export default {
   padding-top: 3rem;
 }
 
+.ctn {
+  padding-left: 7.7%;
+  padding-right: 7.7%;
+}
+
 .red 
 {
   background-color: #f0f0f0;
@@ -267,34 +272,6 @@ project__title::before {
 
 .project__text p:not(:last-of-type) {
     margin-bottom: 2.0rem;
-}
-
-/* for iphone x*/
-@media only screen and (max-width: 720px)
-{
-  .project__description .title,  .project__description .sub
-  {
-    font-size: 2.5rem;
-  }
-
-  .project__description .sub
-  {
-    font-size: 2.1rem;
-  }
-  .m-ml-0 {
-      margin-left: 25.6342857143%;
-  }
-  .btn {
-    font-size: 3vw;
-  }
-}
-
-@media only screen and (max-width: 960px)
-{
-  .ctn {
-      padding-left: 5%;
-      padding-right: 2%;
-  }
 }
 
 .fade-enter-active,
