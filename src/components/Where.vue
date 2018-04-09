@@ -2,9 +2,9 @@
   <div class="where">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="3">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-1 | m-ml-0 m-100 black">
-          <h3 class="project__intro">
+        <h2 v-bind:class="slide__title"  class="project__title | mlg-2 | m-mr-0 t tb" data-i="3">{{ title }}</h2>
+        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
+          <h3 v-bind:class="slide__sub"  class="project__intro">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
               </ul>
@@ -13,27 +13,26 @@
       </div>
     </header>
 
-    <div class="project__inner scrollarea" data-scrollbar id="my-scrollbar">
- 
- 
+    <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
+   <div class="scroll-content" style="">
         <div class="project__content">
-          <div class="project__body row white">
+          <div class="project__body row red">
               <!-- red bar -->
-              <svg class="rectang" width="80" height="2500">
-                <rect x="0" y="0" width="80" height="2500" />
+              <svg class="rectang" width="150" height="2500">
+                <rect x="0" y="0" width="150" height="2500" />
               </svg>
 
-              <section class="project__description col pd-1 | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+              <section class="project__description col-6 pd-1 | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
                   <h3 class="hidden-visually">Project</h3>
                   <div class="project__text | mrg-2 | m-100 m-mr-0">
-                    <p class="title bold black">{{ p.title }}</p>
-                    <p class="sub black">{{ p.sub }}</p>
+                    <p class="title bold tb">{{ p.title }}</p>
+                    <p class="sub tb">{{ p.sub }}</p>
                   </div>
                 </section>
-                <section class="project__description col pd-1 tr | ctn" >
-                  <ul class="black">
+                <section class="project__description col-6 pd-1 tr | ctn red" >
+                  <ul class="tb">
                       <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
-                        <span class="title">{{ v.title }}</span>
+                        <span class="bold">{{ v.title }}</span>
                         <p class="sub">{{ v.sub }}</p>
                       </li>
                   </ul>
@@ -52,20 +51,22 @@
           </section>
         </div>
      </div>
-
+    </div>
       <!-- end scroll content -->
       <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </div>
 </template>
 
 <script>
+import Scrollbar from "smooth-scrollbar";
 export default {
   name: "Where",
   data() {
     return {
       title: 'Where We Invest',
       subs: [ 'Geographical', 'Focus'],
-      show: false,
+      slide__title: false,
+      slide__sub: false,
       posts: [
         { 
           id: 1,
@@ -95,7 +96,7 @@ export default {
       ],
 
       separator: './static/img/separator.',
-      sample: './static/img/img3.jpg',
+      sample: './static/img/map.png',
       prev:  { title : 'What We Invest', url : 'whatweinvest'},
       next: { title : 'How We Invest', url : 'howweinvest'},
 
@@ -106,7 +107,40 @@ export default {
   mounted: function() {
   },
   beforeMount() {
+      var scrolled = 0
+      var vm = this
 
+      window.addEventListener('wheel', function (event) {
+      var div = document.getElementById("scrollbar");
+      const scrollbar = Scrollbar.init(div);
+     
+      //slide title
+      if(scrollbar.scrollTop > 50)
+      {
+        vm.slide__title = 'slide__title__active'
+      }
+      else
+      {
+        vm.slide__title = 'slide__title__leave'
+      }
+
+      //slide sub
+      if(scrollbar.scrollTop > 55)
+      {
+        vm.slide__sub = 'slide__sub__active'
+      }
+      else
+      {
+         vm.slide__sub = 'slide__sub__leave'
+      }
+
+      if (event.deltaY < 0) {
+        scrolled++
+      }
+      if (event.deltaY > 0) {
+        scrolled--
+      }
+    })
   },
   beforeDestroy() {
     // window.removeEventListener('wheel', this.handleScroll)
@@ -115,18 +149,69 @@ export default {
 </script>
 <style scoped>
 
+/* alider class*/
+.slide__title__active
+{
+  transform: translate3d(-226px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__active
+{
+  transform: translate3d(-566px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__title__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+/***/
+
+.ctn {
+  padding-left: 9.1%;
+  padding-right: 9.1%;
+}
+
+.mlg-2
+{
+  margin-left: 18.6342857143%
+}
+
+/* for new */
+
 svg.rectang
 {
-  opacity: 0.6;
-  left: 47%;
+  opacity: 1;
+  margin-left: 35%;
   position: absolute;
   z-index: 3;
-  height: 160vh;
+  height: 150vh;
+  fill: crimson;
 }
 
 ul li.indent
 {
-  left: 30%;
+  margin-top: 50px;
+  margin-left: 35%;
+}
+
+ul
+{
+  margin-left: 50px;
+}
+
+ul li
+{
+  width: 350px;
 }
 
 .pb-6
@@ -182,7 +267,7 @@ h3 > ul > li
   font-weight: bold;
 }
 
-.black {
+.tb {
   color: #2f3c47;
 }
 
@@ -266,41 +351,6 @@ project__title::before {
 
 .project__text p:not(:last-of-type) {
     margin-bottom: 2.0rem;
-}
-
-/* for iphone x*/
-@media only screen and (max-width: 720px)
-{
-  .project__description .title,  .project__description .sub
-  {
-    font-size: 2.5rem;
-  }
-
-  .project__description .sub
-  {
-    font-size: 2.1rem;
-  }
-  .m-ml-0 {
-      margin-left: 25.6342857143%;
-  }
-  .btn {
-    font-size: 3vw;
-  }
-
-  svg.rectang
-  {
-    width: 10px;
-    height: 450px;
-  }
-
-}
-
-@media only screen and (max-width: 960px)
-{
-  .ctn {
-      padding-left: 5%;
-      padding-right: 2%;
-  }
 }
 
 .project__image

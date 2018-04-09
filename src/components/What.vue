@@ -2,8 +2,8 @@
   <div class="what">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t black" data-i="2">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 black">
+        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t tb" data-i="2">{{ title }}</h2>
+        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
@@ -27,7 +27,7 @@
                         <span class="sub bold">{{ p.bold }}</span>  
                         <span class="sub">{{ p.regular }}</span>   
                       </p> 
-                      <p class="sub black" v-for="d in p.detail" :key="d">{{ d }}</p>  
+                      <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>  
                     </div>
                 </section>
 
@@ -39,7 +39,7 @@
                   </div>
                   <div class="col" v-bind:class="{ left: i.id%2 == 0 }">
                     <h1 class="tr title" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
-                    <ul class="black">
+                    <ul class="tb">
                       <li v-for="l in i.lists" :key="l.list"> {{ l }}</li>
                     </ul>
                   </div>
@@ -281,7 +281,7 @@ h3 > ul > li
   font-weight: bold;
 }
 
-.black {
+.tb {
   color: #2f3c47;
 }
 

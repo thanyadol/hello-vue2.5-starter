@@ -2,8 +2,8 @@
   <div class="who">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t black" data-i="1">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 black">
+        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t tb" data-i="1">{{ title }}</h2>
+        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro">{{ sub }}</h3>
         </div>
       </div>
@@ -17,13 +17,13 @@
               <section class="project__description | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
                   <h3 class="hidden-visually">Project</h3>
                   <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
-                    <p class="title bold black">{{ p.title }}</p>
-                    <p class="sub bold black">{{ p.sub }}</p>
+                    <p class="title bold tb">{{ p.title }}</p>
+                    <p class="sub bold tb">{{ p.sub }}</p>
                     <p class="project__text">     
-                      <span class="sub bold black">{{ p.bold }}</span>  
-                      <span class="sub black">{{ p.regular }}</span>   
+                      <span class="sub bold tb">{{ p.bold }}</span>  
+                      <span class="sub tb">{{ p.regular }}</span>   
                     </p> 
-                    <p class="sub black" v-for="d in p.detail" :key="d">{{ d }}</p>  
+                    <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>  
                   </div>
               </section>
             </div>
@@ -31,7 +31,7 @@
         <div class="project__body pt-0">
           <section class="project__description pt-0 | ctn white">
               <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
-                <p class="title bold black"><a class="btn btn--cta" href="#"> About Us</a></p>
+                <p class="title bold tb"><a class="btn btn--cta" href="#"> About Us</a></p>
               </div>
           </section>
         </div>
@@ -214,7 +214,7 @@ export default {
   font-weight: bold;
 }
 
-.black {
+.tb {
   color: #2f3c47;
 }
 

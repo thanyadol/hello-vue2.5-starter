@@ -2,59 +2,65 @@
   <div class="why">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="5">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-1 | m-ml-0 m-100 black">
-          <h3 class="project__intro">{{ sub }}</h3>
+        <h2 v-bind:class="slide__title"  class="project__title | mlg-1 | m-mr-0 t tb" data-i="5">{{ title }}</h2>
+        <div  class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
+          <h3  v-bind:class="slide__sub"  class="project__intro">{{ sub }}</h3>
         </div>
       </div>
     </header>
 
-    <div class="project__inner scrollarea" data-scrollbar id="my-scrollbar">
-      <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
+    <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
+      <div class="scroll-content">
 
-        <div class="project__content">
-          <div class="project__body white row" v-for="p in posts" :key="p.id">
-              <section class="project__description col-8 red | ctn" v-bind:class="p.class">
-                  <h3 class="hidden-visually">Project</h3>
-                  <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                    <p class="title bold tr">{{ p.title }}</p>
-                    <p class="sub bold black">{{ p.sub }}</p>
-                    <p class="project__text">     
-                      <span class="sub black">{{ p.regular }}</span>   
-                    </p> 
-                    <ol>
-                        <li class="ml-5 sub black" v-for="d in p.detail" :key="d">{{ d }}</li>
-                    </ol>
+          
+         <div class="project__content"> 
+            <div class="project__body grey row" v-for="p in posts" :key="p.id">
+                    <section class="project__description red | ctn" v-bind:class="p.class">
+                        <h3 class="hidden-visually">Project</h3>
+                        <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                          <p class="title bold" v-bind:class="p.titleClass">{{ p.title }}</p><img class="bg" v-bind:src="p.image" />
+                          <p class="sub bold" v-bind:class="p.subClass" >{{ p.sub }}</p>
+                          <p class="project__text">     
+                            <span class="sub tw" v-bind:class="p.subClass">{{ p.regular }}</span>   
+                          </p> 
+                          <ol>
+                              <li class="ml-5 sub tw" v-bind:class="p.subClass"  v-for="d in p.detail" :key="d">{{ d }}</li>
+                          </ol>
+                        </div>
+                    </section>
+                    <section class="project__description col box | ctn" v-bind:class="p.box">
+                        <div class="project__text bet | mrg-2c | m-100 m-mr-0">
+                          <span class="title bold tw mr-5">{{ p.bold }}</span>
+                        </div>
+                    </section>
                   </div>
-              </section>
-              <section class="project__description col box" v-bind:class="p.box">
-                  <div class="project__text bet |  mrg-2c | m-100 m-mr-0">
-                    <span class="title bold tr mr-5">{{ p.bold }}</span>
+              </div>
+          
+
+            <div class="project__body ctn grey more"> </div>
+            <!-- should move to component -->
+            <div class="project__content shift white"> 
+            <div class="project__body ctn shift row">
+              <section class="project__description col block | ctn"  v-for="r in res.list" :key="r.id" v-bind:class="r.class">
+                  <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                    <p class="title bold tb">{{ r.country }}</p>
+                    <p class="sub bold tb">{{ r.year }}</p>
+                    <ul>
+                        <li class="ml-5 sub tb" v-for="d in r.detail" :key="d">{{ d }}</li>
+                    </ul>
                   </div>
               </section>
             </div>
-        </div>
-
-        <!-- should move to component -->
-        <div class="project__body white row pt-6">
-          <section class="project__description col-4 red | ctn"  v-for="r in res.list" :key="r.id" v-bind:class="r.class">
-              <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                <p class="title bold black">{{ r.country }}</p>
-                <p class="sub bold black">{{ r.year }}</p>
-                <ul>
-                    <li class="ml-5 sub black" v-for="d in r.detail" :key="d">{{ d }}</li>
-                </ul>
-              </div>
-          </section>
-        </div>
-
+     </div>
+    
+ 
         <div class="project__body pt-0">
           <section class="project__description pt-0 | ctn white">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
 
-        </div>
+      </div>
       <!-- end scroll content -->
       <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </div>
@@ -62,13 +68,15 @@
 </template>
 
 <script>
+import Scrollbar from "smooth-scrollbar";
 export default {
   name: "Why",
   data() {
     return {
       title: 'Why Work With Us',
       sub: 'Our resources and network',
-      show: false,
+      slide__title: false,
+      slide__sub: false,
       posts: [
         { 
           id: 1,
@@ -77,7 +85,8 @@ export default {
           bold: '',
           regular: 'At AddVentures, we look for the investment and partnership opportunities in the areas of B2B, Industrial, and Enterprise. With the support from SCG and our goal to build the portfolio companies in highly related verticals, we believe we can offer substantial synergies in 2 dimensions',
           detail: ['Direct-synergybetween SCG & startup',  'Cross-synergy among startups in the portfolio'],
-          class: 'red',
+          class: 'col-8 red',
+          titleClass: 'tw',
           box: '',
           image: ''
         },
@@ -88,7 +97,9 @@ export default {
           bold: '',
           regular: 'With our resources and extensive business network along SCG business value chain, We believe that we can help startups scale fast through our proprietary resources and access to 300+ SCG subsidiaries and 1,000+ business partners across Southeast Asia Region. We are flexible and open to various collaborationPrograms ranging from commercial partnership,Licensing, JV, minority investment or M&A.',
           detail: [],
-          class: 'white right',
+          class: 'col-8 grey right',
+          titleClass: 'tr',
+          subClass: 'tb',
           box: '',
           image: ''
         },
@@ -99,8 +110,10 @@ export default {
           bold: 'Corperate & Startups',
           regular: 'As a strategic investor, we do not only provide financing but we also commit to long - term success of startups in our portfolio. Unlike traditional VC funds, we do not rush for short term financial result and investment exit. with this long term support, startups can focus on building a great company to reach their full potential fastest possible.',
           detail: [],
-          class: 'white',
-          box: 'red',
+          class: 'col-6 grey',
+          titleClass: 'tr',
+          subClass: 'tb',
+          box: 'red mr-91',
           image: ''
         }
       ],
@@ -117,7 +130,7 @@ export default {
             title: [],
             sub : [],
             bu: [ 'SCG Cement - Building Materials' ],
-            class: 'white',
+            class: '',
             image: ''
           },
            { 
@@ -129,7 +142,7 @@ export default {
             title: [],
             sub : [],
             bu: [ 'SCG Cement - Building Materials' ],
-            class: 'white',
+            class: '',
             image: ''
           },
           { 
@@ -143,16 +156,196 @@ export default {
             bu: [ 'SCG Cement - Building Materials' ],
             class: 'red',
             image: ''
-          }
+          },
+             { 
+            id: 4,
+            country: 'Myanmar', 
+            year: '1994',
+            bold: '',
+            regular: '',
+            title: [],
+            sub : [],
+            bu: [ 'SCG Cement - Building Materials' ],
+            class: '',
+            image: ''
+          },
+                { 
+            id: 6,
+            country: '', 
+            year: '',
+            bold: '',
+            regular: '',
+            title: [ '18 Billions', '50k Employee' ],
+            sub : [ 'Market capitalizayion', 'More than' ],
+            bu: [ 'SCG Cement - Building Materials' ],
+            class: 'red',
+            image: ''
+          },
+           { 
+            id: 5,
+            country: 'Vietnam', 
+            year: '1992',
+            bold: '',
+            regular: '',
+            title: [],
+            sub : [],
+            bu: [ 'SCG Cement - Building Materials' ],
+            class: '',
+            image: ''
+          },
+    
+              { 
+            id: 7,
+            country: 'Myanmar', 
+            year: '1994',
+            bold: '',
+            regular: '',
+            title: [],
+            sub : [],
+            bu: [ 'SCG Cement - Building Materials' ],
+            class: '',
+            image: ''
+          },
+           { 
+            id: 8,
+            country: 'Vietnam', 
+            year: '1992',
+            bold: '',
+            regular: '',
+            title: [],
+            sub : [],
+            bu: [ 'SCG Cement - Building Materials' ],
+            class: '',
+            image: ''
+          },
+              { 
+            id: 9,
+            country: 'Vietnam', 
+            year: '1992',
+            bold: '',
+            regular: '',
+            title: [],
+            sub : [],
+            bu: [ 'SCG Cement - Building Materials' ],
+            class: '',
+            image: ''
+          },
         ]
       },
       prev: { title : 'How We Invest', url : 'howweinvest'},
       next:  { title : 'Our Partners', url : 'ourpartners'}
     };
-  },
+    },
+      beforeMount() {
+      var scrolled = 0
+      var vm = this
+
+      window.addEventListener('wheel', function (event) {
+      var div = document.getElementById("scrollbar");
+      const scrollbar = Scrollbar.init(div);
+     
+      //slide title
+      if(scrollbar.scrollTop > 50)
+      {
+        vm.slide__title = 'slide__title__active'
+      }
+      else
+      {
+        vm.slide__title = 'slide__title__leave'
+      }
+
+      //slide sub
+      if(scrollbar.scrollTop > 55)
+      {
+        vm.slide__sub = 'slide__sub__active'
+      }
+      else
+      {
+         vm.slide__sub = 'slide__sub__leave'
+      }
+
+      if (event.deltaY < 0) {
+        scrolled++
+      }
+      if (event.deltaY > 0) {
+        scrolled--
+      }
+    })
+  }
 };
 </script>
+
 <style scoped>
+
+/* alider class*/
+.slide__title__active
+{
+  transform: translate3d(-166px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__active
+{
+  transform: translate3d(-506px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__title__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+/***/
+
+.more
+{
+  height: 900px;
+}
+
+.shift
+{
+  margin-top: -700px;
+}
+
+.ctn {
+  padding-left: 9.1%;
+  padding-right: 9.1%;
+}
+
+/* cropping box */
+.mr-91
+{
+  margin-right: 9.1%;
+}
+
+.mlg-2
+{
+  margin-left: 20.6342857143%
+}
+
+.project__body .bg
+{
+    position: absolute;
+    left: 15%;
+    /* width: 10%; */
+    z-index: 2;
+    bottom: 0;
+}
+
+/* for new */
+
+.block
+{
+  margin: 20px;
+  width: 33.7314285714%;
+}
 
 .ctn-cu {
   padding-left: 9.1%;
@@ -164,6 +357,11 @@ export default {
 .tr
 {
   color: #ee2524;
+}
+
+.tw
+{
+  color: #f0f0f0; 
 }
 
 .box {
@@ -178,7 +376,7 @@ export default {
 
 .right
 {
-  left: 33.333333%;
+  margin-left: 33.333333%;
 }
 
 .pt-6
@@ -197,7 +395,17 @@ ol {
 
 .red 
 {
+  background-color: #ee2524;
+}
+
+.grey 
+{
   background-color: #f0f0f0;
+}
+
+.tr
+{
+  color: #ee2524;
 }
 
 .white 
@@ -215,7 +423,7 @@ ol {
   font-weight: bold;
 }
 
-.black {
+.tb {
   color: #2f3c47;
 }
 

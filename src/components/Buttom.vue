@@ -69,7 +69,7 @@ div svg {
   margin: 0 2rem;
   cursor: pointer;
   overflow: visible;
-  padding: 0 20px 0 20px;
+  padding: 0 20px 0 0px;
 }
 
 div svg.arrow-right, div svg.arrow-left

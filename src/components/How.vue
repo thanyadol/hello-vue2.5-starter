@@ -2,9 +2,9 @@
   <div class="how">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 class="project__title | mlg-1 | m-mr-0 t black" data-i="4">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-1 | m-ml-0 m-100 black">
-          <h3 class="project__intro">
+        <h2 v-bind:class="slide__title"  class="project__title | mlg-2 | m-mr-0 t tb" data-i="4">{{ title }}</h2>
+        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
+          <h3 v-bind:class="slide__sub"  class="project__intro">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
               </ul>
@@ -13,36 +13,35 @@
       </div>
     </header>
 
-    <div class="project__inner scrollarea" data-scrollbar id="my-scrollbar">
+    <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
  
         <div class="project__content">
           <div class="project__body row white">
-
-              <section class="project__description col-12 | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+              <section class="project__description col-6 red | ctn"  v-for="p in pres" :key="p.id" v-bind:class="p.background">
                   <h3 class="hidden-visually">Project</h3>
                   <div class="project__text | mrg-2 | m-100 m-mr-0">
-                    <p class="title bold black">{{ p.title }}</p>
-                    <p class="sub black">{{ p.sub }}</p>
+                    <p class="title bold">{{ p.title }}</p>
+                    <p class="sub">{{ p.sub }}</p>
                   </div>
                 </section>
-
-
-                <section class="project__description col-12 pd-1 tr | ctn" >
-                  <ul class="black">
+                <section class="project__description col grey | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+                  <div class="project__text | mrg-2 | m-100 m-mr-0">
+                    <p class="title bold tb">{{ p.title }}</p>
+                  </div>
+                </section>
+                <section class="project__description col-12 pd-1 tr grey | ctn" >
+                  <ul class="tb mlg-1">
                       <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
-                        <span class="title">{{ v.title }}</span>
-                        <p class="sub">{{ v.sub }}</p>
+                        <span class="sub">{{ v.sub }}</span>
+                        <span class="title bold tr">{{ v.title }}</span> <img class="bg" v-bind:src="v.image" />
                       </li>
                   </ul>
                 </section>
-
-
-
             </div>
         </div>
 
         <div class="project__body pt-0">
-          <section class="project__description pt-0 | ctn red">
+          <section class="project__description pt-0 | ctn grey">
              <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -54,18 +53,31 @@
 </template>
 
 <script>
+import Scrollbar from "smooth-scrollbar";
 export default {
   name: "How",
   data() {
     return {
       title: 'How We Invest',
       subs: [ 'Stages of Startups'],
-      show: false,
-      posts: [
+      slide__title: false,
+      slide__sub: false,
+      pres: [
         { 
-          id: 1,
-          title: 'Stages of Startups', 
+          id: 99,
+          title: 'Stages of', 
           sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+          bold: '',
+          regular: '',
+          detail: [],
+          background: 'red'
+        }
+      ],
+       posts: [
+        { 
+          id: 98,
+          title: 'Startups', 
+          sub: '',
           bold: '',
           regular: '',
           detail: [],
@@ -75,68 +87,159 @@ export default {
       invests: [
         {
           id: 1,
-          title: 'Seed',
+          title: 'Growth',
           sub : 'Accessories',
-          image: './static/img/img3.jpg',
+          image: './static/img/growth.svg',
           class: 'indent-4'
         },
         {
           id: 2,
-          title: 'Series A',
+          title: 'Series B',
           sub : 'Accessories',
-          image: '',
+          image: './static/img/growth.svg',
           class: 'indent-3',
         },
         {
           id: 3,
-          title: 'Series B',
+          title: 'Series A',
           sub : 'Accessories',
-          image: '',
+          image: './static/img/growth.svg',
           class: 'indent-2',
         },
         {
           id: 4,
-          title: 'Growth',
+          title: 'Seed',
           sub : 'Accessories',
-          image: '',
+          image: './static/img/growth.svg',
           class: 'indent-1',
         }
       ],
       prev: { title : 'Where We Invest', url : 'whereweinvest'},
       next:  { title : 'Why Work With Us', url : 'whyworkwithus'}
     };
+  },
+    beforeMount() {
+      var scrolled = 0
+      var vm = this
+
+      window.addEventListener('wheel', function (event) {
+      var div = document.getElementById("scrollbar");
+      const scrollbar = Scrollbar.init(div);
+     
+      //slide title
+      if(scrollbar.scrollTop > 50)
+      {
+        vm.slide__title = 'slide__title__active'
+      }
+      else
+      {
+        vm.slide__title = 'slide__title__leave'
+      }
+
+      //slide sub
+      if(scrollbar.scrollTop > 55)
+      {
+        vm.slide__sub = 'slide__sub__active'
+      }
+      else
+      {
+         vm.slide__sub = 'slide__sub__leave'
+      }
+
+      if (event.deltaY < 0) {
+        scrolled++
+      }
+      if (event.deltaY > 0) {
+        scrolled--
+      }
+    })
   }
 };
 </script>
 <style scoped>
 
-svg.rectang
+
+/* alider class*/
+.slide__title__active
 {
-  opacity: 0.6;
-  left: 47%;
-  position: absolute;
-  z-index: 3;
-  height: 160vh;
+  transform: translate3d(-226px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__active
+{
+  transform: translate3d(-496px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__title__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+/***/
+
+.ctn {
+  padding-left: 9.1%;
+  padding-right: 9.1%;
+}
+
+.mlg-2
+{
+  margin-left: 20.6342857143%
+}
+
+.project__body .bg
+{
+    position: absolute;
+    left: 15%;
+    /* width: 10%; */
+    z-index: 2;
+    bottom: 0;
+}
+
+/* for new */
+
+.project__body ul li
+{
+  position: relative;
+  font-size: 1.7vw;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 252px;
+  padding-left: 50px;
+}
+
+.project__body ul li span.title
+{
+  line-height: 1.5em;
 }
 
 ul li.indent-1
 {
-  left: 0;
+  margin-left: 0;
 }
 
 ul li.indent-2
 {
-  left: 200%;
+  margin-left: 250px;
 }
 
 ul li.indent-3
 {
-  left: 400%;
+  margin-left: 500px;
 }
 
 ul li.indent-4
 {
-  left: 600%;
+  margin-left: 750px;
 }
 
 .pb-6
@@ -169,6 +272,11 @@ h3 > ul > li
 
 .red 
 {
+  background-color: #ee2524;
+}
+
+.grey 
+{
   background-color: #f0f0f0;
 }
 
@@ -192,7 +300,7 @@ h3 > ul > li
   font-weight: bold;
 }
 
-.black {
+.tb {
   color: #2f3c47;
 }
 
@@ -204,15 +312,10 @@ h3 > ul > li
   margin-bottom: 30px;
 }
 
-.project__body ul li
-{
-  position: relative;
-  font-size: 1.7vw;
-}
 
 .project__body ul
 {
-  list-style-type: square;
+  list-style-type: none;
 }
 
 .t
