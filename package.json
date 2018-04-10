@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "jquery": "^3.3.1",
+    "moment": "^2.22.0",
     "popper": "^1.0.1",
     "sass-loader": "^6.0.7",
     "smooth-scrollbar": "^8.2.7",

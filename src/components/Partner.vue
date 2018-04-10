@@ -26,9 +26,27 @@
                   </div>
                   <div class="col"> </div>
 
+                  <div class="project__description col-4 block | ctn-bk"  v-for="r in posts.items" :key="r.id" v-bind:class="r.class">
+                    <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                      <img class="bg__block" v-bind:src="r.image" />
+                      <p class="title bold pl-5 t-lg">{{ r.title }}</p>
+                      <p class="sub shift bold">{{ r.sub }}</p>
+                      <p class="sub shift">{{ r.content }}</p>
+                    </div>
+                  </div>
+
               </section>
 
-              <section class="project__description white | ctn" >
+             <section class="project__description white row | ctn">
+                  <h3 class="hidden-visually">Venture</h3>
+                  <div class="project__description col-4 block | ctn-bk"  v-for="r in posts.ventures" :key="r.id" v-bind:class="r.class">
+                    <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                      <img class="bg__block" v-bind:src="r.image" />
+                      <p class="title tb bold pl-5 t-lg">{{ r.title }}</p>
+                      <p class="sub shift tb bold">{{ r.sub }}</p>
+                      <p class="sub shift tb">{{ r.content }}</p>
+                    </div>
+                  </div>
               </section>
 
             </div>
@@ -57,10 +75,82 @@ export default {
       subs: [ 'Funding', 'Startups' ],
       posts : {
         title: 'Build / Partner / Grow',
-        sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet oktyr spofa ui',
+        sub: 'At AddVentures, we aim to build long-term and reliable partnerships',
         items:
         [
-
+          { 
+            id: 1,
+            title: 'VC Funds', 
+            sub: '',
+            image: '',
+            class: ''
+          },
+          { 
+            id: 2,
+            title: '', 
+            sub: 'Vertex Ventures',
+            content: ' Southeast Asia & India invests in high - growth startups',
+            image: './static/img/img3.jpg',
+          },
+          { 
+            id: 3,
+            title: '', 
+            sub: 'Wavemaker',
+            content: 'is invests in seed - stage and B2B startups. we aim to build long-term and reliable partnerships not invest first',
+            image: './static/img/img3.jpg',
+          }
+        ],
+        ventures:
+        [
+          { 
+            id: 2,
+            title: '', 
+            sub: 'HG Robotics',
+            content: 'is a logistic marketplace',
+            image: './static/img/img3.jpg',
+          },
+          { 
+            id: 3,
+            title: '', 
+            sub: 'Giztix',
+            content: 'is a logistic marketplace',
+            image: './static/img/img3.jpg',
+          },
+          { 
+            id: 1,
+            title: 'All Startups', 
+            sub: '',
+            image: '',
+            class: ''
+          },
+          { 
+            id: 4,
+            title: '', 
+            sub: 'Getlink',
+            content: 'is a logistic marketplace',
+            image: './static/img/img3.jpg',
+          },
+          { 
+            id: 5,
+            title: '', 
+            sub: 'Bannia',
+            content: 'is a logistic marketplace',
+            image: './static/img/img3.jpg',
+          },
+          { 
+            id: 6,
+            title: '', 
+            sub: 'Builk',
+            content: 'is a logistic marketplace',
+            image: './static/img/img3.jpg',
+          },
+          { 
+            id: 7,
+            title: '', 
+            sub: 'Plug & Play',
+            content: 'is a logistic marketplace',
+            image: './static/img/img3.jpg',
+          },
         ]
       },
       slide__title: false,
@@ -141,14 +231,21 @@ export default {
 
 /***/
 
+.t-lg
+{
+  font-size: 9vh !important;
+}
+
 .more
 {
   height: 900px;
 }
 
-.shift
+.project__text .sub.shift
 {
-  margin-top: -850px;
+  /*margin-top: -90px;*/
+  margin-left: -25px;
+  z-index: 3;
 }
 
 .ctn {
@@ -165,13 +262,6 @@ export default {
 .mlg-2
 {
   margin-left: 20.6342857143%
-}
-
-.project__body .bg
-{
-    position: absolute;
-    width: 15%; 
-    z-index: 2;
 }
 
 .platform
@@ -212,8 +302,7 @@ h3 > ul > li
 
 .project__body .bg__block
 {
-    position: relative;
-    width: 4vw;
+    width: 100%;
     z-index: 2;
     padding: 5px 10px 5px 5px;
 }
@@ -226,7 +315,7 @@ h3 > ul > li
   margin-top: 20px;
   margin-bottom: 20px;
   background-clip: padding-box;
-  border: 10px solid transparent;
+  border: 25px solid transparent;
 }
 
 .block p
@@ -243,8 +332,8 @@ h3 > ul > li
 }
 
 .ctn-bk {
-  padding-left: 5.1%;
-  padding-right: 5.1%;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 3rem;
   padding-top: 3rem;
 }
