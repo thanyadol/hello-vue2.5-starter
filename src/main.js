@@ -19,6 +19,7 @@ import Axiom from '@/components/Axiom'
 import Frame from '@/components/Frame'
 import Flip from '@/components/Flip'
 import Map from '@/components/Map'
+import Cover from '@/components/Cover'
 
 // register DOM tag
 /* Vue.component('right-href', RightHref)
@@ -34,6 +35,7 @@ Vue.component('axiom', Axiom)
 Vue.component('framed', Frame)
 Vue.component('flip', Flip)
 Vue.component('ggmap', Map)
+Vue.component('cover', Cover)
 
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // require('../node_modules/bootstrap/dist/css/bootstrap.min.css')

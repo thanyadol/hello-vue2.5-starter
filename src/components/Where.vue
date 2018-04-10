@@ -38,8 +38,8 @@
                   </ul>
                 </section>
 
-              <section class="project__description col-12 pd-1 | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
-                  <img class="mx-auto" :src="sample">
+              <section class="project__description col-12 pd-1 | ctn-m"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+                  <img class="mx-auto map" :src="sample">
               </section>
 
             </div>
@@ -96,7 +96,7 @@ export default {
       ],
 
       separator: './static/img/separator.',
-      sample: './static/img/map.png',
+      sample: './static/img/map.svg',
       prev:  { title : 'What We Invest', url : 'whatweinvest'},
       next: { title : 'How We Invest', url : 'howweinvest'},
 
@@ -175,6 +175,17 @@ export default {
 }
 
 /***/
+.map
+{
+  height: 700px;
+}
+
+.ctn-m
+{
+  padding-top: 50px;
+  padding-left: 9.1%;
+  padding-right: 9.1%;
+}
 
 .ctn {
   padding-left: 9.1%;

@@ -1,5 +1,5 @@
 <template>
-  <div class="who">
+  <div class="partner">
     <header class="project__header | ctn">
       <div class="project__header__inner">
         <h2 v-bind:class="slide__title"  class="project__title | mlg-2 | m-mr-0 t tb" data-i="6">{{ title }}</h2>
