@@ -79,6 +79,14 @@
     </footer>
 
     <canvas id="stage" width="1828" height="1332" style="touch-action: none; cursor: inherit;"></canvas>
+    <!-- <svg class="down mx-a" viewBox="0 0 26.67 39.88"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M13.33,39.88A13.35,13.35,0,0,1,0,26.54V13.33a13.34,13.34,0,0,1,26.67,0V26.54A13.36,13.36,0,0,1,13.33,39.88ZM13.33,2A11.34,11.34,0,0,0,2,13.33V26.54a11.34,11.34,0,1,0,22.67,0V13.33A11.35,11.35,0,0,0,13.33,2Z"/><circle class="cls-1" cx="13.33" cy="10.83" r="2.92"/></g></g></svg> -->
+    <div class="down mx-a">
+      <div class='mouse-container'>
+        <div class='mouse'>
+          <span class='scroll-down'></span>
+        </div>
+     </div>
+    </div>
 
     <axiom> </axiom>
   </div>
@@ -230,6 +238,99 @@ export default {
 .cls-1 {
   fill: #2f3c47;
 }
+
+.mx-a {
+  margin-left: calc(50% - 40px);
+}
+
+.down {
+  bottom: 45px;
+  /* left: auto; */
+  position: fixed;
+  /* top: 00px; */
+  width: 5vh;
+  z-index: 2;
+}
+
+.down:hover {
+  cursor: pointer;
+}
+
+@-webkit-keyframes scroll-inner {
+  from {
+    margin-top: 15%;
+  }
+  to {
+    margin-top: 50%;
+  }
+}
+@keyframes scroll-inner {
+  from {
+    margin-top: 15%;
+  }
+  to {
+    margin-top: 50%;
+  }
+}
+@-webkit-keyframes scroll-mouse {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 15px;
+  }
+}
+@keyframes scroll-mouse {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 15px;
+  }
+}
+
+div.mouse-container {
+  position: relative;
+  display: block;
+  height: 80px;
+}
+
+div.mouse {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  width: 45px;
+  height: 70px;
+  border: solid 2px #495057;
+  border-radius: 25px;
+}
+
+div.mouse:hover {
+  -webkit-animation: scroll-mouse 1.5s;
+  animation: scroll-mouse 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+div.mouse span.scroll-down {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #495057;
+  border-radius: 50%;
+  margin: 15% auto auto auto;
+}
+
+div.mouse:hover span.scroll-down {
+  -webkit-animation: scroll-inner 1s;
+  animation: scroll-inner 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+}
+
+/* mouse animation */
 
 .vertical {
   width: 40%;

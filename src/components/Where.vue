@@ -69,7 +69,7 @@ export default {
       slide__sub: false,
       posts: [
         {
-          id: 1,
+          // id: 99,
           title: 'Investment Strategy',
           sub:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
