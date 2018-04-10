@@ -24,7 +24,7 @@ export default {
   border: none !important;
   -webkit-transition: opacity 1600ms ease-in;
   transition: opacity 1600ms ease-in;
-  background-color: #2f3c47;
+  background-color: crimson;
 }
 
 .fade-enter-active,

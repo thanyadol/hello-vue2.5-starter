@@ -17,11 +17,11 @@
               <section class="project__description | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
                   <h3 class="hidden-visually">Project</h3>
                   <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
-                    <p class="title bold tb">{{ p.title }}</p>
-                    <p class="sub bold tb">{{ p.sub }}</p>
+                    <p class="title bold tb" v-bind:class="p.text">{{ p.title }}</p>
+                    <p class="sub bold tb" v-bind:class="p.text">{{ p.sub }}</p>
                     <p class="project__text">     
-                      <span class="sub bold tb">{{ p.bold }}</span>  
-                      <span class="sub tb">{{ p.regular }}</span>   
+                      <span class="sub bold tb" v-bind:class="p.text">{{ p.bold }}</span>  
+                      <span class="sub tb" v-bind:class="p.text">{{ p.regular }}</span>   
                     </p> 
                     <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>  
                   </div>
@@ -66,7 +66,8 @@ export default {
           bold: 'At Addventure',
           regular: 'we aim to accelerate and scale technologies, inovations and companies with strategic fit and share our core value',
           detail: [],
-          background: 'red'
+          background: 'red',
+          text: 'tw'
         },
         { 
           id: 2,
@@ -78,7 +79,7 @@ export default {
             'Addenture provides unrivaled access to a global network of SCG experies and resources.',
             'We partner and invest in the best digital innovations in Industrial - Enterprise - B2B verticals.'
           ],
-          background: 'white'
+          background: 'white pt-5'
         },
         { 
           id: 3,
@@ -91,7 +92,7 @@ export default {
             "Southeast Asia's leading Industrial conglomerate estabilished in 1913.",
             'We believe open innovation is part of our roadmap to success in the next centernnial.'
           ],
-          background: 'white'
+          background: 'white pt-5'
         }
       ],
       prev:  { title : 'Home', url : 'index'},
@@ -185,7 +186,7 @@ export default {
 
 .red 
 {
-  background-color: #f0f0f0;
+  background-color: crimson;
 }
 
 .t
@@ -218,6 +219,10 @@ export default {
   color: #2f3c47;
 }
 
+.tw
+{
+  color: #f0f0f0;
+}
 /*.project__text
 {
   color: #2f3c47;

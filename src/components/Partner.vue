@@ -1,10 +1,10 @@
 <template>
-  <div class="partner">
+  <div class="who">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 class="project__title | mlg-2 | m-mr-0 t black" data-i="6">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-2 | m-ml-0 m-100 black">
-           <h3 class="project__intro">
+        <h2 v-bind:class="slide__title"  class="project__title | mlg-2 | m-mr-0 t tb" data-i="6">{{ title }}</h2>
+        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
+          <h3 v-bind:class="slide__sub"  class="project__intro">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
               </ul>
@@ -13,39 +13,226 @@
       </div>
     </header>
 
+    <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
+      <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
+
+        <div class="project__content">
+          <div class="project__body">
+              <section class="project__description red row | ctn">
+                  <h3 class="hidden-visually">Partner</h3>
+                  <div class="project__text | col-6 mrg-2 | m-100 m-mr-0">
+                    <p class="title bold tw">{{ posts.title }}</p>
+                    <p class="sub bold tw">{{ posts.sub }}</p>
+                  </div>
+                  <div class="col"> </div>
+
+              </section>
+
+              <section class="project__description white | ctn" >
+              </section>
+
+            </div>
+        </div>
+
+         <div class="project__body pt-0">
+          <section class="project__description pt-0 | ctn white">
+            <buttom :next="next" :prev="prev"></buttom>
+          </section>
+        </div>
+        </div>
+      <!-- end scroll content -->
+      <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
+    </div>
   </div>
 </template>
 
 <script>
+import Scrollbar from "smooth-scrollbar";
+import { log } from 'util';
 export default {
-  name: "Partner",
+  name: "Who",
   data() {
     return {
       title: 'Our Partners',
       subs: [ 'Funding', 'Startups' ],
+      posts : {
+        title: 'Build / Partner / Grow',
+        sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet oktyr spofa ui',
+        items:
+        [
+
+        ]
+      },
+      slide__title: false,
+      slide__sub: false,
       prev: { title : 'Why Work With', url : 'whyworkwithus'},
       next:  { title : 'Insign', url : 'insign'}
+
     };
   },
+  // life cycle of component
+  created() {},
+  beforeMount() {
+      var scrolled = 0
+      var vm = this
+
+      window.addEventListener('wheel', function (event) {
+      var div = document.getElementById("scrollbar");
+      const scrollbar = Scrollbar.init(div);
+     
+      //slide title
+      if(scrollbar.scrollTop > 50)
+      {
+        vm.slide__title = 'slide__title__active'
+      }
+      else
+      {
+        vm.slide__title = 'slide__title__leave'
+      }
+
+      //slide sub
+      if(scrollbar.scrollTop > 55)
+      {
+        vm.slide__sub = 'slide__sub__active'
+      }
+      else
+      {
+         vm.slide__sub = 'slide__sub__leave'
+      }
+
+      if (event.deltaY < 0) {
+        scrolled++
+      }
+      if (event.deltaY > 0) {
+        scrolled--
+      }
+    })
+  },
+  beforeDestroy() {
+    // window.removeEventListener('wheel', this.handleScroll)
+  }
 };
 </script>
 <style scoped>
 
-.t
+.slide__title__active
 {
-  position: relative;
-  font-size: 8vw;
-  font-weight: bold;
-  line-height: 1;
-  opacity: 1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  transform: translate3d(-266px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__active
+{
+  transform: translate3d(-536px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__title__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+.slide__sub__leave
+{
+  transform: translate3d(0px, 0px, 0px); 
+  transition-duration: 1600ms;
+}
+
+/***/
+
+.more
+{
+  height: 900px;
+}
+
+.shift
+{
+  margin-top: -850px;
+}
+
+.ctn {
+  padding-left: 9.1%;
+  padding-right: 9.1%;
+}
+
+/* cropping box */
+.mr-91
+{
+  margin-right: 9.1%;
+}
+
+.mlg-2
+{
+  margin-left: 20.6342857143%
+}
+
+.project__body .bg
+{
+    position: absolute;
+    width: 15%; 
+    z-index: 2;
+}
+
+.platform
+{
+  top: 120px;
+  left: 520px;
+}
+
+.vertical
+{
+  top: 130px;
+  left: 150px;
+}
+
+.partner
+{
+  top: 120px;
+  left: 150px;
+}
+
+.project__text ul li
+{
+  list-style-type: none;
+  display: inline;
+  padding: 0;
 }
 
 h3 > ul > li
 {
     display: inline;
     padding-left: 30px;
+}
+
+.indent
+{
+  padding-left: 70px;
+}
+
+.project__body .bg__block
+{
+    position: relative;
+    width: 4vw;
+    z-index: 2;
+    padding: 5px 10px 5px 5px;
+}
+
+
+/* for new */
+
+.block
+{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+}
+
+.block p
+{
+    margin: 0;
+    line-height: 4.1rem;
 }
 
 .ctn-cu {
@@ -55,9 +242,27 @@ h3 > ul > li
   padding-top: 3rem;
 }
 
+.ctn-bk {
+  padding-left: 5.1%;
+  padding-right: 5.1%;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+
 .tr
 {
   color: #ee2524;
+}
+
+.roll
+{
+  font-size: 2vh;
+}
+
+.tw
+{
+  color: #f0f0f0; 
 }
 
 .box {
@@ -72,7 +277,7 @@ h3 > ul > li
 
 .right
 {
-  left: 33.333333%;
+  margin-left: 33.333333%;
 }
 
 .pt-6
@@ -91,7 +296,17 @@ ol {
 
 .red 
 {
+  background-color: #ee2524;
+}
+
+.grey 
+{
   background-color: #f0f0f0;
+}
+
+.tr
+{
+  color: #ee2524;
 }
 
 .white 
@@ -109,7 +324,7 @@ ol {
   font-weight: bold;
 }
 
-.black {
+.tb {
   color: #2f3c47;
 }
 
@@ -178,34 +393,6 @@ project__title::before {
 
 .project__text p:not(:last-of-type) {
     margin-bottom: 2.0rem;
-}
-
-/* for iphone x*/
-@media only screen and (max-width: 720px)
-{
-  .project__description .title,  .project__description .sub
-  {
-    font-size: 2.5rem;
-  }
-
-  .project__description .sub
-  {
-    font-size: 2.1rem;
-  }
-  .m-ml-0 {
-      margin-left: 25.6342857143%;
-  }
-  .btn {
-    font-size: 3vw;
-  }
-}
-
-@media only screen and (max-width: 960px)
-{
-  .ctn {
-      padding-left: 5%;
-      padding-right: 2%;
-  }
 }
 
 .fade-enter-active,

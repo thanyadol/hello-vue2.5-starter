@@ -8,17 +8,15 @@
         </div>
       </div>
     </header>
-
     <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
       <div class="scroll-content">
-
-          
          <div class="project__content"> 
             <div class="project__body grey row" v-for="p in posts" :key="p.id">
                     <section class="project__description red | ctn" v-bind:class="p.class">
                         <h3 class="hidden-visually">Project</h3>
                         <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                          <p class="title bold" v-bind:class="p.titleClass">{{ p.title }}</p><img class="bg" v-bind:src="p.image" />
+                          <p class="title bold indent" v-bind:class="p.titleClass">{{ p.title }}</p>
+                          <img class="bg" v-bind:src="p.image" v-bind:class="p.imageClass" />
                           <p class="sub bold" v-bind:class="p.subClass" >{{ p.sub }}</p>
                           <p class="project__text">     
                             <span class="sub tw" v-bind:class="p.subClass">{{ p.regular }}</span>   
@@ -35,25 +33,32 @@
                     </section>
                   </div>
               </div>
-          
-
             <div class="project__body ctn grey more"> </div>
             <!-- should move to component -->
             <div class="project__content shift white"> 
             <div class="project__body ctn shift row">
-              <section class="project__description col block | ctn"  v-for="r in res.list" :key="r.id" v-bind:class="r.class">
+            <section class="project__description col-12">
+              <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                <p class="title bold tr">{{ res.title }}</p>
+                <p class="sub bold tb">{{ res.sub }}</p>
+              </div>
+            </section>
+              <section class="project__description col-4 block | ctn-bk"  v-for="r in res.list" :key="r.id" v-bind:class="r.class">
                   <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                    <ul>
+                        <li class="" v-for="i in r.imageList" :key="i">
+                           <img class="bg__block" v-bind:src="i" />
+                        </li>
+                    </ul>
                     <p class="title bold tb">{{ r.country }}</p>
                     <p class="sub bold tb">{{ r.year }}</p>
                     <ul>
-                        <li class="ml-5 sub tb" v-for="d in r.detail" :key="d">{{ d }}</li>
+                        <li class="roll tb" v-for="d in r.bu" :key="d">{{ d }}</li>
                     </ul>
                   </div>
               </section>
             </div>
-     </div>
-    
- 
+        </div>
         <div class="project__body pt-0">
           <section class="project__description pt-0 | ctn white">
             <buttom :next="next" :prev="prev"></buttom>
@@ -88,7 +93,8 @@ export default {
           class: 'col-8 red',
           titleClass: 'tw',
           box: '',
-          image: ''
+          image: './static/img/vertical.svg',
+          imageClass: 'vertical'
         },
         { 
           id: 2,
@@ -101,7 +107,8 @@ export default {
           titleClass: 'tr',
           subClass: 'tb',
           box: '',
-          image: ''
+          image: './static/img/platform.svg',
+          imageClass: 'platform'
         },
         { 
           id: 3,
@@ -114,7 +121,8 @@ export default {
           titleClass: 'tr',
           subClass: 'tb',
           box: 'red mr-91',
-          image: ''
+          image: './static/img/partner.svg',
+          imageClass: 'partner'
         }
       ],
       res: {
@@ -130,6 +138,7 @@ export default {
             title: [],
             sub : [],
             bu: [ 'SCG Cement - Building Materials' ],
+            imageList: ['./static/img/cement.svg'],
             class: '',
             image: ''
           },
@@ -142,6 +151,7 @@ export default {
             title: [],
             sub : [],
             bu: [ 'SCG Cement - Building Materials' ],
+            imageList: ['./static/img/cement.svg', './static/img/chem.svg', './static/img/pack.svg'],
             class: '',
             image: ''
           },
@@ -153,7 +163,7 @@ export default {
             regular: '',
             title: [ '18 Billions', '50k Employee' ],
             sub : [ 'Market capitalizayion', 'More than' ],
-            bu: [ 'SCG Cement - Building Materials' ],
+            bu: [],    
             class: 'red',
             image: ''
           },
@@ -166,6 +176,7 @@ export default {
             title: [],
             sub : [],
             bu: [ 'SCG Cement - Building Materials' ],
+            imageList: ['./static/img/cement.svg', './static/img/chem.svg', './static/img/pack.svg'],
             class: '',
             image: ''
           },
@@ -177,7 +188,6 @@ export default {
             regular: '',
             title: [ '18 Billions', '50k Employee' ],
             sub : [ 'Market capitalizayion', 'More than' ],
-            bu: [ 'SCG Cement - Building Materials' ],
             class: 'red',
             image: ''
           },
@@ -189,7 +199,8 @@ export default {
             regular: '',
             title: [],
             sub : [],
-            bu: [ 'SCG Cement - Building Materials' ],
+                   bu: [ 'SCG Cement - Building Materials' ],
+            imageList: ['./static/img/cement.svg'],
             class: '',
             image: ''
           },
@@ -203,6 +214,7 @@ export default {
             title: [],
             sub : [],
             bu: [ 'SCG Cement - Building Materials' ],
+            imageList: ['./static/img/cement.svg', './static/img/chem.svg', './static/img/pack.svg'],
             class: '',
             image: ''
           },
@@ -215,6 +227,7 @@ export default {
             title: [],
             sub : [],
             bu: [ 'SCG Cement - Building Materials' ],
+            imageList: ['./static/img/cement.svg', './static/img/chem.svg', './static/img/pack.svg'],
             class: '',
             image: ''
           },
@@ -227,6 +240,7 @@ export default {
             title: [],
             sub : [],
             bu: [ 'SCG Cement - Building Materials' ],
+            imageList: ['./static/img/cement.svg', './static/img/pack.svg'],
             class: '',
             image: ''
           },
@@ -311,7 +325,7 @@ export default {
 
 .shift
 {
-  margin-top: -700px;
+  margin-top: -850px;
 }
 
 .ctn {
@@ -333,18 +347,63 @@ export default {
 .project__body .bg
 {
     position: absolute;
-    left: 15%;
-    /* width: 10%; */
+    width: 15%; 
     z-index: 2;
-    bottom: 0;
 }
+
+.platform
+{
+  top: 120px;
+  left: 520px;
+}
+
+.vertical
+{
+  top: 130px;
+  left: 150px;
+}
+
+.partner
+{
+  top: 120px;
+  left: 150px;
+}
+
+.project__text ul li
+{
+  list-style-type: none;
+  display: inline;
+  padding: 0;
+}
+
+.indent
+{
+  padding-left: 70px;
+}
+
+.project__body .bg__block
+{
+    position: relative;
+    width: 4vw;
+    z-index: 2;
+    padding: 5px 10px 5px 5px;
+}
+
 
 /* for new */
 
 .block
 {
-  margin: 20px;
-  width: 33.7314285714%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+}
+
+.block p
+{
+    margin: 0;
+    line-height: 4.1rem;
 }
 
 .ctn-cu {
@@ -354,9 +413,22 @@ export default {
   padding-top: 3rem;
 }
 
+.ctn-bk {
+  padding-left: 5.1%;
+  padding-right: 5.1%;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+
 .tr
 {
   color: #ee2524;
+}
+
+.roll
+{
+  font-size: 2vh;
 }
 
 .tw
@@ -492,34 +564,6 @@ project__title::before {
 
 .project__text p:not(:last-of-type) {
     margin-bottom: 2.0rem;
-}
-
-/* for iphone x*/
-@media only screen and (max-width: 720px)
-{
-  .project__description .title,  .project__description .sub
-  {
-    font-size: 2.5rem;
-  }
-
-  .project__description .sub
-  {
-    font-size: 2.1rem;
-  }
-  .m-ml-0 {
-      margin-left: 25.6342857143%;
-  }
-  .btn {
-    font-size: 3vw;
-  }
-}
-
-@media only screen and (max-width: 960px)
-{
-  .ctn {
-      padding-left: 5%;
-      padding-right: 2%;
-  }
 }
 
 .fade-enter-active,
