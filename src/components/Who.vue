@@ -19,11 +19,11 @@
                   <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
                     <p class="title bold tb" v-bind:class="p.text">{{ p.title }}</p>
                     <p class="sub bold tb" v-bind:class="p.text">{{ p.sub }}</p>
-                    <p class="project__text">     
-                      <span class="sub bold tb" v-bind:class="p.text">{{ p.bold }}</span>  
-                      <span class="sub tb" v-bind:class="p.text">{{ p.regular }}</span>   
-                    </p> 
-                    <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>  
+                    <p class="project__text">
+                      <span class="sub bold tb" v-bind:class="p.text">{{ p.bold }}</span>
+                      <span class="sub tb" v-bind:class="p.text">{{ p.regular }}</span>
+                    </p>
+                    <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>
                   </div>
               </section>
             </div>
@@ -49,41 +49,43 @@
 </template>
 
 <script>
-import Scrollbar from "smooth-scrollbar";
+import scroll from 'smooth-scrollbar'
 export default {
-  name: "Who",
-  data() {
+  name: 'Who',
+  data () {
     return {
       title: 'Who We Are',
       sub: 'Partnering With Startups',
       slide__title: false,
       slide__sub: false,
       posts: [
-        { 
+        {
           id: 1,
-          title: 'You Inovate, We Scale', 
-          sub: 'We are partnering with startups and transfrom industries together',
+          title: 'You Inovate, We Scale',
+          sub:
+            'We are partnering with startups and transfrom industries together',
           bold: 'At Addventure',
-          regular: 'we aim to accelerate and scale technologies, inovations and companies with strategic fit and share our core value',
+          regular:
+            'we aim to accelerate and scale technologies, inovations and companies with strategic fit and share our core value',
           detail: [],
           background: 'red',
           text: 'tw'
         },
-        { 
+        {
           id: 2,
-          title: '', 
+          title: '',
           sub: 'More Than Just a Capital Partner',
           bold: '',
           regular: '',
-          detail: [ 
+          detail: [
             'Addenture provides unrivaled access to a global network of SCG experies and resources.',
             'We partner and invest in the best digital innovations in Industrial - Enterprise - B2B verticals.'
           ],
           background: 'white pt-5'
         },
-        { 
+        {
           id: 3,
-          title: '', 
+          title: '',
           sub: 'Corporate Venture of SCG',
           bold: '',
           regular: '',
@@ -95,39 +97,32 @@ export default {
           background: 'white pt-5'
         }
       ],
-      prev:  { title : 'Home', url : 'index'},
-      next: { title : 'What We Invest', url : 'whatweinvest'},
-
-    };
+      prev: { title: 'Home', url: 'index' },
+      next: { title: 'What We Invest', url: 'whatweinvest' }
+    }
   },
   // life cycle of component
-  created() {},
-  beforeMount() {
-      var scrolled = 0
-      var vm = this
+  created () {},
+  beforeMount () {
+    var scrolled = 0
+    var vm = this
 
-      window.addEventListener('wheel', function (event) {
-      var div = document.getElementById("scrollbar");
-      const scrollbar = Scrollbar.init(div);
-     
-      //slide title
-      if(scrollbar.scrollTop > 50)
-      {
+    window.addEventListener('wheel', function (event) {
+      var div = document.getElementById('scrollbar')
+      const scrollbar = scroll.init(div)
+
+      // slide title
+      if (scrollbar.scrollTop > 50) {
         vm.slide__title = 'slide__title__active'
-      }
-      else
-      {
+      } else {
         vm.slide__title = 'slide__title__leave'
       }
 
-      //slide sub
-      if(scrollbar.scrollTop > 55)
-      {
+      // slide sub
+      if (scrollbar.scrollTop > 55) {
         vm.slide__sub = 'slide__sub__active'
-      }
-      else
-      {
-         vm.slide__sub = 'slide__sub__leave'
+      } else {
+        vm.slide__sub = 'slide__sub__leave'
       }
 
       if (event.deltaY < 0) {
@@ -137,36 +132,33 @@ export default {
         scrolled--
       }
     })
+
+    console.log(scrolled)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     // window.removeEventListener('wheel', this.handleScroll)
   }
-};
+}
 </script>
 <style scoped>
-
 /* alider class*/
-.slide__title__active
-{
-  transform: translate3d(-296px, 0px, 0px); 
+.slide__title__active {
+  transform: translate3d(-296px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__sub__active
-{
-  transform: translate3d(-476px, 0px, 0px); 
+.slide__sub__active {
+  transform: translate3d(-476px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__title__leave
-{
-  transform: translate3d(0px, 0px, 0px); 
+.slide__title__leave {
+  transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__sub__leave
-{
-  transform: translate3d(0px, 0px, 0px); 
+.slide__sub__leave {
+  transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
@@ -184,13 +176,11 @@ export default {
   padding-right: 7.7%;
 }
 
-.red 
-{
+.red {
   background-color: crimson;
 }
 
-.t
-{
+.t {
   position: relative;
   font-size: 8vw;
   font-weight: bold;
@@ -200,18 +190,15 @@ export default {
   letter-spacing: 1px;
 }
 
-.white 
-{
+.white {
   background-color: #ffff;
 }
 
-.index
-{
+.index {
   z-index: unset;
 }
 
-.bold
-{
+.bold {
   font-weight: bold;
 }
 
@@ -219,8 +206,7 @@ export default {
   color: #2f3c47;
 }
 
-.tw
-{
+.tw {
   color: #f0f0f0;
 }
 /*.project__text
@@ -239,8 +225,7 @@ export default {
   top: -6.75vw;
 }
 
-.project__body
-{
+.project__body {
   border-left: solid 15px #ffff;
   border-right: solid 15px #ffff;
 }
@@ -260,23 +245,21 @@ project__title::before {
   font-size: 3.4rem;
 }
 
-.project__description
-{
+.project__description {
   padding-bottom: 30px;
 }
 
-.project__description .title,  .project__description .sub
-{
+.project__description .title,
+.project__description .sub {
   font-size: 5.5rem;
 }
 
-.project__description .sub
-{
+.project__description .sub {
   font-size: 3.1rem;
 }
 
 .project__text p:not(:last-of-type) {
-    margin-bottom: 2.0rem;
+  margin-bottom: 2rem;
 }
 
 .fade-enter-active,
@@ -285,24 +268,22 @@ project__title::before {
 }
 
 .fade-enter,
-.fade-leave-to
-/* .fade-leave-active in <2.1.8 */
-{
+.fade-leave-to {
   opacity: 0;
 }
 
-.btn.focus, .btn:focus {
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--cta {
-    padding: none;
-    color: #495057;
-    background: #fff;
-    border-radius: 0;
-    border: 1px solid;
+  padding: none;
+  color: #495057;
+  background: #fff;
+  border-radius: 0;
+  border: 1px solid;
 }
-
 </style>

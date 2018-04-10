@@ -30,7 +30,7 @@
              <section class="project__description grey row | ctn-b">
                   <h3 class="hidden-visually">Venture</h3>
                   <div class="project__description col-12 block | ctn-block" v-for="r in post.blogs" :key="r.id" v-bind:class="r.class">
-                   
+
                     <div class="project__text col-6 | m-100 m-mr-0">
                       <img class="bg__block" v-bind:src="r.image" />
                         <div class="date">
@@ -69,52 +69,51 @@
 </template>
 
 <script>
-import Scrollbar from "smooth-scrollbar"
+import scroll from 'smooth-scrollbar'
 import moment from 'moment'
 
 export default {
-  name: "Insign",
-  data() {
+  name: 'Insign',
+  data () {
     return {
       title: 'Insign',
-      subs: [ 'Be in the know with AddVenture' ],
+      subs: ['Be in the know with AddVenture'],
       arrow: './static/img/next.svg',
-      post : {
+      post: {
         title: 'Insign',
         sub: 'Be in the know with AddVenture',
-        blogs:
-        [
-          { 
+        blogs: [
+          {
             id: 1,
-            title: 'Gixtix easy an online worldwide shipping', 
+            title: 'Gixtix easy an online worldwide shipping',
             author: 'by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
-          { 
+          {
             id: 2,
-            title: 'Gixtix easy an online worldwide shipping', 
+            title: 'Gixtix easy an online worldwide shipping',
             author: 'by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
-          { 
+          {
             id: 3,
-            title: 'Gixtix easy an online worldwide shipping', 
+            title: 'Gixtix easy an online worldwide shipping',
             author: 'by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
-          { 
+          {
             id: 4,
-            title: 'Gixtix easy an online worldwide shipping', 
+            title: 'Gixtix easy an online worldwide shipping',
             author: 'by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
-          { 
+          {
             id: 5,
-            title: 'Gixtix easy an online worldwide shipping', 
+            title: 'Gixtix easy an online worldwide shipping',
             author: 'by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
@@ -123,44 +122,37 @@ export default {
       },
       slide__title: false,
       slide__sub: false,
-      prev: { title : 'Our Partners', url : 'ourpartners'},
-      next:  { title : 'The Team', url : 'theteam'}
-
-    };
+      prev: { title: 'Our Partners', url: 'ourpartners' },
+      next: { title: 'The Team', url: 'theteam' }
+    }
   },
-   filters: {
+  filters: {
     moment: function (date) {
-      return moment(date).format('MMM');
+      return moment(date).format('MMM')
     }
   },
   // life cycle of component
-  created() {},
-  beforeMount() {
-      var scrolled = 0
-      var vm = this
+  created () {},
+  beforeMount () {
+    var scrolled = 0
+    var vm = this
 
-      window.addEventListener('wheel', function (event) {
-      var div = document.getElementById("scrollbar");
-      const scrollbar = Scrollbar.init(div);
-     
-      //slide title
-      if(scrollbar.scrollTop > 50)
-      {
+    window.addEventListener('wheel', function (event) {
+      var div = document.getElementById('scrollbar')
+      const scrollbar = scroll.init(div)
+
+      // slide title
+      if (scrollbar.scrollTop > 50) {
         vm.slide__title = 'slide__title__active'
-      }
-      else
-      {
+      } else {
         vm.slide__title = 'slide__title__leave'
       }
 
-      //slide sub
-      if(scrollbar.scrollTop > 55)
-      {
+      // slide sub
+      if (scrollbar.scrollTop > 55) {
         vm.slide__sub = 'slide__sub__active'
-      }
-      else
-      {
-         vm.slide__sub = 'slide__sub__leave'
+      } else {
+        vm.slide__sub = 'slide__sub__leave'
       }
 
       if (event.deltaY < 0) {
@@ -170,64 +162,56 @@ export default {
         scrolled--
       }
     })
+
+    console.log(scrolled)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     // window.removeEventListener('wheel', this.handleScroll)
   }
-};
+}
 </script>
 <style scoped>
-
-.slide__title__active
-{
-  transform: translate3d(-516px, 0px, 0px); 
+.slide__title__active {
+  transform: translate3d(-516px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__sub__active
-{
-  transform: translate3d(-496px, 0px, 0px); 
+.slide__sub__active {
+  transform: translate3d(-496px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__title__leave
-{
-  transform: translate3d(0px, 0px, 0px); 
+.slide__title__leave {
+  transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__sub__leave
-{
-  transform: translate3d(0px, 0px, 0px); 
+.slide__sub__leave {
+  transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
 /***/
 
-.mlg-25
-{
+.mlg-25 {
   padding-left: 35.43333%;
 }
 
-.t-lg
-{
+.t-lg {
   font-size: 9vh !important;
 }
 
-.more
-{
+.more {
   height: 900px;
 }
 
-.project__text .sub.shift
-{
+.project__text .sub.shift {
   /*margin-top: -90px;*/
   margin-left: -25px;
   z-index: 3;
 }
 
-a:hover
-{
+a:hover {
   color: red;
   text-decoration: none;
 }
@@ -237,100 +221,87 @@ a:hover
   padding-right: 9.1%;
 }
 
-hr.separate
-{
+hr.separate {
   background-color: #0f0f0f;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.arrow
-{
-    width: 10vh;
-    padding-top: 10px;
-    margin-left: 50px;
-    position: absolute;
+.arrow {
+  width: 10vh;
+  padding-top: 10px;
+  margin-left: 50px;
+  position: absolute;
 }
 
 /* cropping box */
-.mr-91
-{
+.mr-91 {
   margin-right: 9.1%;
 }
 
-.mlg-2
-{
-  margin-left: 20.6342857143%
+.mlg-2 {
+  margin-left: 20.6342857143%;
 }
 
-.platform
-{
+.platform {
   top: 120px;
   left: 520px;
 }
 
-.vertical
-{
+.vertical {
   top: 130px;
   left: 150px;
 }
 
-.partner
-{
+.partner {
   top: 120px;
   left: 150px;
 }
 
-.project__text ul li
-{
+.project__text ul li {
   list-style-type: none;
   display: inline;
   padding: 0;
 }
 
-h3 > ul > li
-{
-    display: inline;
-    padding-left: 30px;
+h3 > ul > li {
+  display: inline;
+  padding-left: 30px;
 }
 
-.indent
-{
+.indent {
   padding-left: 70px;
 }
 
-.project__body .bg__block
-{
-    width: 100%;
-    z-index: 2;
-    padding: 5px 10px 5px 5px;
+.project__body .bg__block {
+  width: 100%;
+  z-index: 2;
+  padding: 5px 10px 5px 5px;
 }
 
 .ctn-b {
-    padding-left: 12.1%;
-    padding-right: 12.1%;
+  padding-left: 12.1%;
+  padding-right: 12.1%;
 }
 
 .project__text .date {
-    left: -50px;
-    position: absolute;
-    top: 0;
+  left: -50px;
+  position: absolute;
+  top: 0;
 }
 
 /* for new */
 
-.block
-{
+.block {
   margin-top: 0;
   margin-bottom: 0;
   background-clip: padding-box;
   border: 25px solid transparent;
 }
 
-.block p
-{
-    margin: 0;
-    line-height: 5.1rem;
+.block p {
+  margin: 0;
+  line-height: 5.1rem;
 }
 
 .ctn-cu {
@@ -347,78 +318,65 @@ h3 > ul > li
   padding-top: 3rem;
 }
 
-
-.tr
-{
+.tr {
   color: #ee2524;
 }
 
-.roll
-{
+.roll {
   font-size: 2vh;
 }
 
-.tw
-{
-  color: #f0f0f0; 
+.tw {
+  color: #f0f0f0;
 }
 
 .box {
-    position:relative;
+  position: relative;
 }
 
 .bet {
-    position:absolute;
-    bottom:0;
-    right:0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
-.right
-{
+.right {
   margin-left: 33.333333%;
 }
 
-.pt-6
-{
+.pt-6 {
   padding-top: 23.333333%;
 }
 
-.left
-{
+.left {
   left: -50%;
 }
 
 ol {
-    list-style: decimal;
+  list-style: decimal;
 }
 
-.red 
-{
+.red {
   background-color: #ee2524;
 }
 
-.grey 
-{
+.grey {
   background-color: #f0f0f0;
 }
 
-.tr
-{
+.tr {
   color: #ee2524;
 }
 
-.white 
-{
+.white {
   background-color: #ffff;
 }
 
-.index
-{
+.index {
   z-index: unset;
 }
 
-.bold
-{
+.bold {
   font-weight: bold;
 }
 
@@ -442,14 +400,12 @@ ol {
   top: -6.75vw;
 }
 
-.project__body
-{
+.project__body {
   border-left: solid 15px #ffff;
   border-right: solid 15px #ffff;
 }
 
-.t
-{
+.t {
   position: relative;
   font-size: 8vw;
   font-weight: bold;
@@ -474,19 +430,17 @@ project__title::before {
   font-size: 3.4rem;
 }
 
-
-.project__description .title,  .project__description .sub
-{
+.project__description .title,
+.project__description .sub {
   font-size: 5.5rem;
 }
 
-.project__description .sub
-{
+.project__description .sub {
   font-size: 3.1rem;
 }
 
 .project__text p:not(:last-of-type) {
-    margin-bottom: 2.0rem;
+  margin-bottom: 2rem;
 }
 
 .fade-enter-active,
@@ -495,24 +449,22 @@ project__title::before {
 }
 
 .fade-enter,
-.fade-leave-to
-/* .fade-leave-active in <2.1.8 */
-{
+.fade-leave-to {
   opacity: 0;
 }
 
-.btn.focus, .btn:focus {
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--cta {
-    padding: none;
-    color: #495057;
-    background: #fff;
-    border-radius: 0;
-    border: 1px solid;
+  padding: none;
+  color: #495057;
+  background: #fff;
+  border-radius: 0;
+  border: 1px solid;
 }
-
 </style>

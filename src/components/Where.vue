@@ -2,47 +2,47 @@
   <div class="where">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title"  class="project__title | mlg-2 | m-mr-0 t tb" data-i="3">{{ title }}</h2>
+        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t tb" data-i="3">{{ title }}</h2>
         <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
-          <h3 v-bind:class="slide__sub"  class="project__intro">
-              <ul>
-                  <li v-for="s in subs" :key="s" >{{ s }}</li>
-              </ul>
+          <h3 v-bind:class="slide__sub" class="project__intro">
+            <ul>
+              <li v-for="s in subs" :key="s">{{ s }}</li>
+            </ul>
           </h3>
         </div>
       </div>
     </header>
 
     <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
-   <div class="scroll-content" style="">
+      <div class="scroll-content" style="">
         <div class="project__content">
           <div class="project__body row red">
-              <!-- red bar -->
-              <svg class="rectang" width="150" height="2500">
-                <rect x="0" y="0" width="150" height="2500" />
-              </svg>
+            <!-- red bar -->
+            <svg class="rectang" width="150" height="2500">
+                      <rect x="0" y="0" width="150" height="2500" />
+                    </svg>
 
-              <section class="project__description col-6 pd-1 | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
-                  <h3 class="hidden-visually">Project</h3>
-                  <div class="project__text | mrg-2 | m-100 m-mr-0">
-                    <p class="title bold tb">{{ p.title }}</p>
-                    <p class="sub tb">{{ p.sub }}</p>
-                  </div>
-                </section>
-                <section class="project__description col-6 pd-1 tr | ctn red" >
-                  <ul class="tb">
-                      <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
-                        <span class="bold">{{ v.title }}</span>
-                        <p class="sub">{{ v.sub }}</p>
-                      </li>
-                  </ul>
-                </section>
+            <section class="project__description col-6 pd-1 | ctn" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+              <h3 class="hidden-visually">Project</h3>
+              <div class="project__text | mrg-2 | m-100 m-mr-0">
+                <p class="title bold tb">{{ p.title }}</p>
+                <p class="sub tb">{{ p.sub }}</p>
+              </div>
+            </section>
+            <section class="project__description col-6 pd-1 tr | ctn red">
+              <ul class="tb">
+                <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
+                  <span class="bold">{{ v.title }}</span>
+                  <p class="sub">{{ v.sub }}</p>
+                </li>
+              </ul>
+            </section>
 
-              <section class="project__description col-12 pd-1 | ctn-m"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
-                  <img class="mx-auto map" :src="sample">
-              </section>
+            <section class="project__description col-12 pd-1 | ctn-m" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+              <img class="mx-auto map" :src="sample">
+            </section>
 
-            </div>
+          </div>
         </div>
 
         <div class="project__body pt-0">
@@ -50,28 +50,29 @@
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
-     </div>
+      </div>
     </div>
-      <!-- end scroll content -->
-      <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
-    </div>
+    <!-- end scroll content -->
+    <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
+  </div>
 </template>
 
 <script>
-import Scrollbar from "smooth-scrollbar";
+import scroll from 'smooth-scrollbar'
 export default {
-  name: "Where",
-  data() {
+  name: 'Where',
+  data () {
     return {
       title: 'Where We Invest',
-      subs: [ 'Geographical', 'Focus'],
+      subs: ['Geographical', 'Focus'],
       slide__title: false,
       slide__sub: false,
       posts: [
-        { 
+        {
           id: 1,
-          title: 'Investment Strategy', 
-          sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+          title: 'Investment Strategy',
+          sub:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
           bold: '',
           regular: '',
           detail: [],
@@ -82,56 +83,54 @@ export default {
         {
           id: 1,
           title: 'Thailand & Asian Countries',
-          sub : 'Lorem ipsum dolor sit amet',
+          sub: 'Lorem ipsum dolor sit amet',
           image: './static/img/img3.jpg',
           class: 'indent'
         },
         {
           id: 2,
           title: 'USA / Europe / Silicon Valley / Televiv / Chaina',
-          sub : 'Consectetur adipiscing elit',
+          sub: 'Consectetur adipiscing elit',
           image: './static/img/img3.jpg',
-          class: '',
+          class: ''
         }
       ],
 
       separator: './static/img/separator.',
       sample: './static/img/map.svg',
-      prev:  { title : 'What We Invest', url : 'whatweinvest'},
-      next: { title : 'How We Invest', url : 'howweinvest'},
-
-    };
+      prev: {
+        title: 'What We Invest',
+        url: 'whatweinvest'
+      },
+      next: {
+        title: 'How We Invest',
+        url: 'howweinvest'
+      }
+    }
   },
   // life cycle of component
-  created() {},
-  mounted: function() {
-  },
-  beforeMount() {
-      var scrolled = 0
-      var vm = this
+  created () {},
+  mounted: function () {},
+  beforeMount () {
+    var scrolled = 0
+    var vm = this
 
-      window.addEventListener('wheel', function (event) {
-      var div = document.getElementById("scrollbar");
-      const scrollbar = Scrollbar.init(div);
-     
-      //slide title
-      if(scrollbar.scrollTop > 50)
-      {
+    window.addEventListener('wheel', function (event) {
+      var div = document.getElementById('scrollbar')
+      const scrollbar = scroll.init(div)
+
+      // slide title
+      if (scrollbar.scrollTop > 50) {
         vm.slide__title = 'slide__title__active'
-      }
-      else
-      {
+      } else {
         vm.slide__title = 'slide__title__leave'
       }
 
-      //slide sub
-      if(scrollbar.scrollTop > 55)
-      {
+      // slide sub
+      if (scrollbar.scrollTop > 55) {
         vm.slide__sub = 'slide__sub__active'
-      }
-      else
-      {
-         vm.slide__sub = 'slide__sub__leave'
+      } else {
+        vm.slide__sub = 'slide__sub__leave'
       }
 
       if (event.deltaY < 0) {
@@ -141,47 +140,45 @@ export default {
         scrolled--
       }
     })
+
+    console.log(scrolled)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     // window.removeEventListener('wheel', this.handleScroll)
   }
-};
+}
 </script>
+
 <style scoped>
-
 /* alider class*/
-.slide__title__active
-{
-  transform: translate3d(-226px, 0px, 0px); 
+
+.slide__title__active {
+  transform: translate3d(-226px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__sub__active
-{
-  transform: translate3d(-566px, 0px, 0px); 
+.slide__sub__active {
+  transform: translate3d(-566px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__title__leave
-{
-  transform: translate3d(0px, 0px, 0px); 
+.slide__title__leave {
+  transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__sub__leave
-{
-  transform: translate3d(0px, 0px, 0px); 
+.slide__sub__leave {
+  transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
 /***/
-.map
-{
+
+.map {
   height: 700px;
 }
 
-.ctn-m
-{
+.ctn-m {
   padding-top: 50px;
   padding-left: 9.1%;
   padding-right: 9.1%;
@@ -192,15 +189,13 @@ export default {
   padding-right: 9.1%;
 }
 
-.mlg-2
-{
-  margin-left: 18.6342857143%
+.mlg-2 {
+  margin-left: 18.6342857143%;
 }
 
 /* for new */
 
-svg.rectang
-{
+svg.rectang {
   opacity: 1;
   margin-left: 35%;
   position: absolute;
@@ -209,41 +204,34 @@ svg.rectang
   fill: crimson;
 }
 
-ul li.indent
-{
+ul li.indent {
   margin-top: 50px;
   margin-left: 35%;
 }
 
-ul
-{
+ul {
   margin-left: 50px;
 }
 
-ul li
-{
+ul li {
   width: 350px;
 }
 
-.pb-6
-{
+.pb-6 {
   padding-bottom: 5vh;
 }
 
-.right
-{
+.right {
   left: 50%;
 }
 
-.left
-{
+.left {
   left: -50%;
 }
 
-h3 > ul > li
-{
-    display: inline;
-    padding-left: 30px;
+h3 > ul > li {
+  display: inline;
+  padding-left: 30px;
 }
 
 .ctn-cu {
@@ -253,28 +241,23 @@ h3 > ul > li
   padding-top: 3rem;
 }
 
-.red 
-{
+.red {
   background-color: #f0f0f0;
 }
 
-.tr
-{
+.tr {
   color: #ee2524;
 }
 
-.white 
-{
+.white {
   background-color: #ffff;
 }
 
-.index
-{
+.index {
   z-index: unset;
 }
 
-.bold
-{
+.bold {
   font-weight: bold;
 }
 
@@ -282,27 +265,23 @@ h3 > ul > li
   color: #2f3c47;
 }
 
-.project__body h1
-{
+.project__body h1 {
   position: relative;
   font-size: 5vw;
   font-weight: bold;
   margin-bottom: 30px;
 }
 
-.project__body ul li
-{
+.project__body ul li {
   position: relative;
   font-size: 1.7vw;
 }
 
-.project__body ul
-{
+.project__body ul {
   list-style-type: square;
 }
 
-.t
-{
+.t {
   position: relative;
   font-size: 8vw;
   font-weight: bold;
@@ -312,13 +291,12 @@ h3 > ul > li
   letter-spacing: 1px;
 }
 
-
 /*.project__text
-{
-  color: #2f3c47;
-  font-size: 2.1rem;
-  line-height: 1.62;
-}*/
+      {
+        color: #2f3c47;
+        font-size: 2.1rem;
+        line-height: 1.62;
+      }*/
 
 .scrollarea {
   height: 100vh;
@@ -329,8 +307,7 @@ h3 > ul > li
   top: -6.75vw;
 }
 
-.project__body
-{
+.project__body {
   border-left: solid 15px #ffff;
   border-right: solid 15px #ffff;
 }
@@ -350,22 +327,20 @@ project__title::before {
   font-size: 3.4rem;
 }
 
-.project__description .title,  .project__description .sub
-{
+.project__description .title,
+.project__description .sub {
   font-size: 5.5rem;
 }
 
-.project__description .sub
-{
+.project__description .sub {
   font-size: 3.1rem;
 }
 
 .project__text p:not(:last-of-type) {
-    margin-bottom: 2.0rem;
+  margin-bottom: 2rem;
 }
 
-.project__image
-{
+.project__image {
   top: -100px;
   width: 90%;
   position: relative;
@@ -377,24 +352,22 @@ project__title::before {
 }
 
 .fade-enter,
-.fade-leave-to
-/* .fade-leave-active in <2.1.8 */
-{
+.fade-leave-to {
   opacity: 0;
 }
 
-.btn.focus, .btn:focus {
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--cta {
-    padding: none;
-    color: #495057;
-    background: #fff;
-    border-radius: 0;
-    border: 1px solid;
+  padding: none;
+  color: #495057;
+  background: #fff;
+  border-radius: 0;
+  border: 1px solid;
 }
-
 </style>

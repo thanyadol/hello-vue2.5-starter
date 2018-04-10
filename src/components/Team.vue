@@ -2,12 +2,12 @@
   <div class="team">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title"  class="project__title | mlg-28 | m-mr-0 t tb" data-i="8">{{ title }}</h2>
+        <h2 v-bind:class="slide__title" class="project__title | mlg-28 | m-mr-0 t tb" data-i="8">{{ title }}</h2>
         <div class="project__info | col-8 mlg-25 | m-ml-0 m-100 tb">
-          <h3 v-bind:class="slide__sub"  class="project__intro">
-              <ul>
-                  <li v-for="s in subs" :key="s" >{{ s }}</li>
-              </ul>
+          <h3 v-bind:class="slide__sub" class="project__intro">
+            <ul>
+              <li v-for="s in subs" :key="s">{{ s }}</li>
+            </ul>
           </h3>
         </div>
       </div>
@@ -18,44 +18,44 @@
 
         <div class="project__content">
           <div class="project__body">
-              <section class="project__description grey row | ctn">
-                  <h3 class="hidden-visually">Blog</h3>
-                  <div class="project__text | col-6 mrg-2 | m-100 m-mr-0">
-                    <p class="title bold tb">{{ post.title }}</p>
-                    <p class="sub bold tb">{{ post.sub }}</p>
-                  </div>
-                  <div class="col"> </div>
-              </section>
-              <section class="project__description grey row | ctn-r">
-                  <h3 class="hidden-visually">Staff</h3>
-                  <div class="project__description col-4 block | ctn-b"  v-for="s in post.staffs" :key="s.id" v-bind:class="s.class">
-                    <div class="project__text | mrg-2c | m-100 m-mr-0">
-                      <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
-                      <p class="sub sm tb text-uppercase" v-bind:class="s.fontClass">{{ s.position }}</p>
-                      <p class="title tb bold bot t-lg">{{ s.title }}</p>
-                    </div>
-                  </div>
-              </section>
+            <section class="project__description grey row | ctn">
+              <h3 class="hidden-visually">Blog</h3>
+              <div class="project__text | col-6 mrg-2 | m-100 m-mr-0">
+                <p class="title bold tb">{{ post.title }}</p>
+                <p class="sub bold tb">{{ post.sub }}</p>
+              </div>
+              <div class="col"> </div>
+            </section>
+            <section class="project__description grey row | ctn-r">
+              <h3 class="hidden-visually">Staff</h3>
+              <div class="project__description col-4 block | ctn-b" v-for="s in post.staffs" :key="s.id" v-bind:class="s.class">
+                <div class="project__text | mrg-2c | m-100 m-mr-0">
+                  <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
+                  <p class="sub sm tb text-uppercase" v-bind:class="s.fontClass">{{ s.position }}</p>
+                  <p class="title tb bold bot t-lg">{{ s.title }}</p>
+                </div>
+              </div>
+            </section>
 
-               <section class="project__description grey row | ctn-l">
-                  <h3 class="hidden-visually">Staff</h3>
-                  <div class="project__description col-4 block | ctn-b"  v-for="s in post.blocks" :key="s.id" v-bind:class="s.class">
-                    <div class="project__text | mrg-2c | m-100 m-mr-0">
-                      <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
-                      <p class="sub sm tb text-uppercase" v-bind:class="s.fontClass">{{ s.position }}</p>
-                      <span class="title tb bold bot t-lg">{{ s.title }}</span>
-                    </div>
-                  </div>
-              </section>
-            </div>
+            <section class="project__description grey row | ctn-l">
+              <h3 class="hidden-visually">Staff</h3>
+              <div class="project__description col-4 block | ctn-b" v-for="s in post.blocks" :key="s.id" v-bind:class="s.class">
+                <div class="project__text | mrg-2c | m-100 m-mr-0">
+                  <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
+                  <p class="sub sm tb text-uppercase" v-bind:class="s.fontClass">{{ s.position }}</p>
+                  <span class="title tb bold bot t-lg">{{ s.title }}</span>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
 
-         <div class="project__body pt-0">
+        <div class="project__body pt-0">
           <section class="project__description pt-0 | ctn white">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
-        </div>
+      </div>
       <!-- end scroll content -->
       <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </div>
@@ -63,216 +63,225 @@
 </template>
 
 <script>
-import Scrollbar from "smooth-scrollbar";
-import moment from "moment";
+import scroll from 'smooth-scrollbar'
+import moment from 'moment'
 
 export default {
-  name: "Team",
-  data() {
+  name: 'Team',
+  data () {
     return {
-      title: "The Team",
-      subs: ["We are AddVenture"],
+      title: 'The Team',
+      subs: ['We are AddVenture'],
       post: {
-        title: "We are AddVenture",
-        sub: "We are partnering with startups to transform industries together",
+        title: 'We are AddVenture',
+        sub: 'We are partnering with startups to transform industries together',
         staffs: [
           {
             id: 1,
-            title: "",
-            name: "Joshua Pas PH.D.",
-            position: "Managing Director and Investment Commitee",
-            class: "red",
-            fontClass: "tw"
+            title: '',
+            name: 'Joshua Pas PH.D.',
+            position: 'Managing Director and Investment Commitee',
+            class: 'red',
+            fontClass: 'tw'
           },
           {
             id: 2,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           },
           {
             id: 3,
-            title: "The Team",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
+            title: 'The Team',
+            name: '',
+            position: '',
+            class: 'grey',
+            fontClass: 'tw'
           },
           {
             id: 4,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           },
           {
             id: 5,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           },
           {
             id: 6,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           },
           {
             id: 7,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           },
           {
             id: 8,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           },
           {
             id: 9,
-            title: "",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'grey',
+            fontClass: 'tw'
           },
           {
             id: 10,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           },
           {
             id: 11,
-            title: "",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'grey',
+            fontClass: 'tw'
           },
           {
             id: 12,
-            title: "",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'grey',
+            fontClass: 'tw'
           }
         ],
 
         blocks: [
           {
             id: 1,
-            title: "",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'grey',
+            fontClass: 'tw'
           },
           {
             id: 2,
-            title: "Investment Commitee",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
+            title: 'Investment Commitee',
+            name: '',
+            position: '',
+            class: 'grey',
+            fontClass: 'tw'
           },
           {
             id: 3,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           },
           {
             id: 4,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           },
           {
             id: 5,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           },
           {
             id: 6,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
           }
         ]
       },
       slide__title: false,
       slide__sub: false,
-      prev: { title: "Insign", url: "insign" },
-      next: { title: "Contact", url: "contact" }
-    };
+      prev: {
+        title: 'Insign',
+        url: 'insign'
+      },
+      next: {
+        title: 'Contact',
+        url: 'contact'
+      }
+    }
   },
   filters: {
-    moment: function(date) {
-      return moment(date).format("MMM");
+    moment: function (date) {
+      return moment(date).format('MMM')
     }
   },
   // life cycle of component
-  created() {},
-  beforeMount() {
-    var scrolled = 0;
-    var vm = this;
+  created () {},
+  beforeMount () {
+    var scrolled = 0
+    var vm = this
 
-    window.addEventListener("wheel", function(event) {
-      var div = document.getElementById("scrollbar");
-      const scrollbar = Scrollbar.init(div);
+    window.addEventListener('wheel', function (event) {
+      var div = document.getElementById('scrollbar')
+      const scrollbar = scroll.init(div)
 
-      //slide title
+      // slide title
       if (scrollbar.scrollTop > 50) {
-        vm.slide__title = "slide__title__active";
+        vm.slide__title = 'slide__title__active'
       } else {
-        vm.slide__title = "slide__title__leave";
+        vm.slide__title = 'slide__title__leave'
       }
 
-      //slide sub
+      // slide sub
       if (scrollbar.scrollTop > 55) {
-        vm.slide__sub = "slide__sub__active";
+        vm.slide__sub = 'slide__sub__active'
       } else {
-        vm.slide__sub = "slide__sub__leave";
+        vm.slide__sub = 'slide__sub__leave'
       }
 
       if (event.deltaY < 0) {
-        scrolled++;
+        scrolled++
       }
       if (event.deltaY > 0) {
-        scrolled--;
+        scrolled--
       }
-    });
+    })
+
+    console.log(scrolled)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     // window.removeEventListener('wheel', this.handleScroll)
   }
-};
+}
 </script>
+
 <style scoped>
 .slide__title__active {
   transform: translate3d(-396px, 0px, 0px);
@@ -350,6 +359,7 @@ hr.separate {
 }
 
 /* cropping box */
+
 .mr-91 {
   margin-right: 9.1%;
 }

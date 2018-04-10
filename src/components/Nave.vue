@@ -1,36 +1,38 @@
 <template>
-    <div class="nav">
-        <router-link to="pickdeck">
-            <button class="menu-btn pickdeck" aria-label="Pickdeck" href="#">
-                <span class="menu-btn__text">Pick Deck</span>
-            </button>
-        </router-link>
-        <router-link to="carrer">
-            <button class="menu-btn career" aria-label="Career" href="#">
-                <span class="menu-btn__text">Career</span>
-            </button>
-        </router-link>
-        <router-link to="menu">
-            <button class="menu-btn menu" aria-label="Menu" href="#">
-                <span class="menu-btn__text">Menu</span>
-            </button>
-        </router-link>
-    </div>
+  <div class="nav">
+    <router-link to="pickdeck">
+      <button class="menu-btn pickdeck" aria-label="Pickdeck" href="#">
+                    <span class="menu-btn__text">Pick Deck</span>
+                </button>
+    </router-link>
+    <router-link to="carrer">
+      <button class="menu-btn career" aria-label="Career" href="#">
+                    <span class="menu-btn__text">Career</span>
+                </button>
+    </router-link>
+    <router-link to="menu">
+      <button class="menu-btn menu" aria-label="Menu" href="#">
+                    <span class="menu-btn__text">Menu</span>
+                </button>
+    </router-link>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Nave"
-};
+  name: 'Nave'
+}
 </script>
 
 <style lang="css" scoped>
 /* remove reboot*/
+
 button:focus {
   outline: none;
 }
 
 /*top button*/
+
 a:hover {
   text-decoration: none;
 }
@@ -42,11 +44,12 @@ a:hover {
 }
 
 /*.menu-btn :hover
-{
-  border-bottom: solid 2px #2f3c47;
-}*/
+    {
+      border-bottom: solid 2px #2f3c47;
+    }*/
 
 /* Top and Bottom borders go out */
+
 button:before,
 button:after {
   position: absolute;

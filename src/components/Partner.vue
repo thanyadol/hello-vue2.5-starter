@@ -2,12 +2,12 @@
   <div class="partner">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title"  class="project__title | mlg-2 | m-mr-0 t tb" data-i="6">{{ title }}</h2>
+        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t tb" data-i="6">{{ title }}</h2>
         <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
-          <h3 v-bind:class="slide__sub"  class="project__intro">
-              <ul>
-                  <li v-for="s in subs" :key="s" >{{ s }}</li>
-              </ul>
+          <h3 v-bind:class="slide__sub" class="project__intro">
+            <ul>
+              <li v-for="s in subs" :key="s">{{ s }}</li>
+            </ul>
           </h3>
         </div>
       </div>
@@ -18,46 +18,46 @@
 
         <div class="project__content">
           <div class="project__body">
-              <section class="project__description red row | ctn">
-                  <h3 class="hidden-visually">Partner</h3>
-                  <div class="project__text | col-6 mrg-2 | m-100 m-mr-0">
-                    <p class="title bold tw">{{ posts.title }}</p>
-                    <p class="sub bold tw">{{ posts.sub }}</p>
-                  </div>
-                  <div class="col"> </div>
+            <section class="project__description red row | ctn">
+              <h3 class="hidden-visually">Partner</h3>
+              <div class="project__text | col-6 mrg-2 | m-100 m-mr-0">
+                <p class="title bold tw">{{ posts.title }}</p>
+                <p class="sub bold tw">{{ posts.sub }}</p>
+              </div>
+              <div class="col"> </div>
 
-                  <div class="project__description col-4 block | ctn-bk"  v-for="r in posts.items" :key="r.id" v-bind:class="r.class">
-                    <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                      <img class="bg__block" v-bind:src="r.image" />
-                      <p class="title bold pl-5 t-lg">{{ r.title }}</p>
-                      <p class="sub shift bold">{{ r.sub }}</p>
-                      <p class="sub shift">{{ r.content }}</p>
-                    </div>
-                  </div>
+              <div class="project__description col-4 block | ctn-bk" v-for="r in posts.items" :key="r.id" v-bind:class="r.class">
+                <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                  <img class="bg__block" v-bind:src="r.image" />
+                  <p class="title bold pl-5 t-lg">{{ r.title }}</p>
+                  <p class="sub shift bold">{{ r.sub }}</p>
+                  <p class="sub shift">{{ r.content }}</p>
+                </div>
+              </div>
 
-              </section>
+            </section>
 
-             <section class="project__description white row | ctn">
-                  <h3 class="hidden-visually">Venture</h3>
-                  <div class="project__description col-4 block | ctn-bk"  v-for="r in posts.ventures" :key="r.id" v-bind:class="r.class">
-                    <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                      <img class="bg__block" v-bind:src="r.image" />
-                      <p class="title tb bold pl-5 t-lg">{{ r.title }}</p>
-                      <p class="sub shift tb bold">{{ r.sub }}</p>
-                      <p class="sub shift tb">{{ r.content }}</p>
-                    </div>
-                  </div>
-              </section>
+            <section class="project__description white row | ctn">
+              <h3 class="hidden-visually">Venture</h3>
+              <div class="project__description col-4 block | ctn-bk" v-for="r in posts.ventures" :key="r.id" v-bind:class="r.class">
+                <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                  <img class="bg__block" v-bind:src="r.image" />
+                  <p class="title tb bold pl-5 t-lg">{{ r.title }}</p>
+                  <p class="sub shift tb bold">{{ r.sub }}</p>
+                  <p class="sub shift tb">{{ r.content }}</p>
+                </div>
+              </div>
+            </section>
 
-            </div>
+          </div>
         </div>
 
-         <div class="project__body pt-0">
+        <div class="project__body pt-0">
           <section class="project__description pt-0 | ctn white">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
-        </div>
+      </div>
       <!-- end scroll content -->
       <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </div>
@@ -65,129 +65,128 @@
 </template>
 
 <script>
-import Scrollbar from "smooth-scrollbar";
-import { log } from 'util';
+import scroll from 'smooth-scrollbar'
 export default {
-  name: "Who",
-  data() {
+  name: 'Who',
+  data () {
     return {
       title: 'Our Partners',
-      subs: [ 'Funding', 'Startups' ],
-      posts : {
+      subs: ['Funding', 'Startups'],
+      posts: {
         title: 'Build / Partner / Grow',
-        sub: 'At AddVentures, we aim to build long-term and reliable partnerships',
-        items:
-        [
-          { 
+        sub:
+          'At AddVentures, we aim to build long-term and reliable partnerships',
+        items: [
+          {
             id: 1,
-            title: 'VC Funds', 
+            title: 'VC Funds',
             sub: '',
             image: '',
             class: ''
           },
-          { 
+          {
             id: 2,
-            title: '', 
+            title: '',
             sub: 'Vertex Ventures',
-            content: ' Southeast Asia & India invests in high - growth startups',
-            image: './static/img/img3.jpg',
+            content:
+              ' Southeast Asia & India invests in high - growth startups',
+            image: './static/img/img3.jpg'
           },
-          { 
+          {
             id: 3,
-            title: '', 
+            title: '',
             sub: 'Wavemaker',
-            content: 'is invests in seed - stage and B2B startups. we aim to build long-term and reliable partnerships not invest first',
-            image: './static/img/img3.jpg',
+            content:
+              'is invests in seed - stage and B2B startups. we aim to build long-term and reliable partnerships not invest first',
+            image: './static/img/img3.jpg'
           }
         ],
-        ventures:
-        [
-          { 
+        ventures: [
+          {
             id: 2,
-            title: '', 
+            title: '',
             sub: 'HG Robotics',
             content: 'is a logistic marketplace',
-            image: './static/img/img3.jpg',
+            image: './static/img/img3.jpg'
           },
-          { 
+          {
             id: 3,
-            title: '', 
+            title: '',
             sub: 'Giztix',
             content: 'is a logistic marketplace',
-            image: './static/img/img3.jpg',
+            image: './static/img/img3.jpg'
           },
-          { 
+          {
             id: 1,
-            title: 'All Startups', 
+            title: 'All Startups',
             sub: '',
             image: '',
             class: ''
           },
-          { 
+          {
             id: 4,
-            title: '', 
+            title: '',
             sub: 'Getlink',
             content: 'is a logistic marketplace',
-            image: './static/img/img3.jpg',
+            image: './static/img/img3.jpg'
           },
-          { 
+          {
             id: 5,
-            title: '', 
+            title: '',
             sub: 'Bannia',
             content: 'is a logistic marketplace',
-            image: './static/img/img3.jpg',
+            image: './static/img/img3.jpg'
           },
-          { 
+          {
             id: 6,
-            title: '', 
+            title: '',
             sub: 'Builk',
             content: 'is a logistic marketplace',
-            image: './static/img/img3.jpg',
+            image: './static/img/img3.jpg'
           },
-          { 
+          {
             id: 7,
-            title: '', 
+            title: '',
             sub: 'Plug & Play',
             content: 'is a logistic marketplace',
-            image: './static/img/img3.jpg',
-          },
+            image: './static/img/img3.jpg'
+          }
         ]
       },
       slide__title: false,
       slide__sub: false,
-      prev: { title : 'Why Work With', url : 'whyworkwithus'},
-      next:  { title : 'Insign', url : 'insign'}
-
-    };
+      prev: {
+        title: 'Why Work With',
+        url: 'whyworkwithus'
+      },
+      next: {
+        title: 'Insign',
+        url: 'insign'
+      }
+    }
   },
   // life cycle of component
-  created() {},
-  beforeMount() {
-      var scrolled = 0
-      var vm = this
+  created () {},
+  beforeMount () {
+    var scrolled
+    var vm = this
 
-      window.addEventListener('wheel', function (event) {
-      var div = document.getElementById("scrollbar");
-      const scrollbar = Scrollbar.init(div);
-     
-      //slide title
-      if(scrollbar.scrollTop > 50)
-      {
+    window.addEventListener('wheel', function (event) {
+      var div = document.getElementById('scrollbar')
+      const scrollbar = scroll.init(div)
+
+      // slide title
+      if (scrollbar.scrollTop > 50) {
         vm.slide__title = 'slide__title__active'
-      }
-      else
-      {
+      } else {
         vm.slide__title = 'slide__title__leave'
       }
 
-      //slide sub
-      if(scrollbar.scrollTop > 55)
-      {
+      // slide sub
+      if (scrollbar.scrollTop > 55) {
         vm.slide__sub = 'slide__sub__active'
-      }
-      else
-      {
-         vm.slide__sub = 'slide__sub__leave'
+      } else {
+        vm.slide__sub = 'slide__sub__leave'
       }
 
       if (event.deltaY < 0) {
@@ -196,53 +195,48 @@ export default {
       if (event.deltaY > 0) {
         scrolled--
       }
+
+      console.log(scrolled)
     })
   },
-  beforeDestroy() {
+  beforeDestroy () {
     // window.removeEventListener('wheel', this.handleScroll)
   }
-};
+}
 </script>
+
 <style scoped>
-
-.slide__title__active
-{
-  transform: translate3d(-266px, 0px, 0px); 
+.slide__title__active {
+  transform: translate3d(-266px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__sub__active
-{
-  transform: translate3d(-536px, 0px, 0px); 
+.slide__sub__active {
+  transform: translate3d(-536px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__title__leave
-{
-  transform: translate3d(0px, 0px, 0px); 
+.slide__title__leave {
+  transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__sub__leave
-{
-  transform: translate3d(0px, 0px, 0px); 
+.slide__sub__leave {
+  transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
 /***/
 
-.t-lg
-{
+.t-lg {
   font-size: 9vh !important;
 }
 
-.more
-{
+.more {
   height: 900px;
 }
 
-.project__text .sub.shift
-{
+.project__text .sub.shift {
   /*margin-top: -90px;*/
   margin-left: -25px;
   z-index: 3;
@@ -254,74 +248,63 @@ export default {
 }
 
 /* cropping box */
-.mr-91
-{
+
+.mr-91 {
   margin-right: 9.1%;
 }
 
-.mlg-2
-{
-  margin-left: 20.6342857143%
+.mlg-2 {
+  margin-left: 20.6342857143%;
 }
 
-.platform
-{
+.platform {
   top: 120px;
   left: 520px;
 }
 
-.vertical
-{
+.vertical {
   top: 130px;
   left: 150px;
 }
 
-.partner
-{
+.partner {
   top: 120px;
   left: 150px;
 }
 
-.project__text ul li
-{
+.project__text ul li {
   list-style-type: none;
   display: inline;
   padding: 0;
 }
 
-h3 > ul > li
-{
-    display: inline;
-    padding-left: 30px;
+h3 > ul > li {
+  display: inline;
+  padding-left: 30px;
 }
 
-.indent
-{
+.indent {
   padding-left: 70px;
 }
 
-.project__body .bg__block
-{
-    width: 100%;
-    z-index: 2;
-    padding: 5px 10px 5px 5px;
+.project__body .bg__block {
+  width: 100%;
+  z-index: 2;
+  padding: 5px 10px 5px 5px;
 }
-
 
 /* for new */
 
-.block
-{
+.block {
   margin-top: 20px;
   margin-bottom: 20px;
   background-clip: padding-box;
   border: 25px solid transparent;
 }
 
-.block p
-{
-    margin: 0;
-    line-height: 4.1rem;
+.block p {
+  margin: 0;
+  line-height: 4.1rem;
 }
 
 .ctn-cu {
@@ -338,78 +321,65 @@ h3 > ul > li
   padding-top: 3rem;
 }
 
-
-.tr
-{
+.tr {
   color: #ee2524;
 }
 
-.roll
-{
+.roll {
   font-size: 2vh;
 }
 
-.tw
-{
-  color: #f0f0f0; 
+.tw {
+  color: #f0f0f0;
 }
 
 .box {
-    position:relative;
+  position: relative;
 }
 
 .bet {
-    position:absolute;
-    bottom:0;
-    right:0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
-.right
-{
+.right {
   margin-left: 33.333333%;
 }
 
-.pt-6
-{
+.pt-6 {
   padding-top: 23.333333%;
 }
 
-.left
-{
+.left {
   left: -50%;
 }
 
 ol {
-    list-style: decimal;
+  list-style: decimal;
 }
 
-.red 
-{
+.red {
   background-color: #ee2524;
 }
 
-.grey 
-{
+.grey {
   background-color: #f0f0f0;
 }
 
-.tr
-{
+.tr {
   color: #ee2524;
 }
 
-.white 
-{
+.white {
   background-color: #ffff;
 }
 
-.index
-{
+.index {
   z-index: unset;
 }
 
-.bold
-{
+.bold {
   font-weight: bold;
 }
 
@@ -418,11 +388,11 @@ ol {
 }
 
 /*.project__text
-{
-  color: #2f3c47;
-  font-size: 2.1rem;
-  line-height: 1.62;
-}*/
+        {
+          color: #2f3c47;
+          font-size: 2.1rem;
+          line-height: 1.62;
+        }*/
 
 .scrollarea {
   height: 100vh;
@@ -433,14 +403,12 @@ ol {
   top: -6.75vw;
 }
 
-.project__body
-{
+.project__body {
   border-left: solid 15px #ffff;
   border-right: solid 15px #ffff;
 }
 
-.t
-{
+.t {
   position: relative;
   font-size: 8vw;
   font-weight: bold;
@@ -465,23 +433,21 @@ project__title::before {
   font-size: 3.4rem;
 }
 
-.project__description
-{
+.project__description {
   padding-bottom: 30px;
 }
 
-.project__description .title,  .project__description .sub
-{
+.project__description .title,
+.project__description .sub {
   font-size: 5.5rem;
 }
 
-.project__description .sub
-{
+.project__description .sub {
   font-size: 3.1rem;
 }
 
 .project__text p:not(:last-of-type) {
-    margin-bottom: 2.0rem;
+  margin-bottom: 2rem;
 }
 
 .fade-enter-active,
@@ -490,24 +456,22 @@ project__title::before {
 }
 
 .fade-enter,
-.fade-leave-to
-/* .fade-leave-active in <2.1.8 */
-{
+.fade-leave-to {
   opacity: 0;
 }
 
-.btn.focus, .btn:focus {
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--cta {
-    padding: none;
-    color: #495057;
-    background: #fff;
-    border-radius: 0;
-    border: 1px solid;
+  padding: none;
+  color: #495057;
+  background: #fff;
+  border-radius: 0;
+  border: 1px solid;
 }
-
 </style>

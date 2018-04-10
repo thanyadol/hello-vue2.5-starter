@@ -23,11 +23,11 @@
                     <div class="project__text | mrg-2 | m-100 m-mr-0">
                       <p class="title bold">{{ p.title }}</p>
                       <p class="sub bold">{{ p.sub }}</p>
-                      <p class="project__text">     
-                        <span class="sub bold">{{ p.bold }}</span>  
-                        <span class="sub">{{ p.regular }}</span>   
-                      </p> 
-                      <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>  
+                      <p class="project__text">
+                        <span class="sub bold">{{ p.bold }}</span>
+                        <span class="sub">{{ p.regular }}</span>
+                      </p>
+                      <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>
                     </div>
                 </section>
 
@@ -48,7 +48,7 @@
               </div>
           </div>
           <div class="project__body pt-0">
-            <section class="project__description pt-0 | ctn white"> 
+            <section class="project__description pt-0 | ctn white">
                 <buttom :next="next" :prev="prev"></buttom>
             </section>
           </div>
@@ -60,20 +60,21 @@
 </template>
 
 <script>
-import Scrollbar from "smooth-scrollbar";
+import scroll from 'smooth-scrollbar'
 export default {
-  name: "What",
-  data() {
+  name: 'What',
+  data () {
     return {
       title: 'What We Invest',
-      subs: [ 'Industrail',  'B2B',  'Enterprise' ],
+      subs: ['Industrail', 'B2B', 'Enterprise'],
       slide__title: false,
       slide__sub: false,
       posts: [
-        { 
+        {
           id: 1,
-          title: 'What we invest in 3 verticals', 
-          sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+          title: 'What we invest in 3 verticals',
+          sub:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
           bold: '',
           regular: '',
           detail: [],
@@ -84,65 +85,75 @@ export default {
         {
           id: 1,
           title: 'Industrail',
-          lists: [ 'Smart Manufacturing', 'Robotics', 'Automation', 'Energy  Technology'],
+          lists: [
+            'Smart Manufacturing',
+            'Robotics',
+            'Automation',
+            'Energy  Technology'
+          ],
           image: './static/img/img3.jpg',
           imageIcon: './static/img/industrail.svg',
           imageClass: 'bg indust',
-          float: 'left red',
-      
+          float: 'left red'
         },
         {
           id: 2,
           title: 'B2B',
-          lists: [ 'Marketplace and platform for', 'Construction product', 'Chemicals', 'Packaging', 'Logistics and Industrail supply'],
+          lists: [
+            'Marketplace and platform for',
+            'Construction product',
+            'Chemicals',
+            'Packaging',
+            'Logistics and Industrail supply'
+          ],
           image: './static/img/img3.jpg',
           imageIcon: './static/img/b2b.svg',
           imageClass: 'bg b2b',
           float: 'right white',
           titleAlign: 'text-right'
         },
-         {
+        {
           id: 3,
           title: 'Enterprise',
-          lists: [ 'E-commerce enablement', 'Predictive analystics', 'Chemicals', 'Omni channel', 'Construction efficiency management'],
+          lists: [
+            'E-commerce enablement',
+            'Predictive analystics',
+            'Chemicals',
+            'Omni channel',
+            'Construction efficiency management'
+          ],
           image: './static/img/img3.jpg',
           imageIcon: './static/img/b2b.svg',
           imageClass: 'bg enterprise',
           float: 'left red'
         }
       ],
-      prev: { title : 'Who We Are', url : 'whoweare'},
-      next:  { title : 'Where We Invest', url : 'whereweinvest'}
-    };
+      prev: { title: 'Who We Are', url: 'whoweare' },
+      next: { title: 'Where We Invest', url: 'whereweinvest' }
+    }
   },
   // life cycle of component
-  created() {},
-  beforeMount() {
-      var scrolled = 0
-      var vm = this
+  created () {},
+  beforeMount () {
+    var scrolled = 0
+    var vm = this
 
-      window.addEventListener('wheel', function (event) {
-      var div = document.getElementById("scrollbar");
-      const scrollbar = Scrollbar.init(div);
-     
-      //slide title
-      if(scrollbar.scrollTop > 50)
-      {
+    window.addEventListener('wheel', function (event) {
+      var div = document.getElementById('scrollbar')
+      const scrollbar = scroll.init(div)
+
+      // slide title
+      if (scrollbar.scrollTop > 50) {
         vm.slide__title = 'slide__title__active'
-      }
-      else
-      {
+      } else {
         vm.slide__title = 'slide__title__leave'
       }
 
-      //slide sub
-      if(scrollbar.scrollTop > 55)
-      {
+      // slide sub
+      if (scrollbar.scrollTop > 55) {
         vm.slide__sub = 'slide__sub__active'
-      }
-      else
-      {
-         vm.slide__sub = 'slide__sub__leave'
+      } else {
+        vm.slide__sub = 'slide__sub__leave'
       }
 
       if (event.deltaY < 0) {
@@ -151,102 +162,88 @@ export default {
       if (event.deltaY > 0) {
         scrolled--
       }
+
+      console.log(scrolled)
     })
   },
-  beforeDestroy() {
+  beforeDestroy () {
     // window.removeEventListener('wheel', this.handleScroll)
   }
-};
+}
 </script>
 <style scoped>
-
 /* alider class*/
-.slide__title__active
-{
-  transform: translate3d(-296px, 0px, 0px); 
+.slide__title__active {
+  transform: translate3d(-296px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__sub__active
-{
-  transform: translate3d(-546px, 0px, 0px); 
+.slide__sub__active {
+  transform: translate3d(-546px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__title__leave
-{
-  transform: translate3d(0px, 0px, 0px); 
+.slide__title__leave {
+  transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
-.slide__sub__leave
-{
-  transform: translate3d(0px, 0px, 0px); 
+.slide__sub__leave {
+  transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
 /***/
 
-.mt-ne-1
-{
+.mt-ne-1 {
   margin-top: -200px;
 }
 
-.indust
-{
+.indust {
   top: 20px;
   left: -20px;
 }
 
-.b2b
-{
+.b2b {
   top: 40px;
   right: 120px;
 }
 
-.enterprise
-{
+.enterprise {
   top: 40px;
   left: -10px;
 }
 
-.project__body .bg
-{
-    position: absolute;
-    width: 10%;
-    z-index: 2;
+.project__body .bg {
+  position: absolute;
+  width: 10%;
+  z-index: 2;
 }
 
-.project__body .title
-{
-    z-index: 1;
-    position: relative;
+.project__body .title {
+  z-index: 1;
+  position: relative;
 }
 
-.mlg-2
-{
-  margin-left: 22.6342857143%
+.mlg-2 {
+  margin-left: 22.6342857143%;
 }
 
-.pb-6
-{
+.pb-6 {
   padding-bottom: 5vh;
 }
 
-.right
-{
+.right {
   left: 50%;
 }
 
-.left
-{
+.left {
   left: -50%;
 }
 
-h3 > ul > li
-{
-    display: inline;
-    padding-left: 30px;
+h3 > ul > li {
+  display: inline;
+  padding-left: 30px;
 }
 
 .ctn-cu {
@@ -256,28 +253,23 @@ h3 > ul > li
   padding-top: 3rem;
 }
 
-.red 
-{
+.red {
   background-color: #ee2524;
 }
 
-.tr
-{
+.tr {
   color: #ee2524;
 }
 
-.white 
-{
+.white {
   background-color: #ffff;
 }
 
-.index
-{
+.index {
   z-index: unset;
 }
 
-.bold
-{
+.bold {
   font-weight: bold;
 }
 
@@ -285,27 +277,23 @@ h3 > ul > li
   color: #2f3c47;
 }
 
-.project__body h1
-{
+.project__body h1 {
   position: relative;
   font-size: 5vw;
   font-weight: bold;
   margin-bottom: 30px;
 }
 
-.project__body ul li
-{
+.project__body ul li {
   position: relative;
   font-size: 1.7vw;
 }
 
-.project__body ul
-{
+.project__body ul {
   list-style-type: square;
 }
 
-.t
-{
+.t {
   position: relative;
   font-size: 8vw;
   font-weight: bold;
@@ -315,9 +303,7 @@ h3 > ul > li
   letter-spacing: 1px;
 }
 
-
-.project__text
-{
+.project__text {
   margin-bottom: 70px;
 }
 
@@ -330,8 +316,7 @@ h3 > ul > li
   top: -6.75vw;
 }
 
-.project__body
-{
+.project__body {
   border-left: solid 15px #ffff;
   border-right: solid 15px #ffff;
 }
@@ -351,22 +336,20 @@ project__title::before {
   font-size: 3.4rem;
 }
 
-.project__description .title,  .project__description .sub
-{
+.project__description .title,
+.project__description .sub {
   font-size: 5.5rem;
 }
 
-.project__description .sub
-{
+.project__description .sub {
   font-size: 3.1rem;
 }
 
 .project__text p:not(:last-of-type) {
-    margin-bottom: 2.0rem;
+  margin-bottom: 2rem;
 }
 
-.project__image
-{
+.project__image {
   /*top: -180px;*/
   width: 90%;
   position: relative;
@@ -378,24 +361,22 @@ project__title::before {
 }
 
 .fade-enter,
-.fade-leave-to
-/* .fade-leave-active in <2.1.8 */
-{
+.fade-leave-to {
   opacity: 0;
 }
 
-.btn.focus, .btn:focus {
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--cta {
-    padding: none;
-    color: #495057;
-    background: #fff;
-    border-radius: 0;
-    border: 1px solid;
+  padding: none;
+  color: #495057;
+  background: #fff;
+  border-radius: 0;
+  border: 1px solid;
 }
-
 </style>

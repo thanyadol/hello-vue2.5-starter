@@ -19,7 +19,6 @@ export default {
 </script>
 
 <style scoped>
-
 .border {
   border: none !important;
   -webkit-transition: opacity 1600ms ease-in;
@@ -33,14 +32,13 @@ export default {
 }
 
 .fade-enter,
-.fade-leave-to
-/* .fade-leave-active in <2.1.8 */
-{
+.fade-leave-to {
   opacity: 0;
 }
 
 /* animate fade */
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition-property: opacity;
   transition-duration: 1600ms;
 }
@@ -49,8 +47,8 @@ export default {
   transition-delay: 0;
 }
 
-.fade-enter, .fade-leave-active {
-  opacity: 0
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
-
 </style>
