@@ -172,7 +172,8 @@ export default {
         whyworkwithus: { next: 'ourpartners', prev: 'howweinvest' },
         ourpartners: { next: 'insign', prev: 'whyworkwithus' },
         insign: { next: 'theteam', prev: 'ourpartners' },
-        theteam: { next: 'index', prev: 'insign' }
+        theteam: { next: 'contact', prev: 'insign' },
+        contact: { next: 'index', prev: 'theteam' }
       }
       return pages[this.$route.path.substring(1, this.$route.path.length)]
     },

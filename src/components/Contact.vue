@@ -2,7 +2,7 @@
   <div class="who">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title"  class="project__title | mlg-28 | m-mr-0 t tb" data-i="8">{{ title }}</h2>
+        <h2 v-bind:class="slide__title"  class="project__title | mlg-28 | m-mr-0 t tb" data-i="9">{{ title }}</h2>
         <div class="project__info | col-8 mlg-25 | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub"  class="project__intro">
               <ul>
@@ -17,36 +17,38 @@
       <div class="scroll-content">
 
         <div class="project__content">
-          <div class="project__body">
-              <section class="project__description grey row | ctn">
+          <div class="project__body row grey">
+              <section class="project__description col-8 red row | ctn">
                   <h3 class="hidden-visually">Blog</h3>
-                  <div class="project__text | col-6 mrg-2 | m-100 m-mr-0">
-                    <p class="title bold tb">{{ post.title }}</p>
-                    <p class="sub bold tb">{{ post.sub }}</p>
+                  <div class="project__text |  mrg-2 | m-100 m-mr-0">
+                    <p class="title bold tw">{{ post.title }}</p>
+                    <p class="sub bold tw">{{ post.sub }}</p>
                   </div>
-                  <div class="col"> </div>
               </section>
-              <section class="project__description grey row | ctn-r">
-                  <h3 class="hidden-visually">Staff</h3>
-                  <div class="project__description col-4 block | ctn-b"  v-for="s in post.staffs" :key="s.id" v-bind:class="s.class">
-                    <div class="project__text | mrg-2c | m-100 m-mr-0">
-                      <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
-                      <p class="sub sm tb text-uppercase" v-bind:class="s.fontClass">{{ s.position }}</p>
-                      <p class="title tb bold bot t-lg">{{ s.title }}</p>
-                    </div>
+              <section class="col grey"> </section>
+
+               <section class="project__description col-6 grey row | ctn">
+                  <div class="project__text |  mrg-2 | m-100 m-mr-0">
+                    <p class="sub bold tb sm">{{ addr.title }}</p>
+                    <p class="sub tb sm">{{ addr.sub }}</p>
                   </div>
               </section>
 
-               <section class="project__description grey row | ctn-l">
-                  <h3 class="hidden-visually">Staff</h3>
-                  <div class="project__description col-4 block | ctn-b"  v-for="s in post.blocks" :key="s.id" v-bind:class="s.class">
-                    <div class="project__text | mrg-2c | m-100 m-mr-0">
-                      <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
-                      <p class="sub sm tb text-uppercase" v-bind:class="s.fontClass">{{ s.position }}</p>
-                      <span class="title tb bold bot t-lg">{{ s.title }}</span>
-                    </div>
+              <section class="project__description col-6 grey row | ctn-b">
+                  <h3 class="hidden-visually">CV</h3>
+                  <div class="project__text cv | mlg-2 | m-100 m-mr-0">
+                    <p class="sub bold tr">{{ cv.title }}</p>
+                      <router-link to=""> <p class="sub bold tb udl">{{ cv.sub }}</p></router-link>
                   </div>
               </section>
+
+              <section class="project__description col-12 grey row | ctn-m">
+                  <h3 class="hidden-visually">Map</h3>
+                  <div class="project__text fill">
+                    <ggmap> </ggmap>
+                  </div>
+              </section>
+
             </div>
         </div>
 
@@ -67,168 +69,27 @@ import Scrollbar from "smooth-scrollbar";
 import moment from "moment";
 
 export default {
-  name: "Team",
+  name: "Contact",
   data() {
     return {
-      title: "The Team",
+      title: "Contact",
       subs: ["We are AddVenture"],
       post: {
-        title: "We are AddVenture",
+        title: "Contact Us",
         sub: "We are partnering with startups to transform industries together",
-        staffs: [
-          {
-            id: 1,
-            title: "",
-            name: "Joshua Pas PH.D.",
-            position: "Managing Director and Investment Commitee",
-            class: "red",
-            fontClass: "tw"
-          },
-          {
-            id: 2,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          },
-          {
-            id: 3,
-            title: "The Team",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
-          },
-          {
-            id: 4,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          },
-          {
-            id: 5,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          },
-          {
-            id: 6,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          },
-          {
-            id: 7,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          },
-          {
-            id: 8,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          },
-          {
-            id: 9,
-            title: "",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
-          },
-          {
-            id: 10,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          },
-          {
-            id: 11,
-            title: "",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
-          },
-          {
-            id: 12,
-            title: "",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
-          }
-        ],
-
-        blocks: [
-          {
-            id: 1,
-            title: "",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
-          },
-          {
-            id: 2,
-            title: "Investment Commitee",
-            name: "",
-            position: "",
-            class: "grey",
-            fontClass: "tw"
-          },
-          {
-            id: 3,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          },
-          {
-            id: 4,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          },
-          {
-            id: 5,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          },
-          {
-            id: 6,
-            title: "",
-            name: "",
-            position: "",
-            class: "white",
-            fontClass: "tw"
-          }
-        ]
+      },
+      cv: {
+        title: "Please contact us or submit your CV to",
+        sub: "contact@addventures.co.th",
+      },
+      addr: {
+        title: "Our office",
+        sub: "The Siam Cement PCL. (Headquarter) 1 Siam Cement Road, Bangsue Bangkok 10800 Thailand",
       },
       slide__title: false,
       slide__sub: false,
-      prev: { title: "Insign", url: "insign" },
-      next: { title: "Contact", url: "contact" }
+      prev: { title: "Our Team", url: "team" },
+      next: { title: "Home", url: "index" }
     };
   },
   filters: {
@@ -275,7 +136,7 @@ export default {
 </script>
 <style scoped>
 .slide__title__active {
-  transform: translate3d(-396px, 0px, 0px);
+  transform: translate3d(-436px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
@@ -295,7 +156,6 @@ export default {
 }
 
 /***/
-
 .t-lg {
   font-size: 9vh !important;
 }
@@ -310,6 +170,11 @@ export default {
   height: 900px;
 }
 
+.fill
+{
+  width: -webkit-fill-available;
+}
+
 .project__text .sub.shift {
   /*margin-top: -90px;*/
   margin-left: -25px;
@@ -321,7 +186,8 @@ a:hover {
   text-decoration: none;
 }
 
-.ctn {
+.ctn
+{
   padding-left: 9.1%;
   padding-right: 9.1%;
 }
@@ -334,6 +200,12 @@ a:hover {
 .ctn-l {
   padding-right: 9.1%;
   padding-left: 20.1%;
+}
+
+.ctn-m {
+  padding-left: 9.1%;
+  padding-right: 9.1%;
+  padding-top: 0;
 }
 
 hr.separate {
@@ -349,32 +221,28 @@ hr.separate {
   position: absolute;
 }
 
+.udl
+{
+  text-decoration: underline;
+  letter-spacing: 0.05em;
+}
+
 /* cropping box */
 .mr-91 {
   margin-right: 9.1%;
 }
 
 .mlg-28 {
-  margin-left: 29.6342857143%;
+  margin-left: 32.6342857143%;
 }
 
 .mlg-25 {
   margin-left: 38.43333%;
 }
 
-.platform {
-  top: 120px;
-  left: 520px;
-}
-
-.vertical {
-  top: 130px;
-  left: 150px;
-}
-
-.partner {
-  top: 120px;
-  left: 150px;
+.cv 
+{
+  margin-top: -30px;
 }
 
 .project__text ul li {

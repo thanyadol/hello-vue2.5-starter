@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // component
-import About from '@/components/About'
+import Contact from '@/components/Contact'
 import Career from '@/components/Career'
 
 // import IndexSlide from '@/components/IndexSlide'
@@ -25,8 +25,8 @@ export default new Router({
   routes: [
     {
       path: '/contact',
-      name: 'About',
-      component: About
+      name: 'Contact',
+      component: Contact
     },
     {
       path: '/career',
