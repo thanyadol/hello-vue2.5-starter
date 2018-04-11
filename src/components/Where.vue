@@ -13,7 +13,7 @@
       </div>
     </header>
 
-    <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
+    <div class="project__inner scrollarea" data-scrollbar id="where">
       <div class="scroll-content" style="">
         <div class="project__content">
           <div class="project__body row red">
@@ -116,7 +116,7 @@ export default {
     var vm = this
 
     window.addEventListener('wheel', function (event) {
-      var div = document.getElementById('scrollbar')
+      var div = document.getElementById('where')
       const scrollbar = scroll.init(div)
 
       // slide title

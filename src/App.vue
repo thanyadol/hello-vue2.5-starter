@@ -2,7 +2,7 @@
   <div class="project">
     <header id="header" class="ctn noselect">
       <h1 class="header__title">
-        <a href="/">home</a>
+        <router-link to="/index"> home </router-link>
       </h1>
       <nave></nave>
 
@@ -96,6 +96,7 @@
 <script>
 // import your components here
 import scroll from 'smooth-scrollbar'
+// import { isNullOrUndefined } from 'util'
 // import Vue from 'vue'
 
 export default {
@@ -124,14 +125,13 @@ export default {
       continuousScrolling: true
     }
 
-    var div = document.getElementById('scrollbar')
+    var v = vm.chevron().scroll
+
+    var div = document.getElementById(v)
     const scrollbar = scroll.init(div, scrollbarOptions)
 
     // get
     if (scrollbar.offset.y > 50) {
-      // console.log(scrollbar.scrollTop)
-      // console.log(scrollbar.offset.y)
-
       vm.show = true
       vm.left = 'v'
       vm.right = 'z'
@@ -185,7 +185,19 @@ export default {
     var vm = this
 
     window.addEventListener('wheel', function (event) {
-      var div = document.getElementById('scrollbar')
+      var v = vm.chevron().scroll
+      var div = document.getElementById(v)
+
+      // alert(v)
+
+      /* if (isNullOrUndefined(v)) {
+        vm.show = false
+        vm.left = 'c'
+        vm.right = 'c'
+        vm.mouse = 'z-2'
+        return
+      } */
+
       const scrollbar = scroll.get(div)
 
       // get
@@ -230,47 +242,58 @@ export default {
       var pages = {
         index: {
           next: 'whoweare',
-          prev: 'index'
+          prev: 'index',
+          scroll: false
         },
         whoweare: {
           next: 'whatweinvest',
-          prev: 'index'
+          prev: 'index',
+          scroll: 'who'
         },
         whatweinvest: {
           next: 'whereweinvest',
-          prev: 'whoweare'
+          prev: 'whoweare',
+          scroll: 'what'
         },
         whereweinvest: {
           next: 'howweinvest',
-          prev: 'whatweinvest'
+          prev: 'whatweinvest',
+          scroll: 'where'
         },
         howweinvest: {
           next: 'whyworkwithus',
-          prev: 'whereweinvest'
+          prev: 'whereweinvest',
+          scroll: 'how'
         },
         whyworkwithus: {
           next: 'ourpartners',
-          prev: 'howweinvest'
+          prev: 'howweinvest',
+          scroll: 'why'
         },
         ourpartners: {
           next: 'insign',
-          prev: 'whyworkwithus'
+          prev: 'whyworkwithus',
+          scroll: 'partner'
         },
         insign: {
           next: 'theteam',
-          prev: 'ourpartners'
+          prev: 'ourpartners',
+          scroll: 'insign'
         },
         theteam: {
           next: 'contact',
-          prev: 'insign'
+          prev: 'insign',
+          scroll: 'team'
         },
         contact: {
           next: 'index',
-          prev: 'theteam'
+          prev: 'theteam',
+          scroll: 'contact'
         },
         pitchdeck: {
           next: 'pitchdeck',
-          prev: 'pitchdeck'
+          prev: 'pitchdeck',
+          scroll: 'deck'
         }
       }
       return pages[this.$route.path.substring(1, this.$route.path.length)]

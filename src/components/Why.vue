@@ -8,7 +8,7 @@
         </div>
       </div>
     </header>
-    <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
+    <div class="project__inner scrollarea" data-scrollbar id="why">
       <div class="scroll-content">
          <div class="project__content">
             <div class="project__body grey row" v-for="p in posts" :key="p.id">
@@ -277,7 +277,7 @@ export default {
     var vm = this
 
     window.addEventListener('wheel', function (event) {
-      var div = document.getElementById('scrollbar')
+      var div = document.getElementById('why')
       const scrollbar = scroll.init(div)
 
       // slide title

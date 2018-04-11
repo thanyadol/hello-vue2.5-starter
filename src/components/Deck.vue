@@ -1,7 +1,7 @@
 <template>
-  <div id="deck">
+  <div class="deck">
 
-    <div class="project__inner scrollarea" data-scrollbar id="scrollbar" ref="scrolled">
+    <div class="project__inner scrollarea" data-scrollbar id="deck" ref="scrolled">
       <div class="scroll-content">
           <div class="project__content">
             <div class="project__body grey">
@@ -44,13 +44,13 @@ export default {
   mounted: function () {
     // var vm = this
 
-    var scrollbarOptions = {
+    /* var scrollbarOptions = {
       renderByPixels: true,
       continuousScrolling: true
-    }
+    } */
 
-    var el = document.getElementById('scrollbar')
-    const s = scroll.init(el, scrollbarOptions)
+    var el = document.getElementById('deck')
+    const s = scroll.init(el)
     s.scrollTop = 750
 
     // s.destroy()
@@ -93,7 +93,7 @@ export default {
 
       // var div = document.getElementById('scrollbar')
       // const scrollbar = scroll.init(div)
-      var el = document.getElementById('scrollbar')
+      var el = document.getElementById('deck')
       const s = scroll.get(el)
 
       // s.scrollTop = 750
@@ -105,8 +105,11 @@ export default {
       // console.log(s.scrollTop)
     })
   },
-  beforeDestroy () {}
-
+  destroyed () {
+    // var el = document.getElementById('deck')
+    // const s = scroll.get(el)
+    // s.destroy()
+  }
 }
 </script>
 <style scoped>

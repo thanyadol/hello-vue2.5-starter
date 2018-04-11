@@ -13,7 +13,7 @@
       </div>
     </header>
 
-    <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
+    <div class="project__inner scrollarea" data-scrollbar id="partner">
       <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
 
         <div class="project__content">
@@ -172,7 +172,7 @@ export default {
     var vm = this
 
     window.addEventListener('wheel', function (event) {
-      var div = document.getElementById('scrollbar')
+      var div = document.getElementById('partner')
       const scrollbar = scroll.init(div)
 
       // slide title
