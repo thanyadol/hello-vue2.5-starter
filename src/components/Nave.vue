@@ -5,9 +5,9 @@
                     <span class="menu-btn__text">Pitch Deck</span>
                 </button>
     </router-link>
-    <router-link to="carrer">
-      <button class="menu-btn career" aria-label="Career" href="#">
-                    <span class="menu-btn__text">Career</span>
+    <router-link to="joinus">
+      <button class="menu-btn career" aria-label="Join Us" href="#">
+                    <span class="menu-btn__text">Join Us</span>
                 </button>
     </router-link>
     <router-link to="menu">

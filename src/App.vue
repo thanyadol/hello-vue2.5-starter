@@ -302,6 +302,16 @@ export default {
           next: 'pitchdeck',
           prev: 'pitchdeck',
           scroll: 'deck'
+        },
+        joinus: {
+          next: 'joinus',
+          prev: 'joinus',
+          scroll: 'join'
+        },
+        menu: {
+          next: 'menu',
+          prev: 'menu',
+          scroll: 'menu'
         }
       }
       return pages[this.$route.path.substring(1, this.$route.path.length)]

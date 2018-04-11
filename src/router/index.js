@@ -3,7 +3,6 @@ import Router from 'vue-router'
 
 // component
 import Contact from '@/components/Contact'
-import Career from '@/components/Career'
 
 // import IndexSlide from '@/components/IndexSlide'
 import Index from '@/components/Index'
@@ -18,6 +17,8 @@ import Insign from '@/components/Insign'
 import Team from '@/components/Team'
 
 import Deck from '@/components/Deck'
+import Join from '@/components/Join'
+import Menu from '@/components/Menu'
 // import './style.css';
 
 // Vue.use(BootstrapVue);
@@ -29,11 +30,6 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
-    },
-    {
-      path: '/career',
-      name: 'Career',
-      component: Career
     },
     {
       path: '/index',
@@ -138,6 +134,17 @@ export default new Router({
       path: '/pitchdeck',
       name: 'Deck',
       component: Deck
+    }
+    ,
+    {
+      path: '/joinus',
+      name: 'Join',
+      component: Join
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: Menu
     }
   ]
 })

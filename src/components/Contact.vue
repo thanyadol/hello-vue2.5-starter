@@ -1,5 +1,5 @@
 <template>
-  <div class="who">
+  <div class="contact">
     <header class="project__header | ctn">
       <div class="project__header__inner">
         <h2 v-bind:class="slide__title" class="project__title | mlg-28 | m-mr-0 t tb" data-i="9">{{ title }}</h2>
@@ -13,7 +13,7 @@
       </div>
     </header>
 
-    <div class="project__inner scrollarea" data-scrollbar id="scrollbar">
+    <div class="project__inner scrollarea" data-scrollbar id="contact">
       <div class="scroll-content">
 
         <div class="project__content">
@@ -113,7 +113,7 @@ export default {
     var vm = this
 
     window.addEventListener('wheel', function (event) {
-      var div = document.getElementById('scrollbar')
+      var div = document.getElementById('contact')
       const scrollbar = scroll.init(div)
 
       // slide title
@@ -233,8 +233,9 @@ hr.separate {
 }
 
 .udl {
-  text-decoration: underline;
+  border-bottom: 2px solid black;
   letter-spacing: 0.05em;
+  width: min-content;
 }
 
 /* cropping box */
