@@ -41,7 +41,7 @@
                 <p class="title bold tb">{{ title }}</p>
                 <p class="sub tb">{{ sub }}</p>
                 <p class="sub bold tr">{{ cv }}</p>
-                <p class="sub bold tb udl">{{ email }}</p>
+                <router-link to=""> <p class="sub bold tb udl">{{ email }}</p> </router-link>
               </div>
             </section>
 
@@ -151,6 +151,11 @@ export default {
 
 <style scoped>
 /***/
+
+a:hover {
+  color: red;
+  text-decoration: none;
+}
 
 .udl {
   border-bottom: 2px solid black;
