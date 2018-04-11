@@ -65,9 +65,8 @@ export default {
       pres: [
         {
           id: 99,
-          title: 'Stages of',
-          sub:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+          title: 'Stages of Startups',
+          sub: '',
           bold: '',
           regular: '',
           detail: [],
@@ -77,7 +76,7 @@ export default {
       posts: [
         {
           id: 98,
-          title: 'Startups',
+          title: '',
           sub: '',
           bold: '',
           regular: '',
@@ -191,7 +190,7 @@ export default {
   left: 15%;
   /* width: 10%; */
   z-index: 2;
-  bottom: 0;
+  bottom: -2px;
 }
 
 /* for new */
@@ -345,36 +344,6 @@ project__title::before {
 
 .project__text p:not(:last-of-type) {
   margin-bottom: 2rem;
-}
-
-/* for iphone x*/
-@media only screen and (max-width: 720px) {
-  .project__description .title,
-  .project__description .sub {
-    font-size: 2.5rem;
-  }
-
-  .project__description .sub {
-    font-size: 2.1rem;
-  }
-  .m-ml-0 {
-    margin-left: 25.6342857143%;
-  }
-  .btn {
-    font-size: 3vw;
-  }
-
-  svg.rectang {
-    width: 10px;
-    height: 450px;
-  }
-}
-
-@media only screen and (max-width: 960px) {
-  .ctn {
-    padding-left: 5%;
-    padding-right: 2%;
-  }
 }
 
 .project__image {

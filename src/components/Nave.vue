@@ -1,8 +1,8 @@
 <template>
   <div class="nav">
-    <router-link to="pickdeck">
-      <button class="menu-btn pickdeck" aria-label="Pickdeck" href="#">
-                    <span class="menu-btn__text">Pick Deck</span>
+    <router-link to="pitchdeck">
+      <button class="menu-btn pickdeck" aria-label="Pitchdeck" href="#">
+                    <span class="menu-btn__text">Pitch Deck</span>
                 </button>
     </router-link>
     <router-link to="carrer">

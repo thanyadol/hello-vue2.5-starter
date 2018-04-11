@@ -80,7 +80,7 @@
 
     <canvas id="stage" width="1828" height="1332" style="touch-action: none; cursor: inherit;"></canvas>
     <!-- <svg class="down mx-a" viewBox="0 0 26.67 39.88"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M13.33,39.88A13.35,13.35,0,0,1,0,26.54V13.33a13.34,13.34,0,0,1,26.67,0V26.54A13.36,13.36,0,0,1,13.33,39.88ZM13.33,2A11.34,11.34,0,0,0,2,13.33V26.54a11.34,11.34,0,1,0,22.67,0V13.33A11.35,11.35,0,0,0,13.33,2Z"/><circle class="cls-1" cx="13.33" cy="10.83" r="2.92"/></g></g></svg> -->
-    <div class="down mx-a">
+    <div class="down mx-a" v-bind:class="mouse">
       <div class='mouse-container'>
         <div class='mouse'>
           <span class='scroll-down'></span>
@@ -95,8 +95,7 @@
 
 <script>
 // import your components here
-// import RightHref from '@/components/RightHref'
-// import scrollbar from 'smooth-scrollbar'
+import scroll from 'smooth-scrollbar'
 // import Vue from 'vue'
 
 export default {
@@ -105,7 +104,9 @@ export default {
     return {
       show: false,
       left: true,
-      right: true
+      right: true,
+      mouse: false,
+      el: false
     }
   },
   // life cycle of component
@@ -116,6 +117,32 @@ export default {
     // document.body.appendChild(pixiscript)
   },
   mounted: function () {
+    var vm = this
+
+    var scrollbarOptions = {
+      renderByPixels: true,
+      continuousScrolling: true
+    }
+
+    var div = document.getElementById('scrollbar')
+    const scrollbar = scroll.init(div, scrollbarOptions)
+
+    // get
+    if (scrollbar.offset.y > 50) {
+      // console.log(scrollbar.scrollTop)
+      // console.log(scrollbar.offset.y)
+
+      vm.show = true
+      vm.left = 'v'
+      vm.right = 'z'
+      vm.mouse = 'z-0'
+    } else {
+      vm.show = false
+      vm.left = 'c'
+      vm.right = 'c'
+      vm.mouse = 'z-2'
+    }
+
     /* var options = {
         wheelEventTarget: EventTarget,
       };
@@ -130,6 +157,17 @@ export default {
       console.log(parent)
 
       // alert("scrolling") */
+    // var vm = this
+
+    /* var options = {
+      wheelEventTarget: EventTarget
+    } */
+
+    // var div = document.getElementById('scrollbar')
+    // scroll.init(div)
+
+    // set
+    // vm.el = scroll
   },
   beforeMount () {
     // var parent = new Vue({ el: '.team#scrollbar' })
@@ -141,38 +179,46 @@ export default {
     // console.log(parent)
     // const scrollbar = scrollbar.init(div);
     // window.addEventListener('scroll', this.handleScroll)
-    /* var scrolled = 0
-      // var scrolling
-      var vm = this
 
-      window.addEventListener('wheel', function (event) {
-        var div = document.getElementById("scrollbar");
-        const scrollbar = scrollbar.init(div);
-        if(scrollbar.scrollTop > 50)
-        {
-          // console.log(scrollbar.scrollTop)
-          // console.log(scrollbar.offset.y)
-          vm.show = true
-        }
-        else
-        {
-          vm.show = false
-        }
+    var scrolled = 0
+    // var scrolling
+    var vm = this
 
-        if (event.deltaY < 0) {
-          scrolled++
-          // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
+    window.addEventListener('wheel', function (event) {
+      var div = document.getElementById('scrollbar')
+      const scrollbar = scroll.get(div)
 
-          // vm.scrolling = scrolling
-          console.log('scrolling up hanlde : ' + event.deltaY)
-        }
-        if (event.deltaY > 0) {
-          scrolled--
-          // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
-          // vm.scrolling = scrolling
-          console.log('scrolling down hanlde : ' + event.deltaY)
-        }
-      }) */
+      // get
+      if (scrollbar.offset.y > 50) {
+        // console.log(scrollbar.scrollTop)
+        // console.log(scrollbar.offset.y)
+        vm.show = true
+        vm.left = 'v'
+        vm.right = 'z'
+        vm.mouse = 'z-0'
+      } else {
+        vm.show = false
+        vm.left = 'c'
+        vm.right = 'c'
+        vm.mouse = 'z-2'
+      }
+
+      /* if (event.deltaY < 0) {
+        scrolled++
+        // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
+
+        // vm.scrolling = scrolling
+        console.log('scrolling up hanlde : ' + event.deltaY)
+      }
+      if (event.deltaY > 0) {
+        scrolled--
+        // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
+        // vm.scrolling = scrolling
+        console.log('scrolling down hanlde : ' + event.deltaY)
+      } */
+    })
+
+    console.log(scrolled)
   },
   beforeDestroy () {
     // window.removeEventListener('scroll', this.handleScroll)
@@ -221,6 +267,10 @@ export default {
         contact: {
           next: 'index',
           prev: 'theteam'
+        },
+        pitchdeck: {
+          next: 'pitchdeck',
+          prev: 'pitchdeck'
         }
       }
       return pages[this.$route.path.substring(1, this.$route.path.length)]
@@ -250,6 +300,20 @@ export default {
   /* top: 00px; */
   width: 5vh;
   z-index: 2;
+}
+
+.z-0
+{
+  z-index: 0;
+}
+.z-2
+{
+  z-index: 2;
+}
+
+.z-1
+{
+  z-index: 1;
 }
 
 .down:hover {
@@ -299,8 +363,8 @@ div.mouse {
   position: relative;
   margin: 0 auto;
   display: block;
-  width: 45px;
-  height: 70px;
+  width: 35px;
+  height: 60px;
   border: solid 2px #495057;
   border-radius: 25px;
 }

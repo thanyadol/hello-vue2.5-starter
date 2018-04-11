@@ -47,6 +47,7 @@
                 </section>
               </div>
           </div>
+
           <div class="project__body pt-0">
             <section class="project__description pt-0 | ctn white">
                 <buttom :next="next" :prev="prev"></buttom>
@@ -253,6 +254,11 @@ h3 > ul > li {
   padding-top: 3rem;
 }
 
+.ctn {
+  padding-left: 9.1%;
+  padding-right: 9.1%;
+}
+
 .red {
   background-color: #ee2524;
 }
@@ -314,11 +320,6 @@ h3 > ul > li {
 
 .project__header__inner {
   top: -6.75vw;
-}
-
-.project__body {
-  border-left: solid 15px #ffff;
-  border-right: solid 15px #ffff;
 }
 
 .border {

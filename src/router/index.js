@@ -16,6 +16,8 @@ import Why from '@/components/Why'
 import Partner from '@/components/Partner'
 import Insign from '@/components/Insign'
 import Team from '@/components/Team'
+
+import Deck from '@/components/Deck'
 // import './style.css';
 
 // Vue.use(BootstrapVue);
@@ -131,6 +133,11 @@ export default new Router({
       props: {
         slide: true
       }
+    },
+    {
+      path: '/pitchdeck',
+      name: 'Deck',
+      component: Deck
     }
   ]
 })
