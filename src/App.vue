@@ -126,8 +126,17 @@ export default {
     }
 
     var v = vm.chevron().scroll
-
     var div = document.getElementById(v)
+    console.log(div)
+    if (!div) {
+      vm.show = false
+      vm.left = 'c'
+      vm.right = 'c'
+      vm.mouse = 'z-2'
+      console.log('if')
+      return
+    }
+
     const scrollbar = scroll.init(div, scrollbarOptions)
 
     // get
@@ -187,7 +196,6 @@ export default {
     window.addEventListener('wheel', function (event) {
       var v = vm.chevron().scroll
       var div = document.getElementById(v)
-
       // alert(v)
 
       /* if (isNullOrUndefined(v)) {
