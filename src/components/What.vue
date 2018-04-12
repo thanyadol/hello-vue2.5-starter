@@ -2,8 +2,8 @@
   <div class="what">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t tb" data-i="2">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
+        <h2 v-bind:class="slide__title" class="project__title | m-mr-0 t tb" data-i="2">{{ title }}</h2>
+        <div class="project__info | col-12 | m-mr-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
@@ -18,9 +18,9 @@
 
           <div class="project__content">
             <div class="project__body white">
-                <section class="project__description col-7 pd-1 | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+                <section class="project__description col-7 pd-1 mobile | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
                     <h3 class="hidden-visually">Project</h3>
-                    <div class="project__text | mrg-2 | m-100 m-mr-0">
+                    <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
                       <p class="title bold">{{ p.title }}</p>
                       <p class="sub bold">{{ p.sub }}</p>
                       <p class="project__text">
@@ -34,13 +34,13 @@
                 <!-- loop with invests -->
                 <section class="mt-ne-1">
                 <div class="project__body pb-6 pt-5 row | ctn" v-for="i in invests" :key="i.id" >
-                  <div class="col-7" v-bind:class="{ right: i.id%2 == 0 }">
+                  <div class="col-7 ne" v-bind:class="{ right: i.id%2 == 0 }">
                     <img class="project__image" :src="i.image" >
                   </div>
-                  <div class="col" v-bind:class="{ left: i.id%2 == 0 }">
-                    <h1 class="tr title" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
-                    <ul class="tb">
-                      <li v-for="l in i.lists" :key="l.list"> {{ l }}</li>
+                  <div class="col ne" v-bind:class="{ left: i.id%2 == 0 }">
+                    <h1 class="tr title ne" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
+                    <ul>
+                      <li class="tb sub ne" v-for="l in i.lists" :key="l.list"> {{ l }}</li>
                     </ul>
                   </div>
                 </div>
@@ -194,6 +194,15 @@ export default {
   transition-duration: 1600ms;
 }
 
+  @media (max-width: 575.98px) {
+      .slide__title__active {
+          transform: translate3d(-10vw, 0px, 0px) !important;
+        }
+        .slide__sub__active {
+          transform: translate3d(-20vw, 0px, 0px) !important;
+        }
+  }
+
 /***/
 
 .mt-ne-1 {
@@ -337,12 +346,12 @@ project__title::before {
   font-size: 3.4rem;
 }
 
-.project__description .title,
-.project__description .sub {
+.project__description .title{
   font-size: 5.5rem;
 }
 
-.project__description .sub {
+.project__description .sub,
+.mt-ne-1 .sub {
   font-size: 3.1rem;
 }
 

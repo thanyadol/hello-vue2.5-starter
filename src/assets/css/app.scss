@@ -12,6 +12,22 @@
     margin-right: unset;
 }
 
+.project__title,
+.project__intro {
+    text-align: center;
+}
+
+.project__title::before {
+    content: "0" attr(data-i) " / 09" !important;
+    top: -50px;
+    left: 260px;
+    font-size: 4.4rem;
+}
+
+.ct
+{
+    text-align: center !important;
+}
 
 ////
 
@@ -1925,11 +1941,7 @@ body:not([data-page=home]) #projects-container {
 }
 
 .project__title::before {
-    content: "0" attr(data-i);
     position: absolute;
-    top: 0;
-    left: -40px;
-    font-size: 1.4rem
 }
 
 .project__info {

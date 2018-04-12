@@ -25,6 +25,7 @@ import Menu from '@/components/Menu'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/contact',
@@ -134,8 +135,7 @@ export default new Router({
       path: '/pitchdeck',
       name: 'Deck',
       component: Deck
-    }
-    ,
+    },
     {
       path: '/joinus',
       name: 'Join',

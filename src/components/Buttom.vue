@@ -1,6 +1,6 @@
 <template>
     <div class="project__text | col-12 mrg-2 | m-100 m-mr-0 mt-6">
-        <div class="mlg-2 | m-mr-0">
+        <div id="desktop" class="footy mlg-2 | m-mr-0">
             <router-link :to="prev.url" class="href">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03">
             <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
@@ -17,7 +17,8 @@
                 </svg>
             </router-link>
         </div>
-        <div class="mlg-3 | m-100 m-ml-0"><h3>&copy; {{ foot }}</h3></div>
+
+        <div class="mlg-3 ct | m-ml-0"><h3>&copy; {{ foot }}</h3></div>
     </div>
 </template>
 

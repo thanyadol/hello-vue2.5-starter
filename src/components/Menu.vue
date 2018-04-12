@@ -279,6 +279,10 @@ a:hover {
   margin-left: 22.6342857143%;
 }
 
+.mlg-3 {
+  margin-left: 32.6342857143%;
+}
+
 .pb-6 {
   padding-bottom: 5vh;
 }

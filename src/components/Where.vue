@@ -2,8 +2,8 @@
   <div class="where">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t tb" data-i="3">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
+        <h2 v-bind:class="slide__title" class="project__title | col-12 mlg-2x | ctn-o m-mr-0 t tb" data-i="3">{{ title }}</h2>
+        <div class="project__info | col-12 mlg-3x | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
@@ -22,17 +22,17 @@
                       <rect x="0" y="0" width="150" height="2500" />
                     </svg>
 
-            <section class="project__description col-6 pd-1 | ctn" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+            <section class="project__description col-md-6 pd-1 | ctn" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
               <div class="project__text | mrg-2 | m-100 m-mr-0">
                 <p class="title bold tb">{{ p.title }}</p>
                 <p class="sub tb">{{ p.sub }}</p>
               </div>
             </section>
-            <section class="project__description col-6 pd-1 tr | ctn red">
+            <section class="project__description col-md-6 pd-1 tr | ctn red">
               <ul class="tb">
                 <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
-                  <span class="bold">{{ v.title }}</span>
+                  <span class="sub bold">{{ v.title }}</span>
                   <p class="sub">{{ v.sub }}</p>
                 </li>
               </ul>
@@ -171,6 +171,15 @@ export default {
   transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
+
+  @media (max-width: 575.98px) {
+      .slide__title__active {
+          transform: translate3d(-3vw, 0px, 0px) !important;
+        }
+        .slide__sub__active {
+          transform: translate3d(-24vw, 0px, 0px) !important;
+        }
+  }
 
 /***/
 

@@ -33,7 +33,7 @@
                   </ul>
                 </div>
 
-                <div class="project__text col-6 red ctn pb-6 pt-5 pb-c text-right mb-0 | m-100 m-mr-0">
+                <div class="project__text col-6 red ctn-c pb-6 pb-c text-right mb-0 | m-100 m-mr-0">
                   <p class="sub tw tl t-al-b1">{{ about.detail }}</p>
                   <p class="title tw bold t-lg t-al-b2">{{ about.sub }}</p>
                 </div>
@@ -331,6 +331,11 @@ export default {
 <style scoped>
 /***/
 
+.project__body {
+  border-left: solid 15px #ffff;
+  border-right: solid 15px #ffff;
+}
+
 .translate h3,
 .translate p {
   margin-bottom: 20px;
@@ -344,7 +349,7 @@ export default {
 
 .btn-fill
 {
-  width: 100vw;
+  width: inherit;
   padding: 30px 400px 30px 400px;
   margin: 0;
   /* padding-right: 0; */
@@ -352,7 +357,6 @@ export default {
   text-align: right;
   color: #f0f0f0f0;
   margin: 0 !important;
-  z-index: 9 !important;
 }
 
 .btn {
@@ -496,6 +500,14 @@ h3 > ul > li {
   padding-right: 0;
   padding-bottom: 3rem;
   padding-top: 3rem;
+}
+
+.ctn-c
+{
+  padding-left: 9.1%;
+  padding-right: 9.1%;
+  padding-top: 130px;
+  margin-top: -140px;
 }
 
 .ctn-l {
