@@ -3,7 +3,7 @@
     <header class="project__header | ctn">
       <div class="project__header__inner">
         <h2 v-bind:class="slide__title" class="project__title | col-12 mlg-2x | ctn-o m-mr-0 t tb" data-i="3">{{ title }}</h2>
-        <div class="project__info | col-12 mlg-3x | m-ml-0 m-100 tb">
+        <div class="project__info | col mlg-3x | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
