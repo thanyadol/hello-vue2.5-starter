@@ -20,13 +20,13 @@
           <div class="project__body">
             <section class="project__description red row | ctn">
               <h3 class="hidden-visually">Partner</h3>
-              <div class="project__text | mrg-2x | m-100 m-mr-0">
+              <div class="project__text | mrg-2x col-md-12 ml-0 mr-0 pr-0 pl-0  | m-100 m-mr-0">
                 <p class="title bold tw">{{ posts.title }}</p>
                 <p class="sub bold tw">{{ posts.sub }}</p>
               </div>
 
               <div class="project__description col-md-4 block | ctn-bk" v-for="r in posts.items" :key="r.id" v-bind:class="r.class">
-                <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                <div class="project__text | col-md-12 mr-0 ml-0 pr-0 pl-0 mrg-2c | m-100 m-mr-0">
                   <img class="bg__block" v-bind:src="r.image" />
                   <p class="title bold pl-5 t-lg">{{ r.title }}</p><hr class="white n"  v-bind:class="r.lineClass" />
                   <p class="sub shift bold">{{ r.sub }}</p>
@@ -291,6 +291,11 @@ export default {
 h3 > ul > li {
   display: inline;
   padding-left: 30px;
+}
+
+.partner hr
+{
+  display: none;
 }
 
 .indent {
