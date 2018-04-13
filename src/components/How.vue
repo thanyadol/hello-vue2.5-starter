@@ -2,8 +2,8 @@
   <div class="how">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title"  class="project__title | mlg-2 | m-mr-0 t tb" data-i="4">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
+        <h2 v-bind:class="slide__title"  class="project__title col | mlg-2x | m-mr-0 t tb" data-i="4">{{ title }}</h2>
+        <div class="project__info | col-12 mlg-3x | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub"  class="project__intro">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
@@ -17,7 +17,7 @@
 
         <div class="project__content">
           <div class="project__body row white">
-              <section class="project__description col-6 red | ctn"  v-for="p in pres" :key="p.id" v-bind:class="p.background">
+              <section class="project__description col-md-6 fill red | ctn"  v-for="p in pres" :key="p.id" v-bind:class="p.background">
                   <h3 class="hidden-visually">Project</h3>
                   <div class="project__text | mrg-2 | m-100 m-mr-0">
                     <p class="title bold">{{ p.title }}</p>
@@ -32,8 +32,8 @@
                 <section class="project__description col-12 pd-1 tr grey | ctn" >
                   <ul class="tb mlg-1">
                       <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
-                        <span class="sub">{{ v.sub }}</span>
-                        <span class="title bold tr">{{ v.title }}</span> <img class="bg" v-bind:src="v.image" />
+                        <span class="sub tb fixed">{{ v.sub }}</span>
+                        <span class="title bold tr fixed">{{ v.title }}</span> <img class="bg" v-bind:src="v.image" />
                       </li>
                   </ul>
                 </section>
@@ -66,7 +66,7 @@ export default {
         {
           id: 99,
           title: 'Stages of Startups',
-          sub: '',
+          sub: 'Post seed startups and invest in beyond',
           bold: '',
           regular: '',
           detail: [],
@@ -88,29 +88,29 @@ export default {
         {
           id: 1,
           title: 'Growth',
-          sub: 'Accessories',
-          image: './static/img/growth.svg',
+          sub: 'Post Seed',
+          image: './static/img/seed.svg',
           class: 'indent-4'
         },
         {
           id: 2,
           title: 'Series B',
           sub: 'Accessories',
-          image: './static/img/growth.svg',
+          image: './static/img/seed.svg',
           class: 'indent-3'
         },
         {
           id: 3,
           title: 'Series A',
           sub: 'Accessories',
-          image: './static/img/growth.svg',
+          image: './static/img/seed.svg',
           class: 'indent-2'
         },
         {
           id: 4,
-          title: 'Seed',
+          title: 'Next Step',
           sub: 'Accessories',
-          image: './static/img/growth.svg',
+          image: './static/img/seed.svg',
           class: 'indent-1'
         }
       ],
@@ -173,6 +173,15 @@ export default {
   transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
+
+  @media (max-width: 575.98px) {
+      .slide__title__active {
+          transform: translate3d(-9vw, 0px, 0px) !important;
+        }
+        .slide__sub__active {
+          transform: translate3d(-30vw, 0px, 0px) !important;
+        }
+  }
 
 /***/
 

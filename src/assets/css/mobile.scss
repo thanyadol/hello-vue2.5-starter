@@ -231,8 +231,129 @@
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
-      
 
+    //how
+    .how .col-6.fill
+    {
+        width: 100% !important;
+        max-width: unset !important;
+    }
+
+    ul li.indent-1,  ul li.indent-2,  ul li.indent-3,  ul li.indent-4 {
+        margin-left: 0 !important;
+        padding-bottom: 15vh;
+      }
+
+      .project__body ul li {
+        border-left: 2px solid black !important;
+        border-bottom: none !important;
+        border-right: none !important;
+    }
+
+    .how .project__body .bg {
+        left: 10vw !important;
+        width: 50% !important;
+        top: -25px !important;
+        clip: rect(0px, 40px, 200px, 0px);
+    }
+
+    .how .project__body ul
+    li::before {
+        content: "\2022 ... ";
+        font-size: 10vw;
+        left: -1.5vw;
+        top: -4vh;
+        position: absolute;
+    }
+
+    .how .project__description .title.fixed
+    {
+        text-transform: uppercase;
+        position: absolute;
+        margin-top: -2vh;
+        margin-left: 14vw;
+        display: block;
+    }
+
+
+    .how .project__description .sub.fixed
+    {
+        position: absolute;
+        margin-top: -4vh;
+        margin-left: 14vw;
+        display: block;
+    }
+
+    //why
+    .why .project__header__inner .t
+    {
+        text-align: left;
+        width: 90%;
+        margin-left: 16vw;
+    }
+
+    .why .project__description
+    {
+        padding-bottom: 30px !important;
+    }
+    
+
+    .why .none, .why .box 
+    {
+        display: none;
+    }
+
+    .why .ctn-o
+    {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .why .project__body .bg__block {
+        width: 15vw !important;
+    }
+
+    .why .project__body ul li {
+        border-left: none !important;
+        border-bottom: none !important;
+        border-right: none !important;
+    }
+
+    .why .project__description .title,
+    .why .project__description .sub {
+        margin-bottom: 0 !important;
+        line-height: 1.2;
+    }
+
+    .why .block {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;  
+    }
+
+    .why .shift, .why .more
+    {
+        margin: 0 !important;
+        height: unset !important;
+        padding-top: 0 !important;
+    }
+
+    .why .project__content .red 
+    {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .why .project__content p.ll
+    {
+        width: 50vw !important;
+        position: relative;
+        left: -70px;
+    }
+
+    .why .project__content .red.shift
+    {
+        border-left: 100px solid transparent; 
+    }
  }
 
 

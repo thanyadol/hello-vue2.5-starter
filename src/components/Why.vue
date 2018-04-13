@@ -2,8 +2,8 @@
   <div class="why">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title"  class="project__title | mlg-1 | m-mr-0 t tb" data-i="5">{{ title }}</h2>
-        <div  class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
+        <h2 v-bind:class="slide__title"  class="project__title | mlg-1x col-md-12 | m-mr-0 t tb" data-i="5">{{ title }}</h2>
+        <div  class="project__info | col-md-12 mlg-3x | m-ml-0 m-100 tb">
           <h3  v-bind:class="slide__sub"  class="project__intro">{{ sub }}</h3>
         </div>
       </div>
@@ -14,7 +14,7 @@
             <div class="project__body grey row" v-for="p in posts" :key="p.id">
                     <section class="project__description red | ctn" v-bind:class="p.class">
                         <h3 class="hidden-visually">Project</h3>
-                        <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                        <div class="project__text | mrg-2c | m-100 m-mr-0">
                           <p class="title bold indent" v-bind:class="p.titleClass">{{ p.title }}</p>
                           <img class="bg" v-bind:src="p.image" v-bind:class="p.imageClass" />
                           <p class="sub bold" v-bind:class="p.subClass" >{{ p.sub }}</p>
@@ -35,20 +35,23 @@
               </div>
             <div class="project__body ctn grey more"> </div>
             <!-- should move to component -->
-            <div class="project__content shift white">
-            <div class="project__body ctn shift row">
+            <div class="project__content shift grey">
+            <div class="project__body ctn shift row | ctn-o">
             <section class="project__description col-12">
               <div class="project__text |  mrg-2c | m-100 m-mr-0">
                 <p class="title bold tr">{{ res.title }}</p>
                 <p class="sub bold tb">{{ res.sub }}</p>
               </div>
             </section>
-              <section class="project__description col-4 block | ctn-bk"  v-for="r in res.list" :key="r.id" v-bind:class="r.class">
+              <section class="project__description col-md-4 block | ctn-bk"  v-for="r in res.list" :key="r.id" v-bind:class="r.class">
                   <div class="project__text |  mrg-2c | m-100 m-mr-0">
                     <ul>
                         <li class="" v-for="i in r.imageList" :key="i">
                            <img class="bg__block" v-bind:src="i" />
                         </li>
+                    </ul>
+                    <ul>
+                        <li v-for="d in r.title" :key="d"><p class="title bold tb ll">{{ d }}</p></li>
                     </ul>
                     <p class="title bold tb">{{ r.country }}</p>
                     <p class="sub bold tb">{{ r.year }}</p>
@@ -94,7 +97,7 @@ export default {
             'Direct-synergybetween SCG & startup',
             'Cross-synergy among startups in the portfolio'
           ],
-          class: 'col-8 red',
+          class: 'col-md-8 red none',
           titleClass: 'tw',
           box: '',
           image: './static/img/vertical.svg',
@@ -108,7 +111,7 @@ export default {
           regular:
             'With our resources and extensive business network along SCG business value chain, We believe that we can help startups scale fast through our proprietary resources and access to 300+ SCG subsidiaries and 1,000+ business partners across Southeast Asia Region. We are flexible and open to various collaborationPrograms ranging from commercial partnership,Licensing, JV, minority investment or M&A.',
           detail: [],
-          class: 'col-8 grey right',
+          class: 'col-md-8 grey right none',
           titleClass: 'tr',
           subClass: 'tb',
           box: '',
@@ -123,7 +126,7 @@ export default {
           regular:
             'As a strategic investor, we do not only provide financing but we also commit to long - term success of startups in our portfolio. Unlike traditional VC funds, we do not rush for short term financial result and investment exit. with this long term support, startups can focus on building a great company to reach their full potential fastest possible.',
           detail: [],
-          class: 'col-6 grey',
+          class: 'col-md-6 grey none',
           titleClass: 'tr',
           subClass: 'tb',
           box: 'red mr-91',
@@ -135,6 +138,19 @@ export default {
         title: 'Our resources and network',
         sub: 'USD 18 Billion market capitalization more than 50,000 employee',
         list: [
+
+          {
+            id: 3,
+            country: '',
+            year: '',
+            bold: '',
+            regular: '',
+            title: ['18 Billions', '50k Employee'],
+            sub: ['Market capitalizayion', 'More than'],
+            bu: [],
+            class: 'red shift',
+            image: ''
+          },
           {
             id: 1,
             country: 'Myanmar',
@@ -166,18 +182,6 @@ export default {
             image: ''
           },
           {
-            id: 3,
-            country: '',
-            year: '',
-            bold: '',
-            regular: '',
-            title: ['18 Billions', '50k Employee'],
-            sub: ['Market capitalizayion', 'More than'],
-            bu: [],
-            class: 'red',
-            image: ''
-          },
-          {
             id: 4,
             country: 'Myanmar',
             year: '1994',
@@ -200,9 +204,9 @@ export default {
             year: '',
             bold: '',
             regular: '',
-            title: ['18 Billions', '50k Employee'],
+            title: ['What we good at industrue expert'],
             sub: ['Market capitalizayion', 'More than'],
-            class: 'red',
+            class: 'red shift',
             image: ''
           },
           {
@@ -328,6 +332,15 @@ export default {
   transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
+
+  @media (max-width: 575.98px) {
+      .slide__title__active {
+          transform: translate3d(-23vw, 0px, 0px) !important;
+        }
+        .slide__sub__active {
+          transform: translate3d(-20vw, 0px, 0px) !important;
+        }
+  }
 
 /***/
 
