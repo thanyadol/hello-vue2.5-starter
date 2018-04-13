@@ -2,8 +2,8 @@
   <div class="partner">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | mlg-2 | m-mr-0 t tb" data-i="6">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-3 | m-ml-0 m-100 tb">
+        <h2 v-bind:class="slide__title" class="project__title | col-12 | m-mr-0 t tb" data-i="6">{{ title }}</h2>
+        <div class="project__info | col-12 | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
@@ -14,22 +14,21 @@
     </header>
 
     <div class="project__inner scrollarea" data-scrollbar id="partner">
-      <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
+      <div class="scroll-content" >
 
         <div class="project__content">
           <div class="project__body">
             <section class="project__description red row | ctn">
               <h3 class="hidden-visually">Partner</h3>
-              <div class="project__text | col-6 mrg-2 | m-100 m-mr-0">
+              <div class="project__text | mrg-2x | m-100 m-mr-0">
                 <p class="title bold tw">{{ posts.title }}</p>
                 <p class="sub bold tw">{{ posts.sub }}</p>
               </div>
-              <div class="col"> </div>
 
-              <div class="project__description col-4 block | ctn-bk" v-for="r in posts.items" :key="r.id" v-bind:class="r.class">
+              <div class="project__description col-md-4 block | ctn-bk" v-for="r in posts.items" :key="r.id" v-bind:class="r.class">
                 <div class="project__text |  mrg-2c | m-100 m-mr-0">
                   <img class="bg__block" v-bind:src="r.image" />
-                  <p class="title bold pl-5 t-lg">{{ r.title }}</p>
+                  <p class="title bold pl-5 t-lg">{{ r.title }}</p><hr class="white n"  v-bind:class="r.lineClass" />
                   <p class="sub shift bold">{{ r.sub }}</p>
                   <p class="sub shift">{{ r.content }}</p>
                 </div>
@@ -37,12 +36,12 @@
 
             </section>
 
-            <section class="project__description white row | ctn">
+            <section class="project__description grey row | ctn">
               <h3 class="hidden-visually">Venture</h3>
-              <div class="project__description col-4 block | ctn-bk" v-for="r in posts.ventures" :key="r.id" v-bind:class="r.class">
+              <div class="project__description col-md-4 block | ctn-bk" v-for="r in posts.ventures" :key="r.id" v-bind:class="r.class">
                 <div class="project__text |  mrg-2c | m-100 m-mr-0">
                   <img class="bg__block" v-bind:src="r.image" />
-                  <p class="title tb bold pl-5 t-lg">{{ r.title }}</p>
+                  <p class="title tb bold pl-5 t-lg">{{ r.title }}</p><hr class="black n" v-bind:class="r.lineClass" />
                   <p class="sub shift tb bold">{{ r.sub }}</p>
                   <p class="sub shift tb">{{ r.content }}</p>
                 </div>
@@ -79,10 +78,11 @@ export default {
         items: [
           {
             id: 1,
-            title: 'VC Funds',
+            title: 'Funds',
             sub: '',
             image: '',
-            class: ''
+            class: 'fill',
+            lineClass: 'show'
           },
           {
             id: 2,
@@ -118,10 +118,11 @@ export default {
           },
           {
             id: 1,
-            title: 'All Startups',
+            title: 'Startups',
             sub: '',
             image: '',
-            class: ''
+            class: 'fill',
+            lineClass: 'show black'
           },
           {
             id: 4,
@@ -226,10 +227,19 @@ export default {
   transition-duration: 1600ms;
 }
 
+  @media (max-width: 575.98px) {
+      .slide__title__active {
+          transform: translate3d(-13vw, 0px, 0px) !important;
+        }
+        .slide__sub__active {
+          transform: translate3d(-30vw, 0px, 0px) !important;
+        }
+  }
+
 /***/
 
 .t-lg {
-  font-size: 9vh !important;
+  font-size: 9vh;
 }
 
 .more {
