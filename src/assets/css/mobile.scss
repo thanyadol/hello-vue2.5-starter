@@ -25,7 +25,7 @@
     }
 
     .nav .menu {
-        right: calc(5vw - 3px) !important;
+        right: calc(10% - 5px) !important;
     }
 
     //logo
@@ -114,7 +114,7 @@
         font-size: 1.8rem !important;
     }
 
-    .index .project__text p:not(:last-of-type) {
+     .project__text p:not(:last-of-type) {
         margin-bottom: 1.3rem !important;
     }
 
@@ -251,7 +251,7 @@
         padding-bottom: 15vh;
       }
 
-      .project__body ul li {
+     .how .project__body ul li {
         border-left: 2px solid black !important;
         border-bottom: none !important;
         border-right: none !important;
