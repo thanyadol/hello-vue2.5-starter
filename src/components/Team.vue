@@ -2,8 +2,8 @@
   <div class="team">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | mlg-28 | m-mr-0 t tb" data-i="8">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-25 | m-ml-0 m-100 tb">
+        <h2 v-bind:class="slide__title" class="project__title | col-md-12 | m-mr-0 t tb" data-i="8">{{ title }}</h2>
+        <div class="project__info | col-md-8| m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
@@ -15,35 +15,33 @@
 
     <div class="project__inner scrollarea" data-scrollbar id="team" ref="divx">
       <div class="scroll-content">
-
         <div class="project__content">
           <div class="project__body">
             <section class="project__description grey row | ctn">
               <h3 class="hidden-visually">Blog</h3>
-              <div class="project__text | col-6 mrg-2 | m-100 m-mr-0">
+              <div class="project__text | col-md-6 mrg-2 pl-0 pr-0 | m-100 m-mr-0">
                 <p class="title bold tb">{{ post.title }}</p>
                 <p class="sub bold tb">{{ post.sub }}</p>
               </div>
-              <div class="col"> </div>
             </section>
             <section class="project__description grey row | ctn-r">
               <h3 class="hidden-visually">Staff</h3>
-              <div class="project__description col-4 block | ctn-b" v-for="s in post.staffs" :key="s.id" v-bind:class="s.class">
+              <div class="project__description col-md-4 block | ctn-b" v-for="s in post.staffs" :key="s.id" v-bind:class="s.class">
                 <div class="project__text | mrg-2c | m-100 m-mr-0">
                   <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
                   <p class="sub sm tb text-uppercase" v-bind:class="s.fontClass">{{ s.position }}</p>
-                  <p class="title tb bold bot t-lg">{{ s.title }}</p>
+                  <p class="title tb bold bot t-lg l">{{ s.title }}</p>
                 </div>
               </div>
             </section>
 
             <section class="project__description grey row | ctn-l">
               <h3 class="hidden-visually">Staff</h3>
-              <div class="project__description col-4 block | ctn-b" v-for="s in post.blocks" :key="s.id" v-bind:class="s.class">
+              <div class="project__description col-md-4 block | ctn-b" v-for="s in post.blocks" :key="s.id" v-bind:class="s.class">
                 <div class="project__text | mrg-2c | m-100 m-mr-0">
                   <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
                   <p class="sub sm tb text-uppercase" v-bind:class="s.fontClass">{{ s.position }}</p>
-                  <span class="title tb bold bot t-lg">{{ s.title }}</span>
+                  <span class="title tb bold bot t-lg r">{{ s.title }}</span>
                 </div>
               </div>
             </section>
@@ -51,7 +49,7 @@
         </div>
 
         <div class="project__body pt-0">
-          <section class="project__description pt-0 | ctn white">
+          <section class="project__description pt-0 | ctn grey">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -73,7 +71,7 @@ export default {
       title: 'The Team',
       subs: ['We are AddVenture'],
       post: {
-        title: 'We are AddVenture',
+        title: 'Team and Career',
         sub: 'We are partnering with startups to transform industries together',
         staffs: [
           {
@@ -98,7 +96,7 @@ export default {
             name: '',
             position: '',
             class: 'grey',
-            fontClass: 'tw'
+            fontClass: 'tw l'
           },
           {
             id: 4,
@@ -154,22 +152,6 @@ export default {
             name: '',
             position: '',
             class: 'white',
-            fontClass: 'tw'
-          },
-          {
-            id: 11,
-            title: '',
-            name: '',
-            position: '',
-            class: 'grey',
-            fontClass: 'tw'
-          },
-          {
-            id: 12,
-            title: '',
-            name: '',
-            position: '',
-            class: 'grey',
             fontClass: 'tw'
           }
         ],
@@ -302,6 +284,15 @@ export default {
   transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
+
+  @media (max-width: 575.98px) {
+      .slide__title__active {
+          transform: translate3d(-25vw, 0px, 0px) !important;
+        }
+        .slide__sub__active {
+          transform: translate3d(-30vw, 0px, 0px) !important;
+        }
+  }
 
 /***/
 
