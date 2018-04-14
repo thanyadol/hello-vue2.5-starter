@@ -2,8 +2,8 @@
   <div class="insign">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title"  class="project__title | mlg-3 | m-mr-0 t tb" data-i="7">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-25 | m-ml-0 m-100 tb">
+        <h2 v-bind:class="slide__title"  class="project__title | m-mr-0 t tb" data-i="7">{{ title }}</h2>
+        <div class="project__info | col-12 | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub"  class="project__intro">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
@@ -20,18 +20,17 @@
           <div class="project__body">
               <section class="project__description red row | ctn">
                   <h3 class="hidden-visually">Blog</h3>
-                  <div class="project__text | col-6 mrg-2 | m-100 m-mr-0">
+                  <div class="project__text | col-md-6 mrg-2 ml-0 mr-0 pr-0 pl-0 | m-100 m-mr-0">
                     <p class="title bold tw">{{ post.title }}</p>
                     <p class="sub bold tw">{{ post.sub }}</p>
                   </div>
-                  <div class="col"> </div>
               </section>
 
              <section class="project__description grey row | ctn-b">
                   <h3 class="hidden-visually">Venture</h3>
-                  <div class="project__description col-12 block | ctn-block" v-for="r in post.blogs" :key="r.id" v-bind:class="r.class">
+                  <div class="project__description | col-md-12 block | ctn-block" v-for="r in post.blogs" :key="r.id" v-bind:class="r.class">
 
-                    <div class="project__text col-6 | m-100 m-mr-0">
+                    <div class="project__text | col-md-6 | m-100 m-mr-0">
                       <img class="bg__block" v-bind:src="r.image" />
                         <div class="date">
                           <p class="title tb bold t-lg">{{ r.date | moment }}</p>
@@ -39,10 +38,10 @@
                         </div>
                     </div>
 
-                    <div class="project__text col-6 | m-100 m-mr-0">
+                    <div class="project__text | col-md-6 ml-3 | m-100 m-mr-0">
                       <p class="title tb bold">{{ r.title }}</p>
-                      <p class="sub tb bold">{{ r.author }}</p>
-                      <p class="tb">View 320K</p>
+                      <p class="sub tb bold at">{{ r.author }}</p>
+                      <p class="sub tb sm">View 320K</p>
                       <hr class="separate">
                       <router-link to="">
                         <span class="read sub tb bold"> Read more </span>
@@ -85,35 +84,35 @@ export default {
         blogs: [
           {
             id: 1,
-            title: 'Gixtix easy an online worldwide shipping',
+            title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
             author: 'by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
           {
             id: 2,
-            title: 'Gixtix easy an online worldwide shipping',
+            title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
             author: 'by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
           {
             id: 3,
-            title: 'Gixtix easy an online worldwide shipping',
+            title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
             author: 'by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
           {
             id: 4,
-            title: 'Gixtix easy an online worldwide shipping',
+            title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
             author: 'by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
           {
             id: 5,
-            title: 'Gixtix easy an online worldwide shipping',
+            title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
             author: 'by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
@@ -191,6 +190,15 @@ export default {
   transition-duration: 1600ms;
 }
 
+  @media (max-width: 575.98px) {
+      .slide__title__active {
+          transform: translate3d(-31vw, 0px, 0px) !important;
+        }
+        .slide__sub__active {
+          transform: translate3d(-22vw, 0px, 0px) !important;
+        }
+  }
+
 /***/
 
 .mlg-25 {
@@ -198,7 +206,7 @@ export default {
 }
 
 .t-lg {
-  font-size: 9vh !important;
+  font-size: 9vh;
 }
 
 .more {
@@ -227,7 +235,7 @@ hr.separate {
   margin-bottom: 20px;
 }
 
-.arrow {
+.insign .arrow {
   width: 10vh;
   padding-top: 10px;
   margin-left: 50px;

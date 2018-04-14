@@ -423,6 +423,54 @@
         padding: 0 !important;
     }
 
+    //insign
+    .insign .ctn-b
+    {
+        padding-left: 1.7% !important;
+        padding-right: 1.7% !important;
+    }
+
+    .insign .date
+    {
+        left: -5px !important;
+        top: 5px !important;
+    }
+
+    .insign .t-lg, .insign .block p
+    {
+        font-size: 1.8rem !important;
+        line-height: 1 !important;
+
+    }
+
+    .insign  .project__body .bg__block{
+        width: 82vw !important;
+        margin-left: 20px !important;
+    }
+
+    .insign .block {
+        padding-left: 1.75% !important;
+        padding-right: 1.75% !important;   
+        border: none !important;
+    }
+
+    .insign .block p.sm
+    {
+        font-size: 1.3rem !important;
+        line-height: 1.1 !important;
+    }
+
+    .insign .block p.at
+    {
+        line-height: 1.5 !important;
+    }
+
+    .insign .arrow {
+        width: 6vh !important;
+        padding-top: 0 !important;
+        margin-left: 20px !important;
+    }
+
  }
 
 
