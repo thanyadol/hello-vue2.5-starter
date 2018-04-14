@@ -1,16 +1,16 @@
 <template>
   <div class="nav">
-    <router-link to="pitchdeck">
+    <router-link class="mobile" to="pitchdeck">
       <button class="menu-btn pickdeck" aria-label="Pitchdeck" href="#">
                     <span class="menu-btn__text">Pitch Deck</span>
                 </button>
     </router-link>
-    <router-link to="joinus">
+    <router-link class="mobile"  to="joinus">
       <button class="menu-btn career" aria-label="Join Us" href="#">
                     <span class="menu-btn__text">Join Us</span>
                 </button>
     </router-link>
-    <router-link to="menu">
+    <router-link class="mn" to="menu">
       <button class="menu-btn menu" aria-label="Menu" href="#">
                     <span class="menu-btn__text">Menu</span>
                 </button>

@@ -5,9 +5,12 @@
             <div class="scroll-content">
                 <div class="project__content">
                     <div class="project__body red">
+
+                        <section class="project__description clearfix | red col pb-0 mb-0">&nbsp;</section>
+
                         <section class="project__description red col pb-0 mb-0">
                             <h3 class="hidden-visually">Menu</h3>
-                            <div class="project__text | col-12 mx-auto ctn | m-100 m-mr-0">
+                            <div class="project__text | col-md-12 mx-auto ctn | m-100 m-mr-0">
                                 <ol class="page mlg-3">
                                     <li v-for="l in list" :key="l.id">
                                         <p>
@@ -19,14 +22,16 @@
                             </div>
                         </section>
 
-                        <section class="project__description red row mt-0 pt-0 pb-0 mb-0 shift">
-                            <div class="project__text | col-12 ctn pt-0 mt-0">
-                                <div class="mlg-3 | m-100 m-ml-0 sub tw ocp-5">
-                                    <p class="sm">{{ last }}</p>
-                                    <h3 class="bold">&copy; {{ foot }}</h3>
+                        <section class="project__description red row mt-0 pt-0 pb-0 mb-0  ctn shift">
+                            <div class="project__text | mlg-3 pt-0 mt-0 | ctn-c">
+                                <div class="mx-auto page | m-100 m-ml-0 sub tw ocp-5">
+                                    <p class="sm sub">{{ last }}</p>
+                                    <h3 class="bold sub feet">&copy; {{ foot }}</h3>
                                 </div>
                             </div>
                         </section>
+
+                        <section class="project__description clearfix | red col pb-0 mb-0">&nbsp;</section>
 
                     </div>
                 </div>
@@ -229,6 +234,10 @@ export default {
 }
 
 /***/
+.ctn-c
+{
+  margin-left: 20vw;
+}
 
 a:hover {
   color: unset;
@@ -244,7 +253,7 @@ a:hover {
 }
 
 .sm {
-  font-size: smaller;
+  font-size: 2rem;
 }
 
 .site {
@@ -335,7 +344,7 @@ h3 > ul > li {
   background-color: #f0f0f0;
 }
 
-.index {
+index {
   z-index: unset;
 }
 

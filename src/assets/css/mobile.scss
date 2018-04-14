@@ -20,8 +20,12 @@
     }
 
     //nave
-    .nav {
+    .nav .mobile {
         display: none !important;
+    }
+
+    .nav .menu {
+        right: calc(5vw - 3px) !important;
     }
 
     //logo
@@ -559,6 +563,38 @@
     .contact .vue-map-container
     {
         height: 200px !important;
+    }
+
+    //menu
+    .menu .site {
+        font-size: 4vh !important;
+    }
+
+
+    .menu ol.page {
+        margin-left: 4vw !important;
+    }
+
+    .menu div.page
+    {
+        margin-left: 3vw !important;
+    }
+
+    .menu .feet 
+    {
+        margin-top: 15vh !important;
+        text-align: center;
+    }
+
+    .menu .index 
+    {
+        margin-right: 7vw !important;
+    }
+
+    .menu .ctn-c
+    {
+        margin-left: 10vw !important;
+        margin-right: 6vw !important;
     }
 
 }
