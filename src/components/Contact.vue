@@ -2,8 +2,8 @@
   <div class="contact">
     <header class="project__header | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | mlg-28 | m-mr-0 t tb" data-i="9">{{ title }}</h2>
-        <div class="project__info | col-8 mlg-25 | m-ml-0 m-100 tb">
+        <h2 v-bind:class="slide__title" class="project__title | m-mr-0 t tb" data-i="9">{{ title }}</h2>
+        <div class="project__info | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
@@ -18,7 +18,7 @@
 
         <div class="project__content">
           <div class="project__body row grey">
-            <section class="project__description col-8 red row | ctn">
+            <section class="project__description col-md-8 red row | ctn">
               <h3 class="hidden-visually">Blog</h3>
               <div class="project__text |  mrg-2 | m-100 m-mr-0">
                 <p class="title bold tw">{{ post.title }}</p>
@@ -27,14 +27,14 @@
             </section>
             <section class="col grey"> </section>
 
-            <section class="project__description col-6 grey row | ctn">
+            <section class="project__description col-md-6 grey row | ctn">
               <div class="project__text |  mrg-2 | m-100 m-mr-0">
                 <p class="sub bold tb sm">{{ addr.title }}</p>
                 <p class="sub tb sm">{{ addr.sub }}</p>
               </div>
             </section>
 
-            <section class="project__description col-6 grey row | ctn-b">
+            <section class="project__description col-md-6 grey row | ctn-b">
               <h3 class="hidden-visually">CV</h3>
               <div class="project__text cv | mlg-2 | m-100 m-mr-0">
                 <p class="sub bold tr">{{ cv.title }}</p>
@@ -55,7 +55,7 @@
         </div>
 
         <div class="project__body pt-0">
-          <section class="project__description pt-0 | ctn white">
+          <section class="project__description pt-0 | ctn grey">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -77,8 +77,8 @@ export default {
       title: 'Contact',
       subs: ['We are AddVenture'],
       post: {
-        title: 'Contact Us',
-        sub: 'We are partnering with startups to transform industries together'
+        title: 'Contact',
+        sub: 'We are partnering with startups to transform industries together immediately'
       },
       cv: {
         title: 'Please contact us or submit your CV to',
@@ -166,6 +166,15 @@ export default {
   transform: translate3d(0px, 0px, 0px);
   transition-duration: 1600ms;
 }
+
+  @media (max-width: 575.98px) {
+      .slide__title__active {
+          transform: translate3d(-26vw, 0px, 0px) !important;
+        }
+        .slide__sub__active {
+          transform: translate3d(-30vw, 0px, 0px) !important;
+        }
+  }
 
 /***/
 

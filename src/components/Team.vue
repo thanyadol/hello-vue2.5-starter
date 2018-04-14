@@ -45,6 +45,21 @@
                 </div>
               </div>
             </section>
+
+             <section class="project__description grey row | ctn mobile">
+              <h3 class="hidden-visually">Contact</h3>
+              <div class="project__text | col-md-6 mrg-2 pl-0 pr-0 | m-100 m-mr-0">
+                <p class="title bold tb text-uppercase">{{ contact.title }}</p>
+                <p class="sub bold tb wine">{{ contact.sub }}</p>
+                <p class="sub tb">{{ contact.detail }}</p>
+                <p class="sub bold tb udl">{{ contact.mail }}</p>
+                <P>
+                  <span class="sub bold tb">{{ contact.more }} </span>
+                  <router-link :to="contact.url" > <span class="sub bold tb udl ">{{ contact.site }} </span> </router-link>
+                </P>
+              </div>
+            </section>
+
           </div>
         </div>
 
@@ -63,6 +78,7 @@
 <script>
 import scroll from 'smooth-scrollbar'
 import moment from 'moment'
+// import { log } from 'util'
 
 export default {
   name: 'Team',
@@ -207,6 +223,15 @@ export default {
           }
         ]
       },
+      contact: {
+        title: 'Join Our Team',
+        sub: 'We are looking for people who make perfect hamony together',
+        detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        mail: 'contact@addventures.co.th',
+        more: 'More detail on',
+        site: 'Addventures',
+        url: 'www.scg.co.th'
+      },
       slide__title: false,
       slide__sub: false,
       prev: {
@@ -295,6 +320,17 @@ export default {
   }
 
 /***/
+
+.mobile
+{
+  display: none;
+}
+
+.udl {
+  border-bottom: 2px solid black;
+  letter-spacing: 0.05em;
+  width: min-content;
+}
 
 .t-lg {
   font-size: 9vh !important;
