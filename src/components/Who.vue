@@ -1,6 +1,6 @@
 <template>
   <div class="who">
-    <header class="project__header | ctn">
+    <header class="project__header action | ctn">
       <div class="project__header__inner">
         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb" data-i="1">{{ title }}</h2>
         <div class="project__info | col-12 ml-0 | m-ml-0 m-100 tb">

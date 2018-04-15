@@ -44,6 +44,22 @@ h3 > ul > li {
     padding-left: 15px !important;
 }
 
+//mouse action
+/*.content__inner ~ .action 
+{   
+    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto;
+}*/
+
+body {
+    cursor: none;
+}
+
+.scroll-content
+{
+    cursor: auto;
+}
+  
+
 ////
 
 article,

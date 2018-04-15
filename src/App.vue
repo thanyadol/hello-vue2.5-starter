@@ -89,6 +89,7 @@
     </div>
 
     <axiom> </axiom>
+    <mouse> </mouse>
   </div>
   <!-- wrapper -->
 </template>
@@ -109,13 +110,6 @@ export default {
       mouse: false,
       el: false
     }
-  },
-  // life cycle of component
-  created () {
-    // use of static js
-    // let pixiscript = document.createElement('script')
-    // pixiscript.setAttribute('src', 'https://www.reed.be/build/js/app-6574c77730.min.js')
-    // document.body.appendChild(pixiscript)
   },
   mounted: function () {
     var vm = this
@@ -326,6 +320,7 @@ export default {
 </script>
 
 <style scoped>
+
   .cls-1 {
     fill: #2f3c47;
   }
