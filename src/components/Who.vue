@@ -37,7 +37,7 @@
         </div>
 
         <div class="project__body pt-0">
-          <section class="project__description pt-0 | ctn white">
+           <section class="project__description p-0 m-0 | ctn white">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>

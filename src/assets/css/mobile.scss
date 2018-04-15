@@ -125,9 +125,14 @@
     }
 
     //footer
-    .footy#desktop
+    .footy.desktop
     {
-        display: none;
+        display: none !important;
+    }
+    
+    .footy.mobile
+    {
+        display: block !important;
     }
 
     //image
@@ -285,18 +290,18 @@
 
     .how .project__description .sub.fixed
     {
-        position: absolute;
-        margin-top: -4vh;
-        margin-left: 14vw;
-        display: block;
+        position: absolute !important;
+        margin-top: -4vh !important;
+        margin-left: 14vw !important;
+        display: block !important;
     }
 
     //why
     .why .project__header__inner .t
     {
-        text-align: left;
-        width: 90%;
-        margin-left: 16vw;
+        text-align: left !important;
+        width: 70vw !important;
+        margin-left: 16vw !important; 
     }
 
     .why .project__description

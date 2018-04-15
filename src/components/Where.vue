@@ -46,7 +46,7 @@
         </div>
 
         <div class="project__body pt-0">
-          <section class="project__description pt-0 | ctn red">
+           <section class="project__description p-0 m-0 | ctn grey">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -216,6 +216,10 @@ svg.rectang {
 ul li.indent {
   margin-top: 50px;
   margin-left: 35%;
+}
+
+.grey {
+  background-color: #f0f0f0;
 }
 
 ul {

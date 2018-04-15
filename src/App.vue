@@ -18,21 +18,21 @@
             <li class="inner-nav__item">
               <router-link :to="chevron().prev" class="">
                 <button class="inner-nav__btn inner-nav__btn--prev" aria-label="Backward" style="background-color: transparent;">
-                  Backward
-                  <svg class="icon icon--arrow icon--arrow--left" viewBox="0 0 38 38">
-                    <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
-                  </svg>
-                </button>
+                        Backward
+                        <svg class="icon icon--arrow icon--arrow--left" viewBox="0 0 38 38">
+                          <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
+                        </svg>
+                      </button>
               </router-link>
             </li>
             <li class="inner-nav__item">
               <router-link :to="chevron().next" class="">
                 <button class="inner-nav__btn inner-nav__btn--next swiper-button-disabled" aria-label="Forward" style="background-color: transparent;">
-                  Forward
-                  <svg class="icon icon--arrow icon--arrow--right" viewBox="0 0 38 38">
-                    <path class="st0" d="M27.7,19c0,0.6-0.2,1.3-0.7,1.7L14.6,33.6c-1,1-2.5,1-3.5,0.1s-1-2.5-0.1-3.5L21.7,19L11,7.9c-1-1-0.9-2.6,0.1-3.5c1-1,2.6-0.9,3.5,0.1L27,17.3C27.5,17.7,27.7,18.4,27.7,19z"></path>
-                    </svg>
-                    </button>
+                        Forward
+                        <svg class="icon icon--arrow icon--arrow--right" viewBox="0 0 38 38">
+                          <path class="st0" d="M27.7,19c0,0.6-0.2,1.3-0.7,1.7L14.6,33.6c-1,1-2.5,1-3.5,0.1s-1-2.5-0.1-3.5L21.7,19L11,7.9c-1-1-0.9-2.6,0.1-3.5c1-1,2.6-0.9,3.5,0.1L27,17.3C27.5,17.7,27.7,18.4,27.7,19z"></path>
+                          </svg>
+                          </button>
               </router-link>
             </li>
           </ul>
@@ -85,7 +85,7 @@
         <div class='mouse'>
           <span class='scroll-down'></span>
         </div>
-     </div>
+      </div>
     </div>
 
     <axiom> </axiom>
@@ -153,24 +153,24 @@ export default {
     }
 
     /* var options = {
-        wheelEventTarget: EventTarget,
-      };
+              wheelEventTarget: EventTarget,
+            };
 
-      var parent = new Vue({ el: '.team' })
-      // access child component instance
-      var child = parent.$refs.divx
+            var parent = new Vue({ el: '.team' })
+            // access child component instance
+            var child = parent.$refs.divx
 
-      // var div = this.$children.refs.divx // this.$el.querySelector('div.team') // window.getElementById("scrollbar");
-      // scrollbar.init(div);
-      // console.log(this.$children)
-      console.log(parent)
+            // var div = this.$children.refs.divx // this.$el.querySelector('div.team') // window.getElementById("scrollbar");
+            // scrollbar.init(div);
+            // console.log(this.$children)
+            console.log(parent)
 
-      // alert("scrolling") */
+            // alert("scrolling") */
     // var vm = this
 
     /* var options = {
-      wheelEventTarget: EventTarget
-    } */
+            wheelEventTarget: EventTarget
+          } */
 
     // var div = document.getElementById('scrollbar')
     // scroll.init(div)
@@ -199,12 +199,12 @@ export default {
       // alert(v)
 
       /* if (isNullOrUndefined(v)) {
-        vm.show = false
-        vm.left = 'c'
-        vm.right = 'c'
-        vm.mouse = 'z-2'
-        return
-      } */
+              vm.show = false
+              vm.left = 'c'
+              vm.right = 'c'
+              vm.mouse = 'z-2'
+              return
+            } */
 
       const scrollbar = scroll.get(div)
 
@@ -224,18 +224,18 @@ export default {
       }
 
       /* if (event.deltaY < 0) {
-        scrolled++
-        // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
+              scrolled++
+              // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
 
-        // vm.scrolling = scrolling
-        console.log('scrolling up hanlde : ' + event.deltaY)
-      }
-      if (event.deltaY > 0) {
-        scrolled--
-        // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
-        // vm.scrolling = scrolling
-        console.log('scrolling down hanlde : ' + event.deltaY)
-      } */
+              // vm.scrolling = scrolling
+              console.log('scrolling up hanlde : ' + event.deltaY)
+            }
+            if (event.deltaY > 0) {
+              scrolled--
+              // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
+              // vm.scrolling = scrolling
+              console.log('scrolling down hanlde : ' + event.deltaY)
+            } */
     })
 
     console.log(scrolled)
@@ -317,167 +317,168 @@ export default {
       return pages[this.$route.path.substring(1, this.$route.path.length)]
     }
     /* handleScroll (event) {
-        // Any code to be executed
-        // when the window is scrolled
-        this.scrolled = window.scrollY > 0
-      } */
+              // Any code to be executed
+              // when the window is scrolled
+              this.scrolled = window.scrollY > 0
+            } */
   }
 }
 </script>
 
 <style scoped>
-.cls-1 {
-  fill: #2f3c47;
-}
-
-.mx-a {
-  margin-left: calc(50% - 40px);
-}
-
-.down {
-  bottom: 45px;
-  /* left: auto; */
-  position: fixed;
-  /* top: 00px; */
-  width: 5vh;
-  z-index: 2;
-}
-
-.z-0
-{
-  z-index: 0;
-}
-.z-2
-{
-  z-index: 2;
-}
-
-.z-1
-{
-  z-index: 1;
-}
-
-.down:hover {
-  cursor: pointer;
-}
-
-@-webkit-keyframes scroll-inner {
-  from {
-    margin-top: 15%;
+  .cls-1 {
+    fill: #2f3c47;
   }
-  to {
-    margin-top: 50%;
+
+  .mx-a {
+    margin-left: calc(50% - 40px);
   }
-}
-@keyframes scroll-inner {
-  from {
-    margin-top: 15%;
+
+  .down {
+    bottom: 45px;
+    /* left: auto; */
+    position: fixed;
+    /* top: 00px; */
+    width: 5vh;
+    z-index: 2;
   }
-  to {
-    margin-top: 50%;
+
+  .z-0 {
+    z-index: 0;
   }
-}
-@-webkit-keyframes scroll-mouse {
-  from {
-    margin-top: 0;
+
+  .z-2 {
+    z-index: 2;
   }
-  to {
-    margin-top: 15px;
+
+  .z-1 {
+    z-index: 1;
   }
-}
-@keyframes scroll-mouse {
-  from {
-    margin-top: 0;
+
+  .down:hover {
+    cursor: pointer;
   }
-  to {
-    margin-top: 15px;
+
+  @-webkit-keyframes scroll-inner {
+    from {
+      margin-top: 15%;
+    }
+    to {
+      margin-top: 50%;
+    }
   }
-}
 
-div.mouse-container {
-  position: relative;
-  display: block;
-  height: 80px;
-}
+  @keyframes scroll-inner {
+    from {
+      margin-top: 15%;
+    }
+    to {
+      margin-top: 50%;
+    }
+  }
 
-div.mouse {
-  position: relative;
-  margin: 0 auto;
-  display: block;
-  width: 35px;
-  height: 60px;
-  border: solid 2px #495057;
-  border-radius: 25px;
-}
+  @-webkit-keyframes scroll-mouse {
+    from {
+      margin-top: 0;
+    }
+    to {
+      margin-top: 15px;
+    }
+  }
 
-div.mouse:hover {
-  -webkit-animation: scroll-mouse 1.5s;
-  animation: scroll-mouse 1.5s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
+  @keyframes scroll-mouse {
+    from {
+      margin-top: 0;
+    }
+    to {
+      margin-top: 15px;
+    }
+  }
 
-div.mouse span.scroll-down {
-  display: block;
-  width: 10px;
-  height: 10px;
-  background: #495057;
-  border-radius: 50%;
-  margin: 15% auto auto auto;
-}
+  div.mouse-container {
+    position: relative;
+    display: block;
+    height: 80px;
+  }
 
-div.mouse:hover span.scroll-down {
-  -webkit-animation: scroll-inner 1s;
-  animation: scroll-inner 1s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-}
+  div.mouse {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: 35px;
+    height: 60px;
+    border: solid 2px #495057;
+    border-radius: 25px;
+  }
 
-/* mouse animation */
+  div.mouse:hover {
+    -webkit-animation: scroll-mouse 1.5s;
+    animation: scroll-mouse 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
 
-.vertical {
-  width: 40%;
-  position: absolute;
-  top: -50px;
-  left: 9px;
-}
+  div.mouse span.scroll-down {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #495057;
+    border-radius: 50%;
+    margin: 15% auto auto auto;
+  }
 
-/* remove reboot*/
+  div.mouse:hover span.scroll-down {
+    -webkit-animation: scroll-inner 1s;
+    animation: scroll-inner 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+  }
 
-button:focus {
-  outline: none;
-}
+  /* mouse animation */
 
-/* arrow nav */
+  .vertical {
+    width: 40%;
+    position: absolute;
+    top: -50px;
+    left: 9px;
+  }
 
-.inner-nav__btn .icon--arrow {
-  top: calc(50% - 7px);
-  width: 24px;
-  height: 24px;
-  fill: #495057;
-}
+  /* remove reboot*/
 
-.inner-nav__list {
-  z-index: 2;
-}
+  button:focus {
+    outline: none;
+  }
 
-/* social list*/
+  /* arrow nav */
 
-.social-list__item .icon {
-  fill: #495057;
-  width: 24px;
-  height: 24px;
-  left: 0;
-  top: 0;
-}
+  .inner-nav__btn .icon--arrow {
+    top: calc(50% - 7px);
+    width: 24px;
+    height: 24px;
+    fill: #495057;
+  }
 
-.red {
-  background-color: #2c3e50;
-}
+  .inner-nav__list {
+    z-index: 2;
+  }
 
-.main {
-  background-color: #fcfcfc;
-}
+  /* social list*/
+
+  .social-list__item .icon {
+    fill: #495057;
+    width: 24px;
+    height: 24px;
+    left: 0;
+    top: 0;
+  }
+
+  .red {
+    background-color: #2c3e50;
+  }
+
+  .main {
+    background-color: #fcfcfc;
+  }
 </style>
