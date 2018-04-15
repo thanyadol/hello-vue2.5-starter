@@ -19,8 +19,8 @@
           <div class="project__body row red">
             <!-- red bar -->
             <svg class="rectang" width="150" height="2500">
-                      <rect x="0" y="0" width="150" height="2500" />
-                    </svg>
+                        <rect x="0" y="0" width="150" height="2500" />
+                      </svg>
 
             <section class="project__description col-md-6 pd-1 | ctn" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="project__body pt-0">
-           <section class="project__description p-0 m-0 | ctn grey">
+          <section class="project__description p-0 m-0 | ctn grey">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -172,14 +172,14 @@ export default {
   transition-duration: 1600ms;
 }
 
-  @media (max-width: 575.98px) {
-      .slide__title__active {
-          transform: translate3d(-3vw, 0px, 0px) !important;
-        }
-        .slide__sub__active {
-          transform: translate3d(-24vw, 0px, 0px) !important;
-        }
+@media (max-width: 575.98px) {
+  .slide__title__active {
+    transform: translate3d(-3vw, 0px, 0px) !important;
   }
+  .slide__sub__active {
+    transform: translate3d(-24vw, 0px, 0px) !important;
+  }
+}
 
 /***/
 
@@ -205,12 +205,12 @@ export default {
 /* for new */
 
 svg.rectang {
-  opacity: 1;
+  opacity: 0.8;
   margin-left: 35%;
   position: absolute;
   z-index: 3;
   height: 150vh;
-  fill: crimson;
+  fill: rgb(255, 0, 0);
 }
 
 ul li.indent {
@@ -305,11 +305,11 @@ h3 > ul > li {
 }
 
 /*.project__text
-      {
-        color: #2f3c47;
-        font-size: 2.1rem;
-        line-height: 1.62;
-      }*/
+        {
+          color: #2f3c47;
+          font-size: 2.1rem;
+          line-height: 1.62;
+        }*/
 
 .scrollarea {
   height: 100vh;

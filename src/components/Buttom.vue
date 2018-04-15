@@ -1,18 +1,18 @@
 <template>
-  <div class="project__text center | col-12 m-0 p-0 | m-100 m-mr-0">
-    <div class="footy mlg-2x desktop  mt-6 | m-mr-0">
+  <div class="project__text | col-12 m-0 p-0 | m-100 m-mr-0">
+    <div class="footy mlg-2x desktop ct col-6  mt-6 | m-mr-0">
       <router-link :to="prev.url" class="href">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03">
+        <svg class="chev l" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03">
               <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
                   <polygon class="arrow-left" points="55.76 10.51 3.83 10.51 12.93 1.41 11.51 0 0 11.51 11.51 23.03 12.93 21.61 3.83 12.51 55.76 12.51 55.76 10.51"/></g></g>
                   </svg><span>{{ prev.title }}</span>
       </router-link>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.4 1 1">
+      <svg class="sep" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.4 1 1">
                   <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
                       <rect class="separate" width="2" height="54.34"/></g></g>
               </svg>
       <router-link :to="next.url" class="href"> <span>{{ next.title }}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
+        <svg class="chev r" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
                       <polygon class="arrow-right" points="44.24 0 42.83 1.41 51.93 10.51 0 10.51 0 12.51 51.93 12.51 42.83 21.61 44.24 23.03 55.76 11.51 44.24 0"/></g></g>
                   </svg>
       </router-link>
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="mlg-3x ct | m-ml-0">
+    <div class="mlg-3x col-5 | m-ml-0">
       <h3>&copy; {{ foot }}</h3>
     </div>
   </div>
@@ -58,9 +58,40 @@ export default {
 
 <style scoped>
 
-  .center
+  .mlg-3x
   {
-    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+  }
+
+  .ct
+  {
+    margin: auto;
+    width: 50%;
+  }
+
+  .footy .sep
+  {
+    position: relative;
+    top: 20px;
+  }
+
+  .footy .chev
+  {
+    position: relative;
+    top: 15px;
+  }
+
+  .footy .chev.l
+  {
+    margin-right: 30px;
+  }
+
+  .footy .chev.r
+  {
+    margin-left: 30px;
   }
 
   .mobile {

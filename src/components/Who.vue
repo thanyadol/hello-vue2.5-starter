@@ -10,7 +10,7 @@
     </header>
 
     <div class="project__inner scrollarea" data-scrollbar id="who">
-      <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
+      <div class="scroll-content" style="">
 
         <div class="project__content">
           <div class="project__body">

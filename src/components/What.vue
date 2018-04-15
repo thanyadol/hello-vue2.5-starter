@@ -48,8 +48,8 @@
               </div>
           </div>
 
-          <div class="project__body pt-0">
-            <section class="project__description p-0 m-0 | ctn grey">
+        <div class="project__body pt-0">
+           <section class="project__description p-0 m-0 | ctn white">
                 <buttom :next="next" :prev="prev"></buttom>
             </section>
           </div>
@@ -228,6 +228,10 @@ export default {
   position: absolute;
   width: 10%;
   z-index: 2;
+}
+
+.grey {
+  background-color: #f0f0f0;
 }
 
 .project__body .title {
