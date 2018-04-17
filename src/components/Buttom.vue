@@ -7,10 +7,7 @@
                   <polygon class="arrow-left" points="55.76 10.51 3.83 10.51 12.93 1.41 11.51 0 0 11.51 11.51 23.03 12.93 21.61 3.83 12.51 55.76 12.51 55.76 10.51"/></g></g>
                   </svg><span class="sub bold">{{ prev.title }}</span>
       </router-link>
-      <svg class="sep" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.4 1 1">
-                  <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
-                      <rect class="separate" width="2" height="54.34"/></g></g>
-              </svg>
+      <span class="sub sep"> | </span>
       <router-link :to="next.url" class="href her"> <span class="sub bold">{{ next.title }}</span>
         <svg class="chev r" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
                       <polygon class="arrow-right" points="44.24 0 42.83 1.41 51.93 10.51 0 10.51 0 12.51 51.93 12.51 42.83 21.61 44.24 23.03 55.76 11.51 44.24 0"/></g></g>
@@ -38,7 +35,7 @@
       </div>
     </div>
 
-    <div class="mlg-3x col-5 ft bold | m-ml-0">
+    <div class="mx-auto ct ft bold | m-ml-0">
       <h3>&copy; {{ foot }}</h3>
     </div>
   </div>
@@ -72,17 +69,9 @@ export default {
     right: calc(50% + 100px);
   }
 
-  .mlg-3x
-  {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 320px;
-  }
-
   .ft
   {
-    font-size: 2.9rem;
+    font-size: 1.8vw;
   }
 
   .ct
@@ -92,9 +81,11 @@ export default {
 
   .footy .sep
   {
-    position: fixed;
-    top: calc(100% - 200px);
-    left: calc(50% - 40px);
+    position: relative;
+    top: -5px;
+    /* left: calc(50% - 40px); */
+    font-size: 5.6rem;
+    font-weight: 100;
   }
 
   .footy .chev
@@ -184,7 +175,7 @@ export default {
   }
 
   div svg {
-    width: 100px;
+    width: 5vw;
     /*height: auto;
     margin: 0 2rem;*/
     cursor: pointer;

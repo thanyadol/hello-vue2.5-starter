@@ -7,9 +7,10 @@
       <nave></nave>
 
       <framed :display="!show"> </framed>
-      <cover :left="left" :right="right"> </cover>
 
     </header>
+    <cover :left="left" :right="right"> </cover>
+
     <!-- header -->
     <main id="content" role="main" class="main">
       <div class="content__wrapper">

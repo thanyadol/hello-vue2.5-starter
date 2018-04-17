@@ -26,7 +26,7 @@ export default {
   background-color: #ec1e23;
 }
 
-.border--l,
+/* .border--l,
 .border--r {
     width: 6.3vw;
 }
@@ -34,7 +34,7 @@ export default {
 .border--b,
 .border--t {
     height: 6.3vw;
-}
+} */
 
 .fade-enter-active,
 .fade-leave-active {

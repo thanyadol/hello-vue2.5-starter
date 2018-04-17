@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 .cls-1 {
-  fill: #f7f7f7;
+   fill: #f7f7f7;
 
 }
 
@@ -57,29 +57,34 @@ export default {
   position: relative;
 }
 
-.c {
-  width: 23%;
-  position: relative;
+.cover__container .c {
+  width: 340px;
   transition: transform 1600ms;
 }
 
-.z
+.cover__container .z
 {
-  transform: scale(10) translateX(75px);
+  transform: scale(10) translateX(68.5px);
 }
 
-.v
+.cover__container .v
 {
-   transform: translateX(-900px);
+   transform: translateX(-1200px);
 }
 
 .cover--l {
-  left: 450px;
-    top: 276px;
+   position: absolute;
+     left: calc(50% + -129px);
+    top: calc(50% + 517px);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .cover--r {
-    left: 624px;
-    bottom: 220px;
+    position: absolute;
+       left: calc(50% + 88px);
+    top: calc(50% + 453px);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 </style>
