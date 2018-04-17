@@ -1,13 +1,5 @@
 <template>
   <div class="who">
-    <header class="project__header action | ctn">
-      <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb" data-i="1">{{ title }}</h2>
-        <div class="project__info | col-12 ml-0 | m-ml-0 m-100 tb">
-          <h3 v-bind:class="slide__sub" class="project__intro">{{ sub }}</h3>
-        </div>
-      </div>
-    </header>
 
     <div class="project__inner scrollarea" data-scrollbar id="who">
       <div class="scroll-content" style="">
@@ -58,6 +50,14 @@ export default {
       sub: 'Partnering With Startups',
       slide__title: false,
       slide__sub: false,
+      baseStyles: {
+        // transform: 'translate3d(0px, 0px, 0px)'
+        // color: 'blue'
+      },
+      overrideStyles: {
+        // transform: 'translate3d(120px, 0px, 0px)'
+        // color: 'red'
+      },
       posts: [{
         id: 1,
         title: 'You Inovate, We Scale',
@@ -117,8 +117,14 @@ export default {
       // slide title
       if (scrollbar.scrollTop > 50) {
         vm.slide__title = 'slide__title__active'
+        vm.overrideStyles = {
+          transform: 'translate3d(0px, 0px, 0px)'
+        }
       } else {
         vm.slide__title = 'slide__title__leave'
+        vm.overrideStyles = {
+          transform: 'translate3d(120px, 0px, 0px)'
+        }
       }
 
       // slide sub
@@ -147,26 +153,6 @@ export default {
 <style scoped>
   /* alider class*/
 
-  .slide__title__active {
-    transform: translate3d(-296px, 0px, 0px);
-    transition-duration: 1600ms;
-  }
-
-  .slide__sub__active {
-    transform: translate3d(-476px, 0px, 0px);
-    transition-duration: 1600ms;
-  }
-
-  .slide__title__leave {
-    transform: translate3d(0px, 0px, 0px);
-    transition-duration: 1600ms;
-  }
-
-  .slide__sub__leave {
-    transform: translate3d(0px, 0px, 0px);
-    transition-duration: 1600ms;
-  }
-
   @media (max-width: 575.98px) {
       .slide__title__active {
           transform: translate3d(-15vw, 0px, 0px) !important;
@@ -192,16 +178,6 @@ export default {
 
   .red {
     background-color: crimson;
-  }
-
-  .t {
-    position: relative;
-    font-size: 8vw;
-    font-weight: bold;
-    line-height: 1;
-    opacity: 1;
-    text-transform: uppercase;
-    letter-spacing: 1px;
   }
 
   .white {

@@ -84,6 +84,7 @@ export default {
   .menu-btn {
     color: #2f3c47;
     padding: 0;
+    height: 44px;
     z-index: 2;
     position: relative;
     right: unset;
