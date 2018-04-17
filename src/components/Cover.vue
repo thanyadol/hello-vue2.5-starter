@@ -1,6 +1,6 @@
 <template>
   <div id="cover">
-    <div class="cover__container">
+    <div class="cover__container col-md-12 mx-auto ct">
       <div v-bind:class="left" class="c cover--l">
         <svg viewBox="0 0 316.22 375.79"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="173.44 375.79 0 375.79 142.78 0 316.22 0 173.44 375.79"/></g></g></svg>
       </div>
@@ -50,14 +50,15 @@ export default {
 <style scoped>
 .cls-1 {
   fill: #f7f7f7;
+
 }
 
 .cover__container {
-  position: fixed;
+  position: relative;
 }
 
 .c {
-  width: 50vh;
+  width: 23%;
   position: relative;
   transition: transform 1600ms;
 }
@@ -73,12 +74,12 @@ export default {
 }
 
 .cover--l {
-  left: 400px;
-  top: 150px;
+  left: 450px;
+    top: 276px;
 }
 
 .cover--r {
-  left: 630px;
-  bottom: 300px;
+    left: 624px;
+    bottom: 220px;
 }
 </style>

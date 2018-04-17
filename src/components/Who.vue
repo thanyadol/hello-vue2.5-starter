@@ -217,7 +217,7 @@ export default {
   }
 
   .tb {
-    color: #2f3c47;
+    color: #221f1f;
   }
 
   .tw {

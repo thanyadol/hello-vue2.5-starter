@@ -18,21 +18,23 @@
             <li class="inner-nav__item">
               <router-link :to="chevron().prev" class="">
                 <button class="inner-nav__btn inner-nav__btn--prev" aria-label="Backward" style="background-color: transparent;">
-                        Backward
-                        <svg class="icon icon--arrow icon--arrow--left" viewBox="0 0 38 38">
-                          <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
-                        </svg>
-                      </button>
+                              <!-- <svg class="icon icon--arrow icon--arrow--left" viewBox="0 0 38 38">Backward
+                                <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
+                              </svg> -->
+                            <!-- <img class="bg" v-bind:src="prev"/> -->
+                            <svg xmlns="http://www.w3.org/2000/svg"  class="icon icon--arrow icon--arrow--left"  viewBox="0 0 25.8 45.82"><title>Cover_Previous</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="25.8 2.84 5.66 22.85 25.67 43 22.83 45.82 0 22.83 22.98 0 25.8 2.84"/></g></g></svg>
+                            </button>
               </router-link>
             </li>
             <li class="inner-nav__item">
               <router-link :to="chevron().next" class="">
                 <button class="inner-nav__btn inner-nav__btn--next swiper-button-disabled" aria-label="Forward" style="background-color: transparent;">
-                        Forward
-                        <svg class="icon icon--arrow icon--arrow--right" viewBox="0 0 38 38">
-                          <path class="st0" d="M27.7,19c0,0.6-0.2,1.3-0.7,1.7L14.6,33.6c-1,1-2.5,1-3.5,0.1s-1-2.5-0.1-3.5L21.7,19L11,7.9c-1-1-0.9-2.6,0.1-3.5c1-1,2.6-0.9,3.5,0.1L27,17.3C27.5,17.7,27.7,18.4,27.7,19z"></path>
-                          </svg>
-                          </button>
+                               <!-- <svg class="icon icon--arrow icon--arrow--right" viewBox="0 0 38 38">Forward
+                                <path class="st0" d="M27.7,19c0,0.6-0.2,1.3-0.7,1.7L14.6,33.6c-1,1-2.5,1-3.5,0.1s-1-2.5-0.1-3.5L21.7,19L11,7.9c-1-1-0.9-2.6,0.1-3.5c1-1,2.6-0.9,3.5,0.1L27,17.3C27.5,17.7,27.7,18.4,27.7,19z"></path>
+                                </svg> -->
+                                             <!-- <img class="bg" v-bind:src="next"/> -->
+                              <svg class="icon icon--arrow icon--arrow--right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.8 45.82"><title>Cover_Next</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="0 42.98 20.14 22.96 0.13 2.82 2.97 0 25.8 22.98 2.82 45.82 0 42.98"/></g></g></svg>
+                             </button>
               </router-link>
             </li>
           </ul>
@@ -58,21 +60,21 @@
     </main>
     <!-- content -->
 
-    <footer id="footer">
+    <footer id="footer_wrapper">
       <ul class="social-list">
         <li class="social-list__item">
           <svg class="vertical" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.54 74.5"><title>MeetMeOn</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M11.34,66.71H3.1l-1-.06-.76-.05v.05l.47.11.56.12c.26.05.5.11.72.17l8.24,2.27v1.27L3.1,72.88c-.27.07-.68.16-1.23.25l-.52.09v.07l.78-.05,1,0h8.24V74.5H0V72.29l7.43-2A10.82,10.82,0,0,1,8.83,70c.58-.08,1-.13,1.16-.14v0c-.19,0-.59-.06-1.18-.13a8.5,8.5,0,0,1-1.38-.25L0,67.46V65.25H11.34Z"/><path class="cls-1" d="M3.4,57.54a5.51,5.51,0,0,1,3.13-.7H7.4v4.72a4.2,4.2,0,0,0,2.22-.48,1.56,1.56,0,0,0,.71-1.43,1.25,1.25,0,0,0-.53-1,2.25,2.25,0,0,0-1.41-.41V56.84a3.22,3.22,0,0,1,2.29.79,2.65,2.65,0,0,1,.86,2.06,2.94,2.94,0,0,1-1.08,2.49A5.74,5.74,0,0,1,7,63a5.89,5.89,0,0,1-3.45-.81,2.83,2.83,0,0,1-1.12-2.47A2.51,2.51,0,0,1,3.4,57.54ZM4.28,61a3.89,3.89,0,0,0,1.89.51V58.26c-1.68,0-2.52.49-2.52,1.46A1.47,1.47,0,0,0,4.28,61Z"/><path class="cls-1" d="M3.4,49.46a5.51,5.51,0,0,1,3.13-.7H7.4v4.72A4.3,4.3,0,0,0,9.62,53a1.57,1.57,0,0,0,.71-1.43,1.25,1.25,0,0,0-.53-1,2.25,2.25,0,0,0-1.41-.41V48.76a3.26,3.26,0,0,1,2.29.78,2.68,2.68,0,0,1,.86,2.06,2.94,2.94,0,0,1-1.08,2.5A5.81,5.81,0,0,1,7,54.92a5.89,5.89,0,0,1-3.45-.81,2.83,2.83,0,0,1-1.12-2.47A2.51,2.51,0,0,1,3.4,49.46ZM4.28,53a3.89,3.89,0,0,0,1.89.51V50.18c-1.68,0-2.52.49-2.52,1.46A1.48,1.48,0,0,0,4.28,53Z"/><path class="cls-1" d="M3.85,44v1.15H9.54a.8.8,0,0,0,.58-.2.74.74,0,0,0,.21-.57V44h.94a1.24,1.24,0,0,1,.17.43,2.48,2.48,0,0,1,.06.54,1.31,1.31,0,0,1-.57,1.18,2.66,2.66,0,0,1-1.43.37H3.85v.75H2.63v-.75L.22,46.24V45.18H2.63V44Z"/><path class="cls-1" d="M5.08,28.57h6.26v1.36H5.17A1.83,1.83,0,0,0,4,30.22a1,1,0,0,0-.34.83,1.25,1.25,0,0,0,.64,1.05A3.15,3.15,0,0,0,6,32.53h5.31v1.36H5.17a1.76,1.76,0,0,0-1.18.3,1.08,1.08,0,0,0-.34.84,1.27,1.27,0,0,0,.64,1.06A3.07,3.07,0,0,0,6,36.52h5.31v1.37H2.63v-1l1-.19v-.09a2.15,2.15,0,0,1-1.22-2,1.81,1.81,0,0,1,1.28-1.86,2.52,2.52,0,0,1-1-.91,2.37,2.37,0,0,1-.33-1.21C2.43,29.25,3.31,28.57,5.08,28.57Z"/><path class="cls-1" d="M3.4,20.9a5.42,5.42,0,0,1,3.13-.7H7.4v4.71a4.2,4.2,0,0,0,2.22-.48A1.56,1.56,0,0,0,10.33,23,1.25,1.25,0,0,0,9.8,22a2.25,2.25,0,0,0-1.41-.4V20.2a3.26,3.26,0,0,1,2.29.78A2.66,2.66,0,0,1,11.54,23a2.91,2.91,0,0,1-1.08,2.49A5.74,5.74,0,0,1,7,26.35a5.89,5.89,0,0,1-3.45-.81,2.83,2.83,0,0,1-1.12-2.46A2.5,2.5,0,0,1,3.4,20.9Zm.88,3.48a3.89,3.89,0,0,0,1.89.51V21.62c-1.68,0-2.52.48-2.52,1.46A1.46,1.46,0,0,0,4.28,24.38Z"/><path class="cls-1" d="M7,7.74q4.54,0,4.54,3.11T7,14q-4.57,0-4.57-3.14T7,7.74Zm-.32,4.82h.61c2,0,3-.57,3-1.71s-1-1.69-3-1.69H6.68a4.8,4.8,0,0,0-2.26.42,1.38,1.38,0,0,0-.77,1.27Q3.65,12.56,6.68,12.56Z"/><path class="cls-1" d="M3.05.56a3,3,0,0,1,2-.56h6.26V1.35H5.17A1.7,1.7,0,0,0,4,1.67a1.21,1.21,0,0,0-.34.92,1.4,1.4,0,0,0,.64,1.14A2.92,2.92,0,0,0,6,4.19h5.31V5.56H2.63v-1l1-.2V4.25A2.25,2.25,0,0,1,2.43,2.16,2,2,0,0,1,3.05.56Z"/></g></g></svg>
         </li>
         <li class="social-list__item">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_Medium</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,0V28H28V0ZM23.33,9.42h-1c-.27,0-1,.29-1,.54v9c0,.25.7.45,1,.45h1v2H16.66v-2H18V10.09h-.23L14.56,21.41H12.08L8.91,10.09H8.67v9.32H10v2H4.67v-2h.74c.29,0,.6-.2.6-.45V10a.64.64,0,0,0-.6-.54H4.67v-2h6.91l2.26,8h.06l2.27-8h7.16Z"/></g></g></svg>
+          <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_Medium</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,0V28H28V0ZM23.33,9.42h-1c-.27,0-1,.29-1,.54v9c0,.25.7.45,1,.45h1v2H16.66v-2H18V10.09h-.23L14.56,21.41H12.08L8.91,10.09H8.67v9.32H10v2H4.67v-2h.74c.29,0,.6-.2.6-.45V10a.64.64,0,0,0-.6-.54H4.67v-2h6.91l2.26,8h.06l2.27-8h7.16Z"/></g></g></svg>
           <a href="https://medium.com/" target="_blank">Medium</a>
         </li>
         <li class="social-list__item">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_LinkIedn</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,0V28H28V0ZM9.64,21.44H6.31v-10H9.64ZM8,10.13H8A1.72,1.72,0,1,1,8,6.7a1.72,1.72,0,1,1,0,3.43ZM21.64,21.44H18.31V16.12c0-1.34-.48-2.25-1.69-2.25a1.81,1.81,0,0,0-1.7,1.21,2.2,2.2,0,0,0-.12.81v5.55H11.48s0-9,0-10h3.33V12.9a3.31,3.31,0,0,1,3-1.64c2.19,0,3.84,1.42,3.84,4.48Z"/></g></g></svg>
+          <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_LinkIedn</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,0V28H28V0ZM9.64,21.44H6.31v-10H9.64ZM8,10.13H8A1.72,1.72,0,1,1,8,6.7a1.72,1.72,0,1,1,0,3.43ZM21.64,21.44H18.31V16.12c0-1.34-.48-2.25-1.69-2.25a1.81,1.81,0,0,0-1.7,1.21,2.2,2.2,0,0,0-.12.81v5.55H11.48s0-9,0-10h3.33V12.9a3.31,3.31,0,0,1,3-1.64c2.19,0,3.84,1.42,3.84,4.48Z"/></g></g></svg>
           <a href="https://twitter.com/" target="_blank">Linkedin</a>
         </li>
         <li class="social-list__item">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_Facebook</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M28,0H0V28H13.94V16.68H11.65V12.87h2.29V9.76c0-.57-.12-4.39,4.8-4.38h3.47v4H19.66a1.1,1.1,0,0,0-1,.91v2.61h3.57c-.14,2-.44,3.82-.44,3.82H18.63V28H28Z"/></g></g></svg>
+          <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_Facebook</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M28,0H0V28H13.94V16.68H11.65V12.87h2.29V9.76c0-.57-.12-4.39,4.8-4.38h3.47v4H19.66a1.1,1.1,0,0,0-1,.91v2.61h3.57c-.14,2-.44,3.82-.44,3.82H18.63V28H28Z"/></g></g></svg>
           <a href="https://www.facebook.com//" target="_blank">Facebook</a>
         </li>
       </ul>
@@ -89,7 +91,7 @@
     </div>
 
     <axiom> </axiom>
-    <mouse> </mouse>
+    <!--<mouse> </mouse>-->
   </div>
   <!-- wrapper -->
 </template>
@@ -108,7 +110,9 @@ export default {
       left: true,
       right: true,
       mouse: false,
-      el: false
+      el: false,
+      prev: './static/img/back.svg',
+      next: './static/img/go.svg'
     }
   },
   mounted: function () {
@@ -147,24 +151,24 @@ export default {
     }
 
     /* var options = {
-              wheelEventTarget: EventTarget,
-            };
+                    wheelEventTarget: EventTarget,
+                  };
 
-            var parent = new Vue({ el: '.team' })
-            // access child component instance
-            var child = parent.$refs.divx
+                  var parent = new Vue({ el: '.team' })
+                  // access child component instance
+                  var child = parent.$refs.divx
 
-            // var div = this.$children.refs.divx // this.$el.querySelector('div.team') // window.getElementById("scrollbar");
-            // scrollbar.init(div);
-            // console.log(this.$children)
-            console.log(parent)
+                  // var div = this.$children.refs.divx // this.$el.querySelector('div.team') // window.getElementById("scrollbar");
+                  // scrollbar.init(div);
+                  // console.log(this.$children)
+                  console.log(parent)
 
-            // alert("scrolling") */
+                  // alert("scrolling") */
     // var vm = this
 
     /* var options = {
-            wheelEventTarget: EventTarget
-          } */
+                  wheelEventTarget: EventTarget
+                } */
 
     // var div = document.getElementById('scrollbar')
     // scroll.init(div)
@@ -193,12 +197,12 @@ export default {
       // alert(v)
 
       /* if (isNullOrUndefined(v)) {
-              vm.show = false
-              vm.left = 'c'
-              vm.right = 'c'
-              vm.mouse = 'z-2'
-              return
-            } */
+                    vm.show = false
+                    vm.left = 'c'
+                    vm.right = 'c'
+                    vm.mouse = 'z-2'
+                    return
+                  } */
 
       const scrollbar = scroll.get(div)
 
@@ -218,18 +222,18 @@ export default {
       }
 
       /* if (event.deltaY < 0) {
-              scrolled++
-              // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
+                    scrolled++
+                    // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
 
-              // vm.scrolling = scrolling
-              console.log('scrolling up hanlde : ' + event.deltaY)
-            }
-            if (event.deltaY > 0) {
-              scrolled--
-              // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
-              // vm.scrolling = scrolling
-              console.log('scrolling down hanlde : ' + event.deltaY)
-            } */
+                    // vm.scrolling = scrolling
+                    console.log('scrolling up hanlde : ' + event.deltaY)
+                  }
+                  if (event.deltaY > 0) {
+                    scrolled--
+                    // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
+                    // vm.scrolling = scrolling
+                    console.log('scrolling down hanlde : ' + event.deltaY)
+                  } */
     })
 
     console.log(scrolled)
@@ -311,169 +315,198 @@ export default {
       return pages[this.$route.path.substring(1, this.$route.path.length)]
     }
     /* handleScroll (event) {
-              // Any code to be executed
-              // when the window is scrolled
-              this.scrolled = window.scrollY > 0
-            } */
+                    // Any code to be executed
+                    // when the window is scrolled
+                    this.scrolled = window.scrollY > 0
+                  } */
   }
 }
 </script>
 
 <style scoped>
+.social-list {
+  bottom: 60px;
+}
 
-  .cls-1 {
-    fill: #2f3c47;
+.inner-nav__btn {
+  display: block;
+}
+
+.cls-1 {
+  fill: #2f3c47;
+}
+
+.mx-a {
+  margin-left: calc(50% - 40px);
+}
+
+.bg {
+  width: 24px;
+}
+
+.down {
+  bottom: 60px;
+  /* left: auto; */
+  position: fixed;
+  /* top: 00px; */
+  width: 5vh;
+  z-index: 2;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.down:hover {
+  cursor: pointer;
+}
+
+@-webkit-keyframes scroll-inner {
+  from {
+    margin-top: 15%;
   }
-
-  .mx-a {
-    margin-left: calc(50% - 40px);
+  to {
+    margin-top: 50%;
   }
+}
 
-  .down {
-    bottom: 45px;
-    /* left: auto; */
-    position: fixed;
-    /* top: 00px; */
-    width: 5vh;
-    z-index: 2;
+@keyframes scroll-inner {
+  from {
+    margin-top: 15%;
   }
-
-  .z-0 {
-    z-index: 0;
+  to {
+    margin-top: 50%;
   }
+}
 
-  .z-2 {
-    z-index: 2;
+@-webkit-keyframes scroll-mouse {
+  from {
+    margin-top: 0;
   }
-
-  .z-1 {
-    z-index: 1;
+  to {
+    margin-top: 15px;
   }
+}
 
-  .down:hover {
-    cursor: pointer;
+@keyframes scroll-mouse {
+  from {
+    margin-top: 0;
   }
-
-  @-webkit-keyframes scroll-inner {
-    from {
-      margin-top: 15%;
-    }
-    to {
-      margin-top: 50%;
-    }
+  to {
+    margin-top: 15px;
   }
+}
 
-  @keyframes scroll-inner {
-    from {
-      margin-top: 15%;
-    }
-    to {
-      margin-top: 50%;
-    }
-  }
+div.mouse-container {
+  position: relative;
+  display: block;
+  /* height: 80px; */
+}
 
-  @-webkit-keyframes scroll-mouse {
-    from {
-      margin-top: 0;
-    }
-    to {
-      margin-top: 15px;
-    }
-  }
+div.mouse {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  width: 27px;
+  height: 40px;
+  border: solid 2px #495057;
+  border-radius: 25px;
+}
 
-  @keyframes scroll-mouse {
-    from {
-      margin-top: 0;
-    }
-    to {
-      margin-top: 15px;
-    }
-  }
+div.mouse:hover {
+  -webkit-animation: scroll-mouse 1.5s;
+  animation: scroll-mouse 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
 
-  div.mouse-container {
-    position: relative;
-    display: block;
-    height: 80px;
-  }
+div.mouse span.scroll-down {
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: #495057;
+  border-radius: 50%;
+  margin: 15% auto auto auto;
+}
 
-  div.mouse {
-    position: relative;
-    margin: 0 auto;
-    display: block;
-    width: 35px;
-    height: 60px;
-    border: solid 2px #495057;
-    border-radius: 25px;
-  }
+div.mouse:hover span.scroll-down {
+  -webkit-animation: scroll-inner 1s;
+  animation: scroll-inner 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+}
 
-  div.mouse:hover {
-    -webkit-animation: scroll-mouse 1.5s;
-    animation: scroll-mouse 1.5s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-  }
+/* mouse animation */
 
-  div.mouse span.scroll-down {
-    display: block;
-    width: 10px;
-    height: 10px;
-    background: #495057;
-    border-radius: 50%;
-    margin: 15% auto auto auto;
-  }
+.vertical {
+  width: 40%;
+  position: absolute;
+  top: -50px;
+  left: 8px;
+}
 
-  div.mouse:hover span.scroll-down {
-    -webkit-animation: scroll-inner 1s;
-    animation: scroll-inner 1s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease;
-    animation-timing-function: ease;
-  }
+/* remove reboot*/
 
-  /* mouse animation */
+button:focus {
+  outline: none;
+}
 
-  .vertical {
-    width: 40%;
-    position: absolute;
-    top: -50px;
-    left: 9px;
-  }
+/* arrow nav */
 
-  /* remove reboot*/
+.inner-nav__btn .icon--arrow {
+  width: 44px;
+  height: 44px;
+  fill: #495057;
+}
 
-  button:focus {
-    outline: none;
-  }
+.inner-nav__list {
+  z-index: 2;
+  right: calc(5vw -20px);
+  bottom: 60px;
+  width: -42px;
+  /* right: 0px; */
+  position: relative;
+  left: calc(90% - 28px);
+}
 
-  /* arrow nav */
+/* .inner-nav__list > li > img:hover
+    {
+       transform: translateX(20vw);
+    } */
 
-  .inner-nav__btn .icon--arrow {
-    top: calc(50% - 7px);
-    width: 24px;
-    height: 24px;
-    fill: #495057;
-  }
+/* social list*/
 
-  .inner-nav__list {
-    z-index: 2;
-  }
+.icon {
+  fill: #495057;
+  width: 24px;
+  height: 24px;
+  left: 0;
+  top: 10px;
+}
 
-  /* social list*/
+.social-list__item .square {
+  fill: #495057;
+  width: 30px;
+  height: 30px;
+  left: 0;
+  top: 0;
+}
 
-  .social-list__item .icon {
-    fill: #495057;
-    width: 24px;
-    height: 24px;
-    left: 0;
-    top: 0;
-  }
+.red {
+  background-color: #2c3e50;
+}
 
-  .red {
-    background-color: #2c3e50;
-  }
-
-  .main {
-    background-color: #fcfcfc;
-  }
+.main {
+  background-color: #fcfcfc;
+}
 </style>

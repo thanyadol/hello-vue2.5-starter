@@ -58,6 +58,47 @@ body {
 {
     cursor: auto;
 }
+
+.ct
+{
+  text-align: center;
+}
+
+.logo {
+  width: 60%;
+}
+
+.project__info
+{
+  padding-left: unset;
+}
+
+.sub
+{
+  font-size: 30px;
+}
+
+.shift
+{
+    padding-left: unset;
+    margin-top: -80px;
+    position: relative;
+}
+
+#content {
+    width: 100%;
+    height: auto;
+}
+
+.inner-nav__btn--prev:hover {
+    transform: translateX(5px)
+}
+
+
+.inner-nav__btn--next:hover {
+    transform: translateX(-5px)
+}
+
   
 
 ////
@@ -1540,8 +1581,9 @@ body:not([data-page=home]) #projects-container {
 }
 
 .inner-nav__btn:hover {
-    transform: translateX(-3px)
+    transform: translateX(-10px)
 }
+
 
 [data-page=home] .inner-nav__btn:hover {
     transform: translateY(-3px)

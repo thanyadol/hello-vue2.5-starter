@@ -23,9 +23,9 @@ export default {
 
 .lines-container {
   top: 0;
-  right: -20%;
+  right: -45%;
   bottom: 0;
-  left: -20%;
+  left: -45%;
   height: 100%;
   z-index: auto;
 }
@@ -34,6 +34,6 @@ export default {
   width: 1px;
   height: 100%;
   background: #f0f0f0;
-  transform: rotate(-200deg);
+  transform: rotate(-201deg);
 }
 </style>

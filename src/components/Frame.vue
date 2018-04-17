@@ -23,7 +23,17 @@ export default {
   border: none !important;
   -webkit-transition: opacity 1600ms ease-in;
   transition: opacity 1600ms ease-in;
-  background-color: crimson;
+  background-color: #ec1e23;
+}
+
+.border--l,
+.border--r {
+    width: 6.3vw;
+}
+
+.border--b,
+.border--t {
+    height: 6.3vw;
 }
 
 .fade-enter-active,
