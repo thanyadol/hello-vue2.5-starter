@@ -65,8 +65,9 @@
 }
 
 h3 > ul > li {
-    padding-right: 15px;
-    padding-left: 15px !important;
+    display: inline;
+    padding-right: 30px;
+    padding-left: 30px !important;
 }
 
 //mouse action
@@ -144,6 +145,23 @@ body {
   {
     font-size: 1.8vw;
   }
+
+  .index {
+    z-index: unset;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .tb {
+    color: #221f1f;
+  }
+
+  .tw {
+    color: #f0f0f0;
+  }
+
 
 
 ////

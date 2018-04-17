@@ -1,10 +1,10 @@
 <template>
   <div class="what">
-    <header class="project__header | ctn">
+    <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | m-mr-0 t tb" data-i="2">{{ title }}</h2>
-        <div class="project__info | col-12 | m-mr-0 m-100 tb">
-          <h3 v-bind:class="slide__sub" class="project__intro">
+        <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="2">{{ title }}</h2>
+        <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+          <h3 v-bind:class="slide__sub" class="project__intro sub bold">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
               </ul>
@@ -255,45 +255,11 @@ export default {
   left: -50%;
 }
 
-h3 > ul > li {
-  display: inline;
-  padding-left: 30px;
-}
-
 .ctn-cu {
   padding-left: 9.1%;
   padding-right: 9.1%;
   padding-bottom: 3rem;
   padding-top: 3rem;
-}
-
-.ctn {
-  padding-left: 9.1%;
-  padding-right: 9.1%;
-}
-
-.red {
-  background-color: #ee2524;
-}
-
-.tr {
-  color: #ee2524;
-}
-
-.white {
-  background-color: #ffff;
-}
-
-.index {
-  z-index: unset;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.tb {
-  color: #2f3c47;
 }
 
 .project__body h1 {
@@ -310,16 +276,6 @@ h3 > ul > li {
 
 .project__body ul {
   list-style-type: square;
-}
-
-.t {
-  position: relative;
-  font-size: 8vw;
-  font-weight: bold;
-  line-height: 1;
-  opacity: 1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .project__text {

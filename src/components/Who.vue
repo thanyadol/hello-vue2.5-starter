@@ -215,22 +215,6 @@ export default {
     padding-right: 7.7%;
   } */
 
-  .index {
-    z-index: unset;
-  }
-
-  .bold {
-    font-weight: bold;
-  }
-
-  .tb {
-    color: #221f1f;
-  }
-
-  .tw {
-    color: #f0f0f0;
-  }
-
   /*.project__text
   {
     color: #2f3c47;
@@ -256,7 +240,7 @@ export default {
     border: none !important;
     -webkit-transition: opacity 2s ease-in;
     transition: opacity 2s ease-in;
-    background-color: #2f3c47;
+    background-color: #221f1f;
   }
 
   /*project__title::before {
@@ -294,7 +278,7 @@ export default {
 
   .btn--cta {
     padding: none;
-    color: #495057;
+    color: #221f1f;
     background: #fff;
     border-radius: 0;
     border: 1px solid;

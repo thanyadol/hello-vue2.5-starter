@@ -1,5 +1,5 @@
 <template>
-  <div class="shift">
+  <div class="follow">
     <div id="follower">
       <div id="circle__outer"></div>
       <div id="circle__inner"></div>
@@ -14,9 +14,9 @@ export default {
   // life cycle of component
   created () {
     // use of static js
-    // let pixiscript = document.createElement('script')
-    // pixiscript.setAttribute('src', './static/js/mouse.js')
-    // document.body.appendChild(pixiscript)
+    let pixiscript = document.createElement('script')
+    pixiscript.setAttribute('src', './static/js/mouse.js')
+    document.body.appendChild(pixiscript)
   }
 }
 </script>

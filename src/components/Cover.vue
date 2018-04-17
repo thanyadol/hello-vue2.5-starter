@@ -18,39 +18,38 @@ export default {
   name: 'Cover',
   props: ['left', 'right']
   /* mounted: function() {
-      var options = {
-        wheelEventTarget: EventTarget,
-      };
-      var div = document.getElementById("scrollbar");
-      scrollbar.init(div);
-
-      console.log("scrolling")
-    }, */
-  /* beforeMount() {
-      var scrolled = 0
-      var vm = this
-
-      window.addEventListener('wheel', function (event) {
+        var options = {
+          wheelEventTarget: EventTarget,
+        };
         var div = document.getElementById("scrollbar");
-        const scrollbar = scrollbar.init(div);
+        scrollbar.init(div);
 
-        if (event.deltaY < 0) {
-          scrolled++
-          console.log('scrolling up hanlde : ' + event.deltaY)
-        }
-        if (event.deltaY > 0) {
-          scrolled--
-          console.log('scrolling down hanlde : ' + event.deltaY)
-        }
-      })
-    } */
+        console.log("scrolling")
+      }, */
+  /* beforeMount() {
+        var scrolled = 0
+        var vm = this
+
+        window.addEventListener('wheel', function (event) {
+          var div = document.getElementById("scrollbar");
+          const scrollbar = scrollbar.init(div);
+
+          if (event.deltaY < 0) {
+            scrolled++
+            console.log('scrolling up hanlde : ' + event.deltaY)
+          }
+          if (event.deltaY > 0) {
+            scrolled--
+            console.log('scrolling down hanlde : ' + event.deltaY)
+          }
+        })
+      } */
 }
 </script>
 
 <style scoped>
 .cls-1 {
-   fill: #f7f7f7;
-
+  fill: #f7f7f7;
 }
 
 .cover__container {
@@ -62,29 +61,27 @@ export default {
   transition: transform 1600ms;
 }
 
-.cover__container .z
-{
+.cover__container .z {
   transform: scale(10) translateX(68.5px);
 }
 
-.cover__container .v
-{
-   transform: translateX(-1200px);
+.cover__container .v {
+  transform: translateX(-1200px);
 }
 
 .cover--l {
-   position: absolute;
-     left: calc(50% + -129px);
-    top: calc(50% + 517px);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  position: absolute;
+  left: calc(50% + -129px);
+  top: calc(50% + 517px);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .cover--r {
-    position: absolute;
-       left: calc(50% + 88px);
-    top: calc(50% + 453px);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  position: absolute;
+  left: calc(50% + 88px);
+  top: calc(50% + 453px);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 </style>

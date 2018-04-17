@@ -92,7 +92,7 @@
     </div>
 
     <axiom> </axiom>
-    <!--<mouse> </mouse>-->
+    <!-- <mouse> </mouse> -->
   </div>
   <!-- wrapper -->
 </template>
@@ -188,7 +188,7 @@ export default {
     // const scrollbar = scrollbar.init(div);
     // window.addEventListener('scroll', this.handleScroll)
 
-    var scrolled = 0
+    // var scrolled = 0
     // var scrolling
     var vm = this
 
@@ -237,7 +237,7 @@ export default {
                   } */
     })
 
-    console.log(scrolled)
+    // console.log(scrolled)
   },
   beforeDestroy () {
     // window.removeEventListener('scroll', this.handleScroll)
@@ -338,7 +338,7 @@ export default {
 }
 
 .mx-a {
-  margin-left: calc(50% - 40px);
+margin-left: calc(50% - 23px);
 }
 
 .bg {
