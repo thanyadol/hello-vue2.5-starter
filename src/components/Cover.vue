@@ -65,7 +65,7 @@ export default {
 
 .z
 {
-  transform: scale(5) translateX(90px);
+  transform: scale(10) translateX(75px);
 }
 
 .v

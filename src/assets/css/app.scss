@@ -6,6 +6,26 @@
 
 //custom
 
+.red {
+    background-color: #ec1e24;
+  }
+
+  .white {
+    background-color: #ffff;
+  }
+
+.ctn-content
+{
+    padding-left: 12.7%;
+    padding-right: 12.7%;
+}
+
+.project__text .title
+{
+    font-size: 4.3vw;
+    line-height: 1.69;
+}
+
 .row
 {
     margin-left: unset;
@@ -24,8 +44,8 @@
 
 .project__title::before {
     content: "0" attr(data-i) " / 09" !important;
-    top: -100px;
-    left: 260px;
+    top: -20px;
+    // left: 260px;
     font-size: 4.4rem;
 }
 
@@ -104,40 +124,27 @@ body {
     transform: translateX(-5px)
 }
 
-.project__title.t {
+.project__title.t
+{
     position: relative;
-    font-size: 140px;
-    font-weight: bold;
-    line-height: 237px;
+    font-size: 8.34vw;
+    font-weight: 600;
+    line-height: 1.69;
     opacity: 1;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/// animate text
-
- .slide__title__active {
-    //transform: translate3d(-296px, 0px, 0px);
-    transition-duration: 1600ms;
+.project__description .sub {
+    font-size: 3.3rem;
+    line-height: 1;
   }
 
-  .slide__sub__active {
-    //transform: translate3d(-476px, 0px, 0px);
-    transition-duration: 1600ms;
+  .project__description .btn, .ft
+  {
+    font-size: 2.9rem;
   }
 
-  .slide__title__leave {
-    //transform: translate3d(0px, 0px, 0px);
-    transition-duration: 1600ms;
-  }
-
-  .slide__sub__leave {
-    //transform: translate3d(0px, 0px, 0px);
-    transition-duration: 1600ms;
-  }
-
-  
-  
 
 ////
 

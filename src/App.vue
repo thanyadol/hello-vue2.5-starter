@@ -471,12 +471,9 @@ button:focus {
 
 .inner-nav__list {
   z-index: 2;
-  right: calc(5vw -20px);
   bottom: 60px;
   width: -42px;
-  /* right: 0px; */
-  position: relative;
-  left: calc(90% - 28px);
+  position: fixed;
 }
 
 /* .inner-nav__list > li > img:hover

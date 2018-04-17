@@ -1,12 +1,21 @@
 <template>
   <div class="who">
+    <!-- <head :overrideStyles="overrideStyles" :sub="sub" :title="title" :index="index"> </head> -->
+    <header class="project__header action | ctn">
+      <div class="project__header__inner">
+        <h2 v-bind:class="slide__title" v-bind:style="[baseStyles, overrideStyles]" class="project__title | ml-0 | m-mr-0 t tb slide__title" :data-i="index">{{ title }}</h2>
+        <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+          <h3 v-bind:class="slide__sub" class="project__intro sub bold">{{ sub }}</h3>
+        </div>
+      </div>
+    </header>
 
     <div class="project__inner scrollarea" data-scrollbar id="who">
       <div class="scroll-content" style="">
 
         <div class="project__content">
           <div class="project__body">
-            <section class="project__description | ctn" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+            <section class="project__description | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
               <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
                 <p class="title bold tb" v-bind:class="p.text">{{ p.title }}</p>
@@ -18,14 +27,14 @@
                 <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>
               </div>
             </section>
-          </div>
-        </div>
-        <div class="project__body pt-0">
-          <section class="project__description pt-0 | ctn white">
+
+           <section class="project__description pt-0 | ctn-content white">
             <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
-              <p class="title bold tb"><a class="btn btn--cta" href="#"> About Us</a></p>
+              <p class="title bold tb"><a class="btn btn--cta" href="#"> About us</a></p>
             </div>
           </section>
+
+          </div>
         </div>
 
         <div class="project__body pt-0">
@@ -48,6 +57,8 @@ export default {
     return {
       title: 'Who We Are',
       sub: 'Partnering With Startups',
+      index: '1',
+      offsetLeft: { title: '120', sub: '150' },
       slide__title: false,
       slide__sub: false,
       baseStyles: {
@@ -117,29 +128,37 @@ export default {
       // slide title
       if (scrollbar.scrollTop > 50) {
         vm.slide__title = 'slide__title__active'
-        vm.overrideStyles = {
+        vm.slide__sub = 'slide__sub__active'
+        /* vm.overrideStyles = {
           transform: 'translate3d(0px, 0px, 0px)'
-        }
+        } */
       } else {
         vm.slide__title = 'slide__title__leave'
-        vm.overrideStyles = {
-          transform: 'translate3d(120px, 0px, 0px)'
-        }
+        vm.slide__sub = 'slide__sub__leave'
+        /* vm.overrideStyles = {
+          transform: 'translate3d(' + vm.offsetLeft.title + 'px, 0px, 0px)'
+        } */
       }
 
       // slide sub
-      if (scrollbar.scrollTop > 55) {
+      /* if (scrollbar.scrollTop > 55) {
         vm.slide__sub = 'slide__sub__active'
       } else {
         vm.slide__sub = 'slide__sub__leave'
-      }
+      } */
 
-      if (event.deltaY < 0) {
+      /* if (event.deltaY < 0) {
         scrolled++
+        vm.overrideStyles = {
+          transform: 'translate3d(' + scrolled + 'px, 0px, 0px)'
+        }
       }
       if (event.deltaY > 0) {
         scrolled--
-      }
+        vm.overrideStyles = {
+          transform: 'translate3d(' + scrolled + 'px, 0px, 0px)'
+        }
+      } */
     })
 
     console.log(scrolled)
@@ -152,6 +171,26 @@ export default {
 
 <style scoped>
   /* alider class*/
+
+ .slide__title__active {
+    transform: translate3d(-256px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
+
+  .slide__sub__active {
+    transform: translate3d(-446px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
+
+  .slide__title__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
+
+  .slide__sub__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
   @media (max-width: 575.98px) {
       .slide__title__active {
@@ -171,18 +210,10 @@ export default {
     padding-top: 3rem;
   }
 
-  .ctn {
+  /* .ctn {
     padding-left: 7.7%;
     padding-right: 7.7%;
-  }
-
-  .red {
-    background-color: crimson;
-  }
-
-  .white {
-    background-color: #ffff;
-  }
+  } */
 
   .index {
     z-index: unset;
@@ -238,15 +269,6 @@ export default {
 
   .project__description {
     padding-bottom: 30px;
-  }
-
-  .project__description .title,
-  .project__description .sub {
-    font-size: 5.5rem;
-  }
-
-  .project__description .sub {
-    font-size: 3.1rem;
   }
 
   .project__text p:not(:last-of-type) {
