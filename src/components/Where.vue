@@ -17,20 +17,21 @@
       <div class="scroll-content" style="">
         <div class="project__content">
           <div class="project__body row white">
+
             <!-- red bar -->
             <svg class="rectang" width="150" height="2500">
                         <rect x="0" y="0" width="150" height="2500" />
                       </svg>
 
-            <section class="project__description col-md-6 pd-1 | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+            <section class="project__description col-md-6 | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
-              <div class="project__text | mrg-2 | m-100 m-mr-0">
-                <p class="title bold tb">{{ p.title }}</p>
+              <div class="project__text | m-100 m-mr-0">
+                <p class="title bold tb t mlg-2">{{ p.title }}</p>
                 <p class="sub tb">{{ p.sub }}</p>
               </div>
             </section>
             <section class="project__description col-md-6 pd-1 tr | ctn-content">
-              <ul class="tb">
+              <ul class="down">
                 <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
                   <span class="sub bold">{{ v.title }}</span>
                   <p class="sub">{{ v.sub }}</p>
@@ -38,8 +39,17 @@
               </ul>
             </section>
 
-            <section class="project__description col-12 pd-1 | ctn-m" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+            <section class="project__map col-12 pt-0 pb-5 | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <img class="mx-auto map" :src="sample">
+            </section>
+
+            <!-- tags lat long -->
+            <section class="project__description tags__wrapper">
+              <div class="tags"
+                  v-bind:style="{ left: t.x + 'px', top: t.y + 'px' }"
+                  v-for="t in tags" :key="t.id">
+                <span class="sub bold sm tw">{{ t.title }}</span>
+              </div>
             </section>
 
           </div>
@@ -67,12 +77,43 @@ export default {
       subs: ['Geographical', 'Focus'],
       slide__title: false,
       slide__sub: false,
+
+      tags: [
+        {
+          id: 1,
+          title: 'USA',
+          x: 200,
+          y: 200,
+          color: 'red'
+        },
+        {
+          id: 2,
+          title: 'China',
+          x: 1150,
+          y: 200,
+          color: 'black red'
+        },
+        {
+          id: 3,
+          title: 'Israel',
+          x: 920,
+          y: 300,
+          color: 'red'
+        },
+        {
+          id: 4,
+          title: 'Asean',
+          x: 1000,
+          y: 450,
+          color: 'red'
+        }
+
+      ],
       posts: [
         {
           // id: 99,
-          title: 'Investment Strategy',
-          sub:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+          title: 'Focused Ecosystems',
+          sub: '',
           bold: '',
           regular: '',
           detail: [],
@@ -82,17 +123,17 @@ export default {
       invests: [
         {
           id: 1,
-          title: 'Thailand & Asian Countries',
-          sub: 'Lorem ipsum dolor sit amet',
+          title: 'Technology',
+          sub: '',
           image: './static/img/img3.jpg',
-          class: 'indent'
+          class: 'tb'
         },
         {
           id: 2,
-          title: 'USA / Europe / Silicon Valley / Televiv / Chaina',
-          sub: 'Consectetur adipiscing elit',
+          title: 'Business Model',
+          sub: '',
           image: './static/img/img3.jpg',
-          class: ''
+          class: 'tr'
         }
       ],
 
@@ -152,25 +193,25 @@ export default {
 <style scoped>
 /* alider class*/
 
-.slide__title__active {
-  transform: translate3d(-226px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+ .slide__title__active {
+    transform: translate3d(-40px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
-.slide__sub__active {
-  transform: translate3d(-566px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+  .slide__sub__active {
+    transform: translate3d(-390px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
-.slide__title__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+  .slide__title__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
-.slide__sub__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+  .slide__sub__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
 @media (max-width: 575.98px) {
   .slide__title__active {
@@ -183,17 +224,53 @@ export default {
 
 /***/
 
+.tags__wrapper
+{
+  position: absolute;
+  display: block;
+  width: 100%;
+  margin-top: 200px;
+}
+
+.tags
+{
+  position: absolute;
+  display: block;
+  background-color: #ec1e24;
+  cursor: pointer;
+}
+
+.tags span:hover
+{
+  color: #2f3c47;
+}
+
+.sm
+{
+  font-size: 2.1rem;
+}
+
+.tags
+{
+  padding: 5px 20px 5px 20px;
+}
+
+.down
+{
+  transform: translateY(60%)
+}
+
+.project__text .title
+{
+  line-height: 1;
+}
+
 .map {
-  height: 700px;
+  width: 65vw;
 }
 
 .ctn-m {
   padding-top: 50px;
-  padding-left: 9.1%;
-  padding-right: 9.1%;
-}
-
-.ctn {
   padding-left: 9.1%;
   padding-right: 9.1%;
 }
@@ -205,11 +282,13 @@ export default {
 /* for new */
 
 svg.rectang {
-  opacity: 0.8;
-  margin-left: 35%;
+  opacity: 0.95;
+  width: 180px;
+  margin-left: 50%;
+  transform: translateX(-100px);
   position: absolute;
   z-index: 3;
-  height: 100vh;
+  height: 95vh;
   fill: #ec1e24;
 }
 
@@ -255,23 +334,6 @@ ul li.indent {
   -webkit-transition: opacity 2s ease-in;
   transition: opacity 2s ease-in;
   background-color: #2f3c47;
-}
-
-project__title::before {
-  content: "0" attr(data-i);
-  position: absolute;
-  top: 0;
-  left: -80px;
-  font-size: 3.4rem;
-}
-
-.project__description .title,
-.project__description .sub {
-  font-size: 5.5rem;
-}
-
-.project__description .sub {
-  font-size: 3.1rem;
 }
 
 .project__text p:not(:last-of-type) {

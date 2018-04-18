@@ -297,10 +297,10 @@ export default {
           prev: 'theteam',
           scroll: 'contact'
         },
-        pitchdeck: {
-          next: 'pitchdeck',
-          prev: 'pitchdeck',
-          scroll: 'deck'
+        pitchdesk: {
+          next: 'pitchdesk',
+          prev: 'pitchdesk',
+          scroll: 'desk'
         },
         joinus: {
           next: 'joinus',

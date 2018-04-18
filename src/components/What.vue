@@ -73,7 +73,7 @@ export default {
       posts: [
         {
           id: 1,
-          title: 'What we invest in 3 verticals',
+          title: 'What we invest',
           sub:
             'Industrial - B2B - Enterprise are the areas that we will bring significant value to startups and our investment partners.',
           bold: '',
@@ -330,10 +330,6 @@ project__title::before {
   top: 0;
   left: -80px;
   font-size: 3.4rem;
-}
-
-.project__description .title{
-  font-size: 5.5rem;
 }
 
 /* .project__description .sub,

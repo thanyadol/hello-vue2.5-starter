@@ -1,10 +1,10 @@
 <template>
   <div class="how">
-    <header class="project__header | ctn">
+        <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title"  class="project__title col | mlg-2x | m-mr-0 t tb" data-i="4">{{ title }}</h2>
-        <div class="project__info | col-12 mlg-3x | m-ml-0 m-100 tb">
-          <h3 v-bind:class="slide__sub"  class="project__intro">
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="5">{{ title }}</h2>
+          <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+          <h3 v-bind:class="slide__sub" class="project__intro sub bold">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
               </ul>
@@ -17,23 +17,24 @@
 
         <div class="project__content">
           <div class="project__body row white">
-              <section class="project__description col-md-6 fill red | ctn"  v-for="p in pres" :key="p.id" v-bind:class="p.background">
+              <section class="project__description col-md-6 fill red | ctn-content"  v-for="p in pres" :key="p.id" v-bind:class="p.background">
                   <h3 class="hidden-visually">Project</h3>
                   <div class="project__text | mrg-2 | m-100 m-mr-0">
                     <p class="title bold">{{ p.title }}</p>
-                    <p class="sub">{{ p.sub }}</p>
+                    <!-- <p class="sub">{{ p.sub }}</p> -->
                   </div>
                 </section>
-                <section class="project__description col grey | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
-                  <div class="project__text | mrg-2 | m-100 m-mr-0">
+                <section class="project__description col grey | ctn-content"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+                  <div class="project__text | mrg-5 | m-100 m-mr-0">
                     <p class="title bold tb">{{ p.title }}</p>
                   </div>
                 </section>
-                <section class="project__description col-12 pd-1 tr grey | ctn" >
-                  <ul class="tb mlg-1">
+                <section class="project__description col-12 tr grey | ctn-content" >
+                  <ul class="">
                       <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
-                        <span class="sub tb fixed">{{ v.sub }}</span>
-                        <span class="title bold tr fixed">{{ v.title }}</span> <img class="bg" v-bind:src="v.image" />
+                        <!-- <span class="sub tb fixed">{{ v.sub }}</span> -->
+                        <span class="title lg bold fixed mx-auto">{{ v.title }}</span>
+                        <img class="bg" v-bind:src="v.image" />
                       </li>
                   </ul>
                 </section>
@@ -90,28 +91,28 @@ export default {
           title: 'Growth',
           sub: 'Post Seed',
           image: './static/img/seed.svg',
-          class: 'indent-4'
+          class: 'indent-4 tb'
         },
         {
           id: 2,
           title: 'Series B',
           sub: 'Accessories',
           image: './static/img/seed.svg',
-          class: 'indent-3'
+          class: 'indent-3 tr'
         },
         {
           id: 3,
           title: 'Series A',
           sub: 'Accessories',
           image: './static/img/seed.svg',
-          class: 'indent-2'
+          class: 'indent-2 tr'
         },
         {
           id: 4,
-          title: 'Next Step',
+          title: 'Seed',
           sub: 'Accessories',
           image: './static/img/seed.svg',
-          class: 'indent-1'
+          class: 'indent-1 tb'
         }
       ],
       prev: { title: 'Where We Invest', url: 'whereweinvest' },
@@ -155,7 +156,7 @@ export default {
 <style scoped>
 /* alider class*/
 .slide__title__active {
-  transform: translate3d(-226px, 0px, 0px);
+  transform: translate3d(-170px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
@@ -184,70 +185,49 @@ export default {
   }
 
 /***/
-
-.ctn {
-  padding-left: 9.1%;
-  padding-right: 9.1%;
-}
-
-.mlg-2 {
-  margin-left: 20.6342857143%;
+.lg
+{
+  font-size: 3.47vw;
 }
 
 .project__body .bg {
   position: absolute;
   left: 15%;
-  /* width: 10%; */
+  width: 11vw;
   z-index: 2;
   bottom: -2px;
+}
+
+.project__description ul li span
+{
+    margin-bottom: 8vh;
+    display: block;
+    transform: translateX(20%);
 }
 
 /* for new */
 
 .project__body ul li {
   position: relative;
-  font-size: 1.7vw;
   border-right: 2px solid black;
   border-bottom: 2px solid black;
-  width: 252px;
-  padding-left: 50px;
-}
-
-.project__body ul li span.title {
-  line-height: 1.5em;
+  width: 17vw;
 }
 
 ul li.indent-1 {
-  margin-left: 0;
+ transform: translateX(0);
 }
 
 ul li.indent-2 {
-  margin-left: 250px;
+ transform: translateX(16.9vw);
 }
 
 ul li.indent-3 {
-  margin-left: 500px;
+  transform: translateX(33.8vw);
 }
 
 ul li.indent-4 {
-  margin-left: 750px;
-}
-
-.pb-6 {
-  padding-bottom: 5vh;
-}
-
-.right {
-  left: 50%;
-}
-
-.left {
-  left: -50%;
-}
-
-h3 > ul > li {
-  display: inline;
-  padding-left: 30px;
+  transform: translateX(50.7vw);
 }
 
 .ctn-cu {
@@ -255,55 +235,6 @@ h3 > ul > li {
   padding-right: 9.1%;
   padding-bottom: 3rem;
   padding-top: 3rem;
-}
-
-.red {
-  background-color: #ee2524;
-}
-
-.grey {
-  background-color: #f0f0f0;
-}
-
-.tr {
-  color: #ee2524;
-}
-
-.white {
-  background-color: #ffff;
-}
-
-.index {
-  z-index: unset;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.tb {
-  color: #2f3c47;
-}
-
-.project__body h1 {
-  position: relative;
-  font-size: 5vw;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.project__body ul {
-  list-style-type: none;
-}
-
-.t {
-  position: relative;
-  font-size: 8vw;
-  font-weight: bold;
-  line-height: 1;
-  opacity: 1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 /*.project__text
@@ -320,39 +251,6 @@ h3 > ul > li {
 
 .project__header__inner {
   top: -6.75vw;
-}
-
-.project__body {
-  border-left: solid 15px #ffff;
-  border-right: solid 15px #ffff;
-}
-
-.border {
-  border: none !important;
-  -webkit-transition: opacity 2s ease-in;
-  transition: opacity 2s ease-in;
-  background-color: #2f3c47;
-}
-
-project__title::before {
-  content: "0" attr(data-i);
-  position: absolute;
-  top: 0;
-  left: -80px;
-  font-size: 3.4rem;
-}
-
-.project__description .title,
-.project__description .sub {
-  font-size: 5.5rem;
-}
-
-.project__description .sub {
-  font-size: 3.1rem;
-}
-
-.project__text p:not(:last-of-type) {
-  margin-bottom: 2rem;
 }
 
 .project__image {
@@ -378,11 +276,4 @@ project__title::before {
   box-shadow: none;
 }
 
-.btn--cta {
-  padding: none;
-  color: #495057;
-  background: #fff;
-  border-radius: 0;
-  border: 1px solid;
-}
 </style>
