@@ -1,45 +1,45 @@
 <template>
-    <div class="menu">
+  <div class="menu">
 
-        <div class="project__inner scrollarea" data-scrollbar id="menu" ref="scrolled">
-            <div class="scroll-content">
-                <div class="project__content">
-                    <div class="project__body red">
+    <div class="project__inner red  scrollarea" data-scrollbar id="menu" ref="scrolled">
+      <div class="scroll-content">
+        <div class="project__content">
+          <div class="project__body red">
 
-                        <section class="project__description clearfix | red col pb-0 mb-0">&nbsp;</section>
+            <section class="project__description clearfix | red pb-0 mb-0">&nbsp;</section>
 
-                        <section class="project__description red col pb-0 mb-0">
-                            <h3 class="hidden-visually">Menu</h3>
-                            <div class="project__text | col-md-12 mx-auto ctn | m-100 m-mr-0">
-                                <ol class="page mlg-3">
-                                    <li v-for="l in list" :key="l.id">
-                                        <p>
-                                            <span class="sub sm index"> {{ l.index }} </span>
-                                            <router-link :to="l.url"> <span class="site bold tw hoverCSS3"> {{ l.title }} </span> </router-link>
-                                        </p>
-                                    </li>
-                                </ol>
-                            </div>
-                        </section>
+            <section class="project__description red pb-0 mb-0">
+              <h3 class="hidden-visually">Menu</h3>
+              <div class="project__text | col-md-12 mx-auto  | m-100 m-mr-0">
+                <ol class="page mlg-3">
+                  <li v-for="l in list" :key="l.id">
+                    <p>
+                      <span class="sub sm index"> {{ l.index }} </span>
+                      <router-link :to="l.url"> <span class="site bold tw hoverCSS3"> {{ l.title }} </span> </router-link>
+                    </p>
+                  </li>
+                </ol>
+              </div>
+            </section>
 
-                        <section class="project__description red row mt-0 pt-0 pb-0 mb-0  ctn shift">
-                            <div class="project__text | mlg-3 pt-0 mt-0 | ctn-c">
-                                <div class="mx-auto page | m-100 m-ml-0 sub tw ocp-5">
-                                    <p class="sm sub">{{ last }}</p>
-                                    <h3 class="bold sub feet">&copy; {{ foot }}</h3>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section class="project__description clearfix | red col pb-0 mb-0">&nbsp;</section>
-
-                    </div>
+            <section class="project__description red row mt-0 pt-0 pb-0 mb-0  ctn shift">
+              <div class="project__text | mx-auto pt-0 mt-0 | footy ctn-c">
+                <div class="mx-auto page | m-100 m-ml-0 sub tw ocp-5">
+                  <p class="sm sub">&nbsp;</p>
+                  <h3 class="bold sub feet">&copy; {{ foot }}</h3>
                 </div>
-            </div>
-            <!-- end scroll content -->
-            <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
+              </div>
+            </section>
+
+            <section class="project__description clearfix | red col pb-0 mb-0">&nbsp;</section>
+
+          </div>
         </div>
+      </div>
+      <!-- end scroll content -->
+      <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </div>
+  </div>
 </template>
 
 <script>
@@ -116,13 +116,15 @@ export default {
     // var vm = this
 
     /* var scrollbarOptions = {
-                  renderByPixels: true,
-                  continuousScrolling: true
-                } */
+                    renderByPixels: true,
+                    continuousScrolling: true
+                  } */
+
+    var scrollOffset = 950
 
     var el = document.getElementById('menu')
     const s = scroll.init(el)
-    s.scrollTop = 900
+    s.scrollTop = scrollOffset
 
     // s.destroy()
     // s.setPosition(900, 900)
@@ -131,11 +133,11 @@ export default {
     // s.addMomentum(100, 750)
 
     /* scroll.scrollIntoView(el, {
-                  // offsetLeft: 34,
-                  // offsetBottom: 12,
-                  // alignToTop: true,
-                  onlyScrollIfNeeded: true
-                }) */
+                    // offsetLeft: 34,
+                    // offsetBottom: 12,
+                    // alignToTop: true,
+                    onlyScrollIfNeeded: true
+                  }) */
 
     console.log('i was mounthed')
   },
@@ -146,14 +148,16 @@ export default {
     // const div1 = this.$refs['scrolled'] // querySelector('div#scrolled') // vm.$refs.scrolled
     // var parent = new Vue({ el: 'div.deck' })
     /* var el = document.getElementById('scrolled')
-                const s = scroll.init(el)
-                if (s.scrollTop > 50) {
+                  const s = scroll.init(el)
+                  if (s.scrollTop > 50) {
 
-                }
+                  }
 
-                console.log(s) */
+                  console.log(s) */
     // var scrolled = 0
     // var vm = this
+
+    var scrollOffset = 950
 
     window.addEventListener('wheel', function (event) {
       // event.preventDefault()
@@ -167,8 +171,8 @@ export default {
 
       // s.scrollTop = 750
       // s.destroy()
-      if (s.scrollTop < 900) {
-        s.scrollTop = 900
+      if (s.scrollTop < scrollOffset) {
+        s.scrollTop = scrollOffset
       }
 
       // console.log(s.scrollTop)
@@ -208,12 +212,12 @@ export default {
 
 .hoverCSS3:before {
   /* content: "*";
-        width: 22px;
-        height: 22px;
-        display: inline;
-        float: right;
-        margin-left: 8px;
-        margin-top: 8px; */
+          width: 22px;
+          height: 22px;
+          display: inline;
+          float: right;
+          margin-left: 8px;
+          margin-top: 8px; */
   -webkit-transition: -webkit-transform 0.4s ease-out;
   -moz-transition: transform 0.4s ease-out;
   -o-transition: transform 0.4s ease-out;
@@ -234,10 +238,11 @@ export default {
 }
 
 /***/
-.ctn-c
-{
-  margin-left: 20vw;
-}
+
+  .project__body {
+    border-left: solid 0 #ffff;
+    border-right: solid 0 #ffff;
+  }
 
 a:hover {
   color: unset;
@@ -252,205 +257,26 @@ a:hover {
   margin-right: 70px;
 }
 
-.sm {
-  font-size: 2rem;
+.menu .sm {
+  font-size: 1.66vw;
 }
 
-.site {
-  font-size: 5vh;
+.menu .site {
+  font-size: 2.36vw;
 }
 
-.translate h3,
-.translate p {
-  margin-bottom: 20px;
+.menu .page {
+  margin-left: 50%;
+  transform: translateX(-25%);
 }
 
-.translate p {
-  margin-bottom: 70px;
-}
-
-.mt-ne-1 {
-  margin-top: -200px;
-}
-
-.project__body .bg__form {
-  position: absolute;
-  width: 10%;
-  z-index: 2;
-}
-
-.project__body .title {
-  z-index: 1;
-  position: relative;
-}
-
-.mlg-2 {
-  margin-left: 22.6342857143%;
-}
-
-.mlg-3 {
-  margin-left: 32.6342857143%;
-}
-
-.pb-6 {
-  padding-bottom: 5vh;
-}
-
-.right {
-  left: 50%;
-}
-
-.left {
-  left: -50%;
-}
-
-h3 > ul > li {
-  display: inline;
-  padding-left: 30px;
-}
-
-.ctn-r {
-  padding-left: 9.1%;
-  padding-right: 0;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-}
-
-.ctn-l {
-  padding-left: 0;
-  padding-right: 9.1%;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-}
-
-.ctn {
-  padding-left: 9.1%;
-  padding-right: 9.1%;
-}
-
-.red {
-  background-color: #ee2524;
-}
-
-.tr {
-  color: #ee2524;
-}
-
-.white {
-  background-color: #ffff;
-}
-
-.grey {
-  background-color: #f0f0f0;
-}
-
-index {
-  z-index: unset;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.tb {
-  color: #2f3c47;
-}
-
-.project__body h1 {
-  position: relative;
-  font-size: 5vw;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.project__body ul li {
-  position: relative;
-  font-size: 1.7vw;
-}
-
-.project__body ul {
-  list-style-type: square;
-}
-
-.t {
-  position: relative;
-  font-size: 8vw;
-  font-weight: bold;
-  line-height: 1;
-  opacity: 1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.project__text {
-  margin-bottom: 70px;
+.menu .feet
+{
+    transform: translateX(40%);
 }
 
 .scrollarea {
   height: 100vh;
   display: block;
-}
-
-.project__header__inner {
-  top: -6.75vw;
-}
-
-.border {
-  border: none !important;
-  -webkit-transition: opacity 2s ease-in;
-  transition: opacity 2s ease-in;
-  background-color: #2f3c47;
-}
-
-project__title::before {
-  content: "0" attr(data-i);
-  position: absolute;
-  top: 0;
-  left: -80px;
-  font-size: 3.4rem;
-}
-
-.project__description .title,
-.project__description .sub {
-  font-size: 5.5rem;
-}
-
-.project__description .sub {
-  font-size: 3.1rem;
-}
-
-.project__text p:not(:last-of-type) {
-  margin-bottom: 2rem;
-}
-
-.project__image {
-  /*top: -180px;*/
-  width: 90%;
-  position: relative;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.btn.focus,
-.btn:focus {
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.btn--cta {
-  padding: none;
-  color: #495057;
-  background: #fff;
-  border-radius: 0;
-  border: 1px solid;
 }
 </style>
