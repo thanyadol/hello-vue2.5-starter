@@ -1,10 +1,10 @@
 <template>
   <div class="where">
-    <header class="project__header | ctn">
+    <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | col-12 mlg-2x | ctn-o m-mr-0 t tb" data-i="3">{{ title }}</h2>
-        <div class="project__info | col mlg-3x | m-ml-0 m-100 tb">
-          <h3 v-bind:class="slide__sub" class="project__intro">
+        <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="3">{{ title }}</h2>
+        <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+          <h3 v-bind:class="slide__sub" class="project__intro sub bold">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
             </ul>
@@ -16,20 +16,20 @@
     <div class="project__inner scrollarea" data-scrollbar id="where">
       <div class="scroll-content" style="">
         <div class="project__content">
-          <div class="project__body row red">
+          <div class="project__body row white">
             <!-- red bar -->
             <svg class="rectang" width="150" height="2500">
                         <rect x="0" y="0" width="150" height="2500" />
                       </svg>
 
-            <section class="project__description col-md-6 pd-1 | ctn" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+            <section class="project__description col-md-6 pd-1 | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
               <div class="project__text | mrg-2 | m-100 m-mr-0">
                 <p class="title bold tb">{{ p.title }}</p>
                 <p class="sub tb">{{ p.sub }}</p>
               </div>
             </section>
-            <section class="project__description col-md-6 pd-1 tr | ctn red">
+            <section class="project__description col-md-6 pd-1 tr | ctn-content">
               <ul class="tb">
                 <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
                   <span class="sub bold">{{ v.title }}</span>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="project__body pt-0">
-          <section class="project__description p-0 m-0 | ctn grey">
+          <section class="project__description p-0 m-0 white | ctn">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -76,7 +76,7 @@ export default {
           bold: '',
           regular: '',
           detail: [],
-          background: 'red'
+          background: 'white'
         }
       ],
       invests: [
@@ -209,42 +209,13 @@ svg.rectang {
   margin-left: 35%;
   position: absolute;
   z-index: 3;
-  height: 150vh;
-  fill: rgb(255, 0, 0);
+  height: 100vh;
+  fill: #ec1e24;
 }
 
 ul li.indent {
   margin-top: 50px;
   margin-left: 35%;
-}
-
-.grey {
-  background-color: #f0f0f0;
-}
-
-ul {
-  margin-left: 50px;
-}
-
-ul li {
-  width: 350px;
-}
-
-.pb-6 {
-  padding-bottom: 5vh;
-}
-
-.right {
-  left: 50%;
-}
-
-.left {
-  left: -50%;
-}
-
-h3 > ul > li {
-  display: inline;
-  padding-left: 30px;
 }
 
 .ctn-cu {
@@ -254,54 +225,8 @@ h3 > ul > li {
   padding-top: 3rem;
 }
 
-.red {
-  background-color: #f0f0f0;
-}
-
-.tr {
-  color: #ee2524;
-}
-
-.white {
-  background-color: #ffff;
-}
-
-.index {
-  z-index: unset;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.tb {
-  color: #2f3c47;
-}
-
-.project__body h1 {
-  position: relative;
-  font-size: 5vw;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.project__body ul li {
-  position: relative;
-  font-size: 1.7vw;
-}
-
 .project__body ul {
   list-style-type: square;
-}
-
-.t {
-  position: relative;
-  font-size: 8vw;
-  font-weight: bold;
-  line-height: 1;
-  opacity: 1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 /*.project__text

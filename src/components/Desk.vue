@@ -1,7 +1,7 @@
 <template>
-  <div class="deck">
+  <div class="desk">
 
-    <div class="project__inner scrollarea" data-scrollbar id="deck" ref="scrolled">
+    <div class="project__inner scrollarea" data-scrollbar id="desk" ref="scrolled">
       <div class="scroll-content">
         <div class="project__content">
           <div class="project__body grey">
@@ -108,7 +108,7 @@ import scroll from 'smooth-scrollbar'
 // import { isNullOrUndefined } from 'util'
 // import Vue from 'vue'
 export default {
-  name: 'Deck',
+  name: 'Desk',
   // define methods under the `methods` object
   methods: {
     submit: function (event) {
@@ -266,7 +266,7 @@ export default {
         continuousScrolling: true
       } */
 
-    var el = document.getElementById('deck')
+    var el = document.getElementById('desk')
     const s = scroll.init(el)
     s.scrollTop = 750
 
@@ -308,7 +308,7 @@ export default {
 
       // var div = document.getElementById('scrollbar')
       // const scrollbar = scroll.init(div)
-      var el = document.getElementById('deck')
+      var el = document.getElementById('desk')
       const s = scroll.get(el)
 
       // s.scrollTop = 750

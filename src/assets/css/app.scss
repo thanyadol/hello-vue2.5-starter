@@ -99,6 +99,12 @@ body {
   padding-left: unset;
 }
 
+
+.grey {
+    background-color: #f0f0f0;
+  }
+
+
 .sub
 {
   font-size: 1.8vw;
@@ -138,7 +144,7 @@ body {
 
 .project__description .sub {
     font-size: 1.8vw;
-    line-height: 1;
+    line-height: 1.35;
   }
 
   .project__description .btn, .ft
@@ -162,9 +168,26 @@ body {
     color: #f0f0f0;
   }
 
+  .tr {
+    color: #ec1e24;
+  }
 
 
-////
+  .project__description {
+    padding-bottom: 50px;
+    padding-top: 67px;
+  }
+
+  .project__body h1 {
+    font-size: 5vw;
+    font-weight: bold;
+    margin-bottom: 30px;
+    line-height: 0.65;
+  }
+  
+
+
+///////////////////////////////////////////////////////////////////
 
 article,
 aside,
@@ -2182,8 +2205,8 @@ body:not([data-page=home]) #projects-container {
     display: flex;
     position: relative;
     justify-content: space-between;
-    padding-top: 110px;
-    padding-bottom: 110px;
+    // padding-top: 110px;
+    // padding-bottom: 110px;
     pointer-events: all
 }
 

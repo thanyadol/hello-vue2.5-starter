@@ -18,7 +18,7 @@
 
           <div class="project__content">
             <div class="project__body white">
-                <section class="project__description col-7 pd-1 mobile | ctn"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+                <section class="project__description col-7 mobile | ctn-content"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
                     <h3 class="hidden-visually">Project</h3>
                     <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
                       <p class="title bold">{{ p.title }}</p>
@@ -32,14 +32,14 @@
                 </section>
 
                 <!-- loop with invests -->
-                <section class="mt-ne-1">
-                <div class="project__body pb-6 pt-5 row | ctn" v-for="i in invests" :key="i.id" >
+               <section class="mt-ne-1">
+                <div class="project__body pb-6 pt-5 row | ctn-content" v-for="i in invests" :key="i.id" >
                   <div class="col-7 ne" v-bind:class="{ right: i.id%2 == 0 }">
                     <img class="project__image" :src="i.image" >
                   </div>
-                  <div class="col ne" v-bind:class="{ left: i.id%2 == 0 }">
-                    <h1 class="tr title ne" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
-                    <ul>
+                  <div class="col ne" v-bind:class="i.containnerClass">
+                    <h1 class="tr title center mb-60" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
+                    <ul v-bind:class="i.contentAlign">
                       <li class="tb sub ne" v-for="l in i.lists" :key="l.list"> {{ l }}</li>
                     </ul>
                   </div>
@@ -75,7 +75,7 @@ export default {
           id: 1,
           title: 'What we invest in 3 verticals',
           sub:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+            'Industrial - B2B - Enterprise are the areas that we will bring significant value to startups and our investment partners.',
           bold: '',
           regular: '',
           detail: [],
@@ -95,7 +95,8 @@ export default {
           image: './static/img/img3.jpg',
           imageIcon: './static/img/industrail.svg',
           imageClass: 'bg indust',
-          float: 'left red'
+          float: 'left red',
+          containnerClass: 'down'
         },
         {
           id: 2,
@@ -111,7 +112,9 @@ export default {
           imageIcon: './static/img/b2b.svg',
           imageClass: 'bg b2b',
           float: 'right white',
-          titleAlign: 'text-right'
+          contentAlign: 'al-r rtl',
+          titleAlign: '',
+          containnerClass: 'left'
         },
         {
           id: 3,
@@ -126,7 +129,9 @@ export default {
           image: './static/img/img3.jpg',
           imageIcon: './static/img/b2b.svg',
           imageClass: 'bg enterprise',
-          float: 'left red'
+          float: 'left red',
+          titleAlign: 'trs-l',
+          containnerClass: 'down'
         }
       ],
       prev: { title: 'Who We Are', url: 'whoweare' },
@@ -174,25 +179,25 @@ export default {
 </script>
 <style scoped>
 /* alider class*/
-.slide__title__active {
-  transform: translate3d(-296px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+ .slide__title__active {
+    transform: translate3d(-170px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
-.slide__sub__active {
-  transform: translate3d(-546px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+  .slide__sub__active {
+    transform: translate3d(-410px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
-.slide__title__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+  .slide__title__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
-.slide__sub__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+  .slide__sub__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
   @media (max-width: 575.98px) {
       .slide__title__active {
@@ -206,32 +211,58 @@ export default {
 /***/
 
 .mt-ne-1 {
-  margin-top: -200px;
+  transform: translateY(-10%);
+}
+
+.trs-l
+{
+  margin-left: 0 !important;
+}
+
+.down
+{
+  margin-top: 60px;
+}
+
+.mb-60
+{
+  margin-bottom: 60px;
+}
+
+.rtl
+{
+  direction: rtl;
+}
+
+.al-r
+{
+  text-align: right;
+}
+
+.center
+{
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .indust {
   top: 20px;
-  left: -20px;
 }
 
 .b2b {
-  top: 40px;
-  right: 120px;
+  top: 20px;
+  right: 80px;
 }
 
 .enterprise {
   top: 40px;
-  left: -10px;
+  left: 300px;
 }
 
 .project__body .bg {
   position: absolute;
-  width: 10%;
+  width: 15%;
   z-index: 2;
-}
-
-.grey {
-  background-color: #f0f0f0;
 }
 
 .project__body .title {
@@ -245,6 +276,7 @@ export default {
 
 .pb-6 {
   padding-bottom: 5vh;
+  padding-top: 7rem!important;
 }
 
 .right {
@@ -253,6 +285,7 @@ export default {
 
 .left {
   left: -50%;
+  padding-right: 9.1%;
 }
 
 .ctn-cu {
@@ -262,17 +295,10 @@ export default {
   padding-top: 3rem;
 }
 
-.project__body h1 {
-  position: relative;
-  font-size: 5vw;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.project__body ul li {
+/* .project__body ul li {
   position: relative;
   font-size: 1.7vw;
-}
+} */
 
 .project__body ul {
   list-style-type: square;
@@ -310,18 +336,18 @@ project__title::before {
   font-size: 5.5rem;
 }
 
-.project__description .sub,
+/* .project__description .sub,
 .mt-ne-1 .sub {
   font-size: 3.1rem;
 }
 
 .project__text p:not(:last-of-type) {
   margin-bottom: 2rem;
-}
+} */
 
 .project__image {
   /*top: -180px;*/
-  width: 90%;
+  width: 34.72vw;
   position: relative;
 }
 

@@ -16,7 +16,7 @@ import Partner from '@/components/Partner'
 import Insign from '@/components/Insign'
 import Team from '@/components/Team'
 
-import Deck from '@/components/Deck'
+import Desk from '@/components/Desk'
 import Join from '@/components/Join'
 import Menu from '@/components/Menu'
 // import './style.css';
@@ -132,9 +132,9 @@ export default new Router({
       }
     },
     {
-      path: '/pitchdeck',
-      name: 'Deck',
-      component: Deck
+      path: '/pitchdesk',
+      name: 'Desk',
+      component: Desk
     },
     {
       path: '/joinus',

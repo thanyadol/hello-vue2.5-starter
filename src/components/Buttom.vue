@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="mx-auto ct ft bold | m-ml-0">
+    <div class="mx-auto mb-6 ct ft bold | m-ml-0">
       <h3>&copy; {{ foot }}</h3>
     </div>
   </div>
@@ -54,6 +54,11 @@ export default {
 </script>
 
 <style scoped>
+
+.mb-6
+{
+  padding-bottom: 7rem;
+}
 
   a.her
   {

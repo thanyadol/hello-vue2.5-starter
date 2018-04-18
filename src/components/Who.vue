@@ -251,13 +251,9 @@ export default {
     font-size: 3.4rem;
   }*/
 
-  .project__description {
+  /* .project__description {
     padding-bottom: 30px;
-  }
-
-  .project__text p:not(:last-of-type) {
-    margin-bottom: 2rem;
-  }
+  } */
 
   .fade-enter-active,
   .fade-leave-active {
