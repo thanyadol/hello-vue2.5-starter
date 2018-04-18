@@ -1,10 +1,10 @@
 <template>
   <div class="contact">
-    <header class="project__header | ctn">
+      <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | m-mr-0 t tb" data-i="9">{{ title }}</h2>
-        <div class="project__info | m-ml-0 m-100 tb">
-          <h3 v-bind:class="slide__sub" class="project__intro">
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="6">{{ title }}</h2>
+          <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+          <h3 v-bind:class="slide__sub" class="project__intro sub bold">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
             </ul>
@@ -18,7 +18,7 @@
 
         <div class="project__content">
           <div class="project__body row grey">
-            <section class="project__description col-md-8 red row | ctn">
+            <section class="project__description col-md-8 red row | ctn-content">
               <h3 class="hidden-visually">Blog</h3>
               <div class="project__text |  mrg-2 | m-100 m-mr-0">
                 <p class="title bold tw">{{ post.title }}</p>
@@ -265,21 +265,6 @@ hr.separate {
   margin-top: -30px;
 }
 
-.project__text ul li {
-  list-style-type: none;
-  display: inline;
-  padding: 0;
-}
-
-h3 > ul > li {
-  display: inline;
-  padding-left: 30px;
-}
-
-.indent {
-  padding-left: 70px;
-}
-
 .project__body .bg__block {
   width: 100%;
   z-index: 2;
@@ -298,113 +283,6 @@ h3 > ul > li {
   top: 0;
 }
 
-.project__description .sm {
-  font-size: 3.5rem;
-}
-
-/* for new */
-
-.block {
-  margin-top: 0;
-  margin-bottom: 0;
-  background-clip: padding-box;
-  border: 5px solid transparent;
-}
-
-.block p {
-  margin: 0;
-  line-height: 5.1rem;
-}
-
-.block span {
-  margin: 0;
-  line-height: 6.5rem;
-}
-
-.ctn-cu {
-  padding-left: 9.1%;
-  padding-right: 9.1%;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-}
-
-.ctn-block {
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-}
-
-.tr {
-  color: #ee2524;
-}
-
-.roll {
-  font-size: 2vh;
-}
-
-.tw {
-  color: #f0f0f0;
-}
-
-.box {
-  position: relative;
-}
-
-.bet {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-.right {
-  margin-left: 33.333333%;
-}
-
-.pt-6 {
-  padding-top: 23.333333%;
-}
-
-.left {
-  left: -50%;
-}
-
-ol {
-  list-style: decimal;
-}
-
-.red {
-  background-color: #ee2524;
-}
-
-.grey {
-  background-color: #f0f0f0;
-}
-
-.tr {
-  color: #ee2524;
-}
-
-.white {
-  background-color: #ffff;
-}
-
-.index {
-  z-index: unset;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.tb {
-  color: #2f3c47;
-}
-
-.tw {
-  color: #f0f0f0;
-}
-
 .scrollarea {
   height: 100vh;
   display: block;
@@ -412,49 +290,6 @@ ol {
 
 .project__header__inner {
   top: -6.75vw;
-}
-
-.project__body {
-  border-left: solid 15px #ffff;
-  border-right: solid 15px #ffff;
-}
-
-.t {
-  position: relative;
-  font-size: 8vw;
-  font-weight: bold;
-  line-height: 1;
-  opacity: 1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.border {
-  border: none !important;
-  -webkit-transition: opacity 2s ease-in;
-  transition: opacity 2s ease-in;
-  background-color: #2f3c47;
-}
-
-project__title::before {
-  content: "0" attr(data-i);
-  position: absolute;
-  top: 0;
-  left: -80px;
-  font-size: 3.4rem;
-}
-
-.project__description .title,
-.project__description .sub {
-  font-size: 5.5rem;
-}
-
-.project__description .sub {
-  font-size: 3.1rem;
-}
-
-.project__text p:not(:last-of-type) {
-  margin-bottom: 2rem;
 }
 
 .fade-enter-active,

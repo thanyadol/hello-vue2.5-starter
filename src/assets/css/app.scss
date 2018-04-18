@@ -189,9 +189,50 @@ body {
     border-left: solid 15px #ffff;
     border-right: solid 15px #ffff;
   }
+
+  .project__header__inner {
+    top: -6.75vw;
+}
+
+  .scrollarea {
+    height: 100vh;
+    display: block;
+  }
   
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+  
+.al-r
+{
+    text-align: right;
+}
+
+.fl-r
+{
+    float: right;
+}
+
+.al-l
+{
+    text-align: left;
+}
+
+.fl-l
+{
+    float: left;
+}
 
 
+a:hover {
+    text-decoration: none;
+  }
 ///////////////////////////////////////////////////////////////////
 
 article,
@@ -2077,7 +2118,7 @@ body:not([data-page=home]) #projects-container {
 
 .project__header__inner {
     position: relative;
-    top: -4.6875vw;
+    // top: -4.6875vw;
     height: 50%;
     margin-top: auto
 }

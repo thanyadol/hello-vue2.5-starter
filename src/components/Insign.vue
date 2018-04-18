@@ -1,10 +1,10 @@
 <template>
   <div class="insign">
-    <header class="project__header | ctn">
+            <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title"  class="project__title | m-mr-0 t tb" data-i="7">{{ title }}</h2>
-        <div class="project__info | col-12 | m-ml-0 m-100 tb">
-          <h3 v-bind:class="slide__sub"  class="project__intro">
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="7">{{ title }}</h2>
+          <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+          <h3 v-bind:class="slide__sub" class="project__intro sub bold">
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
               </ul>
@@ -18,33 +18,60 @@
 
         <div class="project__content">
           <div class="project__body">
-              <section class="project__description red row | ctn">
+              <section class="project__description grey row | ctn-content">
                   <h3 class="hidden-visually">Blog</h3>
                   <div class="project__text | col-md-6 mrg-2 ml-0 mr-0 pr-0 pl-0 | m-100 m-mr-0">
-                    <p class="title bold tw">{{ post.title }}</p>
-                    <p class="sub bold tw">{{ post.sub }}</p>
+                    <p class="title bold tb">{{ post.title }}</p>
+                    <p class="sub bold tb">{{ post.sub }}</p>
                   </div>
               </section>
 
-             <section class="project__description grey row | ctn-b">
+             <section class="project__description t grey row | ctn-content">
                   <h3 class="hidden-visually">Venture</h3>
-                  <div class="project__description | col-md-12 block | ctn-block" v-for="r in post.blogs" :key="r.id" v-bind:class="r.class">
+                  <div class="project__description | col-md-12 |" v-for="r in post.blogs_t" :key="r.id" v-bind:class="r.class">
 
                     <div class="project__text | col-md-6 | m-100 m-mr-0">
                       <img class="bg__block" v-bind:src="r.image" />
                         <div class="date">
-                          <p class="title tb bold t-lg">{{ r.date | moment }}</p>
-                          <p class="title tr bold t-lg">{{ r.date.getDate() }}</p>
+                          <p class="title tb bold t-lg month">{{ r.date | moment }}</p>
+                          <p class="title tr bold t-lg day">{{ r.date.getDate() }}</p>
                         </div>
                     </div>
 
                     <div class="project__text | col-md-6 ml-3 | m-100 m-mr-0">
-                      <p class="title tb bold">{{ r.title }}</p>
-                      <p class="sub tb bold at">{{ r.author }}</p>
-                      <p class="sub tb sm">View 320K</p>
-                      <hr class="separate">
+                      <p class="sub tb bold">{{ r.title }}</p>
+                      <p class="sub tb mb-5c sm">{{ r.author }}</p>
+                      <!-- <p class="sub tb sm">View 320K</p> -->
+                      <!-- <hr class="separate"> -->
+
                       <router-link to="">
-                        <span class="read sub tb bold"> Read more </span>
+                        <span class="read sub tb bold sm"> Read more </span>
+                        <img class="arrow" v-bind:src="arrow" />
+                      </router-link>
+                    </div>
+
+                  </div>
+              </section>
+
+             <section class="project__description white row | ctn-content">
+                  <div class="project__description b | col-md-12 |" v-for="r in post.blogs_b" :key="r.id" v-bind:class="r.class">
+
+                    <div class="project__text | col-md-6 | m-100 m-mr-0">
+                      <img class="bg__block" v-bind:src="r.image" />
+                        <div class="date">
+                          <p class="title tb bold t-lg month">{{ r.date | moment }}</p>
+                          <p class="title tr bold t-lg day">{{ r.date.getDate() }}</p>
+                        </div>
+                    </div>
+
+                    <div class="project__text | col-md-6 ml-3 | m-100 m-mr-0">
+                      <p class="sub tb bold">{{ r.title }}</p>
+                      <p class="sub tb mb-5c sm">{{ r.author }}</p>
+                      <!-- <p class="sub tb sm">View 320K</p> -->
+                      <!-- <hr class="separate"> -->
+
+                      <router-link to="">
+                        <span class="read sub tb bold sm"> Read more </span>
                         <img class="arrow" v-bind:src="arrow" />
                       </router-link>
                     </div>
@@ -56,7 +83,7 @@
         </div>
 
          <div class="project__body pt-0">
-            <section class="project__description p-0 m-0 | ctn grey">
+            <section class="project__description p-0 m-0 | ctn white">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -81,39 +108,34 @@ export default {
       post: {
         title: 'Insign',
         sub: 'Be in the know with AddVenture',
-        blogs: [
+        blogs_t: [
           {
             id: 1,
             title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
-            author: 'by SCG',
+            author: 'Addventure by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
-          },
+          }
+        ],
+        blogs_b: [
           {
             id: 2,
             title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
-            author: 'by SCG',
+            author: 'Addventure by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
           {
             id: 3,
             title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
-            author: 'by SCG',
+            author: 'Addventure by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
           {
             id: 4,
             title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
-            author: 'by SCG',
-            image: './static/img/img3.jpg',
-            date: new Date()
-          },
-          {
-            id: 5,
-            title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
-            author: 'by SCG',
+            author: 'Addventure by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           }
@@ -171,12 +193,12 @@ export default {
 </script>
 <style scoped>
 .slide__title__active {
-  transform: translate3d(-516px, 0px, 0px);
+  transform: translate3d(-440px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
 .slide__sub__active {
-  transform: translate3d(-496px, 0px, 0px);
+  transform: translate3d(-430px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
@@ -200,33 +222,55 @@ export default {
   }
 
 /***/
-
-.mlg-25 {
-  padding-left: 35.43333%;
+.insign
+.date
+{
+  padding-top: 20px;
+  transform: translateX(30%);
 }
 
-.t-lg {
-  font-size: 9vh;
+.insign .date .day
+{
+  font-size: 5.5vw !important;
+  line-height: 0.4;
 }
 
-.more {
-  height: 900px;
+.insign .date .month
+{
+  font-size: 3.45vw !important;
+  line-height: 1.3;
 }
 
-.project__text .sub.shift {
-  /*margin-top: -90px;*/
-  margin-left: -25px;
-  z-index: 3;
+.insign .mb-5c
+{
+  margin-bottom: 10rem;
 }
 
-a:hover {
-  color: red;
-  text-decoration: none;
+.insign .sm
+{
+  font-size: 1.3vw;
 }
 
-.ctn {
-  padding-left: 9.1%;
-  padding-right: 9.1%;
+.insign
+.project__description {
+    padding-bottom: 0 !important;
+    padding-top: 67px;
+}
+
+.insign
+.project__description.t {
+    padding-bottom: 30vh !important;
+    padding-top: 0;
+}
+
+.insign
+.project__description.b
+{
+    transform: translateY(-70%);
+}
+
+.project__text p:not(:last-of-type) {
+    margin-bottom: 1.5rem;
 }
 
 hr.separate {
@@ -242,57 +286,13 @@ hr.separate {
   position: absolute;
 }
 
-/* cropping box */
-.mr-91 {
-  margin-right: 9.1%;
+.insign .project__body .bg__block {
+    width: 34vw;
+    z-index: 2;
+    padding: 10px 10px 5px 5px;
 }
 
-.mlg-2 {
-  margin-left: 20.6342857143%;
-}
-
-.platform {
-  top: 120px;
-  left: 520px;
-}
-
-.vertical {
-  top: 130px;
-  left: 150px;
-}
-
-.partner {
-  top: 120px;
-  left: 150px;
-}
-
-.project__text ul li {
-  list-style-type: none;
-  display: inline;
-  padding: 0;
-}
-
-h3 > ul > li {
-  display: inline;
-  padding-left: 30px;
-}
-
-.indent {
-  padding-left: 70px;
-}
-
-.project__body .bg__block {
-  width: 100%;
-  z-index: 2;
-  padding: 5px 10px 5px 5px;
-}
-
-.ctn-b {
-  padding-left: 12.1%;
-  padding-right: 12.1%;
-}
-
-.project__text .date {
+.insign .project__text .date {
   left: -50px;
   position: absolute;
   top: 0;
@@ -300,179 +300,14 @@ h3 > ul > li {
 
 /* for new */
 
-.block {
-  margin-top: 0;
-  margin-bottom: 0;
-  background-clip: padding-box;
-  border: 25px solid transparent;
-}
-
 .block p {
   margin: 0;
   line-height: 5.1rem;
 }
-
-.ctn-cu {
-  padding-left: 9.1%;
-  padding-right: 9.1%;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-}
-
-.ctn-block {
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-}
-
-.tr {
-  color: #ee2524;
-}
-
-.roll {
-  font-size: 2vh;
-}
-
-.tw {
-  color: #f0f0f0;
-}
-
-.box {
-  position: relative;
-}
-
-.bet {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-.right {
-  margin-left: 33.333333%;
-}
-
-.pt-6 {
-  padding-top: 23.333333%;
-}
-
-.left {
-  left: -50%;
-}
-
-ol {
-  list-style: decimal;
-}
-
-.red {
-  background-color: #ee2524;
-}
-
-.grey {
-  background-color: #f0f0f0;
-}
-
-.tr {
-  color: #ee2524;
-}
-
-.white {
-  background-color: #ffff;
-}
-
-.index {
-  z-index: unset;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.tb {
-  color: #2f3c47;
-}
-
-/*.project__text
-{
-  color: #2f3c47;
-  font-size: 2.1rem;
-  line-height: 1.62;
-}*/
 
 .scrollarea {
   height: 100vh;
   display: block;
 }
 
-.project__header__inner {
-  top: -6.75vw;
-}
-
-.project__body {
-  border-left: solid 15px #ffff;
-  border-right: solid 15px #ffff;
-}
-
-.t {
-  position: relative;
-  font-size: 8vw;
-  font-weight: bold;
-  line-height: 1;
-  opacity: 1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.border {
-  border: none !important;
-  -webkit-transition: opacity 2s ease-in;
-  transition: opacity 2s ease-in;
-  background-color: #2f3c47;
-}
-
-project__title::before {
-  content: "0" attr(data-i);
-  position: absolute;
-  top: 0;
-  left: -80px;
-  font-size: 3.4rem;
-}
-
-.project__description .title,
-.project__description .sub {
-  font-size: 5.5rem;
-}
-
-.project__description .sub {
-  font-size: 3.1rem;
-}
-
-.project__text p:not(:last-of-type) {
-  margin-bottom: 2rem;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.btn.focus,
-.btn:focus {
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.btn--cta {
-  padding: none;
-  color: #495057;
-  background: #fff;
-  border-radius: 0;
-  border: 1px solid;
-}
 </style>

@@ -2,7 +2,7 @@
   <div class="how">
         <header class="project__header action | ctn">
       <div class="project__header__inner">
-         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="5">{{ title }}</h2>
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="4">{{ title }}</h2>
           <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
               <ul>
