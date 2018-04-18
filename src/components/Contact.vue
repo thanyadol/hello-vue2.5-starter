@@ -1,13 +1,13 @@
 <template>
   <div class="contact">
-      <header class="project__header action | ctn">
+            <header class="project__header action | ctn">
       <div class="project__header__inner">
-         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="6">{{ title }}</h2>
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="9">{{ title }}</h2>
           <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
-            <ul>
-              <li v-for="s in subs" :key="s">{{ s }}</li>
-            </ul>
+              <ul>
+                  <li v-for="s in subs" :key="s" >{{ s }}</li>
+              </ul>
           </h3>
         </div>
       </div>
@@ -19,24 +19,24 @@
         <div class="project__content">
           <div class="project__body row grey">
             <section class="project__description col-md-8 red row | ctn-content">
-              <h3 class="hidden-visually">Blog</h3>
-              <div class="project__text |  mrg-2 | m-100 m-mr-0">
+              <h3 class="hidden-visually">Contact</h3>
+              <div class="project__text | m-100 m-mr-0">
                 <p class="title bold tw">{{ post.title }}</p>
                 <p class="sub bold tw">{{ post.sub }}</p>
               </div>
             </section>
             <section class="col grey"> </section>
 
-            <section class="project__description col-md-6 grey row | ctn">
-              <div class="project__text |  mrg-2 | m-100 m-mr-0">
-                <p class="sub bold tb sm">{{ addr.title }}</p>
+            <section class="project__description col-md-6 grey row | ctn-content">
+              <div class="project__text | m-100 m-mr-0 addr">
+                <p class="sub bold tb">{{ addr.title }}</p>
                 <p class="sub tb sm">{{ addr.sub }}</p>
               </div>
             </section>
 
-            <section class="project__description col-md-6 grey row | ctn-b">
+            <section class="project__description col-md-6 grey row | ctn-content b">
               <h3 class="hidden-visually">CV</h3>
-              <div class="project__text cv | mlg-2 | m-100 m-mr-0">
+              <div class="project__text cv | m-100 m-mr-0">
                 <p class="sub bold tr">{{ cv.title }}</p>
                 <router-link to="">
                   <p class="sub bold tb udl">{{ cv.sub }}</p>
@@ -44,7 +44,7 @@
               </div>
             </section>
 
-            <section class="project__description col-12 grey row | ctn-m">
+            <section class="project__description col-12 grey row | ctn-content m">
               <h3 class="hidden-visually">Map</h3>
               <div class="project__text fill">
                 <ggmap> </ggmap>
@@ -75,9 +75,9 @@ export default {
   data () {
     return {
       title: 'Contact',
-      subs: ['We are AddVenture'],
+      subs: [''],
       post: {
-        title: 'Contact',
+        title: 'Contact us',
         sub: 'We are partnering with startups to transform industries together immediately'
       },
       cv: {
@@ -167,120 +167,38 @@ export default {
   transition-duration: 1600ms;
 }
 
-  @media (max-width: 575.98px) {
-      .slide__title__active {
-          transform: translate3d(-26vw, 0px, 0px) !important;
-        }
-        .slide__sub__active {
-          transform: translate3d(-30vw, 0px, 0px) !important;
-        }
+  @media (max-width: 575.98px)
+  {
+    .slide__title__active {
+        transform: translate3d(-26vw, 0px, 0px) !important;
+      }
+      .slide__sub__active {
+        transform: translate3d(-30vw, 0px, 0px) !important;
+      }
   }
 
 /***/
 
-.t-lg {
-  font-size: 9vh !important;
-}
-
-.bot {
-  position: absolute;
-  bottom: 0px;
-  padding: 20px 20px 40px 20px;
-}
-
-.more {
-  height: 900px;
-}
-
-.fill {
+.contact .fill {
   width: -webkit-fill-available;
 }
 
-.project__text .sub.shift {
-  /*margin-top: -90px;*/
-  margin-left: -25px;
-  z-index: 3;
-}
-
-a:hover {
-  color: red;
-  text-decoration: none;
-}
-
-.ctn {
-  padding-left: 9.1%;
-  padding-right: 9.1%;
-}
-
-.ctn-r {
-  padding-left: 9.1%;
-  padding-right: 20.1%;
-}
-
-.ctn-l {
-  padding-right: 9.1%;
-  padding-left: 20.1%;
-}
-
-.ctn-m {
-  padding-left: 9.1%;
-  padding-right: 9.1%;
-  padding-top: 0;
-}
-
-hr.separate {
-  background-color: #0f0f0f;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.arrow {
-  width: 10vh;
-  padding-top: 10px;
-  margin-left: 50px;
-  position: absolute;
-}
-
-.udl {
+.contact .udl {
   border-bottom: 2px solid black;
   letter-spacing: 0.05em;
   width: min-content;
 }
 
-/* cropping box */
-
-.mr-91 {
-  margin-right: 9.1%;
+.contact .addr .sub.sm
+{
+  font-size: 1.6vw;
 }
 
-.mlg-28 {
-  margin-left: 32.6342857143%;
-}
-
-.mlg-25 {
-  margin-left: 38.43333%;
-}
-
-.cv {
-  margin-top: -30px;
-}
-
-.project__body .bg__block {
-  width: 100%;
-  z-index: 2;
-  padding: 5px 10px 5px 5px;
-}
-
-.ctn-b {
-  padding: 5.1% 40px 40px 40px;
-  height: 41vh;
-  width: 41vh;
-}
-
-.project__text .date {
-  left: -50px;
-  position: absolute;
-  top: 0;
+.contact .m
+{
+    padding-left: 19.7%;
+    padding-right: 19.7%;
+    height: 50vh;
 }
 
 .scrollarea {
@@ -288,32 +206,7 @@ hr.separate {
   display: block;
 }
 
-.project__header__inner {
-  top: -6.75vw;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.btn.focus,
-.btn:focus {
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.btn--cta {
-  padding: none;
-  color: #495057;
-  background: #fff;
-  border-radius: 0;
-  border: 1px solid;
+.project__text p:not(:last-of-type) {
+    margin-bottom: 1.5rem;
 }
 </style>
