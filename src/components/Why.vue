@@ -1,66 +1,75 @@
 <template>
   <div class="why">
-    <header class="project__header | ctn">
+    <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title"  class="project__title | mlg-1x col-md-12 | m-mr-0 t tb" data-i="5">{{ title }}</h2>
-        <div  class="project__info | col-md-12 mlg-3x | m-ml-0 m-100 tb">
-          <h3  v-bind:class="slide__sub"  class="project__intro">{{ sub }}</h3>
+        <h2 v-bind:class="slide__title" v-bind:style="[baseStyles, overrideStyles]" class="project__title | ml-0 | m-mr-0 t tb slide__title" :data-i="5">{{ title }}</h2>
+        <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+          <h3 v-bind:class="slide__sub" class="project__intro sub bold">{{ sub }}</h3>
         </div>
       </div>
     </header>
     <div class="project__inner scrollarea" data-scrollbar id="why">
       <div class="scroll-content">
-         <div class="project__content">
-            <div class="project__body grey row" v-for="p in posts" :key="p.id">
-                    <section class="project__description red | ctn" v-bind:class="p.class">
-                        <h3 class="hidden-visually">Project</h3>
-                        <div class="project__text | mrg-2c | m-100 m-mr-0">
-                          <p class="title bold indent" v-bind:class="p.titleClass">{{ p.title }}</p>
-                          <img class="bg" v-bind:src="p.image" v-bind:class="p.imageClass" />
-                          <p class="sub bold" v-bind:class="p.subClass" >{{ p.sub }}</p>
-                          <p class="project__text">
-                            <span class="sub tw" v-bind:class="p.subClass">{{ p.regular }}</span>
-                          </p>
-                          <ol>
-                              <li class="ml-5 sub tw" v-bind:class="p.subClass"  v-for="d in p.detail" :key="d">{{ d }}</li>
-                          </ol>
-                        </div>
-                    </section>
-                    <section class="project__description col box | ctn" v-bind:class="p.box">
-                        <div class="project__text bet | mrg-2c | m-100 m-mr-0">
-                          <span class="title bold tw mr-5">{{ p.bold }}</span>
-                        </div>
-                    </section>
-                  </div>
+        <div class="project__content">
+          <div class="project__body grey row" v-for="p in posts" :key="p.id">
+            <section class="project__description red | ctn-content" v-bind:class="p.class">
+              <h3 class="hidden-visually">Project</h3>
+              <div class="project__text | mrg-2c | m-100 m-mr-0">
+                <p class="title hls bold indent" v-bind:class="p.titleClass">{{ p.title }}</p>
+                <img class="bg icon" v-bind:src="p.image" v-bind:class="p.imageClass" />
+                <!-- <p class="sub bold" v-bind:class="p.subClass" >{{ p.sub }}</p> -->
+                <p class="project__text mb-5c">
+                  <span class="bold sub tw" v-bind:class="p.subClass">{{ p.bold }}</span>
+                  <span class="sub" v-bind:class="p.subClass">{{ p.regular }}</span>
+                </p>
+                <ol>
+                  <li class="ml-5 sub tw" v-bind:class="p.subClass" v-for="d in p.detail" :key="d">{{ d }}</li>
+                </ol>
               </div>
-            <div class="project__body ctn grey more"> </div>
-            <!-- should move to component -->
-            <div class="project__content shift grey">
-            <div class="project__body ctn shift row | ctn-o">
-            <section class="project__description col-12">
+            </section>
+            <section class="project__description col box | ctn-content" v-bind:class="p.box">
+              <div class="project__text | m-100 m-mr-0">
+                <p class="title bold hls tw">{{ p.reddit }}</p>
+                <p class="title bold hls tw right">{{ p.redditSub }}</p>
+              </div>
+            </section>
+          </div>
+        </div>
+        <!-- <div class="project__body ctn grey more"> </div> -->
+        <!-- should move to component -->
+        <div class="grey">
+          <div class="project__body row | ctn-content">
+            <!-- <section class="project__description col-12">
               <div class="project__text |  mrg-2c | m-100 m-mr-0">
                 <p class="title bold tr">{{ res.title }}</p>
                 <p class="sub bold tb">{{ res.sub }}</p>
               </div>
+            </section> -->
+            <section class="project__description col-md-4 block | ctn-block" v-for="r in res.list" :key="r.id" v-bind:class="r.class">
+              <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                <ul>
+                  <li class="" v-for="i in r.imageList" :key="i">
+                    <img class="bg__block" v-bind:src="i" />
+                  </li>
+                </ul>
+
+                <!-- for black -->
+                <p class="title sm bold tw" v-bind:class="r.titleClass">{{ r.title }}</p>
+
+                <p class="sm tw" v-bind:class="r.subClass">{{ r.sub }}</p>
+                <ul class="al-r">
+                  <li class="blaz sub bold tw" v-for="d in r.bold" :key="d">{{ d }}</li>
+                </ul>
+                <!-- -->
+
+                <p class="title sm bold tb">{{ r.country }}</p>
+                <p class="sub hl-2 bold tb">{{ r.year }}</p>
+                <ul>
+                  <li class="roll tb" v-for="d in r.bu" :key="d">{{ d }}</li>
+                </ul>
+              </div>
             </section>
-              <section class="project__description col-md-4 block | ctn-bk"  v-for="r in res.list" :key="r.id" v-bind:class="r.class">
-                  <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                    <ul>
-                        <li class="" v-for="i in r.imageList" :key="i">
-                           <img class="bg__block" v-bind:src="i" />
-                        </li>
-                    </ul>
-                    <ul>
-                        <li v-for="d in r.title" :key="d"><p class="title bold tb ll">{{ d }}</p></li>
-                    </ul>
-                    <p class="title bold tb">{{ r.country }}</p>
-                    <p class="sub bold tb">{{ r.year }}</p>
-                    <ul>
-                        <li class="roll tb" v-for="d in r.bu" :key="d">{{ d }}</li>
-                    </ul>
-                  </div>
-              </section>
-            </div>
+          </div>
         </div>
         <div class="project__body p-0 m-0">
           <section class="project__description p-0 m-0 | ctn grey">
@@ -90,18 +99,36 @@ export default {
           id: 1,
           title: 'Vertical Focus',
           sub: 'More Than Just a Capital Partner',
-          bold: '',
+          bold: 'At AddVentures,',
           regular:
-            'At AddVentures, we look for the investment and partnership opportunities in the areas of B2B, Industrial, and Enterprise. With the support from SCG and our goal to build the portfolio companies in highly related verticals, we believe we can offer substantial synergies in 2 dimensions',
+            'we look for the investment and partnership opportunities in the areas of B2B, Industrial, and Enterprise. With the support from SCG and our goal to build the portfolio companies in highly related verticals, we believe we can offer substantial synergies in 2 dimensions',
           detail: [
             'Direct-synergybetween SCG & startup',
             'Cross-synergy among startups in the portfolio'
           ],
           class: 'col-md-8 red none',
-          titleClass: 'tw',
+          titleClass: 'tw indent vertical',
           box: '',
           image: './static/img/vertical.svg',
-          imageClass: 'vertical'
+          imageClass: 'vertical',
+          subClass: 'tw'
+        },
+        {
+          id: 3,
+          title: 'Long term partnerships',
+          sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          bold: '',
+          regular:
+            'With our resources and extensive business network along SCG’s business value chain, we believe that we can help startups scale fast through our proprietary resources whilst allowing access to 300+ SCG subsidiaries and 1,000+ business partners across the Southeast Asian region. We are flexible and open to various collaboration programs ranging from commercial partnerships, licensings, JVs, minority investments or M&A.',
+          detail: [],
+          class: 'col-md-6 grey none mt-5 pr-5c',
+          titleClass: 'tr indent longterm',
+          subClass: 'tb',
+          box: 'red down',
+          image: './static/img/partner.svg',
+          imageClass: 'partner',
+          reddit: 'Corperate &',
+          redditSub: 'Startups'
         },
         {
           id: 2,
@@ -111,68 +138,27 @@ export default {
           regular:
             'With our resources and extensive business network along SCG business value chain, We believe that we can help startups scale fast through our proprietary resources and access to 300+ SCG subsidiaries and 1,000+ business partners across Southeast Asia Region. We are flexible and open to various collaborationPrograms ranging from commercial partnership,Licensing, JV, minority investment or M&A.',
           detail: [],
-          class: 'col-md-8 grey right none',
-          titleClass: 'tr',
+          class: 'col-md-10 grey middle',
+          titleClass: 'tr mb-0',
           subClass: 'tb',
           box: '',
           image: './static/img/platform.svg',
           imageClass: 'platform'
-        },
-        {
-          id: 3,
-          title: 'Long term <br/> partnerships',
-          sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-          bold: 'Corperate & Startups',
-          regular:
-            'As a strategic investor, we do not only provide financing but we also commit to long - term success of startups in our portfolio. Unlike traditional VC funds, we do not rush for short term financial result and investment exit. with this long term support, startups can focus on building a great company to reach their full potential fastest possible.',
-          detail: [],
-          class: 'col-md-6 grey none',
-          titleClass: 'tr',
-          subClass: 'tb',
-          box: 'red mr-91',
-          image: './static/img/partner.svg',
-          imageClass: 'partner'
         }
       ],
       res: {
         title: 'Our resources and network',
         sub: 'USD 18 Billion market capitalization more than 50,000 employee',
         list: [
-
-          {
-            id: 3,
-            country: '',
-            year: '',
-            bold: '',
-            regular: '',
-            title: ['18 Billions', '50k Employee'],
-            sub: ['Market capitalizayion', 'More than'],
-            bu: [],
-            class: 'red shift',
-            image: ''
-          },
           {
             id: 1,
-            country: 'Myanmar',
+            country: 'Thailand',
             year: '1994',
-            bold: '',
+            bold: null,
             regular: '',
-            title: [],
-            sub: [],
-            bu: ['SCG Cement - Building Materials'],
-            imageList: ['./static/img/cement.svg'],
-            class: '',
-            image: ''
-          },
-          {
-            id: 2,
-            country: 'Vietnam',
-            year: '1992',
-            bold: '',
-            regular: '',
-            title: [],
-            sub: [],
-            bu: ['SCG Cement - Building Materials'],
+            title: null,
+            sub: null,
+            bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
             imageList: [
               './static/img/cement.svg',
               './static/img/chem.svg',
@@ -182,13 +168,45 @@ export default {
             image: ''
           },
           {
+            id: 2,
+            country: 'Vietnam',
+            year: '1992',
+            bold: null,
+            regular: '',
+            title: null,
+            sub: null,
+            bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
+            imageList: [
+              './static/img/cement.svg',
+              './static/img/chem.svg',
+              './static/img/pack.svg'
+            ],
+            class: '',
+            image: ''
+          },
+          {
+            id: 3,
+            country: '',
+            year: '',
+            bold: '',
+            regular: '',
+            title: 'USD 18 Billion',
+            sub: 'Market capitalization',
+            bu: [],
+            class: 'black clip',
+            titleClass: 'fl-r',
+            subClass: 'fl-r',
+            boldClass: '',
+            image: ''
+          },
+          {
             id: 4,
             country: 'Myanmar',
             year: '1994',
-            bold: '',
+            bold: null,
             regular: '',
-            title: [],
-            sub: [],
+            title: null,
+            sub: null,
             bu: ['SCG Cement - Building Materials'],
             imageList: [
               './static/img/cement.svg',
@@ -202,21 +220,25 @@ export default {
             id: 6,
             country: '',
             year: '',
-            bold: '',
+            bold: [ 'Subsidiaries and', 'Associates' ],
             regular: '',
-            title: ['What we good at industrue expert'],
-            sub: ['Market capitalizayion', 'More than'],
-            class: 'red shift',
+            title: '300+',
+            sub: 'Companies',
+            bu: [],
+            titleClass: '',
+            subClass: '',
+            boldClass: 'fl-r',
+            class: 'black clip',
             image: ''
           },
           {
             id: 5,
             country: 'Vietnam',
             year: '1992',
-            bold: '',
+            bold: null,
             regular: '',
-            title: [],
-            sub: [],
+            title: null,
+            sub: null,
             bu: ['SCG Cement - Building Materials'],
             imageList: ['./static/img/cement.svg'],
             class: '',
@@ -224,13 +246,58 @@ export default {
           },
 
           {
+            id: 99,
+            country: '',
+            year: '',
+            bold: null,
+            regular: '',
+            title: '50k <br/> employees',
+            sub: 'Total Staffs',
+            bu: [],
+            titleClass: '',
+            subClass: '',
+            boldClass: 'fl-r',
+            class: 'black clip',
+            image: ''
+          },
+          {
+            id: 98,
+            country: 'Vietnam',
+            year: '1992',
+            bold: null,
+            regular: '',
+            title: null,
+            sub: null,
+            bu: ['SCG Cement - Building Materials'],
+            imageList: ['./static/img/cement.svg'],
+            class: '',
+            image: ''
+          },
+
+          {
+            id: 97,
+            country: '',
+            year: '',
+            bold: [ 'ASEAN assets' ],
+            regular: '',
+            title: 'USD 4.3 Billion',
+            sub: 'Companies',
+            bu: [],
+            titleClass: '',
+            subClass: '',
+            boldClass: 'fl-r',
+            class: 'black clip',
+            image: ''
+          },
+
+          {
             id: 7,
             country: 'Myanmar',
             year: '1994',
-            bold: '',
+            bold: null,
             regular: '',
-            title: [],
-            sub: [],
+            title: null,
+            sub: null,
             bu: ['SCG Cement - Building Materials'],
             imageList: [
               './static/img/cement.svg',
@@ -242,17 +309,14 @@ export default {
           },
           {
             id: 8,
-            country: 'Vietnam',
-            year: '1992',
+            country: '',
+            year: '',
             bold: '',
             regular: '',
             title: [],
             sub: [],
-            bu: ['SCG Cement - Building Materials'],
+            bu: [],
             imageList: [
-              './static/img/cement.svg',
-              './static/img/chem.svg',
-              './static/img/pack.svg'
             ],
             class: '',
             image: ''
@@ -261,10 +325,10 @@ export default {
             id: 9,
             country: 'Vietnam',
             year: '1992',
-            bold: '',
+            bold: null,
             regular: '',
-            title: [],
-            sub: [],
+            title: null,
+            sub: null,
             bu: ['SCG Cement - Building Materials'],
             imageList: ['./static/img/cement.svg', './static/img/pack.svg'],
             class: '',
@@ -272,8 +336,14 @@ export default {
           }
         ]
       },
-      prev: { title: 'How We Invest', url: 'howweinvest' },
-      next: { title: 'Our Partners', url: 'ourpartners' }
+      prev: {
+        title: 'How We Invest',
+        url: 'howweinvest'
+      },
+      next: {
+        title: 'Our Partners',
+        url: 'ourpartners'
+      }
     }
   },
   beforeMount () {
@@ -313,13 +383,14 @@ export default {
 
 <style scoped>
 /* alider class*/
+
 .slide__title__active {
-  transform: translate3d(-166px, 0px, 0px);
+  transform: translate3d(-100px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
 .slide__sub__active {
-  transform: translate3d(-506px, 0px, 0px);
+  transform: translate3d(-470px, 0px, 0px);
   transition-duration: 1600ms;
 }
 
@@ -333,31 +404,71 @@ export default {
   transition-duration: 1600ms;
 }
 
-  @media (max-width: 575.98px) {
-      .slide__title__active {
-          transform: translate3d(-23vw, 0px, 0px) !important;
-        }
-        .slide__sub__active {
-          transform: translate3d(-20vw, 0px, 0px) !important;
-        }
+@media (max-width: 575.98px) {
+  .slide__title__active {
+    transform: translate3d(-23vw, 0px, 0px) !important;
   }
+  .slide__sub__active {
+    transform: translate3d(-20vw, 0px, 0px) !important;
+  }
+}
 
 /***/
 
+.project__text .title.hls {
+    line-height: 1;
+}
+
+ul.al-r
+{
+  text-align: right;
+  margin-left: 8vw;
+}
+
+.fl-r
+{
+  float: right;
+}
+
+.al-r
+{
+  text-align: right;
+}
+
+.blaz
+{
+  display: block !important;
+}
+
+.sub.hl-2
+{
+  line-height: 2.2;
+}
+
+.project__text .title.sm
+{
+  font-size: 3.47vw;
+}
+
 .more {
-  height: 900px;
+  height: 20px;
 }
 
-.shift {
-  margin-top: -850px;
+.down {
+  /*transform: translateY(60%);*/
+  border-top: solid #f0f0f0 60vh !important;
 }
 
-.ctn {
-  padding-left: 9.1%;
-  padding-right: 9.1%;
+.pr-5c {
+  padding-right: 6.1%;
+}
+
+.mb-5c {
+  margin-bottom: 50px;
 }
 
 /* cropping box */
+
 .mr-91 {
   margin-right: 9.1%;
 }
@@ -366,40 +477,57 @@ export default {
   margin-left: 20.6342857143%;
 }
 
+.middle {
+  transform: translate3d(10%, 11%, 0);
+  text-align: center;
+}
+
 .project__body .bg {
   position: absolute;
-  width: 15%;
   z-index: 2;
 }
 
-.platform {
-  top: 120px;
-  left: 520px;
+.icon.platform {
+  top: 0;
+  left: 693px;
+  width: 13.5vw;
 }
 
-.vertical {
-  top: 130px;
-  left: 150px;
+.icon.vertical {
+  top: 80px;
+  width: 5.5vw;
+  left: 170px;
 }
 
-.partner {
+.icon.partner {
   top: 120px;
-  left: 150px;
+  width: 5.5vw;
+  left: 220px;
 }
 
 .project__text ul li {
   list-style-type: none;
   display: inline;
   padding: 0;
+  width: max-content;
 }
 
-.indent {
-  padding-left: 70px;
+.project__text ul li.roll {
+    font-size: 2vh;
+    display: block !important;
+}
+
+.indent.longterm {
+  transform: translateX(35%);
+}
+
+.indent.vertical {
+  transform: translateX(9%);
 }
 
 .project__body .bg__block {
   position: relative;
-  width: 4vw;
+  width: 3.5vw;
   z-index: 2;
   padding: 5px 10px 5px 5px;
 }
@@ -410,7 +538,15 @@ export default {
   margin-top: 20px;
   margin-bottom: 20px;
   background-clip: padding-box;
-  border: 10px solid transparent;
+  /* border: 10px solid transparent; */
+}
+
+.block.clip
+{
+    border: 60px solid transparent;
+    border-left: 0;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .block p {
@@ -432,27 +568,20 @@ export default {
   padding-top: 3rem;
 }
 
-.tr {
-  color: #ee2524;
-}
-
 .roll {
   font-size: 2vh;
-}
-
-.tw {
-  color: #f0f0f0;
 }
 
 .box {
   position: relative;
 }
 
+/*
 .bet {
   position: absolute;
   bottom: 0;
   right: 0;
-}
+}*/
 
 .right {
   margin-left: 33.333333%;
@@ -470,40 +599,12 @@ ol {
   list-style: decimal;
 }
 
-.red {
-  background-color: #ee2524;
-}
-
-.grey {
-  background-color: #f0f0f0;
-}
-
-.tr {
-  color: #ee2524;
-}
-
-.white {
-  background-color: #ffff;
-}
-
-.index {
-  z-index: unset;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.tb {
-  color: #2f3c47;
-}
-
 /*.project__text
-{
-  color: #2f3c47;
-  font-size: 2.1rem;
-  line-height: 1.62;
-}*/
+  {
+    color: #2f3c47;
+    font-size: 2.1rem;
+    line-height: 1.62;
+  }*/
 
 .scrollarea {
   height: 100vh;
@@ -512,53 +613,6 @@ ol {
 
 .project__header__inner {
   top: -6.75vw;
-}
-
-.project__body {
-  border-left: solid 15px #ffff;
-  border-right: solid 15px #ffff;
-}
-
-.t {
-  position: relative;
-  font-size: 8vw;
-  font-weight: bold;
-  line-height: 1;
-  opacity: 1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.border {
-  border: none !important;
-  -webkit-transition: opacity 2s ease-in;
-  transition: opacity 2s ease-in;
-  background-color: #2f3c47;
-}
-
-project__title::before {
-  content: "0" attr(data-i);
-  position: absolute;
-  top: 0;
-  left: -80px;
-  font-size: 3.4rem;
-}
-
-.project__description {
-  padding-bottom: 30px;
-}
-
-.project__description .title,
-.project__description .sub {
-  font-size: 5.5rem;
-}
-
-.project__description .sub {
-  font-size: 3.1rem;
-}
-
-.project__text p:not(:last-of-type) {
-  margin-bottom: 2rem;
 }
 
 .fade-enter-active,

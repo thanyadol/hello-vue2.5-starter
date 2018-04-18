@@ -90,21 +90,21 @@ export default {
           id: 1,
           title: 'Growth',
           sub: 'Post Seed',
-          image: './static/img/seed.svg',
+          image: './static/img/growth.svg',
           class: 'indent-4 tb'
         },
         {
           id: 2,
           title: 'Series B',
           sub: 'Accessories',
-          image: './static/img/seed.svg',
+          image: './static/img/seriesb.svg',
           class: 'indent-3 tr'
         },
         {
           id: 3,
           title: 'Series A',
           sub: 'Accessories',
-          image: './static/img/seed.svg',
+          image: './static/img/seriesa.svg',
           class: 'indent-2 tr'
         },
         {
