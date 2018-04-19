@@ -509,9 +509,6 @@ button:focus {
     height: 40px;
 }
 
-.inner-nav__btn--prev:hover {
-     transform: translateX(5px);
-}
 }
 
 @media (max-width: 575.98px) {
