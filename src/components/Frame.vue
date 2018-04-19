@@ -61,4 +61,37 @@ export default {
 .fade-leave-active {
   opacity: 0;
 }
+
+/* large scale desktop */
+@media (min-width: 1200px) {
+    .border--b, .border--t {
+    height: 20px;
+  }
+
+  .border--l, .border--r {
+    top: 0;
+    bottom: 0;
+    width: 20px;
+  }
+
+  .border--t {
+    top: 0;
+    transform: translate3d(0, calc(-20px + 15px), 0);
+  }
+
+   .border--b {
+    bottom: 0;
+    transform: translate3d(0, calc(20px - 15px), 0);
+  }
+
+  .border--l {
+    left: 0;
+    transform: translate3d(calc(-20px + 15px), 0, 0);
+}
+  .border--r {
+    right: 0;
+    transform: translate3d(calc(20px - 15px), 0, 0);
+}
+}
+
 </style>

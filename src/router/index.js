@@ -33,7 +33,7 @@ export default new Router({
       component: Contact
     },
     {
-      path: '/index',
+      path: '/',
       name: 'Index',
       components: {
         default: Index,

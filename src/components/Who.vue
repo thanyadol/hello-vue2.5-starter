@@ -71,7 +71,7 @@ export default {
       },
       posts: [{
         id: 1,
-        title: 'You Inovate, We Scale',
+        title: 'You Innovate, We Scale',
         sub: 'We are partnering with startups and transfrom industries together',
         bold: 'At Addventure',
         regular: 'we aim to accelerate and scale technologies, inovations and companies with strategic fit and share our core value',
@@ -110,7 +110,7 @@ export default {
       ],
       prev: {
         title: 'Home',
-        url: 'index'
+        url: ''
       },
       next: {
         title: 'What We Invest',
@@ -196,12 +196,12 @@ export default {
   }
 
   @media (max-width: 575.98px) {
-      .slide__title__active {
-          transform: translate3d(-15vw, 0px, 0px) !important;
-        }
-        .slide__sub__active {
-          transform: translate3d(-20vw, 0px, 0px) !important;
-        }
+    .slide__title__active {
+        transform: translate3d(-15vw, 0px, 0px) !important;
+      }
+      .slide__sub__active {
+        transform: translate3d(-20vw, 0px, 0px) !important;
+      }
   }
 
   .who .mb-5c

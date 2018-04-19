@@ -36,4 +36,19 @@ export default {
   background: #f0f0f0;
   transform: rotate(-201deg);
 }
+
+/* large scale desktop */
+@media (min-width: 1200px) {
+
+.lines-container {
+      left: -47%;
+}
+
+}
+
+@media (max-width: 575.98px) {
+  .lines-container {
+    right: -59%;
+  }
+}
 </style>

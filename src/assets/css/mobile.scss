@@ -4,43 +4,62 @@
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
+
+    .social-list
+    {
+        display: none;
+    }
+
+    .project__header__inner {
+        transform: translateY(-20%);
+    }
     
+    .sub {
+        font-size: 6vw;
+        line-height: 1.68;
+    }
+
+    .project__description .sub {
+        font-size: 1.8vw;
+        line-height: 1.35;
+    }
+
+    .ctn-content {
+        padding-left: 1.7%;
+        padding-right: 1.7%;
+    }
+
+    .project__text .title {
+        font-size: 3.7rem;
+        line-height: 1.69;
+    }
+
+    /////////////////////
+
     // frame
     .border--b, .border--t {
-        height: 7.1vw !important;
+        height: 7.1vw;
     }
 
     .border--l, .border--r {
-        width: 7.1vw !important;
-    }
-
-    .lines-container {
-        right: -90% !important;
-        left: -90% !important;
+        width: 7.1vw;
     }
 
     //nave
     .nav .mobile {
-        display: none !important;
+        display: none;
     }
 
     .nav .menu {
-        right: calc(10% - 5px) !important;
+        right: calc(10% - 5px);
     }
 
     //logo
     .logo
     {
-        width: 100% !important;
+        width: 75.5vw;
     }
 
-    /*.m-ml-0 {
-        margin-left: 20vw !important;
-    }*/
-
-    .project__description .sub {
-        margin-top: 0.4rem !important;
-    }
 
     .project__title::before {     
         top: -20px;
@@ -62,16 +81,6 @@
         height: unset !important; 
     }
 
-    div.mouse {
-        width: 30px !important;
-        height: 45px !important;
-    }
-
-    //page
-    .inner-nav__list {
-        display: flex !important;
-        bottom: 40px !important;
-    }
 
     .inner-nav__btn .icon--arrow--right,
     {
@@ -98,24 +107,6 @@
     .project__description.ctn {
         padding-left: 15px !important;
         padding-right: 15px !important;
-    }
-
-    .project__text
-    {
-        line-height: 1.2;   
-    }
-
-    .project__description .title, 
-    .project__description .sub {
-        font-size: 2.7rem !important;
-    }
-
-    .project__description .sub {
-        font-size: 1.8rem !important;
-    }
-
-     .project__text p:not(:last-of-type) {
-        margin-bottom: 1.3rem !important;
     }
 
     .btn
@@ -176,15 +167,6 @@
         width: 20% !important;
       }
 
-    .project__description .sub,
-    .mt-ne-1 .sub {
-    font-size: 1.8rem !important;
-    }
-
-    .project__text {
-        margin-bottom: 0 !important;
-    }
-
     .project__body ul {
         list-style-type: none !important;
         line-height: 1.5 !important;
@@ -192,11 +174,6 @@
 
     .what .project__body .ne {
         padding-left: 10vw;
-    }
-
-    .project__body .title
-    {
-        margin-bottom: 0 !important;
     }
 
     .what .pb-6

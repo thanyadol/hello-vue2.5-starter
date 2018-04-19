@@ -158,4 +158,26 @@ button:hover:before {
     .menu {
       right: calc(5vw - 12px);
     } */
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .menu-btn.pitch {
+  padding-left: 20px;
+  padding-right: 20px;
+  }
+
+  .mt-4c[data-v-532786d2] {
+    margin-top: 52px;
+    margin-left: -140px;
+}
+}
+
+@media (max-width: 575.98px) {
+
+      .mt-4c {
+    margin-top: 31px;
+    margin-left: -13px;
+}
+}
+
 </style>

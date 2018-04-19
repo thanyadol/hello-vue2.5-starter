@@ -2,7 +2,7 @@
   <div class="project">
     <header id="header" class="ctn noselect">
       <h1 class="header__title">
-        <router-link to="/index"> home </router-link>
+        <router-link to="/"> home </router-link>
       </h1>
       <nave></nave>
 
@@ -249,12 +249,12 @@ export default {
       var pages = {
         index: {
           next: 'whoweare',
-          prev: 'index',
+          prev: '',
           scroll: false
         },
         whoweare: {
           next: 'whatweinvest',
-          prev: 'index',
+          prev: '',
           scroll: 'who'
         },
         whatweinvest: {
@@ -293,7 +293,7 @@ export default {
           scroll: 'team'
         },
         contact: {
-          next: 'index',
+          next: '',
           prev: 'theteam',
           scroll: 'contact'
         },
@@ -313,7 +313,12 @@ export default {
           scroll: 'menu'
         }
       }
-      return pages[this.$route.path.substring(1, this.$route.path.length)]
+
+      if (this.$route.path.length > 0) {
+        return pages['index']
+      } else {
+        return pages[this.$route.path.substring(1, this.$route.path.length)]
+      }
     }
     /* handleScroll (event) {
                     // Any code to be executed
@@ -325,23 +330,23 @@ export default {
 </script>
 
 <style scoped>
-.social-list {
+.project .social-list {
   bottom: 60px;
 }
 
-.inner-nav__btn {
+.project .inner-nav__btn {
   display: block;
 }
 
-.cls-1 {
+.project .cls-1 {
   fill: #2f3c47;
 }
 
-.mx-a {
-margin-left: calc(50% - 23px);
+.project .mx-a {
+  margin-left: calc(50% - 23px);
 }
 
-.bg {
+.project .bg {
   width: 24px;
 }
 
@@ -352,18 +357,6 @@ margin-left: calc(50% - 23px);
   /* top: 00px; */
   width: 5vh;
   z-index: 2;
-}
-
-.z-0 {
-  z-index: 0;
-}
-
-.z-2 {
-  z-index: 2;
-}
-
-.z-1 {
-  z-index: 1;
 }
 
 .down:hover {
@@ -464,27 +457,20 @@ button:focus {
 
 /* arrow nav */
 
-.inner-nav__btn .icon--arrow {
+.project .inner-nav__btn .icon--arrow {
   width: 44px;
   height: 44px;
   fill: #495057;
 }
 
-.inner-nav__list {
+.project .inner-nav__list {
   z-index: 2;
   bottom: 60px;
   width: -42px;
   position: fixed;
 }
 
-/* .inner-nav__list > li > img:hover
-    {
-       transform: translateX(20vw);
-    } */
-
-/* social list*/
-
-.icon {
+.project .icon {
   fill: #495057;
   width: 24px;
   height: 24px;
@@ -492,7 +478,7 @@ button:focus {
   top: 10px;
 }
 
-.social-list__item .square {
+.project .social-list__item .square {
   fill: #495057;
   width: 30px;
   height: 30px;
@@ -500,11 +486,63 @@ button:focus {
   top: 0;
 }
 
-.red {
-  background-color: #2c3e50;
+@media (min-width: 1200px) {
+  .project .social-list {
+    bottom: 67px;
 }
 
-.main {
-  background-color: #fcfcfc;
+  /* .down .mouse-container:before {
+      content: "scroll";
+      color: #2f3c47;
+
+    left: 8px;
+    position: relative;
+  } */
+
+  .project .down
+  {
+    bottom: 67px;
+  }
+
+  .project .inner-nav__btn .icon--arrow {
+    width: 40px;
+    height: 40px;
+}
+
+.inner-nav__btn--prev:hover {
+     transform: translateX(5px);
+}
+}
+
+@media (max-width: 575.98px) {
+
+    div.mouse {
+       width: 23px;
+    height: 34px;
+    }
+
+    .down {
+    bottom: 30px;
+    }
+
+    .project .inner-nav__btn .icon--arrow {
+    width: 24px;
+    height: 24px;
+    }
+
+    .project  .inner-nav__list {
+    display: flex !important;
+        justify-content: center;
+    bottom: 12px;
+    right: -3px;
+    /* width: 96px; */
+}
+
+.project .inner-nav__btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
 }
 </style>

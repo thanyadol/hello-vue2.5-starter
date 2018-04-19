@@ -20,8 +20,7 @@
     padding-right: 12.7%;
 }
 
-.project__text .title
-{
+.project__text .title {
     font-size: 4.3vw;
     line-height: 1.69;
 }
@@ -123,12 +122,12 @@ body {
 }
 
 .inner-nav__btn--prev:hover {
-    transform: translateX(5px)
+   // transform: translateX(5px)
 }
 
 
 .inner-nav__btn--next:hover {
-    transform: translateX(-5px)
+    // transform: translateX(-5px)
 }
 
 .project__title.t
@@ -1720,14 +1719,14 @@ body:not([data-page=home]) #projects-container {
     transition: background-color 1.2s ease, transform .3s cubic-bezier(.215, .61, .355, 1)
 }
 
-.inner-nav__btn:hover {
+/*.inner-nav__btn:hover {
     transform: translateX(-10px)
 }
 
 
 [data-page=home] .inner-nav__btn:hover {
     transform: translateY(-3px)
-}
+}*/
 
 .inner-nav__btn .icon--arrow {
     position: absolute;
