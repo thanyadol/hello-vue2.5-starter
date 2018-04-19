@@ -289,13 +289,13 @@ export default {
   padding: 5px 10px 5px 5px;
 }
 
-.project__body .bg__block.l {
-  /* padding: 5px 0 5px 40px; */
-}
+/* .project__body .bg__block.l {
+  padding: 5px 0 5px 40px;
+}*/
 
-.project__body .bg__block.r {
-  /* padding: 5px 40px 5px 0; */
-}
+ /* .project__body .bg__block.r {
+ padding: 5px 40px 5px 0;
+}*/
 
 .scrollarea {
   height: 100vh;

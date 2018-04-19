@@ -38,7 +38,7 @@
                     <img class="project__image" :src="i.image" >
                   </div>
                   <div class="col ne" v-bind:class="i.containnerClass">
-                    <h1 class="tr title center mb-60" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
+                    <h1 class="tr title center mb-6c" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
                     <ul v-bind:class="i.contentAlign">
                       <li class="tb sub ne" v-for="l in i.lists" :key="l.list"> {{ l }}</li>
                     </ul>
@@ -199,13 +199,14 @@ export default {
     transition-duration: 1600ms;
   }
 
-  @media (max-width: 575.98px) {
-      .slide__title__active {
-          transform: translate3d(-10vw, 0px, 0px) !important;
-        }
-        .slide__sub__active {
-          transform: translate3d(-20vw, 0px, 0px) !important;
-        }
+  @media (max-width: 575.98px)
+  {
+    .slide__title__active {
+        transform: translate3d(-10vw, 0px, 0px) !important;
+      }
+      .slide__sub__active {
+        transform: translate3d(-20vw, 0px, 0px) !important;
+      }
   }
 
 /***/
@@ -214,19 +215,19 @@ export default {
   transform: translateY(-10%);
 }
 
-.trs-l
+.what .trs-l
 {
   margin-left: 0 !important;
 }
 
-.down
+.what .down
 {
   margin-top: 60px;
 }
 
-.mb-60
+.what .mb-6c
 {
-  margin-bottom: 60px;
+  margin-bottom: 6.5vh;
 }
 
 .rtl
@@ -234,22 +235,17 @@ export default {
   direction: rtl;
 }
 
-.al-r
-{
-  text-align: right;
-}
-
-.center
+.what .center
 {
     margin-left: 50%;
     transform: translateX(-50%);
 }
 
-.indust {
+.what .indust {
   top: 20px;
 }
 
-.b2b {
+.what .b2b {
   top: 20px;
   right: 80px;
 }
@@ -259,52 +255,33 @@ export default {
   left: 300px;
 }
 
-.project__body .bg {
+.what .project__body .bg {
   position: absolute;
   width: 15%;
   z-index: 2;
 }
 
-.project__body .title {
-  z-index: 1;
-  position: relative;
-}
-
-.mlg-2 {
-  margin-left: 22.6342857143%;
-}
-
-.pb-6 {
+.what .pb-6 {
   padding-bottom: 5vh;
   padding-top: 7rem!important;
 }
 
-.right {
+.what .right {
   left: 50%;
+  transform: translateX(0);
 }
 
-.left {
+.what .left {
   left: -50%;
+  transform: translateX(0);
   padding-right: 9.1%;
 }
 
-.ctn-cu {
-  padding-left: 9.1%;
-  padding-right: 9.1%;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-}
-
-/* .project__body ul li {
-  position: relative;
-  font-size: 1.7vw;
-} */
-
-.project__body ul {
+.what .project__body ul {
   list-style-type: square;
 }
 
-.project__text {
+.what .project__text {
   margin-bottom: 70px;
 }
 
@@ -313,62 +290,10 @@ export default {
   display: block;
 }
 
-.project__header__inner {
-  top: -6.75vw;
-}
-
-.border {
-  border: none !important;
-  -webkit-transition: opacity 2s ease-in;
-  transition: opacity 2s ease-in;
-  background-color: #2f3c47;
-}
-
-project__title::before {
-  content: "0" attr(data-i);
-  position: absolute;
-  top: 0;
-  left: -80px;
-  font-size: 3.4rem;
-}
-
-/* .project__description .sub,
-.mt-ne-1 .sub {
-  font-size: 3.1rem;
-}
-
-.project__text p:not(:last-of-type) {
-  margin-bottom: 2rem;
-} */
-
-.project__image {
+.what .project__image {
   /*top: -180px;*/
   width: 34.72vw;
   position: relative;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.btn.focus,
-.btn:focus {
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.btn--cta {
-  padding: none;
-  color: #495057;
-  background: #fff;
-  border-radius: 0;
-  border: 1px solid;
-}
 </style>

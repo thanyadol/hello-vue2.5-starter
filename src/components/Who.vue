@@ -19,7 +19,7 @@
               <h3 class="hidden-visually">Project</h3>
               <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
                 <p class="title bold tb" v-bind:class="p.text">{{ p.title }}</p>
-                <p class="sub bold tb" v-bind:class="p.text">{{ p.sub }}</p>
+                <p class="sub bold tb" v-bind:class="p.subClass">{{ p.sub }}</p>
                 <p class="project__text">
                   <span class="sub bold tb" v-bind:class="p.text">{{ p.bold }}</span>
                   <span class="sub tb" v-bind:class="p.text">{{ p.regular }}</span>
@@ -77,7 +77,8 @@ export default {
         regular: 'we aim to accelerate and scale technologies, inovations and companies with strategic fit and share our core value',
         detail: [],
         background: 'red',
-        text: 'tw'
+        text: 'tw',
+        subClass: 'tw mb-5c'
       },
       {
         id: 2,
@@ -89,7 +90,8 @@ export default {
           'Addenture provides unrivaled access to a global network of SCG experies and resources.',
           'We partner and invest in the best digital innovations in Industrial - Enterprise - B2B verticals.'
         ],
-        background: 'white pt-5'
+        background: 'white pt-5',
+        subClass: 'tb mb-2'
       },
       {
         id: 3,
@@ -102,7 +104,8 @@ export default {
           "Southeast Asia's leading Industrial conglomerate estabilished in 1913.",
           'We believe open innovation is part of our roadmap to success in the next centernnial.'
         ],
-        background: 'white pt-5'
+        background: 'white pt-5',
+        subClass: 'tb mb-2'
       }
       ],
       prev: {
@@ -201,68 +204,18 @@ export default {
         }
   }
 
-  /***/
-
-  .ctn-cu {
-    padding-left: 9.1%;
-    padding-right: 9.1%;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
+  .who .mb-5c
+  {
+    margin-bottom: 5rem !important;
   }
 
-  /* .ctn {
-    padding-left: 7.7%;
-    padding-right: 7.7%;
-  } */
-
-  /*.project__text
-  {
-    color: #2f3c47;
-    font-size: 2.1rem;
-    line-height: 1.62;
-  }*/
+  .project__text p:not(:last-of-type) {
+    margin-bottom: 0;
+  }
 
   .scrollarea {
     height: 100vh;
     display: block;
-  }
-
-  .project__header__inner {
-    top: -6.75vw;
-  }
-
-  .project__body {
-    border-left: solid 15px #ffff;
-    border-right: solid 15px #ffff;
-  }
-
-  .border {
-    border: none !important;
-    -webkit-transition: opacity 2s ease-in;
-    transition: opacity 2s ease-in;
-    background-color: #221f1f;
-  }
-
-  /*project__title::before {
-    content: "0" attr(data-i);
-    position: absolute;
-    top: 0;
-    left: -80px;
-    font-size: 3.4rem;
-  }*/
-
-  /* .project__description {
-    padding-bottom: 30px;
-  } */
-
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.5s;
-  }
-
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
   }
 
   .btn.focus,
@@ -279,4 +232,5 @@ export default {
     border-radius: 0;
     border: 1px solid;
   }
+
 </style>
