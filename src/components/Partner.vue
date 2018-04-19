@@ -20,7 +20,7 @@
           <div class="project__body">
             <section class="project__description grey row | ctn-content">
               <h3 class="hidden-visually">Partner</h3>
-              <div class="project__text | mrg-2x col-md-12 ml-0 mr-0 pr-0 pl-0  | m-100 m-mr-0">
+              <div class="project__text | mrg-2x col-md-6 ml-0 mr-0 pr-0 pl-0  | m-100 m-mr-0">
                 <p class="title bold tb">{{ posts.title }}</p>
                 <p class="sub bold tb">{{ posts.sub }}</p>
               </div>
@@ -29,9 +29,9 @@
             <section class="project__description grey row | ctn">
               <div class="col-md-4 block" v-for="r in posts.items" :key="r.id" v-bind:class="r.class">
                 <div class="project__text | col-md-12 mr-0 ml-0 pr-0 pl-0 mrg-2c | m-100 m-mr-0">
-                  <img class="bg__block l" v-bind:src="r.image" />
+                  <img class="bg__block l" v-show="r.image != null" v-bind:src="r.image" />
                   <div class="of-l">
-                    <p class="title bold pl-5 al-l">{{ r.title }}</p>
+                    <p class="title bold pl-5"  v-bind:class="r.titleClass">{{ r.title }}</p>
                     <hr class="white n" v-bind:class="r.lineClass" />
                     <p class="sub shift bold tb">{{ r.sub }}</p>
                     <p class="sub shift tb">{{ r.content }}</p>
@@ -41,13 +41,13 @@
 
             </section>
 
-            <section class="project__description white row | ctn">
+            <section class="project__description white row | ctn pb-0">
               <h3 class="hidden-visually">Venture</h3>
-              <div class="col-md-4 block  mt-5 | al-r" v-for="r in posts.ventures" :key="r.id" v-bind:class="r.class">
+              <div class="col-md-4 block | mb-5" v-for="r in posts.ventures" :key="r.id" v-bind:class="r.class">
                 <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                  <img class="bg__block r" v-bind:src="r.image" />
+                  <img class="bg__block r" v-show="r.image != null"  v-bind:src="r.image" />
                   <div class="of-r">
-                    <p class="title bold pl-5 al-l">{{ r.title }}</p>
+                    <p class="title bold pl-5"  v-bind:class="r.titleClass" >{{ r.title }}</p>
                     <hr class="black n" v-bind:class="r.lineClass" />
                     <p class="sub shift tb bold">{{ r.sub }}</p>
                     <p class="sub shift tb">{{ r.content }}</p>
@@ -86,10 +86,11 @@ export default {
         items: [
           {
             id: 1,
-            title: 'VC <br/> Funds',
+            title: 'VC <br/>  Funds',
             sub: '',
-            image: '',
+            image: null,
             class: 'fill red t',
+            titleClass: 'f-60',
             lineClass: 'show'
           },
           {
@@ -124,10 +125,11 @@ export default {
           },
           {
             id: 1,
-            title: 'All <br/> Startups',
+            title: 'All <br/>  Startups',
             sub: '',
-            image: '',
+            image: null,
             class: 'fill red b',
+            titleClass: ' f-60',
             lineClass: 'show black'
           },
           {
@@ -213,7 +215,7 @@ export default {
 </script>
 
 <style scoped>
-.slide__title__active {
+/* .slide__title__active {
   transform: translate3d(-203px, 0px, 0px);
   transition-duration: 1600ms;
 }
@@ -240,7 +242,7 @@ export default {
   .slide__sub__active {
     transform: translate3d(-30vw, 0px, 0px) !important;
   }
-}
+} */
 
 .partner .block.red.t {
   height: 15.3vw;
@@ -264,17 +266,17 @@ export default {
     margin-bottom: 1.5rem;
 }
 
-.of-r {
+/* .of-r {
   transform: translateX(6%);
 }
 
 .of-l {
   transform: translateX(-6%);
-}
+} */
 
-.partner .ctn {
+/* .partner .ctn {
   padding-left: 7.1% !important;
-}
+} */
 
 .partner hr {
   display: none;
@@ -305,4 +307,61 @@ export default {
 .project__text .title {
   line-height: 1;
 }
+
+  @media (min-width: 1200px) {
+      .partner .ctn {
+    padding-left: 140px;
+    padding-bottom: 110px;
+    }
+
+    .partner .block.red.t {
+    height: 259px;
+    /* padding: 0; */
+       padding: 45px 32px 30px 51px;
+    transform: translateX(-1.8%);
+    border: solid 40px #f0f0f0;
+        border-left: 0;
+    border-top: 0;
+}
+
+ .partner .block.red.b {
+   height: 259px;
+    /* padding: 0; */
+    padding: 45px 32px 30px 51px;
+    /* -webkit-transform: translateX(-1.8%); */
+    /* transform: translateX(-1.8%); */
+    border: solid 40px white;
+        border-left: 0;
+    border-top: 0;
+    /* border-left: solid 0 #f0f0f0; */
+}
+    .partner .f-60
+    {
+      font-size: 60px;
+      line-height: 0.92;
+    }
+
+    /* .partner .of-r {
+    -webkit-transform: translateX(6%);
+    transform: translateX(6%);
+    text-align: right;
+} */
+
+.project__body .bg__block {
+       height: 280px;
+    padding: 0px 10px 5px 0;
+}
+
+.partner .of-l p.sub
+{
+transform: translateX(-5%);
+
+}
+
+.partner .of-r p.sub
+{
+transform: translateX(-5%);
+text-align: right;
+}
+  }
 </style>

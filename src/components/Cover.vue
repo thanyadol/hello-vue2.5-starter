@@ -18,32 +18,32 @@ export default {
   name: 'Cover',
   props: ['left', 'right']
   /* mounted: function() {
-        var options = {
-          wheelEventTarget: EventTarget,
-        };
-        var div = document.getElementById("scrollbar");
-        scrollbar.init(div);
-
-        console.log("scrolling")
-      }, */
-  /* beforeMount() {
-        var scrolled = 0
-        var vm = this
-
-        window.addEventListener('wheel', function (event) {
+          var options = {
+            wheelEventTarget: EventTarget,
+          };
           var div = document.getElementById("scrollbar");
-          const scrollbar = scrollbar.init(div);
+          scrollbar.init(div);
 
-          if (event.deltaY < 0) {
-            scrolled++
-            console.log('scrolling up hanlde : ' + event.deltaY)
-          }
-          if (event.deltaY > 0) {
-            scrolled--
-            console.log('scrolling down hanlde : ' + event.deltaY)
-          }
-        })
-      } */
+          console.log("scrolling")
+        }, */
+  /* beforeMount() {
+          var scrolled = 0
+          var vm = this
+
+          window.addEventListener('wheel', function (event) {
+            var div = document.getElementById("scrollbar");
+            const scrollbar = scrollbar.init(div);
+
+            if (event.deltaY < 0) {
+              scrolled++
+              console.log('scrolling up hanlde : ' + event.deltaY)
+            }
+            if (event.deltaY > 0) {
+              scrolled--
+              console.log('scrolling down hanlde : ' + event.deltaY)
+            }
+          })
+        } */
 }
 </script>
 
@@ -56,8 +56,8 @@ export default {
   position: relative;
 }
 
-.cover__container .c {
-  /* width: 340px; */
+/* .cover__container .c {
+  /* width: 340px; *
   transition: transform 1600ms;
 }
 
@@ -67,7 +67,7 @@ export default {
 
 .cover__container .v {
   transform: translateX(-1200px);
-}
+} */
 
 .cover--l {
   position: absolute;
@@ -86,45 +86,39 @@ export default {
 }
 
 @media (min-width: 1200px) {
-
   .cover--l {
-  left: calc(50% + -92px);
+    left: calc(50% + -92px);
     top: calc(50% + 520px);
     width: 318px;
   }
-
   .cover--r {
-         left: calc(50% + 64px);
+    left: calc(50% + 64px);
     top: calc(50% + 435px);
-      width: 339px;
-     transform: translate(-50%, -50%);
+    width: 339px;
+    transform: translate(-50%, -50%);
   }
+
 }
 
 @media (max-width: 575.98px) {
-
   .cover--l {
-  left: calc(50% + -20px);
+    left: calc(50% + -20px);
     top: calc(50% + 340px);
-     transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
-
   .cover--r {
-      left: calc(50% + 64px);
+    left: calc(50% + 64px);
     top: calc(50% + 435px);
-     transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
-
   .cover__container .c {
     width: 165px;
   }
-
   .cover__container .z {
-  transform: scale(10) translateX(32.5px)
+    transform: scale(10) translateX(32.5px);
   }
-
   /* .cls-1 {
-    fill: crimson;
-  } */
+      fill: crimson;
+    } */
 }
 </style>

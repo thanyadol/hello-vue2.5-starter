@@ -17,24 +17,24 @@
 
         <div class="project__content">
           <div class="project__body row white">
-              <section class="project__description col-md-6 fill red | ctn-content"  v-for="p in pres" :key="p.id" v-bind:class="p.background">
+              <section class="project__description col-md-7 fill red | ctn-content stage"  v-for="p in pres" :key="p.id" v-bind:class="p.background">
                   <h3 class="hidden-visually">Project</h3>
                   <div class="project__text | mrg-2 | m-100 m-mr-0">
                     <p class="title bold">{{ p.title }}</p>
                     <!-- <p class="sub">{{ p.sub }}</p> -->
                   </div>
                 </section>
-                <section class="project__description col grey | ctn-content"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+                <section class="project__description col white | ctn-content"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
                   <div class="project__text | mrg-5 | m-100 m-mr-0">
                     <p class="title bold tb">{{ p.title }}</p>
                   </div>
                 </section>
-                <section class="project__description col-12 tr grey | ctn-content" >
+                <section class="project__description col-12 tr white | ctn-content invest" >
                   <ul class="">
                       <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
                         <!-- <span class="sub tb fixed">{{ v.sub }}</span> -->
-                        <span class="title lg bold fixed mx-auto">{{ v.title }}</span>
-                        <img class="bg" v-bind:src="v.image" />
+                        <span class="title lg bold fixed mx-auto f-60">{{ v.title }}</span>
+                        <img class="bg" v-bind:class="v.imageClass" v-bind:src="v.image" />
                       </li>
                   </ul>
                 </section>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="project__body pt-0">
-            <section class="project__description p-0 m-0 | ctn grey">
+            <section class="project__description p-0 m-0 | ctn white">
              <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -112,6 +112,7 @@ export default {
           title: 'Seed',
           sub: 'Accessories',
           image: './static/img/seed.svg',
+          imageClass: 'seed',
           class: 'indent-1 tb'
         }
       ],
@@ -155,7 +156,7 @@ export default {
 </script>
 <style scoped>
 /* alider class*/
-.slide__title__active {
+/* .slide__title__active {
   transform: translate3d(-170px, 0px, 0px);
   transition-duration: 1600ms;
 }
@@ -175,7 +176,7 @@ export default {
   transition-duration: 1600ms;
 }
 
-/* mobile */
+/* mobile *
 @media (max-width: 575.98px)
 {
   .slide__title__active {
@@ -184,7 +185,7 @@ export default {
   .slide__sub__active {
     transform: translate3d(-30vw, 0px, 0px) !important;
   }
-}
+} */
 
 /***/
 .how .lg
@@ -203,8 +204,8 @@ export default {
 .how .project__description ul li span
 {
     margin-bottom: 8vh;
-    display: block;
-    transform: translateX(20%);
+    /* display: block;
+    transform: translateX(20%); */
 }
 
 /* for new */
@@ -230,6 +231,7 @@ ul li.indent-3 {
 
 ul li.indent-4 {
   transform: translateX(50.7vw);
+  border-right: none !important;
 }
 
 /*.project__text
@@ -243,5 +245,60 @@ ul li.indent-4 {
   height: 100vh;
   display: block;
 }
+
+  @media (min-width: 1200px) {
+      .project__content .title {
+    font-size: 70px;
+    line-height: 1;
+    letter-spacing: normal;
+    }
+
+    .how .ctn-content.stage
+    {
+        width: 800px;
+  height: 350px;
+    }
+
+       .how .ctn-content.invest
+    {
+        padding-top: 0;
+            transform: translateY(-55px);
+    background: transparent;
+    }
+
+    .how .project__body .bg {
+    position: absolute;
+    left: 22%;
+    /* width: 11vw; */
+    height: 63px;
+    z-index: 2;
+    bottom: -2px;
+      }
+
+         .how .project__body .bg.seed {
+               bottom: -0.45rem;
+      }
+
+     .how   .f-60
+      {
+         font-size: 60px;
+        line-height: 1.69;
+      }
+
+      .how .project__description ul li span {
+    margin-bottom: 65px;
+    text-align: center;
+    display: block;
+    /* -webkit-transform: translateX(20%); */
+    /* transform: translateX(20%); */
+}
+
+.project__body ul li {
+    position: relative;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    width: 286px;
+}
+  }
 
 </style>

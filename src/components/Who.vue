@@ -3,9 +3,9 @@
     <!-- <head :overrideStyles="overrideStyles" :sub="sub" :title="title" :index="index"> </head> -->
     <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" v-bind:style="[baseStyles, overrideStyles]" class="project__title | ml-0 | m-mr-0 t tb slide__title" :data-i="index">{{ title }}</h2>
+        <h2 v-bind:class="slide__title" v-bind:style="[baseStyles, overrideStyles]" class="project__title | ml-0 | m-mr-0 title tb slide__title" :data-i="index">{{ title }}</h2>
         <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
-          <h3 v-bind:class="slide__sub" class="project__intro sub bold">{{ sub }}</h3>
+          <h3 v-bind:class="slide__sub" class="project__intro sub bold slide__sub">{{ sub }}</h3>
         </div>
       </div>
     </header>
@@ -17,9 +17,9 @@
           <div class="project__body">
             <section class="project__description | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
-              <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
+              <div class="project__text | col-12 mrg-2 p-0 | m-100 m-mr-0">
                 <p class="title bold tb" v-bind:class="p.text">{{ p.title }}</p>
-                <p class="sub bold tb" v-bind:class="p.subClass">{{ p.sub }}</p>
+                <p class="sub bold tb first" v-bind:class="p.subClass">{{ p.sub }}</p>
                 <p class="project__text">
                   <span class="sub bold tb" v-bind:class="p.text">{{ p.bold }}</span>
                   <span class="sub tb" v-bind:class="p.text">{{ p.regular }}</span>
@@ -29,8 +29,8 @@
             </section>
 
            <section class="project__description pt-0 | ctn-content white">
-            <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
-              <p class="title bold tb"><a class="btn btn--cta" href="#"> About us</a></p>
+            <div class="project__text | col-12 m-o p-0 mrg-2 | m-100 m-mr-0">
+              <a class="btn btn--cta" href="#"> About us</a>
             </div>
           </section>
 
@@ -109,8 +109,8 @@ export default {
       }
       ],
       prev: {
-        title: 'Home',
-        url: ''
+        title: 'Contact',
+        url: 'contact'
       },
       next: {
         title: 'What We Invest',
@@ -175,7 +175,7 @@ export default {
 <style scoped>
   /* alider class*/
 
- .slide__title__active {
+ /* .slide__title__active {
     transform: translate3d(-256px, 0px, 0px);
     transition-duration: 1600ms;
   }
@@ -202,16 +202,16 @@ export default {
       .slide__sub__active {
         transform: translate3d(-20vw, 0px, 0px) !important;
       }
-  }
+  } */
 
-  .who .mb-5c
+  /* .who .mb-5c
   {
     margin-bottom: 5rem !important;
   }
 
   .project__text p:not(:last-of-type) {
     margin-bottom: 0;
-  }
+  } */
 
   .scrollarea {
     height: 100vh;
@@ -233,4 +233,8 @@ export default {
     border: 1px solid;
   }
 
+  /* // Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+
+  }
 </style>

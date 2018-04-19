@@ -94,10 +94,10 @@ a:hover {
   padding-top: 2px;
 }
 
-.menu-btn.pitch:hover {
+/*.menu-btn.pitch:hover {
   background-color: #ec1e23;
   color: #2f3c47;
-}
+}*/
 
 .menu-btn.pitch:before,
 .menu-btn.pitch:after {

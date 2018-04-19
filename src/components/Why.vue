@@ -22,9 +22,9 @@
                   <span class="bold sub tw" v-bind:class="p.subClass">{{ p.bold }}</span>
                   <span class="sub" v-bind:class="p.subClass">{{ p.regular }}</span>
                 </p>
-                <ol>
+                <!-- <ul>
                   <li class="ml-5 sub tw" v-bind:class="p.subClass" v-for="d in p.detail" :key="d">{{ d }}</li>
-                </ol>
+                </ul> -->
               </div>
             </section>
             <section class="project__description col box | ctn-content" v-bind:class="p.box">
@@ -38,7 +38,7 @@
         <!-- <div class="project__body ctn grey more"> </div> -->
         <!-- should move to component -->
         <div class="grey">
-          <div class="project__body row | ctn-content">
+          <div class="project__body row | ctn-content blog">
             <!-- <section class="project__description col-12">
               <div class="project__text |  mrg-2c | m-100 m-mr-0">
                 <p class="title bold tr">{{ res.title }}</p>
@@ -101,12 +101,9 @@ export default {
           sub: 'More Than Just a Capital Partner',
           bold: 'At AddVentures,',
           regular:
-            'we look for the investment and partnership opportunities in the areas of B2B, Industrial, and Enterprise. With the support from SCG and our goal to build the portfolio companies in highly related verticals, we believe we can offer substantial synergies in 2 dimensions',
-          detail: [
-            'Direct-synergybetween SCG & startup',
-            'Cross-synergy among startups in the portfolio'
-          ],
-          class: 'col-md-8 red none',
+            'At AddVentures, we look for investment and partnership opportunities in the areas of B2B, Industrial, and Enterprise. With the support from SCG, our goal is to build a portfolio of companies in highly related verticals. We believe we can offer substantial synergies in 2 dimensions: (1) Direct-synergy between SCG & startups and (2) Cross-synergy among startups in the portfolio.',
+
+          class: 'col-md-7 red vertical',
           titleClass: 'tw indent vertical',
           box: '',
           image: './static/img/vertical.svg',
@@ -121,14 +118,13 @@ export default {
           regular:
             'With our resources and extensive business network along SCG’s business value chain, we believe that we can help startups scale fast through our proprietary resources whilst allowing access to 300+ SCG subsidiaries and 1,000+ business partners across the Southeast Asian region. We are flexible and open to various collaboration programs ranging from commercial partnerships, licensings, JVs, minority investments or M&A.',
           detail: [],
-          class: 'col-md-6 grey none mt-5 pr-5c',
+          class: 'col-md-6 grey none mt-5 pr-5c ',
           titleClass: 'tr indent longterm',
           subClass: 'tb',
           box: 'red down',
           image: './static/img/partner.svg',
           imageClass: 'partner',
-          reddit: 'Corperate &',
-          redditSub: 'Startups'
+          reddit: 'Corperate and Startups'
         },
         {
           id: 2,
@@ -153,7 +149,7 @@ export default {
           {
             id: 1,
             country: 'Thailand',
-            year: '1994',
+            year: '1931',
             bold: null,
             regular: '',
             title: null,
@@ -194,24 +190,22 @@ export default {
             sub: 'Market capitalization',
             bu: [],
             class: 'black clip',
-            titleClass: 'fl-r',
-            subClass: 'fl-r',
+            titleClass: 'f-50 ct',
+            subClass: 'f-16 al-r',
             boldClass: '',
             image: ''
           },
           {
             id: 4,
-            country: 'Myanmar',
-            year: '1994',
+            country: 'Laos',
+            year: '1992',
             bold: null,
             regular: '',
             title: null,
             sub: null,
             bu: ['SCG Cement - Building Materials'],
             imageList: [
-              './static/img/cement.svg',
-              './static/img/chem.svg',
-              './static/img/pack.svg'
+              './static/img/cement.svg'
             ],
             class: '',
             image: ''
@@ -220,21 +214,21 @@ export default {
             id: 6,
             country: '',
             year: '',
-            bold: [ 'Subsidiaries and', 'Associates' ],
+            bold: [ 'Subsidiaries and Associates' ],
             regular: '',
             title: '300+',
             sub: 'Companies',
             bu: [],
-            titleClass: '',
-            subClass: '',
+            titleClass: 'f-50 ct',
+            subClass: 'f-16 al-r',
             boldClass: 'fl-r',
             class: 'black clip',
             image: ''
           },
           {
             id: 5,
-            country: 'Vietnam',
-            year: '1992',
+            country: 'Myanmar',
+            year: '1994',
             bold: null,
             regular: '',
             title: null,
@@ -254,22 +248,26 @@ export default {
             title: '50k <br/> employees',
             sub: 'Total Staffs',
             bu: [],
-            titleClass: '',
-            subClass: '',
+            titleClass: 'f-50 ct',
+            subClass: 'f-16 al-r',
             boldClass: 'fl-r',
             class: 'black clip',
             image: ''
           },
           {
             id: 98,
-            country: 'Vietnam',
-            year: '1992',
+            country: 'Indonesia',
+            year: '1995',
             bold: null,
             regular: '',
             title: null,
             sub: null,
-            bu: ['SCG Cement - Building Materials'],
-            imageList: ['./static/img/cement.svg'],
+            bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
+            imageList: [
+              './static/img/cement.svg',
+              './static/img/chem.svg',
+              './static/img/pack.svg'
+            ],
             class: '',
             image: ''
           },
@@ -283,8 +281,8 @@ export default {
             title: 'USD 4.3 Billion',
             sub: 'Companies',
             bu: [],
-            titleClass: '',
-            subClass: '',
+            titleClass: 'f-50 ct',
+            subClass: 'f-16 al-r',
             boldClass: 'fl-r',
             class: 'black clip',
             image: ''
@@ -292,16 +290,15 @@ export default {
 
           {
             id: 7,
-            country: 'Myanmar',
+            country: 'Philippines',
             year: '1994',
             bold: null,
             regular: '',
             title: null,
             sub: null,
-            bu: ['SCG Cement - Building Materials'],
+            bu: ['SCG Cement - Building Materials', 'SCG Packaging'],
             imageList: [
               './static/img/cement.svg',
-              './static/img/chem.svg',
               './static/img/pack.svg'
             ],
             class: '',
@@ -323,14 +320,18 @@ export default {
           },
           {
             id: 9,
-            country: 'Vietnam',
-            year: '1992',
+            country: 'Malaysia & Singapore',
+            year: '1996',
             bold: null,
             regular: '',
             title: null,
             sub: null,
-            bu: ['SCG Cement - Building Materials'],
-            imageList: ['./static/img/cement.svg', './static/img/pack.svg'],
+            bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
+            imageList: [
+              './static/img/cement.svg',
+              './static/img/chem.svg',
+              './static/img/pack.svg'
+            ],
             class: '',
             image: ''
           }
@@ -384,7 +385,7 @@ export default {
 <style scoped>
 /* alider class*/
 
-.slide__title__active {
+/* .slide__title__active {
   transform: translate3d(-100px, 0px, 0px);
   transition-duration: 1600ms;
 }
@@ -411,16 +412,12 @@ export default {
   .slide__sub__active {
     transform: translate3d(-20vw, 0px, 0px) !important;
   }
-}
+} */
 
 /***/
 
 .why .project__text .title.hls {
     line-height: 1;
-}
-
-.why .indent.longterm {
-  transform: translateX(35%);
 }
 
 .why .indent.vertical {
@@ -443,10 +440,10 @@ ul.al-r
   line-height: 2.2;
 }
 
-.project__text .title.sm
+/* .project__text .title.sm
 {
   font-size: 3.47vw;
-}
+} */
 
 .more {
   height: 20px;
@@ -549,4 +546,130 @@ ol {
   display: block;
 }
 
-</style>
+  @media (min-width: 1200px) {
+
+    .why .ctn-content.focus {
+    padding-right: 151px;
+    }
+
+    .why .project__text .title.hls {
+    margin-bottom: 30px;
+}
+
+.why .icon.vertical {
+    top: 85px;
+    width: 75px;
+    left: 197px;
+}
+
+.why .pr-5c {
+        padding-right: 40px;
+    padding-top: 0;
+}
+.why .indent.longterm {
+  text-align: right;
+  margin-bottom: 25px !important;
+}
+
+.why .icon.partner {
+    top: 46px;
+    width: 90px;
+    left: 364px;
+}
+
+.why .down {
+    /* transform: translateY(60%); */
+    border-top: solid #f0f0f0 350px !important;
+    border-left: solid #f0f0f0 158px !important;
+    padding-top: 123.5px;
+    padding-left: 80px;
+    text-align: right;
+    padding-right: 150px;
+    /* direction: rtl; */
+}
+
+.why .icon.platform {
+    top: 0;
+    left: 693px;
+    width: 215px;
+}
+
+.why .middle{
+    -webkit-transform: translate3d(10%, 0%, 0);
+    transform: translate3d(10%, 0%, 0);
+    text-align: center;
+    margin-top: 135px;
+}
+
+    .block p.title
+    {
+        font-size: 40px;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: normal;
+    }
+
+    .block p.sub
+    {
+font-size: 30px;
+  font-weight: bold;
+  /* line-height: 2.33; */
+  letter-spacing: normal;
+    }
+
+    .block p.roll
+    {
+          font-size: 18px;
+  /* line-height: 1.44; */
+    }
+
+    .block .f-50
+    {
+         font-size: 50px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+    }
+
+    .block .f-16
+    {
+        font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.19;
+  letter-spacing: 2px;
+    }
+
+    .why .block.clip {
+    border: 60px solid transparent;
+    border-left: 0;
+    padding: 18px 36px 18px 36px;
+        height: 334px;
+    margin: 0 !important;
+    }
+
+    .why .ctn-content.blog
+    {
+      padding-left: 276px;
+    padding-right: 90px;
+    /* justify-content: left; */
+    display: flex;
+    /* content: close-quote; */
+    }
+
+    .why .block {
+    margin: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    background-clip: padding-box;
+    /* border: 10px solid transparent; */
+}
+
+}
+
+    </style>

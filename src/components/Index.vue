@@ -86,7 +86,7 @@ export default {
 
   @media (min-width: 1200px) {
 
-    .index .info {
+    .index .sub {
       font-size: 30px;
       font-weight: bold;
       line-height: 1.7;

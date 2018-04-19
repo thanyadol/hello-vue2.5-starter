@@ -19,9 +19,9 @@
           <div class="project__body row white">
 
             <!-- red bar -->
-            <svg class="rectang" width="150" height="2500">
-                        <rect x="0" y="0" width="150" height="2500" />
-                      </svg>
+            <svg class="rectang" width="180" height="2500">
+                          <rect x="0" y="0" width="180" height="2500" />
+                        </svg>
 
             <section class="project__description col-md-6 | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
@@ -33,21 +33,19 @@
             <section class="project__description col-md-6 pd-1 tr | ctn-content">
               <ul class="down">
                 <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
-                  <span class="sub bold">{{ v.title }}</span>
+                  <span class="sub bold f-30">{{ v.title }}</span>
                   <p class="sub">{{ v.sub }}</p>
                 </li>
               </ul>
             </section>
 
-            <section class="project__map col-12 pt-0 pb-5 | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+            <section class="project__map col-12 pt-0 pb-5 | ctn-content | mapp__wrapper" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <img class="mx-auto map" :src="sample">
             </section>
 
             <!-- tags lat long -->
             <section class="project__description tags__wrapper">
-              <div class="tags"
-                  v-bind:style="{ left: t.x + 'px', top: t.y + 'px' }"
-                  v-for="t in tags" :key="t.id">
+              <div class="tags" v-bind:style="{ left: t.x + 'px', top: t.y + 'px' }" v-for="t in tags" :key="t.id">
                 <span class="sub bold sm tw">{{ t.title }}</span>
               </div>
             </section>
@@ -78,63 +76,59 @@ export default {
       slide__title: false,
       slide__sub: false,
 
-      tags: [
-        {
-          id: 1,
-          title: 'USA',
-          x: 200,
-          y: 200,
-          color: 'red'
-        },
-        {
-          id: 2,
-          title: 'China',
-          x: 1150,
-          y: 200,
-          color: 'black red'
-        },
-        {
-          id: 3,
-          title: 'Israel',
-          x: 920,
-          y: 300,
-          color: 'red'
-        },
-        {
-          id: 4,
-          title: 'Asean',
-          x: 1000,
-          y: 450,
-          color: 'red'
-        }
+      tags: [{
+        id: 1,
+        title: 'USA',
+        x: 200,
+        y: 150,
+        color: 'red'
+      },
+      {
+        id: 2,
+        title: 'China',
+        x: 1150,
+        y: 140,
+        color: 'black red'
+      },
+      {
+        id: 3,
+        title: 'Israel',
+        x: 920,
+        y: 300,
+        color: 'red'
+      },
+      {
+        id: 4,
+        title: 'Asean',
+        x: 1200,
+        y: 450,
+        color: 'red'
+      }
 
       ],
-      posts: [
-        {
-          // id: 99,
-          title: 'Focused Ecosystems',
-          sub: '',
-          bold: '',
-          regular: '',
-          detail: [],
-          background: 'white'
-        }
-      ],
-      invests: [
-        {
-          id: 1,
-          title: 'Technology',
-          sub: '',
-          image: './static/img/img3.jpg',
-          class: 'tb'
-        },
-        {
-          id: 2,
-          title: 'Business Model',
-          sub: '',
-          image: './static/img/img3.jpg',
-          class: 'tr'
-        }
+      posts: [{
+        // id: 99,
+        title: 'Focused Ecosystems',
+        sub: '',
+        bold: '',
+        regular: '',
+        detail: [],
+        background: 'white'
+      }],
+      invests: [{
+        id: 1,
+        title: 'Technology',
+        sub: '',
+        image: './static/img/img3.jpg',
+        class: 'tb'
+      },
+      {
+        id: 2,
+        title: 'Business Model',
+        sub: '',
+        image: './static/img/img3.jpg',
+        class: 'tr'
+      }
       ],
 
       separator: './static/img/separator.',
@@ -191,121 +185,163 @@ export default {
 </script>
 
 <style scoped>
-/* alider class*/
+  /* alider class*/
 
-.slide__title__active {
-  transform: translate3d(-40px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-.slide__sub__active {
-  transform: translate3d(-390px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-.slide__title__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-.slide__sub__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-@media (max-width: 575.98px)
-{
-  .slide__title__active {
-    transform: translate3d(-3vw, 0px, 0px) !important;
+  /* .slide__title__active {
+    transform: translate3d(-40px, 0px, 0px);
+    transition-duration: 1600ms;
   }
+
   .slide__sub__active {
-    transform: translate3d(-24vw, 0px, 0px) !important;
+    transform: translate3d(-390px, 0px, 0px);
+    transition-duration: 1600ms;
   }
+
+  .slide__title__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
+
+  .slide__sub__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
+
+  @media (max-width: 575.98px)
+  {
+    .slide__title__active {
+      transform: translate3d(-3vw, 0px, 0px) !important;
+    }
+    .slide__sub__active {
+      transform: translate3d(-24vw, 0px, 0px) !important;
+    }
+  } */
+
+  /***/
+
+  .where .tags__wrapper {
+    position: absolute;
+    display: block;
+    width: 100%;
+    margin-top: 200px;
+  }
+
+  .where .tags {
+    position: absolute;
+    display: block;
+    background-color: #ec1e24;
+    cursor: pointer;
+  }
+
+  .where .tags span:hover {
+    color: #2f3c47;
+  }
+
+  .where .sm {
+    font-size: 2.1rem;
+  }
+
+  .where .tags {
+    padding: 5px 20px 5px 20px;
+  }
+
+  .where .down {
+    transform: translateY(60%)
+  }
+
+  .where .project__text .title {
+    line-height: 1;
+  }
+
+  .where .map {
+    width: 65vw;
+  }
+
+  .where .mlg-2 {
+    margin-left: 18.6342857143%;
+  }
+
+  /* for new */
+
+  svg.rectang {
+    opacity: 0.95;
+    width: 180px;
+    margin-left: 50%;
+    transform: translateX(-100px);
+    position: absolute;
+    z-index: 3;
+    height: 95vh;
+    fill: #ec1e24;
+  }
+
+  ul li.indent {
+    margin-top: 50px;
+    margin-left: 35%;
+  }
+
+  .project__body ul {
+    list-style-type: square;
+  }
+
+  /*.project__text
+          {
+            color: #2f3c47;
+            font-size: 2.1rem;
+            line-height: 1.62;
+          }*/
+
+  .scrollarea {
+    height: 100vh;
+    display: block;
+  }
+
+  @media (min-width: 1200px) {
+    .where svg.rectang {
+      opacity: 0.95;
+      width: 180px;
+      margin-left: 815px;
+      z-index: 3;
+      height: 863px;
+      fill: #ec1e24;
+    }
+    .where .mlg-2 {
+      margin-left: 0;
+    }
+    .f-30 {
+      font-size: 30px;
+      line-height: 1.7;
+      letter-spacing: normal;
+    }
+    .where .map {
+      width: 1200px;
+    }
+
+    .where .mapp__wrapper {
+      margin-top: 61px;
+    }
+
+    .where .tags span
+    {
+      font-size: 22px;
+      line-height: 1.6;
+    }
+
+    .where .tags {
+    padding: 1px 23px 1px 23px;
+    }
+
+    .where
+     .project__body ul {
+    list-style-type: square;
+    font-size: 30px;
+  }
+
+  .where .tags__wrapper {
+              margin-top: 295px;
+          position: fixed;
+    height: 700px;
+    padding-top: 0 !important;
 }
 
-/***/
-
-.where .tags__wrapper
-{
-  position: absolute;
-  display: block;
-  width: 100%;
-  margin-top: 200px;
-}
-
-.where  .tags
-{
-  position: absolute;
-  display: block;
-  background-color: #ec1e24;
-  cursor: pointer;
-}
-
-.where .tags span:hover
-{
-  color: #2f3c47;
-}
-
-.where .sm
-{
-  font-size: 2.1rem;
-}
-
-.where .tags
-{
-  padding: 5px 20px 5px 20px;
-}
-
-.where .down
-{
-  transform: translateY(60%)
-}
-
-.where .project__text .title
-{
-  line-height: 1;
-}
-
-.where .map {
-  width: 65vw;
-}
-
-.where .mlg-2 {
-  margin-left: 18.6342857143%;
-}
-
-/* for new */
-
-svg.rectang {
-  opacity: 0.95;
-  width: 180px;
-  margin-left: 50%;
-  transform: translateX(-100px);
-  position: absolute;
-  z-index: 3;
-  height: 95vh;
-  fill: #ec1e24;
-}
-
-ul li.indent {
-  margin-top: 50px;
-  margin-left: 35%;
-}
-
-.project__body ul {
-  list-style-type: square;
-}
-
-/*.project__text
-        {
-          color: #2f3c47;
-          font-size: 2.1rem;
-          line-height: 1.62;
-        }*/
-
-.scrollarea {
-  height: 100vh;
-  display: block;
-}
-
+  }
 </style>

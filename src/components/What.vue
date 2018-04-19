@@ -2,7 +2,7 @@
   <div class="what">
     <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="2">{{ title }}</h2>
+        <h2 v-bind:class="slide__title" class="project__title | m-0 p-0 | t tb slide__title title" data-i="2">{{ title }}</h2>
         <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
               <ul>
@@ -33,12 +33,13 @@
 
                 <!-- loop with invests -->
                <section class="mt-ne-1">
-                <div class="project__body pb-6 pt-5 row | ctn-content" v-for="i in invests" :key="i.id" >
-                  <div class="col-7 ne" v-bind:class="{ right: i.id%2 == 0 }">
+                <div class="pb-6 pt-5 row | ctn-content" v-for="i in invests" :key="i.id" >
+                  <div class="col-7 m-0 p-0 ne" v-bind:class="{ right: i.id%2 == 0 }">
                     <img class="project__image" :src="i.image" >
                   </div>
                   <div class="col ne" v-bind:class="i.containnerClass">
-                    <h1 class="tr title center mb-6c" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
+                    <h1 class="tr title center large mb-6c" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
+                    <span class="sub bold ne tb">{{ i.sub }}</span>
                     <ul v-bind:class="i.contentAlign">
                       <li class="tb sub ne" v-for="l in i.lists" :key="l.list"> {{ l }}</li>
                     </ul>
@@ -101,33 +102,37 @@ export default {
         {
           id: 2,
           title: 'B2B',
+          sub: 'Marketplace platform for',
           lists: [
-            'Marketplace and platform for',
-            'Construction product',
+            'Construction products',
             'Chemicals',
             'Packaging',
-            'Logistics and Industrail supply'
+            'Logistics and Industrial supply',
+            'Logistics'
           ],
           image: './static/img/img3.jpg',
           imageIcon: './static/img/b2b.svg',
           imageClass: 'bg b2b',
           float: 'right white',
           contentAlign: 'al-r rtl',
-          titleAlign: '',
-          containnerClass: 'left'
+          titleAlign: 'ml-0',
+          containnerClass: 'left al-r'
         },
         {
           id: 3,
           title: 'Enterprise',
           lists: [
             'E-commerce enablement',
-            'Predictive analystics',
-            'Chemicals',
+            'Predictive analytics',
             'Omni channel',
-            'Construction efficiency management'
+            'Construction efficiency management',
+            'Software - as - a Service (SaaS)',
+            'Artificial Intelligent (AI)',
+            'AR / VR',
+            'Blockchain'
           ],
           image: './static/img/img3.jpg',
-          imageIcon: './static/img/b2b.svg',
+          imageIcon: './static/img/enterprise.svg',
           imageClass: 'bg enterprise',
           float: 'left red',
           titleAlign: 'trs-l',
@@ -179,7 +184,7 @@ export default {
 </script>
 <style scoped>
 /* alider class*/
- .slide__title__active {
+ /* .slide__title__active {
     transform: translate3d(-170px, 0px, 0px);
     transition-duration: 1600ms;
   }
@@ -207,7 +212,7 @@ export default {
       .slide__sub__active {
         transform: translate3d(-20vw, 0px, 0px) !important;
       }
-  }
+  } */
 
 /***/
 
@@ -255,12 +260,6 @@ export default {
   left: 300px;
 }
 
-.what .project__body .bg {
-  position: absolute;
-  width: 15%;
-  z-index: 2;
-}
-
 .what .pb-6 {
   padding-bottom: 5vh;
   padding-top: 7rem!important;
@@ -278,7 +277,7 @@ export default {
 }
 
 .what .project__body ul {
-  list-style-type: square;
+  list-style-type: none;
 }
 
 .what .project__text {
@@ -294,6 +293,40 @@ export default {
   /*top: -180px;*/
   width: 34.72vw;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .what .project__body ul > li:before {
+  content: "–"; /* en dash */
+  position: absolute;
+  margin-left: -1.1em;
+      margin-right: -1.1em;
+  }
+
+  .what .project__body .bg {
+  position: absolute;
+  width: 60px;
+  z-index: 2;
+}
+
+.project__content .title.large {
+    font-size: 100px;
+    line-height: 0.69;
+    letter-spacing: normal;
+}
+
+.what .indust {
+  top: 40px;
+}
+.what .b2b {
+  top: 20px;
+  right: 80px;
+}
+
+.enterprise {
+  top: 40px;
+  left: 150px;
+}
 }
 
 </style>
