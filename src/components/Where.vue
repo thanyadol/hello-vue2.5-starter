@@ -20,8 +20,8 @@
 
             <!-- red bar -->
             <!-- <svg class="rectang" width="180" height="2500">
-                            <rect x="0" y="0" width="180" height="2500" />
-                          </svg> -->
+                              <rect x="0" y="0" width="180" height="2500" />
+                            </svg> -->
             <img class="rectang" v-bind:src="sep" />
 
             <section class="project__description col-md-6 | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
@@ -46,7 +46,7 @@
 
             <!-- tags lat long -->
             <section class="project__description tags__wrapper">
-              <div class="tags" v-bind:style="{ left: t.x + 'px', top: t.y + 'px' }" v-for="t in tags" :key="t.id">
+              <div class="tags" v-bind:class="t.color" v-bind:style="{ left: t.x + 'px', top: t.y + 'px' }" v-for="t in tags" :key="t.id">
                 <span class="sub bold sm tw">{{ t.title }}</span>
               </div>
             </section>
@@ -91,7 +91,7 @@ export default {
           title: 'China',
           x: 1150,
           y: 140,
-          color: 'black red'
+          color: 'custom'
         },
         {
           id: 3,
@@ -193,34 +193,34 @@ export default {
 /* alider class*/
 
 /* .slide__title__active {
-      transform: translate3d(-40px, 0px, 0px);
-      transition-duration: 1600ms;
-    }
-
-    .slide__sub__active {
-      transform: translate3d(-390px, 0px, 0px);
-      transition-duration: 1600ms;
-    }
-
-    .slide__title__leave {
-      transform: translate3d(0px, 0px, 0px);
-      transition-duration: 1600ms;
-    }
-
-    .slide__sub__leave {
-      transform: translate3d(0px, 0px, 0px);
-      transition-duration: 1600ms;
-    }
-
-    @media (max-width: 575.98px)
-    {
-      .slide__title__active {
-        transform: translate3d(-3vw, 0px, 0px) !important;
+        transform: translate3d(-40px, 0px, 0px);
+        transition-duration: 1600ms;
       }
+
       .slide__sub__active {
-        transform: translate3d(-24vw, 0px, 0px) !important;
+        transform: translate3d(-390px, 0px, 0px);
+        transition-duration: 1600ms;
       }
-    } */
+
+      .slide__title__leave {
+        transform: translate3d(0px, 0px, 0px);
+        transition-duration: 1600ms;
+      }
+
+      .slide__sub__leave {
+        transform: translate3d(0px, 0px, 0px);
+        transition-duration: 1600ms;
+      }
+
+      @media (max-width: 575.98px)
+      {
+        .slide__title__active {
+          transform: translate3d(-3vw, 0px, 0px) !important;
+        }
+        .slide__sub__active {
+          transform: translate3d(-24vw, 0px, 0px) !important;
+        }
+      } */
 
 /***/
 
@@ -289,11 +289,11 @@ ul li.indent {
 }
 
 /*.project__text
-            {
-              color: #2f3c47;
-              font-size: 2.1rem;
-              line-height: 1.62;
-            }*/
+              {
+                color: #2f3c47;
+                font-size: 2.1rem;
+                line-height: 1.62;
+              }*/
 
 .scrollarea {
   height: 100vh;
@@ -345,30 +345,34 @@ ul li.indent {
     line-height: 1.6;
   }
   .where .tags {
-width: 80px;
+    width: 80px;
     height: 40px;
     padding: 3px 0px 2px 0px;
     text-align: center;
     /* padding-top: 3px; */
   }
+  .where .tags.custom {
+    background: linear-gradient(
+      to right,
+      black 0%,
+      black 50%,
+      #000000 50%,
+      #dc3545 50%,
+      #dc3545 100%
+    );
+  }
   .where .project__body ul {
     list-style-type: square;
     font-size: 30px;
   }
-
-  .where ul li.fix
-  {
+  .where ul li.fix {
     height: 40px;
   }
-
-  .where .ctn-content.focus
-  {
+  .where .ctn-content.focus {
     padding-left: 220px;
-        padding-top: 137.5px;
+    padding-top: 137.5px;
   }
-
-  .where .pt-10c
-  {
+  .where .pt-10c {
     padding-top: 110px;
   }
 }

@@ -1,9 +1,9 @@
 <template>
   <div class="partner">
-  <header class="project__header action | ctn part">
+    <header class="project__header action | ctn part">
       <div class="project__header__inner">
-         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="6">{{ title }}</h2>
-          <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+        <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="6">{{ title }}</h2>
+        <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
@@ -18,7 +18,7 @@
 
         <div class="project__content">
           <div class="project__body">
-            <section class="project__description grey row | ctn-content">
+            <section class="project__description grey row | ctn-content first">
               <h3 class="hidden-visually">Partner</h3>
               <div class="project__text | mrg-2x col-md-6 ml-0 mr-0 pr-0 pl-0  | m-100 m-mr-0">
                 <p class="title bold tb">{{ posts.title }}</p>
@@ -26,12 +26,15 @@
               </div>
             </section>
 
-            <section class="project__description grey row | ctn">
+            <section class="project__description grey row | ctn top">
               <div class="col-md-4 block" v-for="r in posts.items" :key="r.id" v-bind:class="r.class">
                 <div class="project__text | col-md-12 mr-0 ml-0 pr-0 pl-0 mrg-2c | m-100 m-mr-0">
                   <img class="bg__block l" v-show="r.image != null" v-bind:src="r.image" />
                   <div class="of-l">
-                    <p class="title bold pl-5"  v-bind:class="r.titleClass">{{ r.title }}</p>
+                    <div v-show="r.type == 'redd'" class="red box | redd">
+                      <p class="title bold" v-bind:class="r.titleClass">{{ r.title }}</p>
+                    </div>
+
                     <hr class="white n" v-bind:class="r.lineClass" />
                     <p class="sub shift bold tb">{{ r.sub }}</p>
                     <p class="sub shift tb">{{ r.content }}</p>
@@ -45,9 +48,11 @@
               <h3 class="hidden-visually">Venture</h3>
               <div class="col-md-4 block | mb-5" v-for="r in posts.ventures" :key="r.id" v-bind:class="r.class">
                 <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                  <img class="bg__block r" v-show="r.image != null"  v-bind:src="r.image" />
+                  <img class="bg__block r" v-show="r.image != null" v-bind:src="r.image" />
                   <div class="of-r">
-                    <p class="title bold pl-5"  v-bind:class="r.titleClass" >{{ r.title }}</p>
+                    <div v-show="r.type == 'redd'" class="red box | redd">
+                      <p class="title bold" v-bind:class="r.titleClass">{{ r.title }}</p>
+                    </div>
                     <hr class="black n" v-bind:class="r.lineClass" />
                     <p class="sub shift tb bold">{{ r.sub }}</p>
                     <p class="sub shift tb">{{ r.content }}</p>
@@ -86,12 +91,13 @@ export default {
         items: [
           {
             id: 1,
-            title: 'VC <br/>  Funds',
+            title: 'VC  Funds',
             sub: '',
             image: null,
-            class: 'fill red t',
+            class: '',
             titleClass: 'f-60',
-            lineClass: 'show'
+            lineClass: 'show',
+            type: 'redd'
           },
           {
             id: 2,
@@ -125,12 +131,13 @@ export default {
           },
           {
             id: 1,
-            title: 'All <br/>  Startups',
+            title: 'All   Startups',
             sub: '',
             image: null,
-            class: 'fill red b',
+            class: '',
             titleClass: ' f-60',
-            lineClass: 'show black'
+            lineClass: 'show black',
+            type: 'redd'
           },
           {
             id: 4,
@@ -216,67 +223,67 @@ export default {
 
 <style scoped>
 /* .slide__title__active {
-  transform: translate3d(-203px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-.slide__sub__active {
-  transform: translate3d(-466px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-.slide__title__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-.slide__sub__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-@media (max-width: 575.98px) {
-  .slide__title__active {
-    transform: translate3d(-13vw, 0px, 0px) !important;
+    transform: translate3d(-203px, 0px, 0px);
+    transition-duration: 1600ms;
   }
+
   .slide__sub__active {
-    transform: translate3d(-30vw, 0px, 0px) !important;
+    transform: translate3d(-466px, 0px, 0px);
+    transition-duration: 1600ms;
   }
-} */
 
-.partner .block.red.t {
-  height: 15.3vw;
-  -webkit-transform: translateY(1.8%);
-  transform: translateY(1.8%);
-  transform: translateX(-1.8%);
-  border-right: solid 2vw #f0f0f0;
-  border-left: solid 1vw #f0f0f0;
-}
+  .slide__title__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
+
+  .slide__sub__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
+
+  @media (max-width: 575.98px) {
+    .slide__title__active {
+      transform: translate3d(-13vw, 0px, 0px) !important;
+    }
+    .slide__sub__active {
+      transform: translate3d(-30vw, 0px, 0px) !important;
+    }
+  } */
+
+/* .partner .block.red.t {
+    height: 15.3vw;
+    -webkit-transform: translateY(1.8%);
+    transform: translateY(1.8%);
+    transform: translateX(-1.8%);
+    border-right: solid 2vw #f0f0f0;
+    border-left: solid 1vw #f0f0f0;
+  } */
 
 .partner .block.red.b {
   height: 15.3vw;
   /* -webkit-transform: translateY(1.8%);
-  transform: translateY(1.8%);
-  transform: translateX(-1.8%); */
+    transform: translateY(1.8%);
+    transform: translateX(-1.8%); */
   border-right: solid 2vw white;
   border-left: solid 2vw white;
 }
 
 .project__text p:not(:last-of-type) {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* .of-r {
-  transform: translateX(6%);
-}
+    transform: translateX(6%);
+  }
 
-.of-l {
-  transform: translateX(-6%);
-} */
+  .of-l {
+    transform: translateX(-6%);
+  } */
 
 /* .partner .ctn {
-  padding-left: 7.1% !important;
-} */
+    padding-left: 7.1% !important;
+  } */
 
 .partner hr {
   display: none;
@@ -292,12 +299,12 @@ export default {
 }
 
 /* .project__body .bg__block.l {
-  padding: 5px 0 5px 40px;
-}*/
+    padding: 5px 0 5px 40px;
+  }*/
 
- /* .project__body .bg__block.r {
- padding: 5px 40px 5px 0;
-}*/
+/* .project__body .bg__block.r {
+   padding: 5px 40px 5px 0;
+  }*/
 
 .scrollarea {
   height: 100vh;
@@ -308,65 +315,69 @@ export default {
   line-height: 1;
 }
 
-  @media (min-width: 1200px) {
-      .partner .ctn {
+@media (min-width: 1200px) {
+  .partner .ctn {
     padding-left: 140px;
     padding-bottom: 110px;
-    }
-
-    .partner .block.red.t {
-    height: 259px;
-    /* padding: 0; */
-       padding: 45px 32px 30px 51px;
-    transform: translateX(-1.8%);
-    border: solid 40px #f0f0f0;
-        border-left: 0;
-    border-top: 0;
-}
-
- .partner .block.red.b {
-   height: 259px;
+  }
+  .partner .block.red.evo {
+    width: 350px;
+    height: 180px;
     /* padding: 0; */
     padding: 45px 32px 30px 51px;
-    /* -webkit-transform: translateX(-1.8%); */
-    /* transform: translateX(-1.8%); */
-    border: solid 40px white;
-        border-left: 0;
-    border-top: 0;
-    /* border-left: solid 0 #f0f0f0; */
-}
-    .partner .f-60
-    {
-      font-size: 60px;
-      line-height: 0.92;
-    }
-
-    /* .partner .of-r {
-    -webkit-transform: translateX(6%);
-    transform: translateX(6%);
-    text-align: right;
-} */
-
-.project__body .bg__block {
-       height: 280px;
-    padding: 0px 10px 5px 0;
-}
-
-.partner .of-l p.sub
-{
-transform: translateX(-5%);
-
-}
-
-.partner .of-r p.sub
-{
-transform: translateX(-5%);
-text-align: right;
-}
-
-.partner .ctn.part {
-   padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
+    /* transform: translateX(-1.8%);
+      border: solid 40px #f0f0f0; */
   }
+  /* .partner .block.red.b {
+         width: 350px;
+    height: 180px;
+      padding: 45px 32px 30px 51px;
+      /* -webkit-transform: translateX(-1.8%); */
+  /* transform: translateX(-1.8%); */
+  /* border: solid 40px white;
+          border-left: 0;
+      border-top: 0; */
+  /* border-left: solid 0 #f0f0f0; *
+  } */
+  .partner .f-60 {
+    font-size: 60px;
+    line-height: 0.92;
+  }
+  /* .partner .of-r {
+      -webkit-transform: translateX(6%);
+      transform: translateX(6%);
+      text-align: right;
+  } */
+  .project__body .bg__block {
+    width: 350px;
+    height: 280px;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  .partner .of-l p.sub {
+    transform: translateX(-5%);
+  }
+  .partner .of-r p.sub {
+    transform: translateX(-5%);
+    text-align: right;
+  }
+  .partner .ctn.part {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .partner .ctn.top {
+    padding-top: 0;
+  }
+  .partner .box.redd {
+    width: 350px;
+    height: 180px;
+    padding: 36px 111px 56px 36px;
+  }
+  .partner .ctn-content.first {
+    padding-left: 238px;
+    padding-right: 238px;
+    padding-top: 66.5px;
+    padding-bottom: 55px;
+  }
+}
 </style>

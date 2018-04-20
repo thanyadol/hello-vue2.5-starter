@@ -1,13 +1,13 @@
 <template>
   <div class="insign">
-            <header class="project__header action | ctn">
+    <header class="project__header action | ctn">
       <div class="project__header__inner">
-         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="7">{{ title }}</h2>
-          <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+        <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="7">{{ title }}</h2>
+        <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
-              <ul>
-                  <li v-for="s in subs" :key="s" >{{ s }}</li>
-              </ul>
+            <ul>
+              <li v-for="s in subs" :key="s">{{ s }}</li>
+            </ul>
           </h3>
         </div>
       </div>
@@ -17,81 +17,83 @@
       <div class="scroll-content">
 
         <div class="project__content">
-          <div class="project__body">
-              <section class="project__description grey row | ctn-content">
-                  <h3 class="hidden-visually">Blog</h3>
-                  <div class="project__text | col-md-6 mrg-2 ml-0 mr-0 pr-0 pl-0 | m-100 m-mr-0">
-                    <p class="title bold tb">{{ post.title }}</p>
-                    <p class="sub bold tb">{{ post.sub }}</p>
+          <div class="project__body white">
+            <section class="project__description grey row | ctn-content blog">
+              <h3 class="hidden-visually">Blog</h3>
+              <div class="project__text | col-md-6 mrg-2 ml-0 mr-0 pr-0 pl-0 | m-100 m-mr-0">
+                <p class="title bold tb">{{ post.title }}</p>
+                <p class="sub bold tb">{{ post.sub }}</p>
+              </div>
+            </section>
+
+            <!-- grey top -->
+            <div class="bg grey fixed-top"> </div>
+            <section class="project__description t white row | ctn-content blog">
+              <h3 class="hidden-visually">Venture</h3>
+              <div class="project__description | col-md-12 |" v-for="r in post.blogs" :key="r.id" v-bind:class="r.class">
+
+                <div class="project__text | col-6 | m-100 m-mr-0">
+                  <img class="bg__block" v-bind:src="r.image" />
+                  <div class="date">
+                    <p class="title tb bold t-lg month">{{ r.date | moment }}</p>
+                    <p class="title tr bold t-lg day">{{ r.date.getDate() }}</p>
                   </div>
-              </section>
+                </div>
 
-             <section class="project__description t grey row | ctn-content">
-                  <h3 class="hidden-visually">Venture</h3>
-                  <div class="project__description | col-md-12 |" v-for="r in post.blogs_t" :key="r.id" v-bind:class="r.class">
-
-                    <div class="project__text | col-5 | m-100 m-mr-0">
-                      <img class="bg__block" v-bind:src="r.image" />
-                        <div class="date">
-                          <p class="title tb bold t-lg month">{{ r.date | moment }}</p>
-                          <p class="title tr bold t-lg day">{{ r.date.getDate() }}</p>
-                        </div>
-                    </div>
-
-                    <div class="project__text | col ml-3 | m-100 m-mr-0">
-                      <p class="sub tb bold">{{ r.title }}</p>
-                      <p class="sub tb sm">{{ r.author }}</p>
-                      <!-- <p class="sub tb sm">View 320K</p> -->
-                      <!-- <hr class="separate"> -->
-                    <div class="href">
-                         <router-link to="">
-                        <span class="read sub tb bold readmore"> Read more </span>
-                        <img class="arrow" v-bind:src="arrow" />
-                      </router-link>
-                   </div>
-
-                    </div>
-
+                <div class="project__text | col ml-5 | m-100 m-mr-0">
+                  <p class="sub tb bold">{{ r.title }}</p>
+                  <p class="sub tb sm">{{ r.author }}</p>
+                  <!-- <p class="sub tb sm">View 320K</p> -->
+                  <!-- <hr class="separate"> -->
+                  <div class="href">
+                    <router-link to="">
+                      <span class="read sub tb bold readmore"> Read more </span>
+                      <img class="arrow" v-bind:src="arrow" />
+                    </router-link>
                   </div>
-              </section>
 
-             <section class="project__description white row | ctn-content">
-                  <div class="project__description b | col-md-12 |" v-for="r in post.blogs_b" :key="r.id" v-bind:class="r.class">
+                </div>
 
-                    <div class="project__text | col-md-5 | m-100 m-mr-0">
-                      <img class="bg__block" v-bind:src="r.image" />
-                        <div class="date">
-                          <p class="title tb bold t-lg month">{{ r.date | moment }}</p>
-                          <p class="title tr bold t-lg day">{{ r.date.getDate() }}</p>
-                        </div>
-                    </div>
+              </div>
+            </section>
 
-                           <div class="project__text | col ml-3 | m-100 m-mr-0">
-                      <p class="sub tb bold">{{ r.title }}</p>
-                      <p class="sub tb sm">{{ r.author }}</p>
-                      <!-- <p class="sub tb sm">View 320K</p> -->
-                      <!-- <hr class="separate"> -->
-                    <div class="href">
-                         <router-link to="">
-                        <span class="read sub tb bold readmore"> Read more </span>
-                        <img class="arrow" v-bind:src="arrow" />
-                      </router-link>
-                   </div>
+            <!-- <section class="project__description white row | ctn-content"> -->
+            <div class="project__description | b blog | col-md-12 |" v-for="r in post.blogs_b" :key="r.id" v-bind:class="r.class">
 
-                    </div>
+              <div class="project__text | col-md-5 | m-100 m-mr-0">
+                <img class="bg__block" v-bind:src="r.image" />
+                <div class="date">
+                  <p class="title tb bold t-lg month">{{ r.date | moment }}</p>
+                  <p class="title tr bold t-lg day">{{ r.date.getDate() }}</p>
+                </div>
+              </div>
 
-                  </div>
-              </section>
+              <div class="project__text | col ml-3 | m-100 m-mr-0">
+                <p class="sub tb bold">{{ r.title }}</p>
+                <p class="sub tb sm">{{ r.author }}</p>
+                <!-- <p class="sub tb sm">View 320K</p> -->
+                <!-- <hr class="separate"> -->
+                <div class="href">
+                  <router-link to="">
+                    <span class="read sub tb bold readmore"> Read more </span>
+                    <img class="arrow" v-bind:src="arrow" />
+                  </router-link>
+                </div>
+
+              </div>
 
             </div>
+            </section>
+
+          </div>
         </div>
 
-         <div class="project__body pt-0">
-            <section class="project__description p-0 m-0 | ctn white">
+        <div class="project__body pt-0">
+          <section class="project__description p-0 m-0 | ctn white">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
-        </div>
+      </div>
       <!-- end scroll content -->
       <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </div>
@@ -108,37 +110,39 @@ export default {
     return {
       title: 'Insigns',
       subs: ['Be in the know with AddVenture'],
-      arrow: './static/img/next.svg',
+      arrow: './static/img/next.png',
       post: {
         title: 'Insigns',
         sub: 'Be in the know with AddVenture',
-        blogs_t: [
+        blogs: [
           {
             id: 1,
-            title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
+            title:
+              'AddVentures reveals the global trend focuses on B2B startups, Plus giving three success factors for startups',
             author: 'Addventure by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
-          }
-        ],
-        blogs_b: [
+          },
           {
             id: 2,
-            title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
+            title:
+              'AddVentures reveals the global trend focuses on B2B startups, Plus giving three success factors for startups',
             author: 'Addventure by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
           {
             id: 3,
-            title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
+            title:
+              'AddVentures reveals the global trend focuses on B2B startups, Plus giving three success factors for startups',
             author: 'Addventure by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
           {
             id: 4,
-            title: 'Gixtix easy an online worldwide shipping Why we invest Why we invest',
+            title:
+              'AddVentures reveals the global trend focuses on B2B startups, Plus giving three success factors for startups',
             author: 'Addventure by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
@@ -147,8 +151,14 @@ export default {
       },
       slide__title: false,
       slide__sub: false,
-      prev: { title: 'Our Partners', url: 'ourpartners' },
-      next: { title: 'The Team', url: 'theteam' }
+      prev: {
+        title: 'Our Partners',
+        url: 'ourpartners'
+      },
+      next: {
+        title: 'The Team',
+        url: 'theteam'
+      }
     }
   },
   filters: {
@@ -195,87 +205,79 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 /* .slide__title__active {
-  transform: translate3d(-440px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+    transform: translate3d(-440px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
-.slide__sub__active {
-  transform: translate3d(-430px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+  .slide__sub__active {
+    transform: translate3d(-430px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
-.slide__title__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+  .slide__title__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
-.slide__sub__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
+  .slide__sub__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
 
-  @media (max-width: 575.98px) {
-      .slide__title__active {
-          transform: translate3d(-31vw, 0px, 0px) !important;
-        }
-        .slide__sub__active {
-          transform: translate3d(-22vw, 0px, 0px) !important;
-        }
-  } */
+    @media (max-width: 575.98px) {
+        .slide__title__active {
+            transform: translate3d(-31vw, 0px, 0px) !important;
+          }
+          .slide__sub__active {
+            transform: translate3d(-22vw, 0px, 0px) !important;
+          }
+    } */
 
 /***/
-.insign
-.date
-{
+
+.insign .date {
   padding-top: 20px;
   transform: translateX(30%);
 }
 
-.insign .date .day
-{
+.insign .date .day {
   font-size: 5.5vw !important;
   line-height: 0.4;
 }
 
-.insign .date .month
-{
+.insign .date .month {
   font-size: 3.45vw !important;
   line-height: 1.3;
 }
 
-.insign .mb-5c
-{
+.insign .mb-5c {
   margin-bottom: 10rem;
 }
 
-.insign .sm
-{
+.insign .sm {
   font-size: 1.3vw;
 }
 
-.insign
-.project__description {
-    padding-bottom: 0 !important;
-    padding-top: 67px;
-}
+/* .insign .project__description {
+  padding-bottom: 0 !important;
+  padding-top: 67px;
+} */
 
-.insign
-.project__description.t {
-    padding-bottom: 30vh !important;
-    padding-top: 0;
-}
+/* .insign .project__description.t {
+  padding-bottom: 30vh !important;
+  padding-top: 0;
+} */
 
-.insign
-.project__description.b
-{
-    transform: translateY(-70%);
-}
+/* .insign .project__description.b {
+  transform: translateY(-70%);
+} */
 
 /* .project__text p:not(:last-of-type) {
-    margin-bottom: 1.5rem;
-} */
+      margin-bottom: 1.5rem;
+  } */
 
 hr.separate {
   background-color: #0f0f0f;
@@ -291,9 +293,9 @@ hr.separate {
 }
 
 .insign .project__body .bg__block {
-    width: 34vw;
-    z-index: 2;
-    padding: 10px 10px 5px 5px;
+  width: 34vw;
+  z-index: 2;
+  padding: 10px 10px 5px 5px;
 }
 
 .insign .project__text .date {
@@ -315,68 +317,73 @@ hr.separate {
 }
 
 @media (min-width: 1200px) {
-
-  .insign .project__body .bg__block{
+  .insign .project__body .bg__block {
     width: 450px;
+    height: 280px;
     z-index: 2;
     padding: 0;
   }
-
-  .insign .project__text .sub
-  {
+  .insign .project__text .sub {
     font-size: 32px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.25;
+    width: 561px;
   }
-
-    .insign .project__text .sub.sm
-  {
+  .insign .project__text .sub.sm {
     font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.94;
-  letter-spacing: normal;
-  margin-bottom: 95px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.94;
+    letter-spacing: normal;
+        margin-bottom: 58px;
+    margin-top: 23px;
   }
-
-     .insign .project__text .sub.readmore
-  {
+  .insign .project__text .sub.readmore {
     font-size: 22px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.68;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.68;
+  }
+  .insign .date .day {
+    font-size: 80px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.88;
+  }
+  .insign .date .month {
+    font-size: 50px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+  }
+  .insign .arrow {
+    width: 55px;
+    padding-top: 3px;
+    margin-left: 36px;
+  }
+  .insign .b.block {
+    padding-bottom: 0 !important;
+    padding-top: 60px;
+  }
+  .insign .fixed-top {
+    position: absolute;
+    top: 0;
+    height: 800px;
+    z-index: 2;
   }
 
-  .insign .date .day
-{
-   font-size: 80px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 0.88;
+  .insign .ctn-content.blog
+  {
+         z-index: 9;
+    background: transparent;
+    padding-bottom: 41px;
+  }
 }
-
-.insign .date .month
-{
-    font-size: 50px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1;
-  letter-spacing: normal
-}
-
-.insign .arrow {
-    width: 55px;
-    padding-top: 7px;
-    margin-left: 40px;
-    position: absolute;
-}
-
-}
-
 </style>
