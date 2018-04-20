@@ -23,15 +23,15 @@
                   <span class="sub" v-bind:class="p.subClass">{{ p.regular }}</span>
                 </div>
                 <!-- <ul>
-                  <li class="ml-5 sub tw" v-bind:class="p.subClass" v-for="d in p.detail" :key="d">{{ d }}</li>
-                </ul> -->
+                    <li class="ml-5 sub tw" v-bind:class="p.subClass" v-for="d in p.detail" :key="d">{{ d }}</li>
+                  </ul> -->
               </div>
             </section>
             <section class="project__description box | ctn-content" v-bind:class="p.box">
               <div class="project__text | m-100 m-mr-0">
 
-                  <p class="title bold tw redd">{{ p.reddit }}</p>
-                  <p class="title bold tw right">{{ p.redditSub }}</p>
+                <p class="title bold tw redd">{{ p.reddit }}</p>
+                <p class="title bold tw right">{{ p.redditSub }}</p>
 
               </div>
             </section>
@@ -42,12 +42,12 @@
         <div class="grey">
           <div class="project__body row | ctn-content blog">
             <!-- <section class="project__description col-12">
-              <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                <p class="title bold tr">{{ res.title }}</p>
-                <p class="sub bold tb">{{ res.sub }}</p>
-              </div>
-            </section> -->
-            <section class="project__description col-md-4 block | ctn-block" v-for="r in res.list" :key="r.id" v-bind:class="r.boxClass" >
+                <div class="project__text |  mrg-2c | m-100 m-mr-0">
+                  <p class="title bold tr">{{ res.title }}</p>
+                  <p class="sub bold tb">{{ res.sub }}</p>
+                </div>
+              </section> -->
+            <section class="project__description col-md-4 block | ctn-block" v-for="r in res.list" :key="r.id" v-bind:class="r.boxClass">
               <div class="project__text |  mrg-2c | m-100 m-mr-0">
                 <ul class="bus">
                   <li class="" v-for="i in r.imageList" :key="i">
@@ -56,14 +56,14 @@
                 </ul>
 
                 <!-- for black -->
-              <div class="black" v-show="r.type == 'black'">
-                   <p class="sm tw" v-bind:class="r.beforeClass">{{ r.before }}</p>
-               <p class="title sm bold tw" v-bind:class="r.titleClass">{{ r.title }}</p>
+                <div class="black" v-show="r.type == 'black'">
+                  <p class="sm tw" v-bind:class="r.beforeClass">{{ r.before }}</p>
+                  <p class="title sm bold tw" v-bind:class="r.titleClass">{{ r.title }}</p>
 
-                <p class="sm tw" v-bind:class="r.subClass">{{ r.sub }}</p>
-                <ul class="al-r">
-                  <li class="blaz sub bold tw" v-for="d in r.bold" :key="d">{{ d }}</li>
-                </ul>
+                  <p class="sm tw" v-bind:class="r.subClass">{{ r.sub }}</p>
+                  <ul class="al-r">
+                    <li class="blaz sub bold tw" v-for="d in r.bold" :key="d">{{ d }}</li>
+                  </ul>
                 </div>
 
                 <!-- -->
@@ -115,7 +115,6 @@ export default {
           image: './static/img/vertical.svg',
           imageClass: 'vertical',
           subClass: 'tw'
-
         },
         {
           id: 3,
@@ -164,7 +163,11 @@ export default {
             regular: '',
             title: null,
             sub: null,
-            bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
+            bu: [
+              'SCG Cement - Building Materials',
+              'SCG Chemicals',
+              'SCG Packaging'
+            ],
             imageList: [
               './static/img/cement.png',
               './static/img/chem.png',
@@ -181,7 +184,11 @@ export default {
             regular: '',
             title: null,
             sub: null,
-            bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
+            bu: [
+              'SCG Cement - Building Materials',
+              'SCG Chemicals',
+              'SCG Packaging'
+            ],
             imageList: [
               './static/img/cement.png',
               './static/img/chem.png',
@@ -215,9 +222,7 @@ export default {
             title: null,
             sub: null,
             bu: ['SCG Cement - Building Materials'],
-            imageList: [
-              './static/img/cement.png'
-            ],
+            imageList: ['./static/img/cement.png'],
             boxClass: 'center',
             image: ''
           },
@@ -225,7 +230,7 @@ export default {
             id: 6,
             country: '',
             year: '',
-            bold: [ 'Subsidiaries and Associates' ],
+            bold: ['Subsidiaries and Associates'],
             regular: '',
             title: '300+',
             sub: 'Companies',
@@ -275,7 +280,11 @@ export default {
             regular: '',
             title: null,
             sub: null,
-            bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
+            bu: [
+              'SCG Cement - Building Materials',
+              'SCG Chemicals',
+              'SCG Packaging'
+            ],
             imageList: [
               './static/img/cement.png',
               './static/img/chem.png',
@@ -289,7 +298,7 @@ export default {
             id: 97,
             country: '',
             year: '',
-            bold: [ 'ASEAN assets' ],
+            bold: ['ASEAN assets'],
             regular: '',
             title: 'USD 4.3 Billion',
             sub: 'Companies',
@@ -311,10 +320,7 @@ export default {
             title: null,
             sub: null,
             bu: ['SCG Cement - Building Materials', 'SCG Packaging'],
-            imageList: [
-              './static/img/cement.svg',
-              './static/img/pack.svg'
-            ],
+            imageList: ['./static/img/cement.svg', './static/img/pack.svg'],
             boxClass: 'center',
             image: ''
           },
@@ -327,8 +333,7 @@ export default {
             title: [],
             sub: [],
             bu: [],
-            imageList: [
-            ],
+            imageList: [],
             boxClass: 'center',
             image: ''
           },
@@ -340,7 +345,11 @@ export default {
             regular: '',
             title: null,
             sub: null,
-            bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
+            bu: [
+              'SCG Cement - Building Materials',
+              'SCG Chemicals',
+              'SCG Packaging'
+            ],
             imageList: [
               './static/img/cement.svg',
               './static/img/chem.svg',
@@ -400,64 +409,61 @@ export default {
 /* alider class*/
 
 /* .slide__title__active {
-  transform: translate3d(-100px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-.slide__sub__active {
-  transform: translate3d(-470px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-.slide__title__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-.slide__sub__leave {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1600ms;
-}
-
-@media (max-width: 575.98px) {
-  .slide__title__active {
-    transform: translate3d(-23vw, 0px, 0px) !important;
+    transform: translate3d(-100px, 0px, 0px);
+    transition-duration: 1600ms;
   }
+
   .slide__sub__active {
-    transform: translate3d(-20vw, 0px, 0px) !important;
+    transform: translate3d(-470px, 0px, 0px);
+    transition-duration: 1600ms;
   }
-} */
+
+  .slide__title__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
+
+  .slide__sub__leave {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1600ms;
+  }
+
+  @media (max-width: 575.98px) {
+    .slide__title__active {
+      transform: translate3d(-23vw, 0px, 0px) !important;
+    }
+    .slide__sub__active {
+      transform: translate3d(-20vw, 0px, 0px) !important;
+    }
+  } */
 
 /***/
 
 .why .project__text .title.hls {
-    line-height: 1;
+  line-height: 1;
 }
 
 /* .why .indent.vertical {
-  transform: translateX(9%);
-} */
+    transform: translateX(9%);
+  } */
 
-ul.al-r
-{
+ul.al-r {
   text-align: right;
   margin-left: 8vw;
 }
 
-.blaz
-{
+.blaz {
   display: block !important;
 }
 
-.sub.hl-2
-{
+.sub.hl-2 {
   line-height: 2.2;
 }
 
 /* .project__text .title.sm
-{
-  font-size: 3.47vw;
-} */
+  {
+    font-size: 3.47vw;
+  } */
 
 .more {
   height: 20px;
@@ -477,9 +483,9 @@ ul.al-r
 }
 
 /* .why .middle {
-  transform: translate3d(10%, 11%, 0);
-  text-align: center;
-} */
+    transform: translate3d(10%, 11%, 0);
+    text-align: center;
+  } */
 
 .why .project__body .bg {
   position: absolute;
@@ -511,8 +517,8 @@ ul.al-r
 }
 
 .why .project__text ul li.roll {
-    font-size: 2vh;
-    display: block !important;
+  font-size: 2vh;
+  display: block !important;
 }
 
 .project__body .bg__block {
@@ -531,12 +537,11 @@ ul.al-r
   /* border: 10px solid transparent; */
 }
 
-.why .block.clip
-{
-    /* border: 60px solid transparent; */
-    border-left: 0;
-    padding-left: 25px;
-    padding-right: 25px;
+.why .block.clip {
+  /* border: 60px solid transparent; */
+  border-left: 0;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .why .block p {
@@ -549,141 +554,121 @@ ol {
 }
 
 /*.project__text
-  {
-    color: #2f3c47;
-    font-size: 2.1rem;
-    line-height: 1.62;
-  }*/
+    {
+      color: #2f3c47;
+      font-size: 2.1rem;
+      line-height: 1.62;
+    }*/
 
 .scrollarea {
   height: 100vh;
   display: block;
 }
 
-  @media (min-width: 1200px) {
-
-    .why .ctn-content.focus {
+@media (min-width: 1200px) {
+  .why .indent.longterm {
+    text-align: right;
+    line-height: 1.29;
+    transform: translateX(120px);
+    margin-bottom: 25px !important;
+  }
+  .why .ctn-content.focus {
     padding-right: 151px;
-    }
-
-    .why .project__text .title.hls {
+  }
+  .why .project__text .title.hls {
     margin-bottom: 30px;
     margin-left: 98px;
     margin-bottom: 70px;
-}
-
-.why .icon.vertical {
-        top: 105px;
+  }
+  .why .icon.vertical {
+    top: 50px;
     width: 75px;
-    left: 219px;
-}
-
-.why .pr-5c {
-        padding-right: 40px;
+    left: 2px;
+  }
+  .why .pr-5c {
+    padding-right: 40px;
     padding-top: 0;
-}
-.why .indent.longterm {
-  text-align: right;
-  margin-bottom: 25px !important;
-}
-
-.why .icon.partner {
+  }
+  .why .icon.partner {
     top: 46px;
     width: 90px;
-    left: 364px;
-}
-
-.why .down {
-transform: translateY(125%);
+    left: 0;
+  }
+  .why .down {
+    transform: translateY(125%);
     /* border-top: solid #f0f0f0 350px !important; */
     /* border-left: solid #f0f0f0 158px !important; */
     padding: 134px 98px 69px 74px;
     /* padding-top: 123.5px;
-    padding-left: 0;
-    /* text-align: right; */
+      padding-left: 0;
+      /* text-align: right; */
     /*padding-right: 150px; */
     height: 360px;
     /* direction: rtl; */
     /* height: 590px; */
     /* padding: 0; */
     border: none !important;
-}
-
-.why .icon.platform {
-        top: 0;
+  }
+  .why .icon.platform {
+    top: -43px;
     left: 453px;
     width: 215px;
-}
-
-.why .middle{
+  }
+  .why .middle {
     text-align: center;
     padding-top: 106px;
     padding-left: 342px;
     padding-bottom: 0;
     padding-right: 342px;
-}
-
-    .block p.title
-    {
-        font-size: 40px;
-  font-weight: bold;
-  line-height: 1.2;
-  letter-spacing: normal;
-    }
-
-    .block p.sub
-    {
-font-size: 30px;
-  font-weight: bold;
-  /* line-height: 2.33; */
-  letter-spacing: normal;
-    }
-
-    .block p.roll
-    {
-          font-size: 18px;
-  /* line-height: 1.44; */
-    }
-
-    .block .f-50
-    {
-         font-size: 50px !important;;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.1 !important;;
-  letter-spacing: normal;
-    }
-
-    .block .f-16
-    {
-        font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.1 !important;
-  letter-spacing: 2px;
-    }
-
-    .why .block.clip {
+  }
+  .block p.title {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: normal;
+  }
+  .block p.sub {
+    font-size: 30px;
+    font-weight: bold;
+    /* line-height: 2.33; */
+    letter-spacing: normal;
+  }
+  .block p.roll {
+    font-size: 18px;
+    /* line-height: 1.44; */
+  }
+  .block .f-50 {
+    font-size: 50px !important;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.1 !important;
+    letter-spacing: normal;
+  }
+  .block .f-16 {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.1 !important;
+    letter-spacing: 2px;
+  }
+  .why .block.clip {
     /* border: 60px solid transparent; */
     border-left: 0;
     padding: 18px 36px 18px 36px;
-        height: 200px;
+    height: 200px;
     margin: 0 !important;
-    }
-
-    .why .ctn-content.blog
-    {
+  }
+  .why .ctn-content.blog {
     padding-left: 140px;
     padding-right: 140px;
     /* justify-content: left; */
     display: flex;
     /* content: close-quote; */
-    }
-
-    .why .block {
-      margin: 0;
+  }
+  .why .block {
+    margin: 0;
     padding-top: 0;
     padding-bottom: 84px;
     padding-bottom: 60px;
@@ -691,86 +676,64 @@ font-size: 30px;
     /* margin-bottom: 20px; */
     background-clip: padding-box;
     /* border: 10px solid transparent; */
-}
-
-.why .col.vertical
-{
-         /* height: 550px; */
+  }
+  .why .col.vertical {
+    /* height: 550px; */
     width: 900px;
     padding-right: 109px;
     padding-left: 221px;
     padding-bottom: 115px;
-}
-
-.why .col.longterm
-{
-         /* height: 550px; */
+  }
+  .why .col.longterm {
+    /* height: 550px; */
     width: 900px;
     padding-right: 192px;
     padding-left: 221px;
     padding-bottom: 115px;
     padding-top: 66px;
-}
-
-.why .title.redd
-{
-  font-size: 70px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1;
-}
-
-.project__body .bg__block {
+  }
+  .why .title.redd {
+    font-size: 70px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+  }
+  .project__body .bg__block {
     position: relative;
     width: 55px;
     z-index: 2;
     padding: 5px 10px 5px 5px;
-}
-
-.why .project__text ul li.roll  {
+  }
+  .why .project__text ul li.roll {
     font-size: 18px;
     line-height: 1.44;
     display: block !important;
-}
-
-.why ul.bus
-{
-  padding-top: 5px;
-}
-
+  }
+  .why ul.bus {
+    padding-top: 5px;
+  }
   .why .block.clip {
-        /* border-top: 10px solid #f0f0f0;
-    border-bottom: 10px solid #f0f0f0; */
-
-    }
-
-.why .block.left
-{
-  display: flex;
+    /* border-top: 10px solid #f0f0f0;
+      border-bottom: 10px solid #f0f0f0; */
+  }
+  .why .block.left {
+    display: flex;
     justify-content: flex-start;
-}
-
-.why .block.right
-{
-  display: flex;
+  }
+  .why .block.right {
+    display: flex;
     justify-content: flex-end;
+  }
+  .why .block.center {
+    display: flex;
+    justify-content: center;
+  }
+  .why .black {
+    padding: 25px 36px 0 26px;
+    background-color: black;
+    height: 200px;
+    width: 320px;
+  }
 }
-
-.why .block.center
-{
-      display: flex;
-    justify-content:center;
-}
-
-.why .black
-{
-  padding: 25px 36px 0 26px;
-  background-color: black;
-  height: 200px;
-  width: 320px;
-}
-
-}
-
-    </style>
+</style>

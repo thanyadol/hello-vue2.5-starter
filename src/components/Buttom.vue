@@ -350,7 +350,7 @@ export default {
 
     .footy img.bg
     {
-          top: 7px;
+          top: 12px;
     position: relative;
     }
 
