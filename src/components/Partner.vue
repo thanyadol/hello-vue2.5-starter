@@ -1,9 +1,9 @@
 <template>
   <div class="partner">
-    <header class="project__header action | ctn">
+  <header class="project__header action | ctn part">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="6">{{ title }}</h2>
-        <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="6">{{ title }}</h2>
+          <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
@@ -362,6 +362,11 @@ transform: translateX(-5%);
 {
 transform: translateX(-5%);
 text-align: right;
+}
+
+.partner .ctn.part {
+   padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
   }
 </style>

@@ -20,7 +20,8 @@
               <section class="project__description col-md-7 fill red | ctn-content stage"  v-for="p in pres" :key="p.id" v-bind:class="p.background">
                   <h3 class="hidden-visually">Project</h3>
                   <div class="project__text | mrg-2 | m-100 m-mr-0">
-                    <p class="title bold">{{ p.title }}</p>
+                    <p class="title bold">{{ p.titleTop }}</p>
+                                   <p class="title bold">{{ p.titleBot }}</p>
                     <!-- <p class="sub">{{ p.sub }}</p> -->
                   </div>
                 </section>
@@ -66,7 +67,8 @@ export default {
       pres: [
         {
           id: 99,
-          title: 'Stages of Startups',
+          titleTop: 'Stages',
+          titleBot: 'of startups',
           sub: 'Post seed startups and invest in beyond',
           bold: '',
           regular: '',
@@ -263,7 +265,8 @@ ul li.indent-4 {
     {
         padding-top: 0;
             transform: translateY(-55px);
-    background: transparent;
+    background: transparent;padding-left: 296px !important;
+
     }
 
     .how .project__body .bg {

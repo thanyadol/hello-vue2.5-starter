@@ -30,7 +30,7 @@
                   <h3 class="hidden-visually">Venture</h3>
                   <div class="project__description | col-md-12 |" v-for="r in post.blogs_t" :key="r.id" v-bind:class="r.class">
 
-                    <div class="project__text | col-md-6 | m-100 m-mr-0">
+                    <div class="project__text | col-5 | m-100 m-mr-0">
                       <img class="bg__block" v-bind:src="r.image" />
                         <div class="date">
                           <p class="title tb bold t-lg month">{{ r.date | moment }}</p>
@@ -38,16 +38,18 @@
                         </div>
                     </div>
 
-                    <div class="project__text | col-md-6 ml-3 | m-100 m-mr-0">
+                    <div class="project__text | col ml-3 | m-100 m-mr-0">
                       <p class="sub tb bold">{{ r.title }}</p>
-                      <p class="sub tb mb-5c sm">{{ r.author }}</p>
+                      <p class="sub tb sm">{{ r.author }}</p>
                       <!-- <p class="sub tb sm">View 320K</p> -->
                       <!-- <hr class="separate"> -->
-
-                      <router-link to="">
-                        <span class="read sub tb bold sm"> Read more </span>
+                    <div class="href">
+                         <router-link to="">
+                        <span class="read sub tb bold readmore"> Read more </span>
                         <img class="arrow" v-bind:src="arrow" />
                       </router-link>
+                   </div>
+
                     </div>
 
                   </div>
@@ -56,7 +58,7 @@
              <section class="project__description white row | ctn-content">
                   <div class="project__description b | col-md-12 |" v-for="r in post.blogs_b" :key="r.id" v-bind:class="r.class">
 
-                    <div class="project__text | col-md-6 | m-100 m-mr-0">
+                    <div class="project__text | col-md-5 | m-100 m-mr-0">
                       <img class="bg__block" v-bind:src="r.image" />
                         <div class="date">
                           <p class="title tb bold t-lg month">{{ r.date | moment }}</p>
@@ -64,16 +66,18 @@
                         </div>
                     </div>
 
-                    <div class="project__text | col-md-6 ml-3 | m-100 m-mr-0">
+                           <div class="project__text | col ml-3 | m-100 m-mr-0">
                       <p class="sub tb bold">{{ r.title }}</p>
-                      <p class="sub tb mb-5c sm">{{ r.author }}</p>
+                      <p class="sub tb sm">{{ r.author }}</p>
                       <!-- <p class="sub tb sm">View 320K</p> -->
                       <!-- <hr class="separate"> -->
-
-                      <router-link to="">
-                        <span class="read sub tb bold sm"> Read more </span>
+                    <div class="href">
+                         <router-link to="">
+                        <span class="read sub tb bold readmore"> Read more </span>
                         <img class="arrow" v-bind:src="arrow" />
                       </router-link>
+                   </div>
+
                     </div>
 
                   </div>
@@ -102,11 +106,11 @@ export default {
   name: 'Insign',
   data () {
     return {
-      title: 'Insign',
+      title: 'Insigns',
       subs: ['Be in the know with AddVenture'],
       arrow: './static/img/next.svg',
       post: {
-        title: 'Insign',
+        title: 'Insigns',
         sub: 'Be in the know with AddVenture',
         blogs_t: [
           {
@@ -192,7 +196,7 @@ export default {
 }
 </script>
 <style scoped>
-.slide__title__active {
+/* .slide__title__active {
   transform: translate3d(-440px, 0px, 0px);
   transition-duration: 1600ms;
 }
@@ -219,7 +223,7 @@ export default {
         .slide__sub__active {
           transform: translate3d(-22vw, 0px, 0px) !important;
         }
-  }
+  } */
 
 /***/
 .insign
@@ -269,9 +273,9 @@ export default {
     transform: translateY(-70%);
 }
 
-.project__text p:not(:last-of-type) {
+/* .project__text p:not(:last-of-type) {
     margin-bottom: 1.5rem;
-}
+} */
 
 hr.separate {
   background-color: #0f0f0f;
@@ -308,6 +312,71 @@ hr.separate {
 .scrollarea {
   height: 100vh;
   display: block;
+}
+
+@media (min-width: 1200px) {
+
+  .insign .project__body .bg__block{
+    width: 450px;
+    z-index: 2;
+    padding: 0;
+  }
+
+  .insign .project__text .sub
+  {
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+  }
+
+    .insign .project__text .sub.sm
+  {
+    font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.94;
+  letter-spacing: normal;
+  margin-bottom: 95px;
+  }
+
+     .insign .project__text .sub.readmore
+  {
+    font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.68;
+  }
+
+  .insign .date .day
+{
+   font-size: 80px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.88;
+}
+
+.insign .date .month
+{
+    font-size: 50px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal
+}
+
+.insign .arrow {
+    width: 55px;
+    padding-top: 7px;
+    margin-left: 40px;
+    position: absolute;
+}
+
 }
 
 </style>

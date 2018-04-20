@@ -18,7 +18,7 @@
 
           <div class="project__content">
             <div class="project__body white">
-                <section class="project__description col-7 mobile | ctn-content"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
+                <section class="project__description col-7 mobile | ctn-content jf"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
                     <h3 class="hidden-visually">Project</h3>
                     <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
                       <p class="title bold">{{ p.title }}</p>
@@ -33,7 +33,7 @@
 
                 <!-- loop with invests -->
                <section class="mt-ne-1">
-                <div class="pb-6 pt-5 row | ctn-content" v-for="i in invests" :key="i.id" >
+                <div class="pb-0 pt-5c row | ctn-content" v-for="i in invests" :key="i.id" >
                   <div class="col-7 m-0 p-0 ne" v-bind:class="{ right: i.id%2 == 0 }">
                     <img class="project__image" :src="i.image" >
                   </div>
@@ -49,7 +49,7 @@
               </div>
           </div>
 
-        <div class="project__body pt-0">
+        <div class="project__body ft pt-0">
            <section class="project__description p-0 m-0 | ctn white">
                 <buttom :next="next" :prev="prev"></buttom>
             </section>
@@ -74,7 +74,7 @@ export default {
       posts: [
         {
           id: 1,
-          title: 'What we invest',
+          title: 'What we invest in',
           sub:
             'Industrial - B2B - Enterprise are the areas that we will bring significant value to startups and our investment partners.',
           bold: '',
@@ -96,6 +96,7 @@ export default {
           image: './static/img/img3.jpg',
           imageIcon: './static/img/industrail.svg',
           imageClass: 'bg indust',
+          titleAlign: 'ml-0 ind',
           float: 'left red',
           containnerClass: 'down'
         },
@@ -115,7 +116,7 @@ export default {
           imageClass: 'bg b2b',
           float: 'right white',
           contentAlign: 'al-r rtl',
-          titleAlign: 'ml-0',
+          titleAlign: 'ml-0 b2b',
           containnerClass: 'left al-r'
         },
         {
@@ -135,7 +136,7 @@ export default {
           imageIcon: './static/img/enterprise.svg',
           imageClass: 'bg enterprise',
           float: 'left red',
-          titleAlign: 'trs-l',
+          titleAlign: 'trs-l ent',
           containnerClass: 'down'
         }
       ],
@@ -327,6 +328,86 @@ export default {
   top: 40px;
   left: 150px;
 }
+
+.what .project__image {
+    /* top: -180px; */
+    /* width: 34.72vw; */
+    position: relative;
+    width: 474px;
+    height: 356px;
+}
+
+.ctn-content.jf
+{
+
+    padding-right: 130px;
+    padding-bottom: 71px;
+}
+
+.mt-ne-1 {
+        transform: translateY(-14%);
+}
+
+.what .indust {
+    top: 38px;
+}
+
+.what .down{
+    margin-top: 60px;
+    margin-left: 41px;
+}
+
+.ctn-content {
+    padding-left: 238px;
+    padding-right: 223px;
+    padding-top: 66.5px;
+    padding-bottom: 45px;
+}
+
+.what .right {
+    left: 50%;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    padding-left: 16px !important;
+}
+
+.what .pb-6 {
+    margin-bottom: 120px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-top: 0!important;
+}
+
+.what .b2b {
+      width: 78px !important;
+    top: 31px;
+    right: 139px;
+}
+
+.what .enterprise {
+  top: 40px;
+  width: 70px !important;
+  left: 170px;
+}
+
+.what .pt-5c
+{
+  padding-top: 120px;
+}
+.what .project__body .title.ent
+{
+  transform: translateX(-57%);
+}
+
+.what .project__body .title.ind
+{
+  transform: translateX(25%);
+}
+
+.what .ft {
+    margin-top: -150px !important;
+}
+
 }
 
 </style>

@@ -30,7 +30,7 @@
 
            <section class="project__description pt-0 | ctn-content white">
             <div class="project__text | col-12 m-o p-0 mrg-2 | m-100 m-mr-0">
-              <a class="btn btn--cta" href="#"> About us</a>
+              <a class="btn btn--cta" href="#"> About SCG</a>
             </div>
           </section>
 
@@ -56,7 +56,7 @@ export default {
   data () {
     return {
       title: 'Who We Are',
-      sub: 'Partnering With Startups',
+      sub: 'Partnering with Startups',
       index: '1',
       offsetLeft: { title: '120', sub: '150' },
       slide__title: false,
@@ -231,7 +231,15 @@ export default {
     background: #fff;
     border-radius: 0;
     border: 1px solid;
+    width: 125px;
+    height: 40px;
   }
+
+  .project__content .btn--cta:hover {
+    color: #f0f0f0;
+    background: #ec1e23;
+    border: 1px solid #ec1e23;
+}
 
   /* // Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {

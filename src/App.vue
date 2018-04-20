@@ -385,6 +385,7 @@ export default {
   cursor: pointer;
 }
 
+/*
 @-webkit-keyframes scroll-inner {
   from {
     margin-top: 15%;
@@ -419,7 +420,7 @@ export default {
   to {
     margin-top: 15px;
   }
-}
+}*/
 
 div.mouse-container {
   position: relative;
@@ -437,12 +438,12 @@ div.mouse {
   border-radius: 25px;
 }
 
-div.mouse:hover {
+/*div.mouse:hover {
   -webkit-animation: scroll-mouse 1.5s;
   animation: scroll-mouse 1.5s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-}
+}*/
 
 div.mouse span.scroll-down {
   display: block;
@@ -450,7 +451,7 @@ div.mouse span.scroll-down {
   height: 7px;
   background: #495057;
   border-radius: 50%;
-  margin: 15% auto auto auto;
+  margin: 25% auto auto auto;
 }
 
 div.mouse:hover span.scroll-down {
@@ -513,13 +514,15 @@ button:focus {
     bottom: 67px;
 }
 
-  /* .down .mouse-container:before {
-      content: "scroll";
+ .down .mouse-container:before {
+      content: "Scroll";
       color: #2f3c47;
-
-    left: 8px;
+      font-size: 18px;
+      font-weight: bold;
+    left: 5px;
+    letter-spacing: 0.5px;
     position: relative;
-  } */
+  }
 
   .project .down
   {

@@ -2,27 +2,30 @@
   <div class="project__footer | col-md-12 m-0 p-0 | m-100 m-mr-0">
     <div class="footy mlg-2x desktop ct col-md-6 | m-mr-0" >
       <router-link :to="prev.url" class="href hel">
-        <svg class="chev l" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03">
+        <!-- <svg class="chev l" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03">
               <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
                   <polygon class="arrow-left" points="55.76 10.51 3.83 10.51 12.93 1.41 11.51 0 0 11.51 11.51 23.03 12.93 21.61 3.83 12.51 55.76 12.51 55.76 10.51"/></g></g>
-                  </svg>
+                  </svg> -->
+                  <img class="bg l" v-bind:src="prevs"/>
                   <span class="left tb bold">{{ prev.title }}</span>
       </router-link>
-      <span class="sub sep"> | </span>
+      <img class="sep" v-bind:src="sep"/>
       <router-link :to="next.url" class="href her">
         <span class="bold tb right">{{ next.title }}</span>
-        <svg class="chev r" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
+        <!-- <svg class="chev r" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
                       <polygon class="arrow-right" points="44.24 0 42.83 1.41 51.93 10.51 0 10.51 0 12.51 51.93 12.51 42.83 21.61 44.24 23.03 55.76 11.51 44.24 0"/></g></g>
-                  </svg>
+                  </svg> -->
+                              <img class="bg r" v-bind:src="nexts"/>
       </router-link>
     </div>
 
     <div class="footy mobile row mb-6 mt-5 p-0 | m-mr-0">
       <div class="col-md-12 l">
         <router-link :to="prev.url" class="href l p-0 m-0">
-             <svg class="icon pl-1 pr-0 mr-1 ml-0 icon--arrow icon--arrow--left" viewBox="0 0 38 38">
+             <!-- <svg class="icon pl-1 pr-0 mr-1 ml-0 icon--arrow icon--arrow--left" viewBox="0 0 38 38">
                     <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
-                  </svg>
+                  </svg> -->
+
           <span class="left bold tb">{{ prev.title }}</span>
         </router-link>
       </div>
@@ -48,7 +51,10 @@ export default {
   name: 'Buttom',
   data () {
     return {
-      foot: 'Copyright 2018 AddVenture'
+      foot: 'Copyright 2018 AddVenture',
+      sep: './static/img/separator.png',
+      prevs: './static/img/prev.png',
+      nexts: './static/img/next.png'
     }
   },
   props: ['next', 'prev']
@@ -307,6 +313,63 @@ export default {
     font-size: 22px;
     line-height: 1.8;
   }
+
+    .footy .sep {
+        position: relative;
+        top: 0;
+        /* left: calc(50% - 40px); */
+        /* font-size: 5.6rem; */
+        /* font-weight: 100; */
+    }
+
+    @media (min-width: 1200px) {
+        .footy .sep img {
+            height: 60px;
+        }
+
+        a.hel {
+        position: fixed;
+        /* margin-left: 20%; */
+        right: calc(50% + 50px);
+    }
+
+    a.her
+    {
+    position: fixed;
+    /* margin-left: 20%; */
+    left: calc(50% + 50px);
+    }
+
+    .footy .chev.r {
+    margin-left: 50px;
+    }
+
+      .footy .chev.l {
+    margin-right: 50px;
+    }
+
+    .footy img.bg
+    {
+          top: 7px;
+    position: relative;
+    }
+
+   .footy img.r {
+     width: 55px;
+    margin-left: 50px;
+    }
+
+      .footy img.l {
+        width: 55px;
+    margin-right: 50px;
+    }
+
+    .sep
+    {
+      height: 60px;
+    }
+
+}
 
 }
 </style>
