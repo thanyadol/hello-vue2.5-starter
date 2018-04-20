@@ -31,9 +31,9 @@
                 <p class="sub tb">{{ p.sub }}</p>
               </div>
             </section>
-            <section class="project__description col-md-6 pd-1 tr | ctn-content">
+            <section class="project__description col-md-6 pd-1 tr | ctn-content focus">
               <ul class="down">
-                <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
+                <li class="fix" v-bind:class="v.class" v-for="v in invests" :key="v.id">
                   <span class="sub bold f-30">{{ v.title }}</span>
                   <p class="sub">{{ v.sub }}</p>
                 </li>
@@ -55,7 +55,7 @@
         </div>
 
         <div class="project__body pt-0">
-          <section class="project__description p-0 m-0 white | ctn">
+          <section class="project__description pt-10c m-0 white | ctn">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -116,7 +116,7 @@ export default {
           bold: '',
           regular: '',
           detail: [],
-          background: 'white'
+          background: ''
         }
       ],
       invests: [
@@ -305,7 +305,7 @@ ul li.indent {
     margin-top: 295px;
     z-index: 6;
     position: fixed;
-    height: 700px;
+    height: auto;
     padding-top: 0 !important;
   }
   .where img.rectang {
@@ -345,11 +345,31 @@ ul li.indent {
     line-height: 1.6;
   }
   .where .tags {
-    padding: 1px 23px 1px 23px;
+width: 80px;
+    height: 40px;
+    padding: 3px 0px 2px 0px;
+    text-align: center;
+    /* padding-top: 3px; */
   }
   .where .project__body ul {
     list-style-type: square;
     font-size: 30px;
+  }
+
+  .where ul li.fix
+  {
+    height: 40px;
+  }
+
+  .where .ctn-content.focus
+  {
+    padding-left: 220px;
+        padding-top: 137.5px;
+  }
+
+  .where .pt-10c
+  {
+    padding-top: 110px;
   }
 }
 </style>

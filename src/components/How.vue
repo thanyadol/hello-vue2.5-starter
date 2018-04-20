@@ -34,7 +34,7 @@
                   <ul class="">
                       <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
                         <!-- <span class="sub tb fixed">{{ v.sub }}</span> -->
-                        <span class="title lg bold fixed mx-auto f-60">{{ v.title }}</span>
+                        <span class="title lg bold fixed mx-auto f-50">{{ v.title }} <o class="title lg bold f-80"> {{ v.series }} </o></span>
                         <img class="bg" v-bind:class="v.imageClass" v-bind:src="v.image" />
                       </li>
                   </ul>
@@ -92,28 +92,30 @@ export default {
           id: 1,
           title: 'Growth',
           sub: 'Post Seed',
-          image: './static/img/growth.svg',
+          image: './static/img/growth.png',
           class: 'indent-4 tb'
         },
         {
           id: 2,
-          title: 'Series B',
+          title: 'Series',
+          series: 'B',
           sub: 'Accessories',
-          image: './static/img/seriesb.svg',
+          image: './static/img/seriesb.png',
           class: 'indent-3 tr'
         },
         {
           id: 3,
-          title: 'Series A',
+          title: 'Series',
+          series: 'A',
           sub: 'Accessories',
-          image: './static/img/seriesa.svg',
+          image: './static/img/seriesa.png',
           class: 'indent-2 tr'
         },
         {
           id: 4,
           title: 'Seed',
           sub: 'Accessories',
-          image: './static/img/seed.svg',
+          image: './static/img/seed.png',
           imageClass: 'seed',
           class: 'indent-1 tb'
         }
@@ -263,9 +265,11 @@ ul li.indent-4 {
 
        .how .ctn-content.invest
     {
-        padding-top: 0;
-            transform: translateY(-55px);
-    background: transparent;padding-left: 296px !important;
+       padding-top: 24px;
+    /* -webkit-transform: translateY(-55px); */
+    /* transform: translateY(21px); */
+    background: transparent;
+    /* padding-left: 296px !important; */
 
     }
 
@@ -278,9 +282,9 @@ ul li.indent-4 {
     bottom: -2px;
       }
 
-         .how .project__body .bg.seed {
+         /* .how .project__body .bg.seed {
                bottom: -0.45rem;
-      }
+      } */
 
      .how   .f-60
       {
@@ -288,20 +292,49 @@ ul li.indent-4 {
         line-height: 1.69;
       }
 
+        .how   .f-50
+      {
+         font-size: 50px;
+        line-height: 1.69;
+      }
+
+        .how   .f-80
+      {
+         font-size: 80px;
+        line-height: 1.69;
+      }
+
       .how .project__description ul li span {
-    margin-bottom: 65px;
-    text-align: center;
+     margin-bottom: 0;
+    /* text-align: center; */
     display: block;
     /* -webkit-transform: translateX(20%); */
-    /* transform: translateX(20%); */
+    transform: translateY(-52%);
 }
 
 .project__body ul li {
     position: relative;
     border-right: 3px solid black;
     border-bottom: 3px solid black;
-    width: 286px;
+        width: 240px;
+    height: 120px;
 }
+ul li.indent-4 {
+    -webkit-transform: translateX(50.7vw);
+   transform: translateX(49.34vw);
+    border-right: none !important;
+}
+
+ul li.indent-2  {
+    -webkit-transform: translateX(16.9vw);
+    transform: translateX(16.45vw);
+}
+
+ul li.indent-3 {
+    -webkit-transform: translateX(33.8vw);
+    transform: translateX(32.895vw);
+}
+
   }
 
 </style>

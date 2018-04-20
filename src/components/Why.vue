@@ -12,25 +12,27 @@
       <div class="scroll-content">
         <div class="project__content">
           <div class="project__body grey row" v-for="p in posts" :key="p.id">
-            <section class="project__description red | ctn-content" v-bind:class="p.class">
+            <section class="project__description  | ctn-content" v-bind:class="p.class">
               <h3 class="hidden-visually">Project</h3>
-              <div class="project__text | mrg-2c | m-100 m-mr-0">
-                <p class="title hls bold indent" v-bind:class="p.titleClass">{{ p.title }}</p>
+              <div class="project__text col | mrg-2c | m-100 m-mr-0">
+                <p class="title  bold indent" v-bind:class="p.titleClass">{{ p.title }}</p>
                 <img class="bg icon" v-bind:src="p.image" v-bind:class="p.imageClass" />
                 <!-- <p class="sub bold" v-bind:class="p.subClass" >{{ p.sub }}</p> -->
-                <p class="project__text mb-5c">
+                <div class="project__text">
                   <span class="bold sub tw" v-bind:class="p.subClass">{{ p.bold }}</span>
                   <span class="sub" v-bind:class="p.subClass">{{ p.regular }}</span>
-                </p>
+                </div>
                 <!-- <ul>
                   <li class="ml-5 sub tw" v-bind:class="p.subClass" v-for="d in p.detail" :key="d">{{ d }}</li>
                 </ul> -->
               </div>
             </section>
-            <section class="project__description col box | ctn-content" v-bind:class="p.box">
+            <section class="project__description box | ctn-content" v-bind:class="p.box">
               <div class="project__text | m-100 m-mr-0">
-                <p class="title bold hls tw">{{ p.reddit }}</p>
-                <p class="title bold hls tw right">{{ p.redditSub }}</p>
+
+                  <p class="title bold tw redd">{{ p.reddit }}</p>
+                  <p class="title bold tw right">{{ p.redditSub }}</p>
+
               </div>
             </section>
           </div>
@@ -45,21 +47,25 @@
                 <p class="sub bold tb">{{ res.sub }}</p>
               </div>
             </section> -->
-            <section class="project__description col-md-4 block | ctn-block" v-for="r in res.list" :key="r.id" v-bind:class="r.class">
+            <section class="project__description col-md-4 block | ctn-block" v-for="r in res.list" :key="r.id" v-bind:class="r.boxClass" >
               <div class="project__text |  mrg-2c | m-100 m-mr-0">
-                <ul>
+                <ul class="bus">
                   <li class="" v-for="i in r.imageList" :key="i">
                     <img class="bg__block" v-bind:src="i" />
                   </li>
                 </ul>
 
                 <!-- for black -->
-                <p class="title sm bold tw" v-bind:class="r.titleClass">{{ r.title }}</p>
+              <div class="black" v-show="r.type == 'black'">
+                   <p class="sm tw" v-bind:class="r.beforeClass">{{ r.before }}</p>
+               <p class="title sm bold tw" v-bind:class="r.titleClass">{{ r.title }}</p>
 
                 <p class="sm tw" v-bind:class="r.subClass">{{ r.sub }}</p>
                 <ul class="al-r">
                   <li class="blaz sub bold tw" v-for="d in r.bold" :key="d">{{ d }}</li>
                 </ul>
+                </div>
+
                 <!-- -->
 
                 <p class="title sm bold tb">{{ r.country }}</p>
@@ -91,7 +97,7 @@ export default {
   data () {
     return {
       title: 'Why Work With Us',
-      sub: 'Our resources and network',
+      sub: 'AddVentures Value Add',
       slide__title: false,
       slide__sub: false,
       posts: [
@@ -103,25 +109,27 @@ export default {
           regular:
             'At AddVentures, we look for investment and partnership opportunities in the areas of B2B, Industrial, and Enterprise. With the support from SCG, our goal is to build a portfolio of companies in highly related verticals. We believe we can offer substantial synergies in 2 dimensions: (1) Direct-synergy between SCG & startups and (2) Cross-synergy among startups in the portfolio.',
 
-          class: 'col-md-7 red vertical',
-          titleClass: 'tw indent vertical',
+          class: 'col red vertical',
+          titleClass: 'tw indent vertical hls',
           box: '',
           image: './static/img/vertical.svg',
           imageClass: 'vertical',
           subClass: 'tw'
+
         },
         {
           id: 3,
           title: 'Long term partnerships',
           sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
           bold: '',
-          regular:
-            'With our resources and extensive business network along SCG’s business value chain, we believe that we can help startups scale fast through our proprietary resources whilst allowing access to 300+ SCG subsidiaries and 1,000+ business partners across the Southeast Asian region. We are flexible and open to various collaboration programs ranging from commercial partnerships, licensings, JVs, minority investments or M&A.',
           detail: [],
-          class: 'col-md-6 grey none mt-5 pr-5c ',
+          regular:
+            'With our resources and extensive business network along SCG business value chain, We believe that we can help startups scale fast through our proprietary resources and access to 300+ SCG subsidiaries and 1,000+ business partners across Southeast Asia Region. We are flexible and open to various collaborationPrograms ranging from commercial partnership,Licensing, JV, minority investment or M&A.',
+
+          class: 'col grey none longterm',
           titleClass: 'tr indent longterm',
           subClass: 'tb',
-          box: 'red down',
+          box: 'red down col',
           image: './static/img/partner.svg',
           imageClass: 'partner',
           reddit: 'Corperate and Startups'
@@ -131,10 +139,12 @@ export default {
           title: 'Platform to scale up',
           sub: 'USD 18 Billion market capitalization more than 50,000 employee',
           bold: '',
+
           regular:
-            'With our resources and extensive business network along SCG business value chain, We believe that we can help startups scale fast through our proprietary resources and access to 300+ SCG subsidiaries and 1,000+ business partners across Southeast Asia Region. We are flexible and open to various collaborationPrograms ranging from commercial partnership,Licensing, JV, minority investment or M&A.',
+            'As a strategic investor, we do not only provide financing but we also will commit to the long-term success of startups in our portfolio Unlike traditionalVC funds, we do not rush for short term financial result and investment exit.With this long term support, startups can focus on building a great company to reach their fullpotential fastest possible.',
+
           detail: [],
-          class: 'col-md-10 grey middle',
+          class: 'col-12 grey middle hls',
           titleClass: 'tr mb-0',
           subClass: 'tb',
           box: '',
@@ -156,11 +166,11 @@ export default {
             sub: null,
             bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
             imageList: [
-              './static/img/cement.svg',
-              './static/img/chem.svg',
-              './static/img/pack.svg'
+              './static/img/cement.png',
+              './static/img/chem.png',
+              './static/img/pack.png'
             ],
-            class: '',
+            boxClass: 'center',
             image: ''
           },
           {
@@ -173,11 +183,11 @@ export default {
             sub: null,
             bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
             imageList: [
-              './static/img/cement.svg',
-              './static/img/chem.svg',
-              './static/img/pack.svg'
+              './static/img/cement.png',
+              './static/img/chem.png',
+              './static/img/pack.png'
             ],
-            class: '',
+            boxClass: 'center',
             image: ''
           },
           {
@@ -189,11 +199,12 @@ export default {
             title: 'USD 18 Billion',
             sub: 'Market capitalization',
             bu: [],
-            class: 'black clip',
-            titleClass: 'f-50 ct',
+            boxClass: 'left',
+            titleClass: 'f-50 al-r',
             subClass: 'f-16 al-r',
             boldClass: '',
-            image: ''
+            image: '',
+            type: 'black'
           },
           {
             id: 4,
@@ -205,9 +216,9 @@ export default {
             sub: null,
             bu: ['SCG Cement - Building Materials'],
             imageList: [
-              './static/img/cement.svg'
+              './static/img/cement.png'
             ],
-            class: '',
+            boxClass: 'center',
             image: ''
           },
           {
@@ -219,11 +230,12 @@ export default {
             title: '300+',
             sub: 'Companies',
             bu: [],
-            titleClass: 'f-50 ct',
-            subClass: 'f-16 al-r',
+            titleClass: 'f-50 al-l',
+            subClass: 'f-16 al-l',
             boldClass: 'fl-r',
-            class: 'black clip',
-            image: ''
+            boxClass: 'center',
+            image: '',
+            type: 'black'
           },
           {
             id: 5,
@@ -234,8 +246,8 @@ export default {
             title: null,
             sub: null,
             bu: ['SCG Cement - Building Materials'],
-            imageList: ['./static/img/cement.svg'],
-            class: '',
+            imageList: ['./static/img/cement.png'],
+            boxClass: 'center',
             image: ''
           },
 
@@ -245,14 +257,15 @@ export default {
             year: '',
             bold: null,
             regular: '',
-            title: '50k <br/> employees',
-            sub: 'Total Staffs',
+            title: '50k  employees',
+            before: 'Total Staffs',
             bu: [],
-            titleClass: 'f-50 ct',
-            subClass: 'f-16 al-r',
+            titleClass: 'f-50 al-l',
+            beforeClass: 'f-16 al-l',
             boldClass: 'fl-r',
-            class: 'black clip',
-            image: ''
+            boxClass: 'right',
+            image: '',
+            type: 'black'
           },
           {
             id: 98,
@@ -264,11 +277,11 @@ export default {
             sub: null,
             bu: ['SCG Cement - Building Materials', 'SCG Chemicals', 'SCG Packaging'],
             imageList: [
-              './static/img/cement.svg',
-              './static/img/chem.svg',
-              './static/img/pack.svg'
+              './static/img/cement.png',
+              './static/img/chem.png',
+              './static/img/pack.png'
             ],
-            class: '',
+            boxClass: 'center',
             image: ''
           },
 
@@ -281,11 +294,12 @@ export default {
             title: 'USD 4.3 Billion',
             sub: 'Companies',
             bu: [],
-            titleClass: 'f-50 ct',
-            subClass: 'f-16 al-r',
-            boldClass: 'fl-r',
-            class: 'black clip',
-            image: ''
+            titleClass: 'f-50 al-l',
+            subClass: 'f-16 al-l',
+            boldClass: 'fl-l',
+            boxClass: 'left',
+            image: '',
+            type: 'black'
           },
 
           {
@@ -301,7 +315,7 @@ export default {
               './static/img/cement.svg',
               './static/img/pack.svg'
             ],
-            class: '',
+            boxClass: 'center',
             image: ''
           },
           {
@@ -315,7 +329,7 @@ export default {
             bu: [],
             imageList: [
             ],
-            class: '',
+            boxClass: 'center',
             image: ''
           },
           {
@@ -332,7 +346,7 @@ export default {
               './static/img/chem.svg',
               './static/img/pack.svg'
             ],
-            class: '',
+            boxClass: 'center',
             image: ''
           }
         ]
@@ -420,9 +434,9 @@ export default {
     line-height: 1;
 }
 
-.why .indent.vertical {
+/* .why .indent.vertical {
   transform: translateX(9%);
-}
+} */
 
 ul.al-r
 {
@@ -462,10 +476,10 @@ ul.al-r
   margin-bottom: 50px;
 }
 
-.why .middle {
+/* .why .middle {
   transform: translate3d(10%, 11%, 0);
   text-align: center;
-}
+} */
 
 .why .project__body .bg {
   position: absolute;
@@ -519,7 +533,7 @@ ul.al-r
 
 .why .block.clip
 {
-    border: 60px solid transparent;
+    /* border: 60px solid transparent; */
     border-left: 0;
     padding-left: 25px;
     padding-right: 25px;
@@ -554,12 +568,14 @@ ol {
 
     .why .project__text .title.hls {
     margin-bottom: 30px;
+    margin-left: 98px;
+    margin-bottom: 70px;
 }
 
 .why .icon.vertical {
-    top: 85px;
+        top: 105px;
     width: 75px;
-    left: 197px;
+    left: 219px;
 }
 
 .why .pr-5c {
@@ -578,27 +594,33 @@ ol {
 }
 
 .why .down {
-    /* transform: translateY(60%); */
-    border-top: solid #f0f0f0 350px !important;
-    border-left: solid #f0f0f0 158px !important;
-    padding-top: 123.5px;
-    padding-left: 80px;
-    text-align: right;
-    padding-right: 150px;
+transform: translateY(125%);
+    /* border-top: solid #f0f0f0 350px !important; */
+    /* border-left: solid #f0f0f0 158px !important; */
+    padding: 134px 98px 69px 74px;
+    /* padding-top: 123.5px;
+    padding-left: 0;
+    /* text-align: right; */
+    /*padding-right: 150px; */
+    height: 360px;
     /* direction: rtl; */
+    /* height: 590px; */
+    /* padding: 0; */
+    border: none !important;
 }
 
 .why .icon.platform {
-    top: 0;
-    left: 693px;
+        top: 0;
+    left: 453px;
     width: 215px;
 }
 
 .why .middle{
-    -webkit-transform: translate3d(10%, 0%, 0);
-    transform: translate3d(10%, 0%, 0);
     text-align: center;
-    margin-top: 135px;
+    padding-top: 106px;
+    padding-left: 342px;
+    padding-bottom: 0;
+    padding-right: 342px;
 }
 
     .block p.title
@@ -625,11 +647,11 @@ font-size: 30px;
 
     .block .f-50
     {
-         font-size: 50px;
+         font-size: 50px !important;;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.4;
+  line-height: 1.1 !important;;
   letter-spacing: normal;
     }
 
@@ -639,35 +661,114 @@ font-size: 30px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  line-height: 2.19;
+  line-height: 1.1 !important;
   letter-spacing: 2px;
     }
 
     .why .block.clip {
-    border: 60px solid transparent;
+    /* border: 60px solid transparent; */
     border-left: 0;
     padding: 18px 36px 18px 36px;
-        height: 334px;
+        height: 200px;
     margin: 0 !important;
     }
 
     .why .ctn-content.blog
     {
-      padding-left: 276px;
-    padding-right: 90px;
+    padding-left: 140px;
+    padding-right: 140px;
     /* justify-content: left; */
     display: flex;
     /* content: close-quote; */
     }
 
     .why .block {
-    margin: 0;
-    padding-top: 60px;
+      margin: 0;
+    padding-top: 0;
+    padding-bottom: 84px;
     padding-bottom: 60px;
     /* margin-top: 20px; */
     /* margin-bottom: 20px; */
     background-clip: padding-box;
     /* border: 10px solid transparent; */
+}
+
+.why .col.vertical
+{
+         /* height: 550px; */
+    width: 900px;
+    padding-right: 109px;
+    padding-left: 221px;
+    padding-bottom: 115px;
+}
+
+.why .col.longterm
+{
+         /* height: 550px; */
+    width: 900px;
+    padding-right: 192px;
+    padding-left: 221px;
+    padding-bottom: 115px;
+    padding-top: 66px;
+}
+
+.why .title.redd
+{
+  font-size: 70px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+}
+
+.project__body .bg__block {
+    position: relative;
+    width: 55px;
+    z-index: 2;
+    padding: 5px 10px 5px 5px;
+}
+
+.why .project__text ul li.roll  {
+    font-size: 18px;
+    line-height: 1.44;
+    display: block !important;
+}
+
+.why ul.bus
+{
+  padding-top: 5px;
+}
+
+  .why .block.clip {
+        /* border-top: 10px solid #f0f0f0;
+    border-bottom: 10px solid #f0f0f0; */
+
+    }
+
+.why .block.left
+{
+  display: flex;
+    justify-content: flex-start;
+}
+
+.why .block.right
+{
+  display: flex;
+    justify-content: flex-end;
+}
+
+.why .block.center
+{
+      display: flex;
+    justify-content:center;
+}
+
+.why .black
+{
+  padding: 25px 36px 0 26px;
+  background-color: black;
+  height: 200px;
+  width: 320px;
 }
 
 }
