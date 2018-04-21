@@ -56,7 +56,7 @@
         <div class="project__body row grey">
             <section class="project__description col-12 grey | ctn-content m">
               <h3 class="hidden-visually">Map</h3>
-              <div class="project__text fill">
+              <div class="project__text map fill">
                 <ggmap> </ggmap>
               </div>
             </section>
@@ -257,5 +257,10 @@ export default {
 .contact .fill {
   width: max-content
 }
+
+.contact .m .fill {
+  width: -webkit-fill-available;
+}
+
 }
 </style>

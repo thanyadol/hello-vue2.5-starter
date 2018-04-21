@@ -43,7 +43,7 @@ Vue.component('flip', Flip)
 Vue.component('ggmap', Map)
 Vue.component('cover', Cover)
 Vue.component('mouse', Mouse)
-Vue.component('head', Head)
+Vue.component('heading', Head)
 Vue.component('fraction', Fraction)
 
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
