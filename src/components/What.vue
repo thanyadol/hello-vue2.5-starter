@@ -156,7 +156,10 @@ export default {
     }
   },
   // life cycle of component
-  created () {},
+  mounted: function () {
+    var vm = this
+    vm.$parent.show = true
+  },
   beforeMount () {
     var scrolled = 0
     var vm = this

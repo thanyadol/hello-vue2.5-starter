@@ -136,6 +136,10 @@ export default {
       }
     }
   },
+  mounted: function () {
+    var vm = this
+    vm.$parent.show = true
+  },
   beforeMount () {
     var scrolled = 0
     var vm = this
@@ -167,6 +171,10 @@ export default {
 
       console.log(scrolled)
     })
+  },
+  destroyed () {
+    var vm = this
+    vm.$parent.show = false
   }
 }
 </script>
