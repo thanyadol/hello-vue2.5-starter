@@ -1,11 +1,25 @@
 <template>
   <div class="nav">
     <ul>
-      <li v-for="n in navs" :key="n.id">
+      <li v-show="flex != 'menu'" v-for="n in navs" :key="n.id">
         <router-link :to="n.url">
           <button v-bind:class="n.class" class="menu-btn" aria-label="" href="javascript:void(0);">
-               <span class="menu-btn__text">{{ n.title }}</span>
-              </button>
+                 <span class="menu-btn__text">{{ n.title }}</span>
+                </button>
+        </router-link>
+      </li>
+      <li v-show="flex == 'menu'">
+        <router-link to="/">
+          <button class="menu-btn" aria-label="" href="javascript:void(0);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.368 17.368">
+    <g id="Icon_Close" transform="translate(-1217.293 -63.379)">
+        <path id="Path_3426" d="M2866-1352.914l15.953 15.953" class="cls-1" data-name="Path 3426" transform="rotate(90 1341.477 -1460.437)"/>
+        <path id="Path_3425" d="M2866-1352.914l15.953 15.953" class="cls-1" data-name="Path 3425" transform="translate(-1648 1417)"/>
+    </g>
+</svg>
+
+                 <span class="menu-btn__text tw">Close</span>
+                </button>
         </router-link>
       </li>
     </ul>
@@ -15,6 +29,7 @@
 <script>
 export default {
   name: 'Nave',
+  props: [ 'flex' ],
   data () {
     return {
       navs: [
@@ -44,6 +59,8 @@ export default {
 
 <style lang="css" scoped>
 /* remove reboot*/
+
+ .cls-1{fill:none;stroke:#fff;stroke-width:2px}
 
 .nav {
   display: block;
@@ -89,9 +106,9 @@ a:hover {
 }
 
 /*.menu-btn.pitch:hover {
-    background-color: #ec1e23;
-    color: #2f3c47;
-  }*/
+      background-color: #ec1e23;
+      color: #2f3c47;
+    }*/
 
 .menu-btn.pitch:before,
 .menu-btn.pitch:after {
@@ -99,9 +116,9 @@ a:hover {
 }
 
 /*.menu-btn :hover
-            {
-              border-bottom: solid 2px #2f3c47;
-            }*/
+              {
+                border-bottom: solid 2px #2f3c47;
+              }*/
 
 /* Top and Bottom borders go out */
 
@@ -142,16 +159,16 @@ button:hover:before {
 }
 
 /* .pickdeck {
-        right: calc(5vw + 144px);
-      }
+          right: calc(5vw + 144px);
+        }
 
-      .career {
-        right: calc(5vw + 60px);
-      }
+        .career {
+          right: calc(5vw + 60px);
+        }
 
-      .menu {
-        right: calc(5vw - 12px);
-      } */
+        .menu {
+          right: calc(5vw - 12px);
+        } */
 
 /* // Extra large devices (large desktops, 1200px and up) */
 
@@ -163,12 +180,20 @@ button:hover:before {
   .nav {
     display: block;
     position: fixed;
-            z-index: 2 !important;
+    z-index: 2 !important;
     right: 81px;
     top: 52px;
   }
   .nav ul li:last-child {
     margin-right: 0;
+  }
+
+  svg
+  {
+    width: 16px;
+    margin-right: 21px;
+    top: 2px;
+    position: relative;
   }
 }
 

@@ -6,7 +6,7 @@
         <router-link to="/">
          </router-link>
       </h1>
-      <nave></nave>
+      <nave v-show="!page().type != 'nave'" ></nave>
 
       <framed :display="!show"> </framed>
 
@@ -51,7 +51,7 @@
           </ul>
         </div>
 
-        <div class="content__inner top">
+        <div class="content__inner" v-bind:class="!show == true ? 'top' : 'behind' ">
           <article class="project">
             <transition name="fade">
               <router-view></router-view>
@@ -392,21 +392,21 @@ export default {
           next: 'pitchdesk',
           prev: 'pitchdesk',
           scroll: 'desk',
-          home: false,
+          home: true,
           type: 'nave'
         },
         joinus: {
           next: 'joinus',
           prev: 'joinus',
           scroll: 'join',
-          home: false,
+          home: true,
           type: 'nave'
         },
         menu: {
           next: 'menu',
           prev: 'menu',
           scroll: 'menu',
-          home: false,
+          home: true,
           type: 'nave'
         }
       }
@@ -457,14 +457,14 @@ export default {
   z-index: 2;
 }
 
-.show
+.top
 {
-  z-index: -99;
+  z-index: 1;
 }
 
-.hide
+.behide
 {
-  z-index: 99;
+  z-index: 2;
 }
 
 .down:hover {

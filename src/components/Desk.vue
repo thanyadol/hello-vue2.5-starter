@@ -21,8 +21,9 @@
           <h3 class="hidden-visually">Pitch</h3>
           <div class="project__description mb-0 pb-0 grey | row ctn t">
             <div class="project__text | m-100 m-mr-0 | ctn-content l">
-              <!-- <img class="bg__form" v-bind:src="about.image" v-bind:class="about.imageClass" /> -->
-              <p class="title tr bold">{{ about.title }}</p>
+              <p class="title tr bold">
+              <img class="bg__form" v-bind:src="about.image" v-bind:class="about.imageClass" /><span>{{ about.title }}</span>
+              </p>
               <ul class="form">
                 <li v-for="f in about.forms" :key="f.id">
                   <p class="sub tb bold">{{ f.title }}</p>
@@ -53,8 +54,8 @@
             </div>
 
             <div class="project__text | m-100 m-mr-0 | ctn-content r">
-              <!-- <img class="bg__form" v-bind:src="pitch.image"  v-bind:class="pitch.imageClass"  /> -->
-              <p class="title tr bold">{{ pitch.title }}</p>
+
+              <p class="title tr bold">  <img class="bg__form" v-bind:src="pitch.image"  v-bind:class="pitch.imageClass"  /><span>{{ pitch.title }}</span></p>
             </div>
 
           </div>
@@ -143,7 +144,7 @@ export default {
       about: {
         title: 'About You',
         sub: 'Step 1',
-        image: './static/img/you.svg',
+        image: './static/img/you.png',
         imageClass: 'you',
         detail:
           'Before submitting your pitch desk, please fill out the form below',
@@ -177,7 +178,7 @@ export default {
       pitch: {
         title: 'Pitch Desk',
         sub: 'Step 2',
-        image: './static/img/deck.svg',
+        image: './static/img/deck.png',
         imageClass: 'deck',
         detail: '',
         forms: [
@@ -330,9 +331,10 @@ export default {
     // var div = document.getElementById('scrollbar')
     // const scrollbar = scroll.init(div)
     var el = document.getElementById('desk')
-    var s = scroll.init(el)
+    // var s =
+    scroll.init(el)
 
-    s.scrollTop = 750
+    // s.scrollTop = 750
     // s.destroy()
     // if (s.scrollTop < scrollOffset) {
     //   s.scrollTop = scrollOffset
@@ -571,6 +573,8 @@ ul.form li {
     padding-left: 140px;
     padding-right: 0;
     width: 100%;
+
+    padding-top: 130px;
   }
   .desk .ctn.c {
     padding-right: 140px;
@@ -699,6 +703,24 @@ ul.form li {
     color: #ec1e24;
     border: 1px solid #ec1e24;
     box-shadow: none;
+  }
+
+  .desk .you
+  {
+        width: 63.5px;
+    top: 30px;
+    position: relative;
+
+    margin-right: 18.5px;
+
+  }
+
+  .desk .deck
+  {
+     width: 51.3px;
+    top: 35px;
+    position: relative;
+    margin-right: 10px;
   }
 }
 </style>
