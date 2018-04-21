@@ -2,7 +2,12 @@
   <div class="contact">
             <header class="project__header action | ctn">
       <div class="project__header__inner">
-         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="9">{{ title }}</h2>
+        <div class="al-c">
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title fill mx-auto" data-i="9">
+            <fraction :index="index"> </fraction>
+            <span>{{ title }}</span>
+            </h2>
+        </div>
           <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
               <ul>
@@ -18,33 +23,38 @@
 
         <div class="project__content">
           <div class="project__body row grey">
-            <section class="project__description col-md-8 red row | ctn-content">
+            <section class="project__description col-md-8 red | ctn-content t">
               <h3 class="hidden-visually">Contact</h3>
               <div class="project__text | m-100 m-mr-0">
                 <p class="title bold tw">{{ post.title }}</p>
                 <p class="sub bold tw">{{ post.sub }}</p>
               </div>
             </section>
-            <section class="col grey"> </section>
 
-            <section class="project__description col-md-6 grey row | ctn-content">
+          </div>
+
+          <div class="project__body row grey">
+            <section class="project__description col-md-6 grey | ctn-content l">
               <div class="project__text | m-100 m-mr-0 addr">
-                <p class="sub bold tb">{{ addr.title }}</p>
-                <p class="sub tb sm">{{ addr.sub }}</p>
+                <p class="sub bold tb f-32">{{ addr.title }}</p>
+                <p class="sub tb py-0 my-0 ">{{ addr.sub }}</p>
+                  <p class="sub tb ">{{ addr.locate }}</p>
               </div>
             </section>
 
-            <section class="project__description col-md-6 grey row | ctn-content b">
+            <section class="project__description col-md-6 grey | ctn-content r">
               <h3 class="hidden-visually">CV</h3>
               <div class="project__text cv | m-100 m-mr-0">
-                <p class="sub bold tr">{{ cv.title }}</p>
+                <p class="sub bold tr al-r ">{{ cv.title }}</p>
                 <router-link to="">
-                  <p class="sub bold tb udl">{{ cv.sub }}</p>
+                  <p class="sub bold tb udl al-r ">{{ cv.sub }}</p>
                 </router-link>
               </div>
             </section>
+          </div>
 
-            <section class="project__description col-12 grey row | ctn-content m">
+        <div class="project__body row grey">
+            <section class="project__description col-12 grey | ctn-content m">
               <h3 class="hidden-visually">Map</h3>
               <div class="project__text fill">
                 <ggmap> </ggmap>
@@ -52,13 +62,14 @@
             </section>
 
           </div>
-        </div>
 
         <div class="project__body pt-0">
             <section class="project__description p-0 m-0 | ctn grey">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
+      </div>
+
       </div>
       <!-- end scroll content -->
       <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
@@ -75,10 +86,11 @@ export default {
   data () {
     return {
       title: 'Contact',
-      subs: [''],
+      index: '09',
+      subs: ['We are AddVentures'],
       post: {
         title: 'Contact us',
-        sub: 'We are partnering with startups to transform industries together immediately'
+        sub: 'We are partnering with startups to transform industries together'
       },
       cv: {
         title: 'Please contact us or submit your CV to',
@@ -87,17 +99,18 @@ export default {
       addr: {
         title: 'Our office',
         sub:
-          'The Siam Cement PCL. (Headquarter) 1 Siam Cement Road, Bangsue Bangkok 10800 Thailand'
+          'The Siam Cement PCL. (Headquarter)',
+        locate: '1 Siam Cement Road, Bangsue Bangkok 10800 Thailand'
       },
       slide__title: false,
       slide__sub: false,
       prev: {
         title: 'Our Team',
-        url: 'team'
+        url: 'theteam'
       },
       next: {
-        title: 'Home',
-        url: 'index'
+        title: 'Who we are',
+        url: 'whoweare'
       }
     }
   },
@@ -147,7 +160,7 @@ export default {
 </script>
 
 <style scoped>
-.slide__title__active {
+/* .slide__title__active {
   transform: translate3d(-436px, 0px, 0px);
   transition-duration: 1600ms;
 }
@@ -175,13 +188,9 @@ export default {
       .slide__sub__active {
         transform: translate3d(-30vw, 0px, 0px) !important;
       }
-  }
+  } */
 
 /***/
-
-.contact .fill {
-  width: -webkit-fill-available;
-}
 
 .contact .udl {
   border-bottom: 2px solid black;
@@ -189,16 +198,8 @@ export default {
   width: min-content;
 }
 
-.contact .addr .sub.sm
-{
+.contact .addr .sub.sm {
   font-size: 1.6vw;
-}
-
-.contact .m
-{
-    padding-left: 19.7%;
-    padding-right: 19.7%;
-    height: 50vh;
 }
 
 .scrollarea {
@@ -207,6 +208,54 @@ export default {
 }
 
 .project__text p:not(:last-of-type) {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1200px) {
+
+  .contact .ctn-content.t {
+    width: 800px;
+    height: 350px;
+  }
+  .contact .ctn-content.m {
+     padding-top: 60px;
+    width: 866px;
+    height: 320px;
+    padding-left: 287px;
+    padding-right: 287px;
+    padding-bottom: 0;
+}
+
+  .contact .ctn-content.l
+  {
+    padding-right: 88px;
+    padding-top: 50px;
+        padding-bottom: 0;
+  }
+
+ .contact .ctn-content.r
+  {
+        padding-right: 238px;
+    padding-left: 0px;
+
+    justify-content: flex-end;
+    padding-bottom: 0;
+  }
+
+  .contact .f-32
+  {
+      font-size: 26px;
+  line-height: 1.35;
+  }
+
+  .contact .al-r
+  {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+.contact .fill {
+  width: max-content
+}
 }
 </style>

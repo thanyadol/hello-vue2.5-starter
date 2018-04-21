@@ -2,7 +2,12 @@
   <div class="team">
             <header class="project__header action | ctn">
       <div class="project__header__inner">
-         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="8">{{ title }}</h2>
+      <div class="al-c">
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title fill mx-auto">
+            <fraction :index="index"> </fraction>
+            <span>{{ title }}</span>
+            </h2>
+        </div>
           <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
               <ul>
@@ -85,6 +90,7 @@ export default {
   data () {
     return {
       title: 'The Team',
+      index: '08',
       subs: [],
       post: {
         title: 'We are AddVentures',
@@ -472,6 +478,10 @@ export default {
 .team .block.white .title
 {
   line-height: 1;
+}
+
+.team .fill {
+  width: max-content
 }
 
 }

@@ -271,57 +271,68 @@ export default {
         whatweinvest: {
           next: 'whereweinvest',
           prev: 'whoweare',
-          scroll: 'what'
+          scroll: 'what',
+          home: false
         },
         whereweinvest: {
           next: 'howweinvest',
           prev: 'whatweinvest',
-          scroll: 'where'
+          scroll: 'where',
+          home: false
         },
         howweinvest: {
           next: 'whyworkwithus',
           prev: 'whereweinvest',
-          scroll: 'how'
+          scroll: 'how',
+          home: false
         },
         whyworkwithus: {
           next: 'ourpartners',
           prev: 'howweinvest',
-          scroll: 'why'
+          scroll: 'why',
+          home: false
         },
         ourpartners: {
           next: 'insign',
           prev: 'whyworkwithus',
-          scroll: 'partner'
+          scroll: 'partner',
+          home: false
         },
         insign: {
           next: 'theteam',
           prev: 'ourpartners',
-          scroll: 'insign'
+          scroll: 'insign',
+          home: false
         },
         theteam: {
           next: 'contact',
           prev: 'insign',
-          scroll: 'team'
+          scroll: 'team',
+          home: false
         },
         contact: {
           next: '',
           prev: 'theteam',
-          scroll: 'contact'
+          scroll: 'contact',
+          home: false
         },
         pitchdesk: {
           next: 'pitchdesk',
           prev: 'pitchdesk',
-          scroll: 'desk'
+          scroll: 'desk',
+          home: false
         },
         joinus: {
           next: 'joinus',
           prev: 'joinus',
-          scroll: 'join'
+          scroll: 'join',
+          home: false
         },
         menu: {
           next: 'menu',
           prev: 'menu',
-          scroll: 'menu'
+          scroll: 'menu',
+          home: false
         }
       }
 

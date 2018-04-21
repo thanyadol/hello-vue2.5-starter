@@ -2,8 +2,12 @@
   <div class="where">
     <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="3">{{ title }}</h2>
-        <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+          <div class="al-c">
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title fill mx-auto">
+            <fraction :index="index"> </fraction>
+            <span>{{ title }}</span>
+            </h2>
+        </div>  <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
@@ -73,6 +77,7 @@ export default {
   data () {
     return {
       title: 'Where We Invest',
+      index: '03',
       subs: ['Geographical', 'Focus'],
       sep: './static/img/sep.png',
       slide__title: false,
@@ -375,5 +380,9 @@ ul li.indent {
   .where .pt-10c {
     padding-top: 110px;
   }
+
+  .where .fill {
+  width: max-content
+}
 }
 </style>

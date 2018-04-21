@@ -25,6 +25,8 @@ import Cover from '@/components/Cover'
 import Mouse from '@/components/Mouse'
 import Head from '@/components/Head'
 
+import Fraction from '@/components/Fraction'
+
 // register DOM tag
 /* Vue.component('right-href', RightHref)
 Vue.component('nav-bar', NavBar)
@@ -42,6 +44,7 @@ Vue.component('ggmap', Map)
 Vue.component('cover', Cover)
 Vue.component('mouse', Mouse)
 Vue.component('head', Head)
+Vue.component('fraction', Fraction)
 
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // require('../node_modules/bootstrap/dist/css/bootstrap.min.css')

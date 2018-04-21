@@ -2,8 +2,12 @@
   <div class="why">
     <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" v-bind:style="[baseStyles, overrideStyles]" class="project__title | ml-0 | m-mr-0 t tb slide__title" :data-i="5">{{ title }}</h2>
-        <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+          <div class="al-c">
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title fill mx-auto">
+            <fraction :index="index"> </fraction>
+            <span>{{ title }}</span>
+            </h2>
+        </div>  <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">{{ sub }}</h3>
         </div>
       </div>
@@ -98,6 +102,7 @@ export default {
     return {
       title: 'Why Work With Us',
       sub: 'AddVentures Value Add',
+      index: '05',
       slide__title: false,
       slide__sub: false,
       posts: [
@@ -735,5 +740,9 @@ ol {
     height: 200px;
     width: 320px;
   }
+
+  .why .fill {
+  width: max-content
+}
 }
 </style>

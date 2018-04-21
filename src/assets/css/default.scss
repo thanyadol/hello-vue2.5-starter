@@ -10,6 +10,24 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { 
 
+
+  .project__pagging
+  {
+    position: absolute;
+  }
+
+  .project__title.t
+{
+    position: relative;
+    font-size: 140px;
+    font-weight: 600;
+    line-height: 1.69;
+    opacity: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
     span, p, h3, h1, h2, button
     {
         letter-spacing: 0.5px !important;

@@ -41,12 +41,12 @@
     padding-right: 0;
 }
 
-.project__title::before {
-    content: "0" attr(data-i) " / 09" !important;
-    top: -20px;
-    // left: 260px;
-    font-size: 1.8vw;
-}
+// .project__title::before {
+//     content: "0" attr(data-i) " / 09" !important;
+//     top: -20px;
+//     // left: 260px;
+//     font-size: 1.8vw;
+// }
 
 .ct
 {
@@ -130,16 +130,7 @@ body {
     // transform: translateX(-5px)
 }
 
-.project__title.t
-{
-    position: relative;
-    font-size: 8.34vw;
-    font-weight: 600;
-    line-height: 1.69;
-    opacity: 1;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+
 
 .project__description .sub {
     font-size: 1.8vw;

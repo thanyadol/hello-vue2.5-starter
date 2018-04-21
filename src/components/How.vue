@@ -2,8 +2,12 @@
   <div class="how">
     <header class="project__header action | ctn">
       <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title" data-i="4">{{ title }}</h2>
-        <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
+          <div class="al-c">
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title fill mx-auto">
+            <fraction :index="index"> </fraction>
+            <span>{{ title }}</span>
+            </h2>
+        </div>  <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
@@ -61,6 +65,8 @@ export default {
   data () {
     return {
       title: 'How We Invest',
+
+      index: '04',
       subs: ['Stages of Startups'],
       slide__title: false,
       slide__sub: false,
@@ -324,5 +330,9 @@ ul li.indent-4 {
     -webkit-transform: translateX(33.8vw);
     transform: translateX(32.895vw);
   }
+
+  .how .fill {
+  width: max-content
+}
 }
 </style>

@@ -76,21 +76,21 @@ export default {
 
   .border--t {
     top: 0;
-    transform: translate3d(0, calc(-20px + 15px), 0);
+    transform: translate3d(0, calc(-20px + 20px), 0);
   }
 
    .border--b {
     bottom: 0;
-    transform: translate3d(0, calc(20px - 15px), 0);
+    transform: translate3d(0, calc(20px - 20px), 0);
   }
 
   .border--l {
     left: 0;
-    transform: translate3d(calc(-20px + 15px), 0, 0);
+    transform: translate3d(calc(-20px + 20px), 0, 0);
 }
   .border--r {
     right: 0;
-    transform: translate3d(calc(20px - 15px), 0, 0);
+    transform: translate3d(calc(20px - 20px), 0, 0);
 }
 }
 

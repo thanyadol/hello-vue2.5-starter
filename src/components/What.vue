@@ -1,8 +1,12 @@
 <template>
   <div class="what">
     <header class="project__header action | ctn">
-      <div class="project__header__inner">
-        <h2 v-bind:class="slide__title" class="project__title | m-0 p-0 | t tb slide__title title" data-i="2">{{ title }}</h2>
+      <div class="project__header__inner">    <div class="al-c">
+         <h2 v-bind:class="slide__title" class="project__title | ml-0 | m-mr-0 t tb slide__title fill mx-auto">
+            <fraction :index="index"> </fraction>
+            <span>{{ title }}</span>
+            </h2>
+        </div>
         <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
             <ul>
@@ -68,6 +72,7 @@ export default {
   data () {
     return {
       title: 'What We Invest',
+      index: '02',
       subs: ['Industrail', 'B2B', 'Enterprise'],
       slide__title: false,
       slide__sub: false,
@@ -396,5 +401,9 @@ export default {
   {
     padding-top: 330px;
   }
+
+  .what .fill {
+  width: max-content
+}
 }
 </style>
