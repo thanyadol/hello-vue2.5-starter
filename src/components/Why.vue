@@ -40,7 +40,7 @@
         <!-- <div class="project__body ctn grey more"> </div> -->
         <!-- should move to component -->
         <div class="grey">
-          <div class="project__body row | ctn-content blog">
+          <div class="project__body row pb-0 | ctn-content blog">
             <!-- <section class="project__description col-12">
                 <div class="project__text |  mrg-2c | m-100 m-mr-0">
                   <p class="title bold tr">{{ res.title }}</p>
@@ -78,7 +78,7 @@
           </div>
         </div>
         <div class="project__body p-0 m-0">
-          <section class="project__description p-0 m-0 | ctn grey">
+          <section class="project__description py-0 m-0 | ctn grey">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>

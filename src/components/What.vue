@@ -5,56 +5,56 @@
         <h2 v-bind:class="slide__title" class="project__title | m-0 p-0 | t tb slide__title title" data-i="2">{{ title }}</h2>
         <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">
-              <ul>
-                  <li v-for="s in subs" :key="s" >{{ s }}</li>
-              </ul>
+            <ul>
+              <li v-for="s in subs" :key="s">{{ s }}</li>
+            </ul>
           </h3>
         </div>
       </div>
     </header>
 
     <div class="project__inner scrollarea" data-scrollbar id="what">
-      <div class="scroll-content" >
+      <div class="scroll-content">
 
-          <div class="project__content">
-            <div class="project__body white">
-                <section class="project__description col-7 mobile | ctn-content jf"  v-for="p in posts" :key="p.id" v-bind:class="p.background">
-                    <h3 class="hidden-visually">Project</h3>
-                    <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
-                      <p class="title bold">{{ p.title }}</p>
-                      <p class="sub bold">{{ p.sub }}</p>
-                      <p class="project__text">
-                        <span class="sub bold">{{ p.bold }}</span>
-                        <span class="sub">{{ p.regular }}</span>
-                      </p>
-                      <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>
-                    </div>
-                </section>
-
-                <!-- loop with invests -->
-               <section class="mt-ne-1">
-                <div class="pb-0 pt-5c row | ctn-content" v-for="i in invests" :key="i.id" >
-                  <div class="col-7 m-0 p-0 ne" v-bind:class="{ right: i.id%2 == 0 }">
-                    <img class="project__image" :src="i.image" >
-                  </div>
-                  <div class="col ne" v-bind:class="i.containnerClass">
-                    <h1 class="tr title center large mb-6c" v-bind:class="i.titleAlign" > {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
-                    <span class="sub bold ne tb">{{ i.sub }}</span>
-                    <ul v-bind:class="i.contentAlign">
-                      <li class="tb sub ne" v-for="l in i.lists" :key="l.list"> {{ l }}</li>
-                    </ul>
-                  </div>
-                </div>
-                </section>
+        <div class="project__content">
+          <div class="project__body white">
+            <section class="project__description col-7 mobile | ctn-content jf" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+              <h3 class="hidden-visually">Project</h3>
+              <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
+                <p class="title bold">{{ p.title }}</p>
+                <p class="sub bold">{{ p.sub }}</p>
+                <p class="project__text">
+                  <span class="sub bold">{{ p.bold }}</span>
+                  <span class="sub">{{ p.regular }}</span>
+                </p>
+                <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>
               </div>
-          </div>
+            </section>
 
-        <div class="project__body ft pt-0">
-           <section class="project__description p-0 m-0 | ctn white">
-                <buttom :next="next" :prev="prev"></buttom>
+            <!-- loop with invests -->
+            <section class="inv t">
+              <div class="pb-0 row | ctn-content" v-for="i in invests" :key="i.id">
+                <div class="col-7 m-0 p-0 ne" v-bind:class="{ right: i.id%2 == 0 }">
+                  <img class="project__image" :src="i.image">
+                </div>
+                <div class="col ne" v-bind:class="i.containnerClass">
+                  <h1 class="tr title center large mb-6c" v-bind:class="i.titleAlign"> {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
+                  <span class="sub bold ne tb">{{ i.sub }}</span>
+                  <ul v-bind:class="i.contentAlign">
+                    <li class="tb sub ne" v-for="l in i.lists" :key="l.list"> {{ l }}</li>
+                  </ul>
+                </div>
+              </div>
             </section>
           </div>
         </div>
+
+        <div class="project__body">
+          <section class="project__description py-0 | ctn white">
+            <buttom :next="next" :prev="prev"></buttom>
+          </section>
+        </div>
+      </div>
       <!-- end scroll content -->
       <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </div>
@@ -140,8 +140,14 @@ export default {
           containnerClass: 'down'
         }
       ],
-      prev: { title: 'Who We Are', url: 'whoweare' },
-      next: { title: 'Where We Invest', url: 'whereweinvest' }
+      prev: {
+        title: 'Who We Are',
+        url: 'whoweare'
+      },
+      next: {
+        title: 'Where We Invest',
+        url: 'whereweinvest'
+      }
     }
   },
   // life cycle of component
@@ -183,68 +189,65 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 /* alider class*/
- /* .slide__title__active {
-    transform: translate3d(-170px, 0px, 0px);
-    transition-duration: 1600ms;
-  }
 
-  .slide__sub__active {
-    transform: translate3d(-410px, 0px, 0px);
-    transition-duration: 1600ms;
-  }
+/* .slide__title__active {
+      transform: translate3d(-170px, 0px, 0px);
+      transition-duration: 1600ms;
+    }
 
-  .slide__title__leave {
-    transform: translate3d(0px, 0px, 0px);
-    transition-duration: 1600ms;
-  }
+    .slide__sub__active {
+      transform: translate3d(-410px, 0px, 0px);
+      transition-duration: 1600ms;
+    }
 
-  .slide__sub__leave {
-    transform: translate3d(0px, 0px, 0px);
-    transition-duration: 1600ms;
-  }
+    .slide__title__leave {
+      transform: translate3d(0px, 0px, 0px);
+      transition-duration: 1600ms;
+    }
 
-  @media (max-width: 575.98px)
-  {
-    .slide__title__active {
-        transform: translate3d(-10vw, 0px, 0px) !important;
-      }
-      .slide__sub__active {
-        transform: translate3d(-20vw, 0px, 0px) !important;
-      }
-  } */
+    .slide__sub__leave {
+      transform: translate3d(0px, 0px, 0px);
+      transition-duration: 1600ms;
+    }
+
+    @media (max-width: 575.98px)
+    {
+      .slide__title__active {
+          transform: translate3d(-10vw, 0px, 0px) !important;
+        }
+        .slide__sub__active {
+          transform: translate3d(-20vw, 0px, 0px) !important;
+        }
+    } */
 
 /***/
 
-.mt-ne-1 {
+/* .mt-ne-1 {
   transform: translateY(-10%);
-}
+} */
 
-.what .trs-l
-{
+.what .trs-l {
   margin-left: 0 !important;
 }
 
-.what .down
-{
+.what .down {
   margin-top: 60px;
 }
 
-.what .mb-6c
-{
+.what .mb-6c {
   margin-bottom: 6.5vh;
 }
 
-.rtl
-{
+.rtl {
   direction: rtl;
 }
 
-.what .center
-{
-    margin-left: 50%;
-    transform: translateX(-50%);
+.what .center {
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .what .indust {
@@ -263,7 +266,7 @@ export default {
 
 .what .pb-6 {
   padding-bottom: 5vh;
-  padding-top: 7rem!important;
+  padding-top: 7rem !important;
 }
 
 .what .right {
@@ -298,116 +301,100 @@ export default {
 
 @media (min-width: 1200px) {
   .what .project__body ul > li:before {
-  content: "–"; /* en dash */
-  position: absolute;
-  margin-left: -1.1em;
-      margin-right: -1.1em;
+    content: "–";
+    /* en dash */
+    position: absolute;
+    margin-left: -1.1em;
+    margin-right: -1.1em;
   }
-
   .what .project__body .bg {
-  position: absolute;
-  width: 60px;
-  z-index: 2;
-}
-
-.project__content .title.large {
+    position: absolute;
+    width: 60px;
+    z-index: 2;
+  }
+  .project__content .title.large {
     font-size: 100px;
     line-height: 0.69;
     letter-spacing: normal;
-}
-
-.what .indust {
-  top: 40px;
-}
-.what .b2b {
-  top: 20px;
-  right: 80px;
-}
-
-.enterprise {
-  top: 40px;
-  left: 150px;
-}
-
-.what .project__image {
+  }
+  .what .indust {
+    top: 40px;
+  }
+  .what .b2b {
+    top: 20px;
+    right: 80px;
+  }
+  .enterprise {
+    top: 40px;
+    left: 150px;
+  }
+  .what .project__image {
     /* top: -180px; */
     /* width: 34.72vw; */
     position: relative;
     width: 474px;
     height: 356px;
-}
-
-.ctn-content.jf
-{
-
+  }
+  .ctn-content.jf {
+    position: absolute;
+        height: 500px;
     padding-right: 130px;
     padding-bottom: 71px;
-}
-
-.mt-ne-1 {
-        transform: translateY(-14%);
-}
-
-.what .indust {
+    top: 0;
+  }
+  /* .mt-ne-1 {
+    transform: translateY(-14%);
+  } */
+  .what .indust {
     top: 38px;
-}
-
-.what .down{
+  }
+  .what .down {
     margin-top: 60px;
     margin-left: 41px;
-}
-
-.ctn-content {
+  }
+  .ctn-content {
     padding-left: 238px;
     padding-right: 223px;
     padding-top: 66.5px;
     padding-bottom: 45px;
-}
-
-.what .right {
+  }
+  .what .right {
     left: 50%;
     -webkit-transform: translateX(0);
     transform: translateX(0);
     padding-left: 16px !important;
-}
-
-.what .pb-6 {
+  }
+  .what .pb-6 {
     margin-bottom: 120px;
     padding-top: 0;
     padding-bottom: 0;
-    padding-top: 0!important;
-}
-
-.what .b2b {
-      width: 78px !important;
+    padding-top: 0 !important;
+  }
+  .what .b2b {
+    width: 78px !important;
     top: 31px;
     right: 139px;
-}
-
-.what .enterprise {
-  top: 40px;
-  width: 70px !important;
-  left: 170px;
-}
-
-.what .pt-5c
-{
-  padding-top: 120px;
-}
-.what .project__body .title.ent
-{
-  transform: translateX(-57%);
-}
-
-.what .project__body .title.ind
-{
-  transform: translateX(25%);
-}
-
-.what .ft {
+  }
+  .what .enterprise {
+    top: 40px;
+    width: 70px !important;
+    left: 170px;
+  }
+  .what .pt-5c {
+    padding-top: 120px;
+  }
+  .what .project__body .title.ent {
+    transform: translateX(-57%);
+  }
+  .what .project__body .title.ind {
+    transform: translateX(25%);
+  }
+  .what .ft {
     margin-top: -150px !important;
+  }
+  .what .inv
+  {
+    padding-top: 330px;
+  }
 }
-
-}
-
 </style>

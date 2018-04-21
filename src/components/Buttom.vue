@@ -1,5 +1,5 @@
 <template>
-  <div class="project__footer | col-md-12 m-0 p-0 | m-100 m-mr-0">
+  <div class="project__footer | col-md-12 m-0 pb-0 | m-100 m-mr-0">
     <div class="footy mlg-2x desktop ct col-md-6 | m-mr-0" >
       <router-link :to="prev.url" class="href hel">
         <!-- <svg class="chev l" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.76 23.03">
@@ -276,6 +276,12 @@ export default {
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
+
+.project__footer
+{
+  padding-top: 102px;
+}
+
   .project__footer .left
   {
     font-size: 30px;
@@ -296,10 +302,11 @@ export default {
     position: relative;
   }
 
+/*
   .footy
   {
     margin-top: 60px !important;
-  }
+  }*/
 
   .ft
   {

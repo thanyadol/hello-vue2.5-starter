@@ -16,37 +16,37 @@
       <div class="scroll-content">
         <div class="project__content">
           <div class="project__body">
-            <section class="project__description grey row | ctn-content">
+            <section class="project__description grey row | ctn-content t">
               <h3 class="hidden-visually">Blog</h3>
-              <div class="project__text | col-md-6 mrg-2 pl-0 pr-0 | m-100 m-mr-0">
+              <div class="project__text | col mrg-2 pl-0 pr-0 | m-100 m-mr-0">
                 <p class="title bold tb">{{ post.title }}</p>
                 <p class="sub bold tb">{{ post.sub }}</p>
               </div>
             </section>
             <section class="project__description grey row | ctn-content r">
               <h3 class="hidden-visually">Staff</h3>
-              <div class="project__description col-md-4 block" v-for="s in post.staffs" :key="s.id" v-bind:class="s.class">
+              <div class="project__description  block" v-for="s in post.staffs" :key="s.id" v-bind:class="s.class">
                 <div class="project__text  | m-100 m-mr-0  | down">
                   <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
-                  <p class="sub sm tb text-uppercase" v-bind:class="s.fontClass">{{ s.position }}</p>
-                  <p class="title tb bold">{{ s.title }}</p>
+                  <p class="sub sm tb" v-bind:class="s.fontClass">{{ s.position }}</p>
+                  <p class="title tr bold">{{ s.title }}</p>
                 </div>
               </div>
             </section>
 
             <section class="project__description white row | ctn-content l">
               <h3 class="hidden-visually">Staff</h3>
-              <div class="project__description col-md-4 block" v-for="s in post.blocks" :key="s.id" v-bind:class="s.class">
+              <div class="project__description  block" v-for="s in post.blocks" :key="s.id" v-bind:class="s.class">
                 <div class="project__text | m-100 m-mr-0  | down">
                   <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
-                  <p class="sub sm tb text-uppercase" v-bind:class="s.fontClass">{{ s.position }}</p>
-                  <span class="title tb bold" v-bind:class="s.fontClass">{{ s.title }}</span>
+                  <p class="sub sm tb" v-bind:class="s.fontClass">{{ s.position }}</p>
+                  <span class="title tr bold" v-bind:class="s.fontClass">{{ s.title }}</span>
                 </div>
               </div>
             </section>
 
             <!-- for mobile -->
-             <section class="project__description grey row | ctn mobile">
+             <!-- <section class="project__description grey row | ctn mobile">
               <h3 class="hidden-visually">Contact</h3>
               <div class="project__text | col-md-6 mrg-2 pl-0 pr-0 | m-100 m-mr-0">
                 <p class="title bold tb text-uppercase">{{ contact.title }}</p>
@@ -58,7 +58,7 @@
                   <router-link :to="contact.url" > <span class="sub bold tb udl ">{{ contact.site }} </span> </router-link>
                 </P>
               </div>
-            </section>
+            </section> -->
 
           </div>
         </div>
@@ -87,13 +87,13 @@ export default {
       title: 'The Team',
       subs: [],
       post: {
-        title: 'We are AddVenture',
+        title: 'We are AddVentures',
         sub: 'We are partnering with startups to transform industries together',
         staffs: [
           {
             id: 1,
             title: '',
-            name: 'Joshua Pas PH.D.',
+            name: 'Joshua Pas, PH.D.',
             position: 'Managing Director and Investment Commitee',
             class: 'red',
             fontClass: 'tw'
@@ -108,11 +108,11 @@ export default {
           },
           {
             id: 3,
-            title: '',
+            title: 'The Team',
             name: '',
             position: '',
             class: 'grey',
-            fontClass: 'tw l'
+            fontClass: 'tr'
           },
           {
             id: 4,
@@ -183,11 +183,11 @@ export default {
           },
           {
             id: 2,
-            title: 'Investment Commitee',
+            title: 'Investment Committee',
             name: '',
             position: '',
-            class: 'white',
-            fontClass: 'tr ls-n'
+            class: 'white custom',
+            fontClass: 'tr'
           },
           {
             id: 3,
@@ -290,7 +290,7 @@ export default {
 </script>
 
 <style scoped>
-.slide__title__active {
+/* .slide__title__active {
   transform: translate3d(-346px, 0px, 0px);
   transition-duration: 1600ms;
 }
@@ -318,7 +318,7 @@ export default {
       .slide__sub__active {
         transform: translate3d(-30vw, 0px, 0px) !important;
       }
-}
+} */
 
 /***/
 
@@ -346,10 +346,10 @@ export default {
   line-height: 1;
 }
 
-.team .down
+/* .team .down
 {
   transform: translateY(30%);
-}
+} */
 
 .team .udl {
   border-bottom: 2px solid black;
@@ -357,7 +357,7 @@ export default {
   width: min-content;
 }
 
-.team .block {
+/* .team .block {
   margin-top: 0;
   margin-bottom: 0;
   padding: 40px;
@@ -365,9 +365,9 @@ export default {
   border: 10px solid transparent;
   width: 19.4vw !important;
   height: 19.4vw !important;
-}
+} */
 
-.team .project__description.r {
+/* .team .project__description.r {
   padding-left: 12.61%;
   padding-right: 20.1%;
 }
@@ -375,17 +375,17 @@ export default {
 .team .project__description.l {
   padding-right: 9.1%;
   padding-left: 25.1%;
-}
+} */
 
 .team .block p {
   margin: 0;
   line-height: 5.1rem;
 }
-
+/*
 .team  .block span {
   margin: 0;
   line-height: 6.5rem;
-}
+}*/
 .team .ctn.block {
   padding-left: 0;
   padding-right: 0;
@@ -398,8 +398,82 @@ export default {
   display: block;
 }
 
-.project__text p:not(:last-of-type) {
+/* .project__text p:not(:last-of-type) {
     margin-bottom: 1.5rem;
+} */
+
+/* large ascale */
+@media (min-width: 1200px) {
+
+.team .block {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 40px;
+        margin-bottom: 14px;
+    margin-right: 14px;
+    /* background-clip: padding-box;
+    border: 10px solid transparent; */
+    /* width: 19.4vw !important; */
+    /* height: 19.4vw !important; */
+    width: 280px;
+    height: 280px;
+}
+
+.team .ctn-content.r {
+    padding-top: 0;
+    padding-bottom: 74px;
+        padding-right: 280px;
+}
+
+.team .ctn-content.l {
+    padding-top: 66px;
+    padding-bottom: 0;
+        padding-left: 280px;
+}
+
+.team .ctn-content.t {
+    padding-bottom: 79px;
+}
+
+.team .block.red {
+   padding: 120px 0 39px 39px;
+}
+
+.team .block.grey
+{
+  padding-left: 14px;
+    padding-right: 1px;
+    padding-top: 210px;
+}
+
+.team .block.white.custom
+{
+ padding-top: 135px;
+    padding-left: 0px;
+    margin-left: -31px;
+}
+
+.team .block.red .title {
+    font-size: 40px;
+    line-height: 1;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-right: 55px;
+}
+
+.team .block.red .sub {
+
+ font-size: 20px;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+}
+
+.team .block.white .title
+{
+  line-height: 1;
+}
+
 }
 
 </style>

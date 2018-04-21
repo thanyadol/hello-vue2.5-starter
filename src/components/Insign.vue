@@ -18,7 +18,7 @@
 
         <div class="project__content">
           <div class="project__body white">
-            <section class="project__description grey row | ctn-content blog">
+            <section class="project__description grey row |  ctn-content blog">
               <h3 class="hidden-visually">Blog</h3>
               <div class="project__text | col-md-6 mrg-2 ml-0 mr-0 pr-0 pl-0 | m-100 m-mr-0">
                 <p class="title bold tb">{{ post.title }}</p>
@@ -28,7 +28,7 @@
 
             <!-- grey top -->
             <div class="bg grey fixed-top"> </div>
-            <section class="project__description t white row | ctn-content blog">
+            <section class="project__description t white row | pb-0 ctn-content blog">
               <h3 class="hidden-visually">Venture</h3>
               <div class="project__description | col-md-12 |" v-for="r in post.blogs" :key="r.id" v-bind:class="r.class">
 
@@ -89,7 +89,7 @@
         </div>
 
         <div class="project__body pt-0">
-          <section class="project__description p-0 m-0 | ctn white">
+          <section class="project__description py-0 m-0 | ctn white">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>

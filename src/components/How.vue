@@ -30,7 +30,7 @@
               <p class="title bold tb">{{ p.title }}</p>
             </div>
           </section>
-          <section class="project__description col-12 tr white | ctn-content invest">
+          <section class="project__description col-12 tr white pb-0 | ctn-content invest">
             <ul class="">
               <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
                 <!-- <span class="sub tb fixed">{{ v.sub }}</span> -->
@@ -43,7 +43,7 @@
       </div>
 
       <div class="project__body pt-0">
-        <section class="project__description p-0 m-0 | ctn white">
+        <section class="project__description py-0 m-0 | ctn white">
           <buttom :next="next" :prev="prev"></buttom>
         </section>
       </div>

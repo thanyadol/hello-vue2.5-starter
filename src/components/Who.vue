@@ -28,7 +28,7 @@
               </div>
             </section>
 
-           <section class="project__description pt-0 | ctn-content white">
+           <section class="project__description py-0 | ctn-content white">
             <div class="project__text | col-12 m-o p-0 mrg-2 | m-100 m-mr-0">
               <a class="btn btn--cta" href="#"> About SCG</a>
             </div>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="project__body pt-0">
-           <section class="project__description p-0 m-0 | ctn white">
+           <section class="project__description py-0 m-0 | ctn white">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
