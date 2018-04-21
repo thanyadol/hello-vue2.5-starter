@@ -406,6 +406,10 @@ export default {
 
       console.log(scrolled)
     })
+  },
+  destroyed () {
+    var vm = this
+    vm.$parent.show = false
   }
 }
 </script>

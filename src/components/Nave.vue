@@ -1,11 +1,11 @@
 <template>
-  <div class="nav col-12 mt-4c">
+  <div class="nav">
     <ul>
       <li v-for="n in navs" :key="n.id">
         <router-link :to="n.url">
           <button v-bind:class="n.class" class="menu-btn" aria-label="" href="javascript:void(0);">
-             <span class="menu-btn__text">{{ n.title }}</span>
-            </button>
+               <span class="menu-btn__text">{{ n.title }}</span>
+              </button>
         </router-link>
       </li>
     </ul>
@@ -46,20 +46,14 @@ export default {
 /* remove reboot*/
 
 .nav {
-  text-align: right;
   display: block;
   position: fixed;
   z-index: 2;
 }
 
-.mt-4c {
-  margin-top: 50px;
-  margin-left: -150px;
-}
-
 .nav ul li {
   display: inline;
-  padding-right: 35px;
+  margin-right: 55px;
 }
 
 button:focus {
@@ -95,9 +89,9 @@ a:hover {
 }
 
 /*.menu-btn.pitch:hover {
-  background-color: #ec1e23;
-  color: #2f3c47;
-}*/
+    background-color: #ec1e23;
+    color: #2f3c47;
+  }*/
 
 .menu-btn.pitch:before,
 .menu-btn.pitch:after {
@@ -105,9 +99,9 @@ a:hover {
 }
 
 /*.menu-btn :hover
-          {
-            border-bottom: solid 2px #2f3c47;
-          }*/
+            {
+              border-bottom: solid 2px #2f3c47;
+            }*/
 
 /* Top and Bottom borders go out */
 
@@ -148,36 +142,36 @@ button:hover:before {
 }
 
 /* .pickdeck {
-      right: calc(5vw + 144px);
-    }
+        right: calc(5vw + 144px);
+      }
 
-    .career {
-      right: calc(5vw + 60px);
-    }
+      .career {
+        right: calc(5vw + 60px);
+      }
 
-    .menu {
-      right: calc(5vw - 12px);
-    } */
+      .menu {
+        right: calc(5vw - 12px);
+      } */
 
 /* // Extra large devices (large desktops, 1200px and up) */
+
 @media (min-width: 1200px) {
   .menu-btn.pitch {
-  padding-left: 20px;
-  padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-
-  .mt-4c[data-v-532786d2] {
-    margin-top: 52px;
-    margin-left: -140px;
-}
+  .nav {
+    display: block;
+    position: fixed;
+            z-index: 2 !important;
+    right: 81px;
+    top: 52px;
+  }
+  .nav ul li:last-child {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 575.98px) {
-
-      .mt-4c {
-    margin-top: 31px;
-    margin-left: -13px;
 }
-}
-
 </style>

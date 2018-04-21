@@ -55,8 +55,12 @@
 
 <script>
 import scroll from 'smooth-scrollbar'
+// import Vue from 'vue'
+// import App from '@/App'
+
 export default {
   name: 'Who',
+  props: [ 'parentValue' ],
   data () {
     return {
       title: 'Who We Are',
@@ -123,7 +127,28 @@ export default {
     }
   },
   // life cycle of component
-  created () {},
+  /* created () {},
+  ready () {
+    alert('i am ready')
+    window.addEventListener('onload', this.leaving)
+  }, */
+  mounted: function () {
+    // update file of #app
+    /* var app = new Vue({
+      el: '#app'
+    })
+    app.showed() */
+    var vm = this
+    // alert(vm.show)
+    vm.$parent.show = false
+  },
+
+  methods: {
+    /* updateValue: function (value) {
+      this.$emit('input', value)
+    } */
+  },
+
   beforeMount () {
     var scrolled = 0
     var vm = this
@@ -131,6 +156,7 @@ export default {
     window.addEventListener('wheel', function (event) {
       var div = document.getElementById('who')
       const scrollbar = scroll.init(div)
+      // scrollbar.scrollTop = 1
 
       // slide title
       if (scrollbar.scrollTop > 50) {
@@ -170,7 +196,9 @@ export default {
 
     console.log(scrolled)
   },
-  beforeDestroy () {
+  destroyed () {
+    var vm = this
+    vm.$parent.show = false
     // window.removeEventListener('wheel', this.handleScroll)
   }
 }

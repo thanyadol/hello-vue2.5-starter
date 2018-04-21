@@ -291,6 +291,10 @@ export default {
   },
   beforeDestroy () {
     // window.removeEventListener('wheel', this.handleScroll)
+  },
+  destroyed () {
+    var vm = this
+    vm.$parent.show = false
   }
 }
 </script>

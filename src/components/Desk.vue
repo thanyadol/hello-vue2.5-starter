@@ -1,20 +1,116 @@
 <template>
   <div class="desk">
-    <div class="translate">
-      <h3 class="sub bold tb">The standard Lorem Ipsum passage, used since the 1500s</h3>
-      <p class="sub tb">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      <h3 class="sub bold tb">Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</h3>
-      <p class="sub tb">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
-        mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
-        assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
-        ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
-      <h3 class="sub bold tb">1914 translation by H. Rackham</h3>
-      <p class="sub tb">"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and
-        equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is
-        untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently
-        occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse
-        pains."</p>
+
+    <div class="top fixed col-12 white">
+      <header id="header" class="">
+        <h1 class="header__title" v-show="true">
+          <img class="logo__sm" v-bind:src="logo" />
+          <router-link to="/">
+          </router-link>
+        </h1>
+        <div class="nav_wrapper">
+          <nave></nave>
+        </div>
+      </header>
+    </div>
+
+    <div class="pt-130 project__inner scrollarea" data-scrollbar id="desk">
+      <div class="scroll-content">
+
+        <section class="project__description py-0 grey">
+          <h3 class="hidden-visually">Pitch</h3>
+          <div class="project__description mb-0 pb-0 grey | row ctn t">
+            <div class="project__text | m-100 m-mr-0 | ctn-content l">
+              <!-- <img class="bg__form" v-bind:src="about.image" v-bind:class="about.imageClass" /> -->
+              <p class="title tr bold">{{ about.title }}</p>
+              <ul class="form">
+                <li v-for="f in about.forms" :key="f.id">
+                  <p class="sub tb bold">{{ f.title }}</p>
+                  <input class="form-control flg" :v-model="f.name" :placeholder="f.placeholder">
+                </li>
+              </ul>
+            </div>
+
+            <div class="project__text | m-100 m-mr-0 | ctn-content r">
+              <div class="box red">
+                <p class="sub tw f-22">{{ about.detail }}</p>
+                <p class="title tw bold">{{ about.sub }}</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="project__description py-0 grey">
+          <h3 class="hidden-visually">Pitch</h3>
+          <div class="project__description mb-0 pb-0 grey | row ctn c">
+
+            <div class="project__text col | m-100 m-mr-0 | ctn-content l">
+              <div class="box red custom">
+                <!-- <p class="sub tw f-22">{{ pitch.detail }}</p> -->
+                <p class="title tw bold">{{ pitch.sub }}</p>
+              </div>
+            </div>
+
+            <div class="project__text | m-100 m-mr-0 | ctn-content r">
+              <!-- <img class="bg__form" v-bind:src="pitch.image"  v-bind:class="pitch.imageClass"  /> -->
+              <p class="title tr bold">{{ pitch.title }}</p>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="project__description grey | py-0">
+          <h3 class="hidden-visually">Pitch</h3>
+          <div class="project__description row | ctn b">
+
+            <div class="project__text col-12 | m-100 m-mr-0">
+              <ul class="form">
+
+                <li v-if="f.type == 'text'" v-for="f in pitch.forms" :key="f.id">
+                  <p class="sub tb bold">{{ f.title }}</p>
+                  <input class="form-control flg w-684" :v-model="f.name" :placeholder="f.placeholder">
+                </li>
+
+                <li v-if="f.type == 'button-group'" v-for="f in pitch.forms" :key="f.id">
+                  <p class="sub tb bold">{{ f.title }}</p>
+                  <div :v-model="f.name" class="btn-group jc" role="group" aria-label="">
+                    <button :v-model="b.name" :value="b.id" v-for="b in f.buttons" :key="b.id" type="button" class="btn btn-default" v-bind:class="f.buttonClass">{{ b.title }}</button>
+                  </div>
+                </li>
+
+                <li v-if="f.type == 'number'" v-for="f in pitch.forms" :key="f.id">
+                  <p class="sub tb bold">{{ f.title }}</p>
+                  <input class="form-control flg w-684" :v-model="f.name" :placeholder="f.placeholder">
+                </li>
+
+                <li v-if="f.type == 'check'" v-for="f in pitch.forms" :key="f.id">
+                  <p class="sub tb bold">{{ f.title }}</p>
+                  <div :v-model="f.name" class="btn-group jc" role="group" aria-label="">
+                    <button :v-model="b.name" :value="b.id" v-for="b in f.buttons" :key="b.id" type="button" class="btn btn-default">{{ b.title }}</button>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+        </section>
+
+ <section class="project__description grey row | py-0">
+        <div class="project__text grey col footy">
+          <div class="m-100 m-ml-0 | ctn al-c">
+            <h3 class="sub bold tb">&copy; {{ foot }}</h3>
+          </div>
+        </div>
+ </section>
+  <section class="project__description row grey | py-0">
+        <div class="project__text col | p-0 m-0">
+          <button v-on:click="submit" type="button" class="btn btn-default btn-fill red title bold"><span>Submit</span><img class="arrow" v-bind:src="arrow" /></button>
+        </div>
+  </section>
+      </div>
     </div>
   </div>
 </template>
@@ -32,16 +128,17 @@ export default {
       alert('Hello ' + this.url)
       // `event` is the native DOM event
       /* if (event) {
-          alert(event.target.tagName)
-        } */
+                  alert(event.target.tagName)
+                } */
     }
   },
   // el: '#deck',
   data () {
     return {
       title: 'Pitch Deck',
+      logo: './static/img/logo_sm.svg',
       foot: 'Copyright 2018 AddVenture',
-      arrow: './static/img/next.svg',
+      arrow: './static/img/sub.png',
       url: '/api/pitch/create',
       about: {
         title: 'About You',
@@ -49,7 +146,7 @@ export default {
         image: './static/img/you.svg',
         imageClass: 'you',
         detail:
-          'Before submitting your pitch deck, please fill out the form below',
+          'Before submitting your pitch desk, please fill out the form below',
         forms: [
           {
             id: 1,
@@ -73,7 +170,7 @@ export default {
             id: 4,
             name: 'contact',
             title: 'Contact *',
-            placeholder: 'Telephone no.'
+            placeholder: 'Phone no.'
           }
         ]
       },
@@ -97,6 +194,7 @@ export default {
             title: 'Type of business',
             placeholder: '',
             type: 'button-group',
+            buttonClass: 'w-161',
             buttons: [
               {
                 id: 99,
@@ -175,20 +273,23 @@ export default {
     }
   },
   mounted: function () {
+    var vm = this
+    vm.$parent.show = true
     // var vm = this
 
     /* var scrollbarOptions = {
-          renderByPixels: true,
-          continuousScrolling: true
-        } */
+                  renderByPixels: true,
+                  continuousScrolling: true
+                } */
 
-    var scrollOffset = 950
+    // var scrollOffset = 0
 
     var el = document.getElementById('desk')
-    const s = scroll.init(el)
-    s.scrollTop = scrollOffset
-    s.unregisterEvents(/./)
-    s.destroy()
+    // const s =
+    scroll.init(el)
+    // s.scrollTop = scrollOffset
+    // s.unregisterEvents(/./)
+    // s.destroy()
     // s.destroy()
     // s.setPosition(900, 900)
     //  s.limit = { x: 200, y: 750 }
@@ -196,11 +297,11 @@ export default {
     // s.addMomentum(100, 750)
 
     /* scroll.scrollIntoView(el, {
-          // offsetLeft: 34,
-          // offsetBottom: 12,
-          // alignToTop: true,
-          onlyScrollIfNeeded: true
-        }) */
+                  // offsetLeft: 34,
+                  // offsetBottom: 12,
+                  // alignToTop: true,
+                  onlyScrollIfNeeded: true
+                }) */
 
     console.log('i was mounthed')
   },
@@ -211,12 +312,12 @@ export default {
     // const div1 = this.$refs['scrolled'] // querySelector('div#scrolled') // vm.$refs.scrolled
     // var parent = new Vue({ el: 'div.deck' })
     /* var el = document.getElementById('scrolled')
-        const s = scroll.init(el)
-        if (s.scrollTop > 50) {
+                const s = scroll.init(el)
+                if (s.scrollTop > 50) {
 
-        }
+                }
 
-        console.log(s) */
+                console.log(s) */
     // var scrolled = 0
     // var vm = this
 
@@ -224,15 +325,14 @@ export default {
     // event.preventDefault()
     // event.returnValue = false
     // return false
-    var scrollOffset = 950
+    // var scrollOffset = 950
 
     // var div = document.getElementById('scrollbar')
     // const scrollbar = scroll.init(div)
     var el = document.getElementById('desk')
-    const s = scroll.get(el)
-    s.scrollTop = scrollOffset
+    var s = scroll.init(el)
 
-    // s.scrollTop = 750
+    s.scrollTop = 750
     // s.destroy()
     // if (s.scrollTop < scrollOffset) {
     //   s.scrollTop = scrollOffset
@@ -242,6 +342,8 @@ export default {
     //   })
   },
   destroyed () {
+    var vm = this
+    vm.$parent.show = false
     // var el = document.getElementById('deck')
     // const s = scroll.get(el)
     // s.destroy()
@@ -252,19 +354,19 @@ export default {
 <style scoped>
 /***/
 
-.desk .ctn.rr {
-  transform: translateX(17%);
-}
+/* .desk .ctn.rr {
+      transform: translateX(17%);
+    }
 
-.desk .title.t-lg {
-  font-size: 6vw !important;
-  letter-spacing: 2px;
-}
+    .desk .title.t-lg {
+      font-size: 6vw !important;
+      letter-spacing: 2px;
+    }
 
-.desk .ll {
-  transform: translateX(10%);
-  z-index: 4;
-}
+    .desk .ll {
+      transform: translateX(10%);
+      z-index: 4;
+    } */
 
 .desk .my-5c {
   margin-bottom: 12rem;
@@ -290,14 +392,24 @@ export default {
   margin-bottom: 70px;
 }
 
-.desk .ctn.c {
-  padding-top: 130px;
-  transform: translateY(-11.8%);
-}
+/* .desk .ctn.c {
+      padding-top: 130px;
+      transform: translateY(-11.8%);
+    } */
 
-.desk .jc-b {
+.desk .jc {
   justify-content: space-between;
   display: flex;
+}
+
+.btn-group {
+  margin-left: 0;
+  margin-bottom: 15.5px;
+}
+
+.w-161 {
+  width: 161px;
+  height: 60px;
 }
 
 /**** input ***/
@@ -319,9 +431,9 @@ export default {
   font-size: 1.8vw;
 }
 
-.btn-group {
-  margin-left: 30px;
-}
+/* .btn-group {
+      margin-left: 30px;
+    } */
 
 .btn-group > .btn:hover,
 .btn-group > .btn:visited,
@@ -343,55 +455,53 @@ ul.form li {
   font-size: 10vh !important;
 }
 
-.flg {
-  padding-left: 2rem;
-  padding: 1rem 2rem 1rem 2rem;
-  display: block;
-  width: 48vw;
-  /* padding: .375rem .75rem; */
-  font-size: 2rem;
-  /* line-height: 1.7; */
-  color: #221f1f;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ffff;
-  border-radius: 0.25rem;
-  z-index: 4 !important;
-  position: relative;
-}
+/* .flg {
+      padding-left: 2rem;
+      padding: 1rem 2rem 1rem 2rem;
+      display: block;
+      width: 48vw;
+      /* padding: .375rem .75rem; *
+      font-size: 2rem;
+      /* line-height: 1.7; *
+      color: #221f1f;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ffff;
+      border-radius: 0.25rem;
+      z-index: 4 !important;
+      position: relative;
+    } */
 
 /* .w-125 {
-    width: 110%;
-  } */
+            width: 110%;
+          } */
 
-.desk .pb-c {
-  border-bottom: 450px solid #f0f0f0;
-}
+/* .desk .pb-c {
+      border-bottom: 450px solid #f0f0f0;
+    }
 
-.desk .pt-c {
-  border-top: 450px solid #ec1e24;
-}
+    .desk .pt-c {
+      border-top: 450px solid #ec1e24;
+    }
 
-.desk .pt-d {
-  border-top: 20vh solid #ec1e24;
-}
+    .desk .pt-d {
+      border-top: 20vh solid #ec1e24;
+    } */
 
-.desk .you {
-  /* margin-top: 50px;
-    margin-left: -50px; */
-  transform: translate3d(0vw, 12vh, 0);
-}
+/*.desk .you {
+      /* margin-top: 50px;
+            margin-left: -50px; *
+      transform: translate3d(0vw, 12vh, 0);
+    }
 
-.desk .deck {
-  transform: translate3d(13vw, 12vh, 0);
-}
+    .desk .deck {
+      transform: translate3d(13vw, 12vh, 0);
+    }*/
 
 .desk .arrow {
-  width: 10vh;
+  width: 58px;
   padding-top: 10px;
-  margin-left: 30px;
-  position: absolute;
-  fill: #f0f0f0f0;
+  margin-left: 56px;
 }
 
 /***/
@@ -402,42 +512,200 @@ ul.form li {
   z-index: 2;
 }
 
-.desk .pb-6 {
-  padding-bottom: 5vh;
-}
+/* .desk .pb-6 {
+      padding-bottom: 5vh;
+    }
 
-.desk .sft {
-  margin-top: -15.5%;
-}
+    .desk .sft {
+      margin-top: -15.5%;
+    } */
 
-.desk .ctn.r {
-  padding-left: 9.1%;
-  padding-right: 0;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-}
+/* .desk .ctn.r {
+      padding-left: 9.1%;
+      padding-right: 0;
+      padding-bottom: 3rem;
+      padding-top: 3rem;
+    }
 
-.desk .ctn.l {
-  padding-left: 0;
-  padding-right: 9.1%;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-}
+    .desk .ctn.l {
+      padding-left: 0;
+      padding-right: 9.1%;
+      padding-bottom: 3rem;
+      padding-top: 3rem;
+    }
 
-.desk .ctn.b {
-  padding-left: 15.1%;
-  padding-right: 20.1%;
-}
+    .desk .ctn.b {
+      padding-left: 15.1%;
+      padding-right: 20.1%;
+    } */
 
 .scrollarea {
-  height: 90vh;
+  height: 100vh;
   display: block;
 }
 
 @media (min-width: 1200px) {
-  .desk {
-    height: 100vh;
-    background-color: #f0f0f0;
+  .desk .flg {
+    /* padding-left: 2rem; */
+    padding: 9.5px 29px;
+    display: block;
+    width: 670px;
+    /* padding: .375rem .75rem; */
+    font-size: 24px;
+    /* height: 41px; */
+    line-height: 41px;
+    /* line-height: 1.7; */
+    color: #221f1f;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 0;
+    z-index: 5 !important;
+    position: relative;
+    margin-bottom: 15.5px;
+  }
+  .w-684 {
+    width: 684px !important;
+  }
+  .desk .ctn.t {
+    padding-left: 140px;
+    padding-right: 0;
+    width: 100%;
+  }
+  .desk .ctn.c {
+    padding-right: 140px;
+    padding-left: 0;
+    width: 100%;
+  }
+  .desk .t .ctn-content.l {
+    width: 810px;
+    padding: 46px 0 0 0;
+  }
+  .desk .t .ctn-content.r {
+    padding: 0;
+    position: absolute;
+    right: 0;
+  }
+  .desk .c .ctn-content.l {
+    width: 692px;
+    /* height: 430px; */
+    padding: 0 0 0 0;
+  }
+  .desk .c .ctn-content.r {
+    padding-top: 145px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    /* width: 810px; */
+  }
+  .desk .ctn-content.l .title,
+  .desk .ctn-content.r .title {
+    font-size: 100px;
+    line-height: 169px;
+    height: 169px;
+  }
+  .desk .ctn-content.l .sub,
+  .desk .ctn.b .sub {
+    height: 51px;
+    font-size: 30px;
+    line-height: 51px;
+  }
+  .desk .box.red {
+    width: 692px;
+    height: 430px;
+    padding: 242px 119px 15px 250px;
+    text-align: right;
+  }
+  .desk .box.red.custom {
+    width: 692px;
+    height: 430px;
+    padding: 290px 38px 22px 496px;
+    text-align: right;
+    margin-top: -120px;
+  }
+  .desk .box.red-2 {
+    width: 158px;
+    height: 118px;
+  }
+  .desk .box.red .sub {
+    /* height: 79px; */
+    font-size: 26px;
+    line-height: 1;
+  }
+  .desk .box.red .title {
+    font-size: 70px;
+    height: 118px;
+    line-height: 118px;
+  }
+  /* .desk {
+        height: 150vh;
+        background-color: #f0f0f0;
+      }
+
+      .desk header
+      {
+        background-color: white;
+      }*/
+  .desk .top.fixed {
+    display: block;
+    position: absolute;
+    height: 130px;
+    z-index: 100;
+  }
+  .pt-130 {
+    padding-top: 0;
+  }
+  .desk .ctn.b {
+    padding-bottom: 60px;
+    padding-top: 56px;
+    padding-left: 518px;
+    padding-right: 238px;
+  }
+  .desk .btn {
+    height: 60px;
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 44px;
+  }
+
+  .desk .btn-group .btn-default
+  {
+        background-color: white;
+  }
+
+  .footy .sub {
+    height: 37px;
+    font-size: 22px;
+    line-height: 37px;
+    padding-bottom: 90px;
+  }
+  .desk .btn-fill {
+    padding-top: 0;
+    padding-left: 1006px;
+    margin: 0;
+    font-size: 70px;
+    height: 120px;
+    text-align: right;
+    color: #f0f0f0f0;
+    margin: 0 !important;
+    line-height: 118px;
+  }
+  .btn-group > .btn:hover,
+  .btn-group > .btn:visited,
+  .btn-group > .btn:active {
+    z-index: 1;
+    color: #ec1e24;
+    border: 1px solid #ec1e24;
+    box-shadow: none;
   }
 }
+</style>
+
+<style>
+/* .project .content__inner {
+      z-index: 99;
+      position: absolute;
+    } */
 </style>

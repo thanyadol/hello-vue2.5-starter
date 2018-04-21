@@ -16,6 +16,9 @@
 </template>
 
 <script>
+
+// import scroll from 'smooth-scrollbar'
+import Vue from 'vue'
 export default {
   name: 'Index',
   data () {
@@ -24,6 +27,9 @@ export default {
       sub: 'You Innovate, We Scale',
       show: false
     }
+  },
+
+  beforeMount () {
   }
 }
 </script>
@@ -103,4 +109,11 @@ export default {
       margin-top: 0;
     }
   }
+</style>
+
+<style>
+  /* .project .content__inner {
+    z-index: 1;
+    position: absolute;
+  } */
 </style>

@@ -27,7 +27,7 @@ export default {
   bottom: 0;
   left: -45%;
   height: 100%;
-  z-index: auto;
+  z-index: -99;
 }
 
 .line {

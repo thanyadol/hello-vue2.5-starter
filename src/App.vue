@@ -1,7 +1,7 @@
 <template>
   <div class="project">
     <header id="header" class="ctn noselect">
-      <h1 class="header__title" v-show="!chevron().home">
+      <h1 class="header__title" v-show="!page().home">
           <img class="logo__sm" v-bind:src="logo"/>
         <router-link to="/">
          </router-link>
@@ -19,7 +19,7 @@
         <div id="inner-nav" v-show="!show">
           <ul class="inner-nav__list">
             <li class="inner-nav__item">
-              <router-link :to="chevron().prev" class="">
+              <router-link :to="page().prev" class="">
                 <button class="inner-nav__btn inner-nav__btn--prev" aria-label="Backward" style="background-color: transparent;">
                               <!-- <svg class="icon icon--arrow icon--arrow--left" viewBox="0 0 38 38">Backward
                                 <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
@@ -30,7 +30,7 @@
               </router-link>
             </li>
             <li class="inner-nav__item">
-              <router-link :to="chevron().next" class="">
+              <router-link :to="page().next" class="">
                 <button class="inner-nav__btn inner-nav__btn--next swiper-button-disabled" aria-label="Forward" style="background-color: transparent;">
                                <!-- <svg class="icon icon--arrow icon--arrow--right" viewBox="0 0 38 38">Forward
                                 <path class="st0" d="M27.7,19c0,0.6-0.2,1.3-0.7,1.7L14.6,33.6c-1,1-2.5,1-3.5,0.1s-1-2.5-0.1-3.5L21.7,19L11,7.9c-1-1-0.9-2.6,0.1-3.5c1-1,2.6-0.9,3.5,0.1L27,17.3C27.5,17.7,27.7,18.4,27.7,19z"></path>
@@ -51,7 +51,7 @@
           </ul>
         </div>
 
-        <div class="content__inner">
+        <div class="content__inner top">
           <article class="project">
             <transition name="fade">
               <router-view></router-view>
@@ -120,40 +120,89 @@ export default {
       next: './static/img/go.svg'
     }
   },
-  mounted: function () {
-    var vm = this
+  ready () {
+  //  window.addEventListener('onload', this.leaving)
 
+    // alert('i was ready')
+  },
+  mounted: function () {
+    // alert('i was mounth')
+
+    var vm = this
     var scrollbarOptions = {
       renderByPixels: true,
       continuousScrolling: true
     }
 
-    var v = vm.chevron().scroll
+    var v = vm.page().scroll
     var div = document.getElementById(v)
-    console.log(div)
+    // console.log(div)
     if (!div) {
-      vm.show = false
-      vm.left = 'c'
-      vm.right = 'c'
+      // vm.show = false
+      // vm.left = 'c'
+      // vm.right = 'c'
       // vm.scroll = 'show'
       // console.log('if')
       return
     }
 
-    const scrollbar = scroll.init(div, scrollbarOptions)
+    // const scrollbar =
+    scroll.init(div, scrollbarOptions)
 
-    // get
-    if (scrollbar.offset.y > 50) {
-      vm.show = true
-      vm.left = 'v'
-      vm.right = 'z'
-      // vm.scroll = 'hide'
-    } else {
-      vm.show = false
-      vm.left = 'c'
-      vm.right = 'c'
-      // vm.scroll = 'show'
-    }
+    /* var Events = new Vue({})
+    var ListensForEvent = new Vue({
+      el: '#listener',
+      ready () {
+        Events.$on('eventFired', () => {
+          alert('event was heard')
+          this.msg = 'I heard an event.'
+        })
+      },
+      data: {
+        msg: 'I am listening for an event..'
+      }
+    })
+
+    var FiresEvent = new Vue({
+      el: '#dispatcher',
+      ready () {
+        setTimeout(
+          () => {
+            Events.$emit('eventFired')
+            this.msg = 'I fired an event.'
+          },
+          2500
+        )
+      },
+      data: {
+        msg: 'I am getting ready to fire an event.'
+      }
+    }) */
+
+    // var c = vm.page().type
+
+    // if (c === 'nave') {
+    //   // alert(c)
+
+    //   vm.show = true
+    //   vm.left = 'v'
+    //   vm.right = 'z'
+    //   vm.scroll = 'hide'
+    //   return
+    // }
+
+    // // get
+    // if (scrollbar.offset.y > 50) {
+    //   vm.show = true
+    //   vm.left = 'v'
+    //   vm.right = 'z'
+    //   vm.scroll = 'hide'
+    // } else {
+    //   vm.show = false
+    //   vm.left = 'c'
+    //   vm.right = 'c'
+    //   vm.scroll = 'show'
+    // }
 
     /* var options = {
                     wheelEventTarget: EventTarget,
@@ -182,6 +231,7 @@ export default {
     // vm.el = scroll
   },
   beforeMount () {
+    // alert('#app was mounted')
     // var parent = new Vue({ el: '.team#scrollbar' })
     // access child component instance
     // var child = parent.$refs.divx
@@ -197,7 +247,19 @@ export default {
     var vm = this
 
     window.addEventListener('wheel', function (event) {
-      var v = vm.chevron().scroll
+      var v = vm.page().scroll
+      var c = vm.page().type
+
+      if (c === 'nave') {
+      // alert(c)
+
+        vm.show = true
+        vm.left = 'v'
+        vm.right = 'z'
+        vm.scroll = 'hide'
+        return
+      }
+
       var div = document.getElementById(v)
       // alert(v)
 
@@ -248,7 +310,15 @@ export default {
   },
   // define methods under the `methods` object
   methods: {
-    chevron: function () {
+    leaving: function () {
+      var vm = this
+      vm.show = false
+    },
+    showed: function () {
+      var vm = this
+      vm.show = false
+    },
+    page: function () {
       // add new page here
       var pages = {
         default: {
@@ -267,7 +337,8 @@ export default {
           next: 'whatweinvest',
           prev: '/',
           scroll: 'who',
-          home: false
+          home: false,
+          flag: true
         },
         whatweinvest: {
           next: 'whereweinvest',
@@ -321,19 +392,22 @@ export default {
           next: 'pitchdesk',
           prev: 'pitchdesk',
           scroll: 'desk',
-          home: false
+          home: false,
+          type: 'nave'
         },
         joinus: {
           next: 'joinus',
           prev: 'joinus',
           scroll: 'join',
-          home: false
+          home: false,
+          type: 'nave'
         },
         menu: {
           next: 'menu',
           prev: 'menu',
           scroll: 'menu',
-          home: false
+          home: false,
+          type: 'nave'
         }
       }
 

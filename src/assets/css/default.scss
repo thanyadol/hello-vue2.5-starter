@@ -10,6 +10,14 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { 
 
+    #frame {
+        z-index: 2;
+    }
+
+    .project {
+        bottom: 0;
+        z-index: 0;
+    }
 
   .project__pagging
   {
@@ -49,7 +57,7 @@
     {
         top: 53px;
         left: 81px;
-        z-index: 1001;
+        z-index: 2 !important;
         width: 176px;
     }
 
