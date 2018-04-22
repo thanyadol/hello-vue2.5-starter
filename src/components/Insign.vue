@@ -22,7 +22,7 @@
 
         <div class="project__content">
           <div class="project__body white">
-            <section class="project__description grey row |  ctn-content blog">
+            <section class="project__description grey row |  ctn-content blog | pb-73">
               <h3 class="hidden-visually">Blog</h3>
               <div class="project__text | col-md-6 mrg-2 ml-0 mr-0 pr-0 pl-0 | m-100 m-mr-0">
                 <p class="title bold tb">{{ post.title }}</p>
@@ -32,9 +32,9 @@
 
             <!-- grey top -->
             <div class="bg grey fixed-top"> </div>
-            <section class="project__description t white row | pb-0 ctn-content blog">
+            <section class="project__description t white row | py-0 ctn-content blog">
               <h3 class="hidden-visually">Venture</h3>
-              <div class="project__description | col-md-12 |" v-for="r in post.blogs" :key="r.id" v-bind:class="r.class">
+              <div class="project__description | col-md-12 | pt-0" v-for="r in post.blogs" :key="r.id" v-bind:class="r.class">
 
                 <div class="project__text | col-6 | m-100 m-mr-0">
                   <img class="bg__block" v-bind:src="r.image" />
@@ -87,7 +87,7 @@
               </div>
 
             </div>
-            </section>
+            <!-- </section> -->
 
           </div>
         </div>
@@ -174,11 +174,15 @@ export default {
   // life cycle of component
   created () {},
   beforeMount () {
-    var scrolled = 0
+    // var scrolled = 0
     var vm = this
 
     window.addEventListener('wheel', function (event) {
       var div = document.getElementById('insign')
+
+      if (!div) {
+        return
+      }
       const scrollbar = scroll.init(div)
 
       // slide title
@@ -189,21 +193,21 @@ export default {
       }
 
       // slide sub
-      if (scrollbar.scrollTop > 55) {
-        vm.slide__sub = 'slide__sub__active'
-      } else {
-        vm.slide__sub = 'slide__sub__leave'
-      }
+    //   if (scrollbar.scrollTop > 55) {
+    //     vm.slide__sub = 'slide__sub__active'
+    //   } else {
+    //     vm.slide__sub = 'slide__sub__leave'
+    //   }
 
-      if (event.deltaY < 0) {
-        scrolled++
-      }
-      if (event.deltaY > 0) {
-        scrolled--
-      }
+    //   if (event.deltaY < 0) {
+    //     scrolled++
+    //   }
+    //   if (event.deltaY > 0) {
+    //     scrolled--
+    //   }
     })
 
-    console.log(scrolled)
+    // console.log(scrolled)
   },
   beforeDestroy () {
     // window.removeEventListener('wheel', this.handleScroll)
@@ -214,7 +218,7 @@ export default {
   },
   mounted: function () {
     var vm = this
-    vm.$parent.show = true
+    vm.$parent.show = false
   }
 }
 </script>
@@ -401,6 +405,11 @@ hr.separate {
 
   .insign .fill {
   width: max-content
+}
+
+.pb-73
+{
+  padding-bottom: 73px !important;
 }
 }
 </style>

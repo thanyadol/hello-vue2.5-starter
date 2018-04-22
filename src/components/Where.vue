@@ -162,6 +162,9 @@ export default {
 
     window.addEventListener('wheel', function (event) {
       var div = document.getElementById('where')
+      if (!div) {
+        return
+      }
       const scrollbar = scroll.init(div)
 
       // slide title

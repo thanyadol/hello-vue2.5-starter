@@ -263,6 +263,9 @@ export default {
 
     window.addEventListener('wheel', function (event) {
       var div = document.getElementById('team')
+      if (!div) {
+        return
+      }
       const scrollbar = scroll.init(div)
 
       // slide title
@@ -433,12 +436,14 @@ export default {
     padding-top: 0;
     padding-bottom: 74px;
         padding-right: 280px;
+        justify-content: flex-start;
 }
 
 .team .ctn-content.l {
     padding-top: 66px;
     padding-bottom: 0;
         padding-left: 280px;
+        justify-content: flex-end;
 }
 
 .team .ctn-content.t {

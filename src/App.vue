@@ -262,6 +262,9 @@ export default {
 
       var div = document.getElementById(v)
       // alert(v)
+      if (!div) {
+        return
+      }
 
       /* if (isNullOrUndefined(v)) {
                     vm.show = false
@@ -272,6 +275,10 @@ export default {
                   } */
 
       const scrollbar = scroll.get(div)
+
+      if (!scrollbar) {
+        return
+      }
 
       // get
       if (scrollbar.offset.y > 50) {
@@ -344,7 +351,8 @@ export default {
           next: 'whereweinvest',
           prev: 'whoweare',
           scroll: 'what',
-          home: false
+          home: false,
+          flag: true
         },
         whereweinvest: {
           next: 'howweinvest',

@@ -38,7 +38,7 @@
             <ul class="">
               <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
                 <!-- <span class="sub tb fixed">{{ v.sub }}</span> -->
-                <span class="title lg bold fixed mx-auto f-50">{{ v.title }} <o class="title lg bold f-80"> {{ v.series }} </o></span>
+                <span class="title lg bold fixed mx-auto f-50">{{ v.title }} <p class="title lg bold f-80"> {{ v.series }} </p></span>
                 <img class="bg" v-bind:class="v.imageClass" v-bind:src="v.image" />
               </li>
             </ul>
@@ -138,7 +138,7 @@ export default {
   },
   mounted: function () {
     var vm = this
-    vm.$parent.show = true
+    vm.$parent.show = false
   },
   beforeMount () {
     var scrolled = 0
@@ -146,6 +146,11 @@ export default {
 
     window.addEventListener('wheel', function (event) {
       var div = document.getElementById('how')
+
+      if (!div) {
+        return
+      }
+
       const scrollbar = scroll.init(div)
 
       // slide title
@@ -322,7 +327,8 @@ ul li.indent-4 {
     position: relative;
     border-right: 3px solid black;
     border-bottom: 3px solid black;
-    width: 240px;
+    /* width: 240px; */
+    width: calc(16vw + 1rem);
     height: 120px;
   }
   ul li.indent-4 {

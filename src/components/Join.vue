@@ -72,6 +72,9 @@ export default {
     // var scrollOffset = 950
 
     var el = document.getElementById('join')
+    if (!el) {
+      return
+    }
     // const s =
     scroll.init(el)
     // s.scrollTop = scrollOffset
@@ -117,6 +120,9 @@ export default {
       // var div = document.getElementById('scrollbar')
       // const scrollbar = scroll.init(div)
       var el = document.getElementById('join')
+      if (!el) {
+        return
+      }
       // const s =
       scroll.get(el)
 

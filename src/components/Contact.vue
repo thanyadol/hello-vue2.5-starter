@@ -123,7 +123,7 @@ export default {
   created () {},
   mounted: function () {
     var vm = this
-    vm.$parent.show = true
+    vm.$parent.show = false
   },
   beforeMount () {
     var scrolled = 0
@@ -131,6 +131,10 @@ export default {
 
     window.addEventListener('wheel', function (event) {
       var div = document.getElementById('contact')
+
+      if (!div) {
+        return
+      }
       const scrollbar = scroll.init(div)
 
       // slide title

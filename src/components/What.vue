@@ -38,11 +38,14 @@
             <!-- loop with invests -->
             <section class="inv t">
               <div class="pb-0 row | ctn-content" v-for="i in invests" :key="i.id">
-                <div class="col-7 m-0 p-0 ne" v-bind:class="{ right: i.id%2 == 0 }">
+                <div class="col-6 m-0 p-0 ne" v-bind:class="{ right: i.id%2 == 0 }">
                   <img class="project__image" :src="i.image">
                 </div>
                 <div class="col ne" v-bind:class="i.containnerClass">
-                  <h1 class="tr title center large mb-6c" v-bind:class="i.titleAlign"> {{ i.title }} </h1> <img class="bg" :src="i.imageIcon" v-bind:class="i.imageClass" />
+                  <h1 class="tr title large mb-6c" v-bind:class="i.titleAlign">
+                  <img class="bg" :src="i.imageIcon" v-show="i.left" v-bind:class="i.imageClass" />
+                  <span>{{ i.title }}</span>
+                  <img class="bg" :src="i.imageIcon" v-show="!i.left" v-bind:class="i.imageClass" /></h1>
                   <span class="sub bold ne tb">{{ i.sub }}</span>
                   <ul v-bind:class="i.contentAlign">
                     <li class="tb sub ne" v-for="l in i.lists" :key="l.list"> {{ l }}</li>
@@ -101,9 +104,10 @@ export default {
           image: './static/img/img3.jpg',
           imageIcon: './static/img/industrail.svg',
           imageClass: 'bg indust',
-          titleAlign: 'ml-0 ind',
+          titleAlign: 'ind',
           float: 'left red',
-          containnerClass: 'down'
+          containnerClass: 'down',
+          left: true
         },
         {
           id: 2,
@@ -121,8 +125,9 @@ export default {
           imageClass: 'bg b2b',
           float: 'right white',
           contentAlign: 'al-r rtl',
-          titleAlign: 'ml-0 b2b',
-          containnerClass: 'left al-r'
+          titleAlign: 'b2b',
+          containnerClass: 'left al-r',
+          left: false
         },
         {
           id: 3,
@@ -141,8 +146,9 @@ export default {
           imageIcon: './static/img/enterprise.svg',
           imageClass: 'bg enterprise',
           float: 'left red',
-          titleAlign: 'trs-l ent',
-          containnerClass: 'down'
+          titleAlign: 'ent',
+          containnerClass: 'down',
+          left: false
         }
       ],
       prev: {
@@ -166,6 +172,11 @@ export default {
 
     window.addEventListener('wheel', function (event) {
       var div = document.getElementById('what')
+
+      if (!div) {
+        return
+      }
+
       const scrollbar = scroll.init(div)
 
       // slide title
@@ -320,9 +331,11 @@ export default {
     margin-right: -1.1em;
   }
   .what .project__body .bg {
-    position: absolute;
-    width: 60px;
+width: 60px;
     z-index: 2;
+    position: relative;
+    top: 38px;
+    left: 0;
   }
   .project__content .title.large {
     font-size: 100px;
@@ -357,16 +370,29 @@ export default {
   /* .mt-ne-1 {
     transform: translateY(-14%);
   } */
-  .what .indust {
+  .what .project__body .bg.indust {
     top: 38px;
   }
+
+    .what .project__body .bg.b2b {
+    /* width: 78px !important; */
+    top: 31px;
+    right: 139px;
+         margin-left: 60px;
+  }
+  .what .project__body .bg.enterprise {
+    top: 40px;
+    width: 70px !important;
+    left: 0;
+  }
+
   .what .down {
     margin-top: 60px;
-    margin-left: 41px;
+       margin-left: 0;
   }
   .ctn-content {
     padding-left: 238px;
-    padding-right: 223px;
+    padding-right: 0;
     padding-top: 66.5px;
     padding-bottom: 45px;
   }
@@ -382,24 +408,16 @@ export default {
     padding-bottom: 0;
     padding-top: 0 !important;
   }
-  .what .b2b {
-    width: 78px !important;
-    top: 31px;
-    right: 139px;
-  }
-  .what .enterprise {
-    top: 40px;
-    width: 70px !important;
-    left: 170px;
-  }
+
   .what .pt-5c {
     padding-top: 120px;
   }
   .what .project__body .title.ent {
-    transform: translateX(-57%);
+    transform: translateX(0%);
+        margin-left: -195px;
   }
   .what .project__body .title.ind {
-    transform: translateX(25%);
+    transform: translateX(0%);
   }
   .what .ft {
     margin-top: -150px !important;

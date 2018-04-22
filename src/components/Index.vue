@@ -18,7 +18,7 @@
 <script>
 
 // import scroll from 'smooth-scrollbar'
-import Vue from 'vue'
+// import Vue from 'vue'
 export default {
   name: 'Index',
   data () {
