@@ -46,14 +46,17 @@
 
             <section class="project__map col-12 pt-0 pb-5 | ctn-content | mapp__wrapper" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <img class="mx-auto map" :src="sample">
-            </section>
-
-            <!-- tags lat long -->
-            <section class="project__description tags__wrapper">
               <div class="tags" v-bind:class="t.color" v-bind:style="{ left: t.x + 'px', top: t.y + 'px' }" v-for="t in tags" :key="t.id">
                 <span class="sub bold sm tw">{{ t.title }}</span>
               </div>
             </section>
+
+            <!-- tags lat long -->
+            <!-- <section class="project__description tags__wrapper">
+              <div class="tags" v-bind:class="t.color" v-bind:style="{ left: t.x + 'px', top: t.y + 'px' }" v-for="t in tags" :key="t.id">
+                <span class="sub bold sm tw">{{ t.title }}</span>
+              </div>
+            </section> -->
 
           </div>
         </div>
@@ -88,28 +91,28 @@ export default {
           id: 1,
           title: 'USA',
           x: 200,
-          y: 150,
+          y: 90,
           color: 'red'
         },
         {
           id: 2,
           title: 'China',
-          x: 1150,
-          y: 140,
+          x: 1000,
+          y: 90,
           color: 'custom'
         },
         {
           id: 3,
           title: 'Israel',
-          x: 920,
-          y: 300,
+          x: 810,
+          y: 190,
           color: 'red'
         },
         {
           id: 4,
           title: 'Asean',
-          x: 1200,
-          y: 450,
+          x: 930,
+          y: 320,
           color: 'red'
         }
       ],

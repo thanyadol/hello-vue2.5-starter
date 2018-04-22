@@ -38,7 +38,7 @@
             <ul class="">
               <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
                 <!-- <span class="sub tb fixed">{{ v.sub }}</span> -->
-                <span class="title lg bold fixed mx-auto f-50">{{ v.title }} <p class="title lg bold f-80"> {{ v.series }} </p></span>
+                <p class="tile"><span class="title lg bold fixed mx-auto f-50">{{ v.title }}</span><span class="title lg bold f-80"> {{ v.series }}</span></p>
                 <img class="bg" v-bind:class="v.imageClass" v-bind:src="v.image" />
               </li>
             </ul>
@@ -316,10 +316,10 @@ ul li.indent-4 {
     font-size: 80px;
     line-height: 1.69;
   }
-  .how .project__description ul li span {
+  .how .project__description ul li p.tile {
     margin-bottom: 0;
     /* text-align: center; */
-    display: block;
+    /* display: block; */
     /* -webkit-transform: translateX(20%); */
     transform: translateY(-52%);
   }
