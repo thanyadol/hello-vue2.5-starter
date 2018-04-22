@@ -35,8 +35,13 @@
     letter-spacing: 1px;
 }
 
+body
+{
+    cursor: default !important;
+}
 
-    span, p, h3, h1, h2, button
+
+    span, p, h3, h1, h2, button div
     {
         letter-spacing: 0.5px !important;
         }

@@ -319,7 +319,7 @@ a:hover {
   .pt-130 {
 
     padding-top: 130px;
-    padding-left: 567px;
+    padding-left: 39.5%;
     padding-bottom: 18px;
   }
 
@@ -341,6 +341,10 @@ opacity: 0.5;
   {
         padding-left: 630px;
     padding-bottom: 35px;
+    padding-left: 44%;
+    /* padding-left: 39.5%; */
+    padding-right: 0;
+
   }
 
 }

@@ -26,7 +26,6 @@
             <!-- <svg class="rectang" width="180" height="2500">
                               <rect x="0" y="0" width="180" height="2500" />
                             </svg> -->
-            <img class="rectang" v-bind:src="sep" />
 
             <section class="project__description col-md-6 | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
@@ -45,6 +44,7 @@
             </section>
 
             <section class="project__map col-12 pt-0 pb-5 | ctn-content | mapp__wrapper" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+               <img class="rectang" v-bind:src="sep" />
               <img class="mx-auto map" :src="sample">
               <div class="tags" v-bind:class="t.color" v-bind:style="{ left: t.x + 'px', top: t.y + 'px' }" v-for="t in tags" :key="t.id">
                 <span class="sub bold sm tw">{{ t.title }}</span>
@@ -326,11 +326,10 @@ ul li.indent {
   .where img.rectang {
     width: 180px;
     height: 864px;
-    margin-left: 615px;
-    /* display: inline; */
+    margin-left: 340px;
+    transform: translateY(-38%);
     position: absolute;
-    z-index: 5;
-    /* opacity: 0.9; */
+    z-index: -1;
   }
   .where svg.rectang {
     width: 180px;

@@ -10,7 +10,7 @@
       </li>
       <li v-show="flex == 'menu'">
         <router-link to="/">
-          <button class="menu-btn" aria-label="" href="javascript:void(0);">
+          <button class="menu-btn closed" aria-label="" href="javascript:void(0);">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.368 17.368">
     <g id="Icon_Close" transform="translate(-1217.293 -63.379)">
         <path id="Path_3426" d="M2866-1352.914l15.953 15.953" class="cls-1" data-name="Path 3426" transform="rotate(90 1341.477 -1460.437)"/>
@@ -111,7 +111,10 @@ a:hover {
     }*/
 
 .menu-btn.pitch:before,
-.menu-btn.pitch:after {
+.menu-btn.pitch:after,
+.menu-btn.closed:before,
+.menu-btn.closed:after
+{
   background: transparent;
 }
 
