@@ -69,4 +69,51 @@ top: -60px;
 }
 
   @media (min-width: 1200px) {}
+
+  @media (max-width: 575.98px) {
+
+    .timeline-paging .first {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    line-height: 31px;
+    text-align: center;
+    height: 31px;
+    font-size: 18px;
+    display: inline-block;
+    }
+
+    .timeline-paging .second  {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;
+    line-height: 31px;
+    text-align: center;
+    height: 31px;
+    font-size: 18px;
+    display: inline-block;
+    }
+
+    .timeline-paging {
+    position: absolute;
+    /* font-family: Conv_AkzidGroCFFMdEx,Conv_AkzidGroCFFEx; */
+    top: -6.746626686656672vh;
+    width: 8.266666666666667vw;
+    height: 9.295352323838081vh;
+    /* font-size: 30px; */
+    /* font-weight: bold; */
+    /* line-height: 1; */
+    left: 9.866666666666667vw;
+}
+
+.timeline-paging .sep {
+    position: absolute;
+    left: 30%;
+    top: 38%;
+    width: 14px;
+}
+
+  }
 </style>

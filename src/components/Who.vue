@@ -10,6 +10,11 @@
             </h2>
         </div> <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold slide__sub">{{ sub }}</h3>
+               <router-link to="pitchdesk">
+                 <button class="menu-btn mobile pitch" aria-label="" href="javascript:void(0);">
+                 <span class="menu-btn__text">Pitch Desk</span>
+                </button>
+          </router-link>
         </div>
       </div>
     </header>
@@ -19,7 +24,7 @@
 
         <div class="project__content">
           <div class="project__body">
-            <section class="project__description | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+            <section class="project__description | ctn-content t" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
               <div class="project__text | col-12 mrg-2 p-0 | m-100 m-mr-0">
                 <p class="title bold tb" v-bind:class="p.text">{{ p.title }}</p>
@@ -32,7 +37,7 @@
               </div>
             </section>
 
-           <section class="project__description py-0 | ctn-content white">
+           <section class="project__description py-0 | ctn-content white c">
             <div class="project__text | col-12 m-o p-0 mrg-2 | m-100 m-mr-0">
               <a class="btn btn--cta" href="#"> About SCG</a>
             </div>
@@ -98,7 +103,7 @@ export default {
           'Addenture provides unrivaled access to a global network of SCG experies and resources.',
           'We partner and invest in the best digital innovations in Industrial - Enterprise - B2B verticals.'
         ],
-        background: 'white pt-5',
+        background: 'white pt-5 pb-0',
         subClass: 'tb mb-2'
       },
       {
@@ -112,7 +117,7 @@ export default {
           "Southeast Asia's leading Industrial conglomerate estabilished in 1913.",
           'We believe open innovation is part of our roadmap to success in the next centernnial.'
         ],
-        background: 'white pt-5',
+        background: 'white pt-5 pb-0',
         subClass: 'tb mb-2'
       }
       ],
@@ -283,6 +288,59 @@ export default {
     .who .fill {
   width: max-content
 }
+  .who .ctn-content.c
+  {
+    padding-top: 55px !important;
+  }
+
+}
+
+ @media (max-width: 575.98px) {
+    .menu-btn.pitch {
+       background-color: #ec1e23;
+    color: #f7f7f7;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
+    position: relative;
+    margin-top: 14.842578710644677vh;
+    font-size: 5.866666666666666vw;
+    /* width: 110px; */
+    height: 45px;
+    }
+    .who .ctn-content {
+padding-left: 6.933333333333334vw;
+    padding-right: 8vw;
+    padding-top: 46px !important;
+    padding-bottom: 48px;
+  }
+
+  .who .mb-5c {
+    margin-bottom: 3rem!important;
+  }
+  .who .btn--cta  {
+    padding: none;
+    color: #221f1f;
+    background: #fff;
+    border-radius: 0;
+    border: 1px solid;
+    width: 125px;
+    /* height: 40px; */
+    /* width: 120px; */
+    height: 45px;
+    font-size: 22px;
+    font-weight: bold;
+    /* font-style: normal; */
+    /* font-stretch: normal; */
+    line-height: 45px;
+    padding: 0;
+  }
+  .who .ctn
+  {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   }
 </style>

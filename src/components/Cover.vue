@@ -152,7 +152,7 @@ position: absolute;
     position: absolute;
   }
   .cover__container .z {
-    transform: scale(10) translateX(32.5px);
+    /* transform: scale(10) translateX(32.5px); */
   }
   /* .cls-1 {
       fill: crimson;

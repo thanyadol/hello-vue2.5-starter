@@ -218,7 +218,7 @@ button:hover:before {
     .menu-btn.menu
   {
       position: fixed;
-    top: 30.5px;
+    top: 5.2197301349325337vh;
     right: 37px;
   }
 }

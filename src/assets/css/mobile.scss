@@ -5,6 +5,41 @@
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
 
+    .project__text p:not(:last-of-type) {
+        margin-bottom: 0;
+    }
+
+    .project__description .sub {
+        /* font-size: 1.8vw; */
+        /* line-height: 1.35; */
+        // height: 8.995502248875562vh;
+        /* font-family: PragatiNarrow; */
+        font-size: 5.333333333333333vw;
+        /* font-weight: bold; */
+        line-height: 1.25;
+    }
+
+    .project__text .title
+    {   
+        // height: 8.995502248875562vh;
+        line-height: 8.995502248875562vh;
+        font-size: 9.333333333333334vw;
+    }
+
+    .project__content {
+        padding-top: calc(100vh - 10px);
+    }
+
+    .project__body {
+        border-left: solid 10px #ffff;
+        border-right: solid 10px #ffff;
+    }
+
+    .project__intro {
+        margin-top: 2vw;
+        font-size: 5.866666666666666vw;
+    }
+
     .logo {
         width: 72vw;
         position: relative;
@@ -12,7 +47,7 @@
       }
 
       .project__header__inner {
-        top: calc(50vh - 77px);
+        top: calc(50vh - 50px);
         height: 100%;
         margin-top: auto;
     }
@@ -23,6 +58,30 @@
         font-size: 22px;
         line-height: 37px;
     }
+
+    .header__title {
+        top: 31px;
+        left: 36px;
+    }
+
+    .logo__sm
+    {
+        width: 40vw;
+    }
+
+    .project__title {
+        opacity: 1;
+    }
+
+    .project__title.t {
+        position: relative;
+        font-size: 9.333333333333334vw;
+        font-weight: 600;
+        line-height: 1.69;
+        opacity: 1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
     
     /*.project
     {
@@ -30,6 +89,17 @@
         margin-right: auto !important;
         margin-left: auto !important;
     }*/
+
+    .timeline-paging .first {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        line-height: 31px;
+        text-align: center;
+        height: 31px;
+        display: inline-block;
+    }
 
 }
 
