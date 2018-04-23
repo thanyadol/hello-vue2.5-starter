@@ -94,4 +94,26 @@ export default {
 }
 }
 
+    /* for iphone series*/
+@media (max-width: 575.98px) {
+    .border--t,
+     .border--b {
+        transform: translate3d(0, 0, 0);
+    }
+
+    .border--b, .border--t {
+        height: 10px;
+    }
+
+    .border--r,
+     .border--l {
+    transform: translate3d(0, 0, 0);
+}
+
+.border--l, .border--r {
+    width: 10px;
+}
+
+  }
+
 </style>

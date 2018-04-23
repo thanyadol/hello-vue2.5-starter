@@ -1,5 +1,6 @@
 <template>
   <div class="index">
+
     <header class="project__header | ctn">
       <div class="project__header__inner">
         <div class="col-md-12 mx-auto ct | m-mr-0 c">
@@ -9,6 +10,11 @@
         </div>
         <div class="project__info col-md-12 mx-auto ct | m-ml-0 m-100 tb">
           <h3 class="project__intro sub tb bold info">{{ sub }}</h3>
+           <router-link to="pitchdesk">
+                 <button class="menu-btn mobile pitch" aria-label="" href="javascript:void(0);">
+                 <span class="menu-btn__text">Pitch Desk</span>
+                </button>
+        </router-link>
         </div>
       </div>
     </header>
@@ -99,21 +105,26 @@ export default {
       margin-top: 0;
     }
 
+    .menu-btn.pitch {
+      display: none;
+    }
+
   }
 
   @media (max-width: 575.98px) {
-    .index .c {
-      transform: translateX(-6%);
+    .index .project__intro {
+       margin-top: 11.3px;
     }
-    .index .project__info {
-      margin-top: 0;
-    }
-  }
-</style>
 
-<style>
-  /* .project .content__inner {
-    z-index: 1;
-    position: absolute;
-  } */
+    .menu-btn.pitch {
+      background-color: #ec1e23;
+    color: #f7f7f7;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    position: relative;
+    margin-top: 14.842578710644677vh;
+    }
+
+  }
 </style>

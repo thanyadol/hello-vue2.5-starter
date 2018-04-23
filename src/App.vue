@@ -51,7 +51,7 @@
           </ul>
         </div>
 
-        <div class="content__inner" v-bind:class="!show == true ? 'top' : 'behind' ">
+        <div class="content__inner container" v-bind:class="!show == true ? 'top' : 'behind' ">
           <article class="project">
             <transition name="fade">
               <router-view></router-view>
@@ -116,8 +116,8 @@ export default {
       scroll: false,
       el: false,
       logo: './static/img/logo_sm.svg',
-      prev: './static/img/back.svg',
-      next: './static/img/go.svg'
+      prev: './static/img/back.png',
+      next: './static/img/go.png'
     }
   },
   ready () {
@@ -633,32 +633,42 @@ button:focus {
 @media (max-width: 575.98px) {
 
     div.mouse {
-       width: 23px;
-    height: 34px;
+width: 21px;
+    height: 30px;
     }
 
+    div.mouse span.scroll-down {
+    width: 5px;
+    height: 5px;
+  }
+
     .down {
-    bottom: 30px;
+    bottom: 25px;
     }
 
     .project .inner-nav__btn .icon--arrow {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     }
 
     .project  .inner-nav__list {
     display: flex !important;
         justify-content: center;
-    bottom: 12px;
-    right: -3px;
+    bottom: 0;
+    right: -20px;
     /* width: 96px; */
-}
+    }
 
-.project .inner-nav__btn {
-    position: relative;
-    width: 40px;
-    height: 40px;
-}
+    .project .inner-nav__btn {
+        position: relative;
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-list
+    {
+      display: none;
+    }
 
 }
 </style>

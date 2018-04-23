@@ -37,13 +37,13 @@ export default {
           id: 1,
           title: 'Join us',
           url: 'joinus',
-          class: 'mobile'
+          class: 'join'
         },
         {
           id: 2,
           title: 'Menu',
           url: 'menu',
-          class: ''
+          class: 'menu'
         },
         {
           id: 3,
@@ -201,5 +201,25 @@ button:hover:before {
 }
 
 @media (max-width: 575.98px) {
+
+  .menu-btn.pitch
+  {
+        position: fixed;
+    top: 471px;
+    left: 133px;
+    display: none;
+  }
+
+    .menu-btn.join
+  {
+      display: none;
+  }
+
+    .menu-btn.menu
+  {
+      position: fixed;
+    top: 30.5px;
+    right: 37px;
+  }
 }
 </style>

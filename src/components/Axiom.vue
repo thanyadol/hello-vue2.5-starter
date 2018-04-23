@@ -47,8 +47,25 @@ export default {
 }
 
 @media (max-width: 575.98px) {
-  .lines-container {
-    right: -59%;
+  .lines-container{
+     top: 0;
+  right: 0;
+  bottom: 0;
+  left: -0;
+  height: 100%;
+  z-index: -99;
+  }
+
+  .line {
+    width: 1px;
+    height: 100%;
+    background: #f0f0f0;
+    -webkit-transform: rotate(-201deg);
+    transform: rotate(-201deg);
+    margin-left: -78.93333333333334vw;
+     margin-right: -89.933333vw;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
   }
 }
 </style>

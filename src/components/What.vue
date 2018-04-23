@@ -164,7 +164,7 @@ export default {
   // life cycle of component
   mounted: function () {
     var vm = this
-    vm.$parent.show = true
+    vm.$parent.show = false
   },
   beforeMount () {
     var scrolled = 0

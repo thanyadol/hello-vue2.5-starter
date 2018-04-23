@@ -108,7 +108,7 @@
  </section>
   <section class="project__description row grey | py-0">
         <div class="project__text col | p-0 m-0">
-          <button v-on:click="submit" type="button" class="btn btn-default btn-fill red title bold"><span>Submit</span><img class="arrow" v-bind:src="arrow" /></button>
+          <button v-on:click="submit" type="button" class="btn btn-default btn-fill red title bold"><span class="bold">Submit</span><img class="arrow" v-bind:src="arrow" /></button>
         </div>
   </section>
       </div>
@@ -722,6 +722,11 @@ ul.form li {
     position: relative;
     margin-right: 10px;
   }
+
+  .btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
 }
 </style>
 
