@@ -296,6 +296,10 @@ export default {
 }
 
  @media (max-width: 575.98px) {
+
+      .who .fill {
+  width: max-content
+}
     .menu-btn.pitch {
        background-color: #ec1e23;
     color: #f7f7f7;

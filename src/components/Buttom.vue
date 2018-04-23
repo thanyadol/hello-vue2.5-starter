@@ -21,7 +21,7 @@
 
     <div class="footy mobile row px-0 p-0 | m-mr-0">
       <div class="col-md-12 r px-0">
-        <router-link :to="prev.url" class="href r p-0 m-0">
+        <router-link :to="next.url" class="href r p-0 m-0">
           <!-- <svg class="icon pl-1 pr-0 mr-1 ml-0 icon--arrow icon--arrow--left" viewBox="0 0 38 38">
                       <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
                     </svg> -->
@@ -31,7 +31,7 @@
       </div>
       <hr class="black" />
       <div class="col-md-12 l px-0">
-        <router-link :to="next.url" class="href l p-0 m-0">
+        <router-link :to="prev.url" class="href l p-0 m-0">
           <img class="bg r" v-bind:src="prevm" />
           <span class="right bold tb">{{ prev.title }}</span>
           <!-- <svg class="icon pr-1 pl-0 mr-0 ml-1 icon--arrow icon--arrow--right" viewBox="0 0 38 38">

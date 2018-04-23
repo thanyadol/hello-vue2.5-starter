@@ -5,6 +5,36 @@
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
 
+    h3 > ul > li {
+        display: inline;
+        padding-right: 10px;
+        padding-left: 10px !important;
+    }
+
+    .project__content .sub {
+        font-size: 5.333333333333333vw;
+        line-height: 1.35;
+        letter-spacing: normal;
+    }
+
+    span, p, h3, h1, h2, button div
+    {
+        letter-spacing: 0.6px !important;
+        }
+
+
+    .project__content .title.large {
+        font-size: 18.666666666666668vw;
+        line-height: 0.69;
+        letter-spacing: normal;
+    }
+
+    .project__body .ctn
+    {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     .project__text p:not(:last-of-type) {
         margin-bottom: 0;
     }

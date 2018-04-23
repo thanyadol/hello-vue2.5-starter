@@ -72,6 +72,10 @@ top: -60px;
 
   @media (max-width: 575.98px) {
 
+    /* .timeline-paging {
+    position: absolute;
+} */
+
     .timeline-paging .first {
   position: absolute;
     top: 0;
@@ -97,15 +101,15 @@ top: -60px;
     }
 
     .timeline-paging {
-    position: absolute;
+position: absolute;
     /* font-family: Conv_AkzidGroCFFMdEx,Conv_AkzidGroCFFEx; */
-    top: -6.746626686656672vh;
+    top: -7.746626686656672vh;
     width: 8.266666666666667vw;
     height: 9.295352323838081vh;
     /* font-size: 30px; */
     /* font-weight: bold; */
     /* line-height: 1; */
-    left: 9.866666666666667vw;
+    left: 0;
 }
 
 .timeline-paging .sep {
@@ -113,6 +117,11 @@ top: -60px;
     left: 30%;
     top: 38%;
     width: 14px;
+}
+
+.Fraction
+{
+      height: 0;
 }
 
   }

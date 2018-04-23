@@ -22,23 +22,23 @@
 
         <div class="project__content">
           <div class="project__body white">
-            <section class="project__description col-7 mobile | ctn-content jf" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+            <section class="project__description col-md-7 mobile | ctn-content jf" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
               <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
                 <p class="title bold">{{ p.title }}</p>
                 <p class="sub bold">{{ p.sub }}</p>
-                <p class="project__text">
+                <!-- <p class="project__text">
                   <span class="sub bold">{{ p.bold }}</span>
                   <span class="sub">{{ p.regular }}</span>
-                </p>
-                <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p>
+                </p> -->
+                <!-- <p class="sub tb" v-for="d in p.detail" :key="d">{{ d }}</p> -->
               </div>
             </section>
 
             <!-- loop with invests -->
             <section class="inv t">
-              <div class="pb-0 row | ctn-content" v-for="i in invests" :key="i.id">
-                <div class="col-6 m-0 p-0 ne" v-bind:class="{ right: i.id%2 == 0 }">
+              <div class="pb-0 row | ctn-content pb-48" v-for="i in invests" :key="i.id">
+                <div class="col-md-6 | col-xs-12 | m-0 p-0 ne" v-bind:class="{ right: i.id%2 == 0 }">
                   <img class="project__image" :src="i.image">
                 </div>
                 <div class="col ne" v-bind:class="i.containnerClass">
@@ -431,4 +431,159 @@ width: 60px;
   width: max-content
 }
 }
+
+ @media (max-width: 575.98px) {
+
+     .what .fill {
+  width: max-content
+     }
+
+   .what .ctn-content.red
+   {
+      width: 74.66666666666667vw;;
+      padding-left: 6.933333333333334vw;
+    padding-right: 8vw;
+    padding-top: 46px !important;
+    padding-bottom: 48px;
+   }
+
+   .what .mrg-2
+   {
+     margin: 0;
+     padding: 0;
+   }
+
+.what .project__text {
+    margin-bottom: 0;
+}
+
+  /* .what .ctn
+  {
+    padding-left: 0;
+    padding-right: 0;
+  } */
+
+  .what .t .ctn-content
+  {
+    padding: 0 27px 0 27px;
+  }
+
+  .what .project__image[data-v-495b54f4] {
+    /* top: -180px; */
+    /* width: 34.72vw; */
+    position: relative;
+    width: 80vw;
+    height: 33.733133433283356vh;
+  }
+
+  .what .inv {
+    padding-top: 34.2275862068966vh;
+
+}
+
+.ctn-content.jf {
+    position: absolute;
+    top: 0;
+}
+
+.what .project__body .bg {
+    width: 58px;
+    z-index: 2;
+}
+
+.what .down {
+    margin-top: 0;
+
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+  .what .indust {
+         top: 11.99400299850075vh;
+    position: absolute;
+    left: 0;
+}
+
+.what .mb-6c {
+    margin-bottom: 4.5vh;
+}
+
+.what .title.ind
+{
+  font-size: 18.666666666666668vw;
+  text-align: right;
+    line-height: 17.691154422788607vh;
+    height: 17.691154422788607vh;
+    letter-spacing: normal;
+}
+
+.what .title.b2b {
+  position: initial;
+    font-size: 18.666666666666668vw;
+  text-align: left !important;
+    line-height: 17.691154422788607vh;
+    height: 17.691154422788607vh;
+    letter-spacing: normal;
+}
+
+.what .title.ent {
+  position: initial;
+    font-size: 18.666666666666668vw;
+    line-height: 17.691154422788607vh;
+    height: 17.691154422788607vh;
+    letter-spacing: normal;
+    text-align: right;
+}
+
+.what .project__body ul > li:before {
+    content: "\2013";
+    position: absolute;
+    margin-left: -1.1em;
+    margin-right: -1.1em;
+}
+
+.what .sub.ne
+{
+  margin-left: 23px;
+}
+
+.what .pb-48
+{
+  padding-bottom: 48px !important;
+}
+
+.what .right  {
+    left: 0;
+    transform: translateX(0);
+}
+
+.what .left {
+    left: 0;
+    transform: translateX(0);
+    padding-right: 0;
+        padding-left: 0;
+}
+
+.what .b2b {
+    top: 6.746626686656672vh;
+     right: 0;
+    position: relative;
+}
+
+.what .enterprise {
+    top: 14.992503748125937vh;
+    left: 0;
+    position: absolute;
+}
+
+.what .rtl {
+    direction: ltr;
+}
+
+.what .al-r {
+    text-align: left;
+}
+
+}
+
 </style>
