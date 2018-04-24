@@ -5,6 +5,32 @@
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
 
+    .menu-btn {
+        top: calc(4.25vw + 2px);
+        right: 5px;
+    }
+
+    .menu-btn.pitch {
+        background-color: #ec1e23;
+     color: #f7f7f7;
+     padding-left: 20px;
+     padding-right: 20px;
+     /* padding-top: 10px; */
+     /* padding-bottom: 10px; */
+     position: relative;
+     margin-top: 14.842578710644677vh;
+     font-size: 5.866666666666666vw;
+     /* width: 110px; */
+     height: 45px;
+     }
+
+    .header__title {
+        top: 15px;
+        left: 15px;
+        width: 40vw;
+        height: auto;
+    }
+
     h3 > ul > li {
         display: inline;
         padding-right: 10px;

@@ -13,6 +13,11 @@
               <li v-for="s in subs" :key="s">{{ s }}</li>
             </ul>
           </h3>
+             <router-link to="pitchdesk">
+                 <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
+                 <span class="menu-btn__text">Pitch Desk</span>
+                </button>
+          </router-link>
         </div>
       </div>
     </header>
@@ -26,10 +31,10 @@
             <!-- <svg class="rectang" width="180" height="2500">
                               <rect x="0" y="0" width="180" height="2500" />
                             </svg> -->
-
-            <section class="project__description col-md-6 | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+    <img class="rectang" v-bind:src="sep" />
+            <section class="project__description col-md-6 | ctn-content | t" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
-              <div class="project__text | m-100 m-mr-0">
+              <div class="project__text | m-100 m-mr-0 | w-154">
                 <p class="title bold tb t mlg-2">{{ p.title }}</p>
                 <p class="sub tb">{{ p.sub }}</p>
               </div>
@@ -44,10 +49,19 @@
             </section>
 
             <section class="project__map col-12 pt-0 pb-5 | ctn-content | mapp__wrapper" v-for="p in posts" :key="p.id" v-bind:class="p.background">
-               <img class="rectang" v-bind:src="sep" />
+
               <img class="mx-auto map" :src="sample">
+
+              <div class="mobile">
               <div class="tags" v-bind:class="t.color" v-bind:style="{ left: t.x + 'px', top: t.y + 'px' }" v-for="t in tags" :key="t.id">
                 <span class="sub bold sm tw">{{ t.title }}</span>
+              </div>
+              </div>
+
+              <div class="desktop" >
+              <div class="tags" v-bind:class="t.color" v-bind:style="{ left: t.xm + 'px', top: t.ym + 'px' }" v-for="t in tags" :key="t.id">
+                <span class="sub bold sm tw">{{ t.title }}</span>
+              </div>
               </div>
             </section>
 
@@ -92,6 +106,8 @@ export default {
           title: 'USA',
           x: 200,
           y: 90,
+          xm: 35,
+          ym: 90,
           color: 'red'
         },
         {
@@ -99,6 +115,8 @@ export default {
           title: 'China',
           x: 1000,
           y: 90,
+          xm: 1000,
+          ym: 90,
           color: 'custom'
         },
         {
@@ -106,6 +124,8 @@ export default {
           title: 'Israel',
           x: 810,
           y: 190,
+          xm: 810,
+          ym: 190,
           color: 'red'
         },
         {
@@ -113,6 +133,8 @@ export default {
           title: 'Asean',
           x: 930,
           y: 320,
+          xm: 930,
+          ym: 320,
           color: 'red'
         }
       ],
@@ -265,17 +287,17 @@ export default {
   padding: 5px 20px 5px 20px;
 }
 
-.where .down {
+/* .where .down {
   transform: translateY(60%);
-}
+} */
 
-.where .project__text .title {
+/* .where .project__text .title {
   line-height: 1;
 }
 
 .where .map {
   width: 65vw;
-}
+} */
 
 .where .mlg-2 {
   margin-left: 18.6342857143%;
@@ -394,4 +416,79 @@ ul li.indent {
   width: max-content
 }
 }
+
+ @media (max-width: 575.98px) {
+  .where .ctn-content
+  {
+    padding: 0 27px 0 27px;
+  }
+
+  .where img.rectang {
+    width: 26.133333333333333vw;
+    height: 810px;
+    position: fixed;
+    z-index: 2;
+    right: 37px;
+
+  }
+
+     .where .ctn-content.t
+   {
+    padding-top: 46px !important;
+
+   }
+
+        .where .ctn-content.focus
+   {
+    margin-top: 17px;
+    margin-bottom: 95px;
+   }
+
+   .where .ctn-content.mapp__wrapper {
+    padding: 0px;
+    width: auto;
+  }
+
+   .where .map {
+       height: 483.3px;
+    /* width: 339px; */
+    z-index: 2;
+    position: relative;
+  }
+
+  .where .mlg-2 {
+    margin-left: 0;
+    line-height: 1.2;
+}
+
+.where .down
+{
+  margin-left: 20px;
+}
+
+.where .w-154
+{
+  width: 41.06666666666667vw;
+  line-height: 1;
+}
+
+.where .tags {
+    width: 80px;
+    height: 40px;
+    padding: 3px 0px 2px 0px;
+    text-align: center;
+    z-index: 5;
+    /* padding-top: 3px; */
+}
+
+.where .sm {
+    line-height: unset;
+}
+
+.where .mobile
+{
+  display: none;
+}
+
+ }
 </style>

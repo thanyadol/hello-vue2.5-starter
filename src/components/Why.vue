@@ -9,18 +9,24 @@
             </h2>
         </div>  <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">{{ sub }}</h3>
+                         <router-link to="pitchdesk">
+                 <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
+                 <span class="menu-btn__text">Pitch Desk</span>
+                </button>
+          </router-link>
         </div>
       </div>
     </header>
     <div class="project__inner scrollarea" data-scrollbar id="why">
       <div class="scroll-content">
         <div class="project__content">
-          <div class="project__body grey row" v-for="p in posts" :key="p.id">
+          <div class="project__body white row" v-for="p in posts" :key="p.id">
             <section class="project__description  | ctn-content" v-bind:class="p.class">
               <h3 class="hidden-visually">Project</h3>
               <div class="project__text col | mrg-2c | m-100 m-mr-0">
-                <p class="title  bold indent" v-bind:class="p.titleClass">{{ p.title }}</p>
-                <img class="bg icon" v-bind:src="p.image" v-bind:class="p.imageClass" />
+                <h3 class="title  bold indent" v-bind:class="p.titleClass">
+                  <span> {{ p.title }} </span>
+                  <img class="bg icon" v-bind:src="p.image" v-bind:class="p.imageClass" /></h3>
                 <!-- <p class="sub bold" v-bind:class="p.subClass" >{{ p.sub }}</p> -->
                 <div class="project__text">
                   <span class="bold sub tw" v-bind:class="p.subClass">{{ p.bold }}</span>
@@ -31,7 +37,7 @@
                   </ul> -->
               </div>
             </section>
-            <section class="project__description box | ctn-content" v-bind:class="p.box">
+            <section v-show="p.haveBox" class="project__description box | ctn-content" v-bind:class="p.box">
               <div class="project__text | m-100 m-mr-0">
 
                 <p class="title bold tw redd">{{ p.reddit }}</p>
@@ -41,9 +47,9 @@
             </section>
           </div>
         </div>
-        <!-- <div class="project__body ctn grey more"> </div> -->
+        <!-- <div class="project__body ctn white tb more"> More </div> -->
         <!-- should move to component -->
-        <div class="grey">
+        <div class="white">
           <div class="project__body row pb-0 | ctn-content blog">
             <!-- <section class="project__description col-12">
                 <div class="project__text |  mrg-2c | m-100 m-mr-0">
@@ -65,8 +71,8 @@
                   <p class="title sm bold tw" v-bind:class="r.titleClass">{{ r.title }}</p>
 
                   <p class="sm tw" v-bind:class="r.subClass">{{ r.sub }}</p>
-                  <ul class="al-r">
-                    <li class="blaz sub bold tw" v-for="d in r.bold" :key="d">{{ d }}</li>
+                  <ul class="">
+                    <li class="block sub bold tw f-32 al-r" v-for="d in r.bold" :key="d">{{ d }}</li>
                   </ul>
                 </div>
 
@@ -82,7 +88,7 @@
           </div>
         </div>
         <div class="project__body p-0 m-0">
-          <section class="project__description py-0 m-0 | ctn grey">
+          <section class="project__description py-0 m-0 | ctn white">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -112,14 +118,15 @@ export default {
           sub: 'More Than Just a Capital Partner',
           bold: 'At AddVentures,',
           regular:
-            'At AddVentures, we look for investment and partnership opportunities in the areas of B2B, Industrial, and Enterprise. With the support from SCG, our goal is to build a portfolio of companies in highly related verticals. We believe we can offer substantial synergies in 2 dimensions: (1) Direct-synergy between SCG & startups and (2) Cross-synergy among startups in the portfolio.',
+            'we look for investment and partnership opportunities in the areas of B2B, Industrial, and Enterprise. With the support from SCG, our goal is to build a portfolio of companies in highly related verticals. We believe we can offer substantial synergies in 2 dimensions: (1) Direct-synergy between SCG & startups and (2) Cross-synergy among startups in the portfolio.',
 
-          class: 'col red vertical',
+          class: 'col-md red vertical',
           titleClass: 'tw indent vertical hls',
           box: '',
           image: './static/img/vertical.svg',
           imageClass: 'vertical',
-          subClass: 'tw'
+          subClass: 'tw',
+          haveBox: false
         },
         {
           id: 3,
@@ -130,13 +137,14 @@ export default {
           regular:
             'With our resources and extensive business network along SCG business value chain, We believe that we can help startups scale fast through our proprietary resources and access to 300+ SCG subsidiaries and 1,000+ business partners across Southeast Asia Region. We are flexible and open to various collaborationPrograms ranging from commercial partnership,Licensing, JV, minority investment or M&A.',
 
-          class: 'col grey none longterm',
+          class: 'col white none longterm',
           titleClass: 'tr indent longterm',
           subClass: 'tb',
-          box: 'red down col',
+          box: 'red down col-md',
           image: './static/img/partner.svg',
           imageClass: 'partner',
-          reddit: 'Corperate and Startups'
+          reddit: 'Corperate and Startups',
+          haveBox: true
         },
         {
           id: 2,
@@ -145,15 +153,16 @@ export default {
           bold: '',
 
           regular:
-            'As a strategic investor, we do not only provide financing but we also will commit to the long-term success of startups in our portfolio Unlike traditionalVC funds, we do not rush for short term financial result and investment exit.With this long term support, startups can focus on building a great company to reach their fullpotential fastest possible.',
+            'As a strategic investor, we do not only provide financing but we also will commit to the long-term success of startups in our portfolio Unlike traditional VC funds, we do not rush for short term financial result and investment exit.With this long term support, startups can focus on building a great company to reach their fullpotential fastest possible.',
 
           detail: [],
-          class: 'col-12 grey middle hls',
+          class: 'col-12 white middle hls',
           titleClass: 'tr mb-0',
           subClass: 'tb',
           box: '',
           image: './static/img/platform.svg',
-          imageClass: 'platform'
+          imageClass: 'platform',
+          haveBox: false
         }
       ],
       res: {
@@ -270,7 +279,7 @@ export default {
             title: '50k  employees',
             before: 'Total Staffs',
             bu: [],
-            titleClass: 'f-50 al-l',
+            titleClass: 'f-50 al-l w-23',
             beforeClass: 'f-16 al-l',
             boldClass: 'fl-r',
             boxClass: 'right',
@@ -303,7 +312,7 @@ export default {
             id: 97,
             country: '',
             year: '',
-            bold: ['ASEAN assets'],
+            bold: ['', 'ASEAN assets'],
             regular: '',
             title: 'USD 4.3 Billion',
             sub: 'Companies',
@@ -451,10 +460,6 @@ export default {
 
 /***/
 
-.why .project__text .title.hls {
-  line-height: 1;
-}
-
 /* .why .indent.vertical {
     transform: translateX(9%);
   } */
@@ -464,7 +469,7 @@ ul.al-r {
   margin-left: 8vw;
 }
 
-.blaz {
+.block {
   display: block !important;
 }
 
@@ -479,11 +484,6 @@ ul.al-r {
 
 .more {
   height: 20px;
-}
-
-.down {
-  /*transform: translateY(60%);*/
-  border-top: solid #f0f0f0 60vh !important;
 }
 
 .pr-5c {
@@ -632,6 +632,7 @@ ol {
     padding-left: 342px;
     padding-bottom: 0;
     padding-right: 342px;
+    display: block;
   }
   .block p.title {
     font-size: 40px;
@@ -749,7 +750,167 @@ ol {
   }
 
   .why .fill {
-  width: max-content
+    width: max-content;
+  }
 }
+
+@media (max-width: 575.98px) {
+  .why .fill {
+    width: max-content;
+  }
+
+  .why .ctn-content.vertical {
+    flex-direction: unset;
+    padding-top: 46px !important;
+    width: 87.46666666666667vw;
+    /* height: 200px; */
+    padding-left: 25px;
+    padding-right: 67px;
+  }
+
+  .why .ctn-content.longterm {
+    flex-direction: unset;
+    padding-top: 46px !important;
+    width: 87.46666666666667vw;
+    /* height: 200px; */
+    padding-left: 25px;
+    padding-right: 12px;
+  }
+
+  .why .ctn-content.blog {
+    padding-left: 25px;
+    padding-right: 12px;
+  }
+
+  .why .col {
+    padding: 0;
+  }
+
+  .why .project__text .title.hls {
+    height: 8.995502248875562vh;
+    line-height: 8.995502248875562vh;
+    margin-bottom: 8.245877061469265vh;
+    text-align: right;
+  }
+
+  .why .icon.vertical {
+    top: 5.997001499250375vh;
+    width: 14.666666666666666vw;
+    left: 0;
+  }
+
+  .why .project__text .title.longterm {
+    width: 160px;
+    line-height: 1.2;
+    margin-bottom: 8.245877061469265vh;
+    height: auto;
+    text-align: left;
+    margin-left: 35.2vw;
+  }
+
+  .why .icon.partner {
+    top: 13.333333333333334vw;
+    width: 20.533333333333335vw;
+    left: 0;
+  }
+  .why .down {
+    margin-top: 26px;
+    width: 72vw;
+    height: 180px;
+    margin-left: 60px;
+    padding-top: 80px;
+    padding-right: 29px;
+  }
+
+  .why .project__text .title.redd {
+    line-height: 1;
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  .why .icon.platform {
+    top: -40px;
+    left: 0;
+    margin-left: 37.333333333333336vw;
+    width: 44.266666666666666vw;
+    /* text-align: -webkit-right; */
+    /* content: no-open-quote; */
+  }
+
+  .why .middle {
+    text-align: center;
+    padding-top: 100px;
+    padding-left: 24px;
+    padding-bottom: 200px;
+    padding-right: 25px;
+    display: block;
+  }
+
+  .block p.title {
+    font-size: 10.666666666666666vw;
+    line-height: 1.2;
+  }
+  .block p.sub {
+    font-size: 8vw;
+    font-weight: bold;
+  }
+  /* .block p.roll {
+    font-size: 5.333333333333333vw;
+    /* line-height: 1.44;
+  } */
+
+  .why .project__text ul li.roll {
+     font-size: 5.333333333333333vw;
+     line-height: 1.2;
+}
+
+  .project__body .bg__block {
+    position: relative;
+    width: 55px;
+    z-index: 2;
+    padding: 5px 10px 5px 0;
+  }
+
+  .why .block {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+
+  .why .block .black {
+    width: 280px;
+    height: 170px;
+    margin-left: 15.133333333333333vw;
+    padding: 10px 18px 20px 23px;
+  }
+
+  .block .black .sm.f-16 {
+    font-size: 5.333333333333333vw;
+        line-height: 1.5 !important;
+  }
+
+  .block .black .f-32 {
+        font-size: 8.533333333333333vw;
+    line-height: 1;
+
+  }
+
+  .block .black .title.f-50 {
+    font-size: 10.133333333333333vw;
+  }
+
+  .w-23
+  {
+    width: 13.333333333333334vw;
+  }
+
+  .why .more {
+    font-size: 8.533333333333333vw;
+    line-height: 1;
+    transform: rotate(90deg);
+    margin: 0;
+
+  }
+
 }
 </style>

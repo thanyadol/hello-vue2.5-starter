@@ -60,7 +60,7 @@ export default {
   }
 
   .cls-3 {
-    fill: #ec1e24;
+    fill: #2f3c47;
   }
 
   .cls-4 {
@@ -125,6 +125,12 @@ export default {
     position: relative;
     margin-top: 14.842578710644677vh;
     }
+
+    .index .project__header__inner {
+    top: calc(50vh - 90px);
+    height: 100%;
+    margin-top: auto;
+}
 
   }
 </style>

@@ -13,6 +13,11 @@
               <li v-for="s in subs" :key="s">{{ s }}</li>
             </ul>
           </h3>
+                         <router-link to="pitchdesk">
+                 <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
+                 <span class="menu-btn__text">Pitch Desk</span>
+                </button>
+          </router-link>
         </div>
       </div>
     </header>
@@ -21,7 +26,7 @@
 
       <div class="project__content">
         <div class="project__body row white">
-          <section class="project__description col-md-7 fill red | ctn-content stage" v-for="p in pres" :key="p.id" v-bind:class="p.background">
+          <section class="project__description col-md-7 red | ctn-content stage" v-for="p in pres" :key="p.id" v-bind:class="p.background">
             <h3 class="hidden-visually">Project</h3>
             <div class="project__text | mrg-2 | m-100 m-mr-0">
               <p class="title bold">{{ p.titleTop }}</p>
@@ -39,7 +44,7 @@
               <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
                 <!-- <span class="sub tb fixed">{{ v.sub }}</span> -->
                 <p class="tile"><span class="title lg bold fixed mx-auto f-50">{{ v.title }}</span><span class="title lg bold f-80"> {{ v.series }}</span></p>
-                <img class="bg" v-bind:class="v.imageClass" v-bind:src="v.image" />
+                <img class="bg mobile" v-bind:class="v.imageClass" v-bind:src="v.image" />
               </li>
             </ul>
           </section>
@@ -82,24 +87,14 @@ export default {
           background: 'red'
         }
       ],
-      posts: [
-        {
-          id: 98,
-          title: '',
-          sub: '',
-          bold: '',
-          regular: '',
-          detail: [],
-          background: 'red'
-        }
-      ],
       invests: [
         {
           id: 1,
           title: 'Growth',
           sub: 'Post Seed',
           image: './static/img/growth.png',
-          class: 'indent-4 tb'
+          class: 'indent-4 tb',
+          imageClass: 'growth'
         },
         {
           id: 2,
@@ -107,6 +102,7 @@ export default {
           series: 'B',
           sub: 'Accessories',
           image: './static/img/seriesb.png',
+          imageClass: 'seriesb',
           class: 'indent-3 tr'
         },
         {
@@ -115,6 +111,7 @@ export default {
           series: 'A',
           sub: 'Accessories',
           image: './static/img/seriesa.png',
+          imageClass: 'seriesa',
           class: 'indent-2 tr'
         },
         {
@@ -224,13 +221,13 @@ export default {
   font-size: 3.47vw;
 }
 
-.how .project__body .bg {
+/* .how .project__body .bg {
   position: absolute;
   left: 15%;
   width: 11vw;
   z-index: 2;
   bottom: -2px;
-}
+} */
 
 .how .project__description ul li span {
   margin-bottom: 8vh;
@@ -247,7 +244,7 @@ export default {
   width: 17vw;
 }
 
-ul li.indent-1 {
+/* ul li.indent-1 {
   transform: translateX(0);
 }
 
@@ -262,7 +259,7 @@ ul li.indent-3 {
 ul li.indent-4 {
   transform: translateX(50.7vw);
   border-right: none !important;
-}
+} */
 
 /*.project__text
   {
@@ -348,5 +345,77 @@ ul li.indent-4 {
   .how .fill {
   width: max-content
 }
+}
+/* end desktop*/
+
+ @media (max-width: 575.98px) {
+     .how .fill {
+  width: max-content
+ }
+
+  .how .ctn-content.stage
+ {
+       width: 74.66666666666667vw;
+    /* height: 200px; */
+    padding-left: 25px;
+ }
+
+   .how .ctn-content.invest
+ {
+   padding-right: 40px;
+    padding-left: 48px;
+    padding-top: 5px;
+ }
+
+ .how .project__text .title {
+    line-height: 1;
+ }
+
+ .project__body ul li {
+    position: relative;
+    border: none;
+    width: 100%;
+        padding: 2vh 0 0 0;
+}
+
+.how .project__body .bg {
+    position: relative;
+     /* left: 0; */
+    width: 70%;
+    z-index: 2;
+     /* bottom: 0; */
+}
+
+.how .tile .title {
+    font-size: 10.666666666666666vw;
+}
+
+.how .tile .title.f-80  {
+    font-size: 14.666666666666666vw;
+}
+
+  ul li.indent-2 {
+     text-align: right;
+  }
+  ul li.indent-3 {
+      text-align: right;
+  }
+
+    .bg.seriesa,
+  .bg.seriesb
+  {
+       margin-left: 30.6666666666666665vw;
+  }
+
+  .bg.seed
+  {
+       margin-left: -7.6666666666666665vw;
+    margin-top: -5vw;
+  }
+
+  .how .pb-0, .py-0 {
+     padding-bottom: 70!important;
+  }
+
 }
 </style>

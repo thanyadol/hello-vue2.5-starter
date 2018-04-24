@@ -11,7 +11,7 @@
         </div> <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold slide__sub">{{ sub }}</h3>
                <router-link to="pitchdesk">
-                 <button class="menu-btn mobile pitch" aria-label="" href="javascript:void(0);">
+                 <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
                  <span class="menu-btn__text">Pitch Desk</span>
                 </button>
           </router-link>
@@ -300,19 +300,7 @@ export default {
       .who .fill {
   width: max-content
 }
-    .menu-btn.pitch {
-       background-color: #ec1e23;
-    color: #f7f7f7;
-    padding-left: 20px;
-    padding-right: 20px;
-    /* padding-top: 10px; */
-    /* padding-bottom: 10px; */
-    position: relative;
-    margin-top: 14.842578710644677vh;
-    font-size: 5.866666666666666vw;
-    /* width: 110px; */
-    height: 45px;
-    }
+
     .who .ctn-content {
 padding-left: 6.933333333333334vw;
     padding-right: 8vw;

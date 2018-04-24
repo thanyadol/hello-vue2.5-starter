@@ -12,6 +12,12 @@
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
             </ul>
+
+                           <router-link to="pitchdesk">
+                 <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
+                 <span class="menu-btn__text">Pitch Desk</span>
+                </button>
+          </router-link>
           </h3>
         </div>
       </div>
@@ -24,6 +30,7 @@
           <div class="project__body white">
             <section class="project__description col-md-7 mobile | ctn-content jf" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
+
               <div class="project__text | col-12 mrg-2 | m-100 m-mr-0">
                 <p class="title bold">{{ p.title }}</p>
                 <p class="sub bold">{{ p.sub }}</p>
