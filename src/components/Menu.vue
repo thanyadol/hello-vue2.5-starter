@@ -24,19 +24,45 @@
                 <ol class="page">
                   <li v-for="l in list" :key="l.id">
                     <p>
-                      <span class="sub site index"> {{ l.index }} </span>
-                      <router-link :to="l.url"> <span class="site bold tw"> {{ l.title }} </span> </router-link>
+                      <span class="sub site index f-16 bold"> {{ l.index }} </span>
+                      <router-link :to="l.url"> <span class="site bold tw f-28"> {{ l.title }} </span> </router-link>
                     </p>
                   </li>
                 </ol>
               </div>
             </section>
 
-            <section class="project__description red row mt-0 pt-0 pb-0 mb-0  mx-0 px-0 | ctn">
+            <section class="project__description red row mt-0 pt-0 pb-0 mb-0  mx-0 px-0 | ctn mobile">
               <div class="project__text | pt-0 mx-0 | footy ctn c">
                 <div class="page | m-100 m-ml-0">
                      <h3 class="bold sub"> {{ last }}</h3>
                   <h3 class="bold sub">&copy; {{ foot }}</h3>
+                </div>
+              </div>
+            </section>
+
+        <section class="project__description red row mt-0 pt-0 pb-0 mb-0  mx-0 px-0 | ctn meetme">
+              <div class="project__text | pt-0 mx-0 | footy ctn c">
+                <div class="page | m-100 m-ml-0">
+                          <footer id="footer_wrapper">
+      <ul class="">
+        <li class="social-list__text">
+          <span class="sub bold f-18"> Meet me on </span>
+        </li>
+        <li class="social-list__item">
+          <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_Medium</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,0V28H28V0ZM23.33,9.42h-1c-.27,0-1,.29-1,.54v9c0,.25.7.45,1,.45h1v2H16.66v-2H18V10.09h-.23L14.56,21.41H12.08L8.91,10.09H8.67v9.32H10v2H4.67v-2h.74c.29,0,.6-.2.6-.45V10a.64.64,0,0,0-.6-.54H4.67v-2h6.91l2.26,8h.06l2.27-8h7.16Z"/></g></g></svg>
+          <a href="https://medium.com/" target="_blank">Medium</a>
+        </li>
+        <li class="social-list__item">
+          <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_LinkIedn</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,0V28H28V0ZM9.64,21.44H6.31v-10H9.64ZM8,10.13H8A1.72,1.72,0,1,1,8,6.7a1.72,1.72,0,1,1,0,3.43ZM21.64,21.44H18.31V16.12c0-1.34-.48-2.25-1.69-2.25a1.81,1.81,0,0,0-1.7,1.21,2.2,2.2,0,0,0-.12.81v5.55H11.48s0-9,0-10h3.33V12.9a3.31,3.31,0,0,1,3-1.64c2.19,0,3.84,1.42,3.84,4.48Z"/></g></g></svg>
+          <a href="https://twitter.com/" target="_blank">Linkedin</a>
+        </li>
+        <li class="social-list__item">
+          <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Social_Facebook</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M28,0H0V28H13.94V16.68H11.65V12.87h2.29V9.76c0-.57-.12-4.39,4.8-4.38h3.47v4H19.66a1.1,1.1,0,0,0-1,.91v2.61h3.57c-.14,2-.44,3.82-.44,3.82H18.63V28H28Z"/></g></g></svg>
+          <a href="https://www.facebook.com//" target="_blank">Facebook</a>
+        </li>
+      </ul>
+    </footer>
                 </div>
               </div>
             </section>
@@ -113,6 +139,12 @@ export default {
           index: '09',
           title: 'Contact',
           url: 'contact'
+        },
+        {
+          id: 11,
+          index: '10',
+          title: 'Join us',
+          url: 'joinus'
         }
       ]
     }
@@ -248,6 +280,11 @@ export default {
 
 /***/
 
+.cls-1
+{
+  fill: #ffffff;
+}
+
   .project__body {
     border-left: solid 0 #ffff;
     border-right: solid 0 #ffff;
@@ -348,4 +385,74 @@ opacity: 0.5;
   }
 
 }
+
+  @media (max-width: 575.98px) {
+
+    .menu .mobile
+    {
+      display: none;
+    }
+
+  .menu .col-md-12
+  {
+        padding-top: 87px;
+    padding-left: 20vw;
+  }
+
+  .menu .f-28
+  {
+    height: 6.952662721893492vh;
+    font-size: 7.466666666666667vw;
+    line-height: 6.952662721893492vh;
+  }
+
+   .menu .f-16
+  {
+    height: 5.4733727810650885vh;
+    font-size: 5.866666666666666vw;
+    line-height: 5.4733727810650885vh;
+    margin-right: 8.8vw;
+  }
+
+  .menu .social-list {
+    /* position: fixed; */
+    /* bottom: 45px; */
+    /* left: calc(5vw - 15px); */
+    /* width: 30px; */
+    /* -webkit-transform: translate3d(0, 0, 0); */
+    /* transform: translate3d(0, 0, 0); */
+}
+
+.menu ul li.social-list__item {
+    position: relative;
+    width: 9.066666666666666vw;
+    height: 9.066666666666666vw;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 3.4023668639053257vh;
+}
+
+.ctn {
+    padding-left: 14.933333333333334vw;
+    padding-right: 14.933333333333334vw;
+}
+
+.menu ul
+{
+  padding-left: 18vw;
+}
+
+.f-18
+{
+  height: 31px;
+  font-size: 4.8vw;
+  line-height: 31px;
+
+}
+
+.menu .footy
+{
+  margin-top: 20px;
+}
+  }
 </style>

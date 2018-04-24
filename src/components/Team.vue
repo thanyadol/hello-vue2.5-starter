@@ -13,6 +13,11 @@
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
               </ul>
+                  <router-link to="pitchdesk">
+                 <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
+                 <span class="menu-btn__text">Pitch Desk</span>
+                </button>
+          </router-link>
           </h3>
         </div>
       </div>
@@ -34,18 +39,18 @@
                 <div class="project__text  | m-100 m-mr-0  | down">
                   <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
                   <p class="sub sm tb" v-bind:class="s.fontClass">{{ s.position }}</p>
-                  <p class="title tr bold">{{ s.title }}</p>
+                  <p class="title tr bold f-35">{{ s.title }}</p>
                 </div>
               </div>
             </section>
 
-            <section class="project__description white row | ctn-content l">
+            <section class="project__description white grey-m row | ctn-content l">
               <h3 class="hidden-visually">Staff</h3>
-              <div class="project__description  block" v-for="s in post.blocks" :key="s.id" v-bind:class="s.class">
+              <div class="project__description  block" v-for="s in post.blogs" :key="s.id" v-bind:class="s.class">
                 <div class="project__text | m-100 m-mr-0  | down">
                   <p class="title sm tb bold text-uppercase" v-bind:class="s.fontClass">{{ s.name }}</p>
                   <p class="sub sm tb" v-bind:class="s.fontClass">{{ s.position }}</p>
-                  <span class="title tr bold" v-bind:class="s.fontClass">{{ s.title }}</span>
+                  <span class="title tr bold f-35" v-bind:class="s.fontClass">{{ s.title }}</span>
                 </div>
               </div>
             </section>
@@ -95,7 +100,55 @@ export default {
       post: {
         title: 'We are AddVentures',
         sub: 'We are partnering with startups to transform industries together',
-        staffs: [
+        staffs: this.getStaff(),
+        blogs: this.getBlog()
+      },
+      contact: {
+        title: 'Join Our Team',
+        sub: 'We are looking for people who make perfect hamony together',
+        detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        mail: 'contact@addventures.co.th',
+        more: 'More detail on',
+        site: 'Addventures',
+        url: 'www.scg.co.th'
+      },
+      slide__title: false,
+      slide__sub: false,
+      prev: {
+        title: 'Insign',
+        url: 'insign'
+      },
+      next: {
+        title: 'Contact',
+        url: 'contact'
+      }
+    }
+  },
+  filters: {
+    moment: function (date) {
+      return moment(date).format('MMM')
+    }
+  },
+
+  methods: {
+    isMobile: function () {
+      if (navigator.userAgent.match(/Android/i) ||
+          navigator.userAgent.match(/webOS/i) ||
+          navigator.userAgent.match(/iPhone/i) ||
+          navigator.userAgent.match(/iPad/i) ||
+          navigator.userAgent.match(/iPod/i) ||
+          navigator.userAgent.match(/BlackBerry/i) ||
+          navigator.userAgent.match(/Windows Phone/i)
+      ) {
+        return true
+      } else {
+        return false
+      }
+    },
+
+    getStaff: function () {
+      if (!this.isMobile) {
+        var desktopList = [
           {
             id: 1,
             title: '',
@@ -176,9 +229,102 @@ export default {
             class: 'white',
             fontClass: 'tw'
           }
-        ],
+        ]
 
-        blocks: [
+        return desktopList
+      } else {
+        var mobileList = [
+          {
+            id: 1,
+            title: '',
+            name: 'Joshua Pas, PH.D.',
+            position: 'Managing Director and Investment Commitee',
+            class: 'red',
+            fontClass: 'tw'
+          },
+          {
+            id: 2,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+          {
+            id: 4,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+          {
+            id: 3,
+            title: 'The Team',
+            name: '',
+            position: '',
+            class: 'grey',
+            fontClass: 'tr'
+          },
+
+          {
+            id: 5,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+          {
+            id: 6,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+          {
+            id: 7,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+          {
+            id: 8,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+          {
+            id: 10,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+          {
+            id: 9,
+            title: '',
+            name: '',
+            position: '',
+            class: 'grey',
+            fontClass: 'tw'
+          }
+
+        ]
+
+        return mobileList
+      }
+    },
+
+    getBlog: function () {
+      if (!this.isMobile) {
+        var d = [
           {
             id: 1,
             title: '',
@@ -228,32 +374,65 @@ export default {
             fontClass: 'tw'
           }
         ]
-      },
-      contact: {
-        title: 'Join Our Team',
-        sub: 'We are looking for people who make perfect hamony together',
-        detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        mail: 'contact@addventures.co.th',
-        more: 'More detail on',
-        site: 'Addventures',
-        url: 'www.scg.co.th'
-      },
-      slide__title: false,
-      slide__sub: false,
-      prev: {
-        title: 'Insign',
-        url: 'insign'
-      },
-      next: {
-        title: 'Contact',
-        url: 'contact'
+
+        return d
+      } else {
+        var m = [
+          {
+            id: 2,
+            title: 'Investment Committee',
+            name: '',
+            position: '',
+            class: 'grey custom',
+            fontClass: 'tr'
+          },
+          {
+            id: 1,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+
+          {
+            id: 3,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+          {
+            id: 4,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+          {
+            id: 5,
+            title: '',
+            name: '',
+            position: '',
+            class: 'white',
+            fontClass: 'tw'
+          },
+          {
+            id: 6,
+            title: '',
+            name: '',
+            position: '',
+            class: 'grey',
+            fontClass: 'tw'
+          }
+        ]
+
+        return m
       }
     }
-  },
-  filters: {
-    moment: function (date) {
-      return moment(date).format('MMM')
-    }
+
   },
   // life cycle of component
   created () {},
@@ -495,4 +674,71 @@ export default {
 
 }
 
+@media (max-width: 575.98px) {
+  .team .fill {
+    width: max-content;
+  }
+
+    .team .ctn-content.t {
+    flex-direction: unset;
+    padding-top: 46px !important;
+    /* width: 87.46666666666667vw; */
+    /* height: 200px; */
+    padding-left: 25px;
+    padding-right: 35px;
+  }
+
+ .team .ctn-content.r,
+  .team .ctn-content.l {
+     padding-left: 6.666666666666667vw;
+    padding-right: 5.333333333333333vw;
+    padding-top: 0;
+    flex-direction: initial;
+  }
+
+.team .block.red {
+    padding: 6.933333333333334vw 2px 3px 3vw;
+}
+
+.team .block.grey
+{
+      padding: 0 9px 0 4vw;
+    /* vertical-align: -webkit-baseline-middle; */
+    justify-content: flex-end;
+}
+
+.team .block {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 40px;
+    margin-bottom: 1.4792899408284024vh;
+    margin-right: 0;
+    /* width: 19.4vw !important; */
+    /* height: 19.4vw !important; */
+    width: 40vw;
+    height: 40vw;
+}
+
+.team .block.red .title  {
+
+    font-size: 8vw;
+    line-height: 8.6vw;
+    height: 18.6vw;
+    text-align: left;
+}
+
+.team .block.red .sub {
+    font-size: 4.266666666666667vw;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: none;
+    /* width: 35vw; */
+}
+
+.team .block .f-35 {
+    line-height: 1.2;
+    font-size: 9.333333333333334vw;
+}
+
+}
 </style>

@@ -12,7 +12,12 @@
             <ul>
               <li v-for="s in subs" :key="s">{{ s }}</li>
             </ul>
-          </h3>
+
+              <router-link to="pitchdesk">
+                 <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
+                 <span class="menu-btn__text">Pitch Desk</span>
+                </button>
+          </router-link></h3>
         </div>
       </div>
     </header>
@@ -21,7 +26,7 @@
       <div class="scroll-content">
 
         <div class="project__content">
-          <div class="project__body">
+          <div class="project__body white">
             <section class="project__description grey row | ctn-content first">
               <h3 class="hidden-visually">Partner</h3>
               <div class="project__text | mrg-2x col-md-6 ml-0 mr-0 pr-0 pl-0  | m-100 m-mr-0">
@@ -35,11 +40,12 @@
                 <div class="project__text | col-md-12 mr-0 ml-0 pr-0 pl-0 mrg-2c | m-100 m-mr-0">
                   <img class="bg__block l" v-show="r.image != null" v-bind:src="r.image" />
                   <div class="of-l">
+
                     <div v-show="r.type == 'redd'" class="red box | redd">
                       <p class="title bold" v-bind:class="r.titleClass">{{ r.title }}</p>
                     </div>
 
-                    <hr class="white n" v-bind:class="r.lineClass" />
+                    <!-- <hr class="white n" v-bind:class="r.lineClass" /> -->
                     <p class="sub shift bold tb">{{ r.sub }}</p>
                     <p class="sub shift tb">{{ r.content }}</p>
                   </div>
@@ -48,18 +54,18 @@
 
             </section>
 
-            <section class="project__description white row | ctn pb-0">
+            <section class="project__description row | ctn pb-0 bot">
               <h3 class="hidden-visually">Venture</h3>
-              <div class="col-md-4 block | mb-5" v-for="r in posts.ventures" :key="r.id" v-bind:class="r.class">
+              <div class="col-md-4 block  | mb-5" v-for="r in posts.ventures" :key="r.id" v-bind:class="r.class">
                 <div class="project__text |  mrg-2c | m-100 m-mr-0">
                   <img class="bg__block r" v-show="r.image != null" v-bind:src="r.image" />
-                  <div class="of-r">
+                  <div class="of-r" >
                     <div v-show="r.type == 'redd'" class="red box | redd">
                       <p class="title bold" v-bind:class="r.titleClass">{{ r.title }}</p>
                     </div>
                     <hr class="black n" v-bind:class="r.lineClass" />
                     <p class="sub shift tb bold">{{ r.sub }}</p>
-                    <p class="sub shift tb">{{ r.content }}</p>
+                    <p class="sub shift tb bold">{{ r.content }}</p>
                   </div>
                 </div>
               </div>
@@ -96,10 +102,10 @@ export default {
         items: [
           {
             id: 1,
-            title: 'VC  Funds',
+            title: 'CV Funds',
             sub: '',
             image: null,
-            class: '',
+            class: 'cv',
             titleClass: 'f-60',
             lineClass: 'show',
             type: 'redd'
@@ -121,6 +127,17 @@ export default {
         ],
         ventures: [
           {
+            id: 0,
+            title: 'All   Startups',
+            sub: '',
+            image: null,
+            class: 'desktop',
+            titleClass: ' f-60',
+            lineClass: 'show black',
+            type: 'redd',
+            boxClass: 'desktop'
+          },
+          {
             id: 2,
             title: '',
             sub: 'HG Robotics',
@@ -139,10 +156,11 @@ export default {
             title: 'All   Startups',
             sub: '',
             image: null,
-            class: '',
+            class: 'mobile',
             titleClass: ' f-60',
             lineClass: 'show black',
-            type: 'redd'
+            type: 'redd',
+            boxClass: 'mobile'
           },
           {
             id: 4,
@@ -396,5 +414,104 @@ export default {
   width: max-content
 
   }
+
+  .partner .desktop
+  {
+    display: none;
+  }
+
+  .partner .mobile
+  {
+    display: block;
+  }
+
+}
+
+@media (max-width: 575.98px) {
+  .partner .fill {
+    width: max-content;
+  }
+
+  .partner .ctn-content.first {
+    flex-direction: unset;
+    padding-top: 46px !important;
+    /* width: 87.46666666666667vw; */
+    /* height: 200px; */
+    padding-left: 25px;
+    padding-right: 2px;
+  }
+
+    .partner .project__text .title {
+    height: 8.995502248875562vh;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  .partner .box.redd  {
+    padding: 26px 139px 39px 66px;
+    width: 74.66666666666667vw;
+    height: 22.488755622188904vh;
+    margin-bottom: 0;
+    padding-left: 39px;
+}
+
+.partner .col-md-4.block
+{
+  padding-left: 23px;
+  padding-right: 0;
+}
+
+.project__body .bg__block {
+padding: 0;
+    margin-bottom: 30px;
+    width: 80vw;
+    height: 35.98200899550225vh;
+    margin-top: 0;
+}
+
+.partner .of-l
+{
+  width: 54.13333333333333vw;
+      margin-bottom: 25px;
+}
+
+  .partner .desktop
+  {
+    display: block;
+  }
+
+  .partner .mobile
+  {
+    display: none;
+  }
+
+  .partner .cv
+  {
+    margin-bottom: 27px;
+  }
+
+  .partner .title.f-60
+  {
+    font-size:  12vw
+  }
+
+  .partner .row.white
+  {
+    padding-top: 0;
+
+  }
+
+  .partner .top
+{
+  padding-bottom: 11.99400299850075vh;
+  padding-top: 0;
+}
+  .partner .bot
+  {
+     margin-top: -10.494752623688155vh;
+    padding-top: 0;
+
+  }
+
 }
 </style>

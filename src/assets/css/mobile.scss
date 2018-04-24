@@ -5,6 +5,10 @@
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
 
+    .grey-m {
+        background-color: #f0f0f0 !important;
+      }
+
     .menu-btn {
         top: calc(4.25vw + 2px);
         right: 5px;

@@ -65,6 +65,7 @@
 
 <script>
 import scroll from 'smooth-scrollbar'
+import PartnerVue from './Partner.vue'
 export default {
   name: 'How',
   data () {
@@ -87,42 +88,7 @@ export default {
           background: 'red'
         }
       ],
-      invests: [
-        {
-          id: 1,
-          title: 'Growth',
-          sub: 'Post Seed',
-          image: './static/img/growth.png',
-          class: 'indent-4 tb',
-          imageClass: 'growth'
-        },
-        {
-          id: 2,
-          title: 'Series',
-          series: 'B',
-          sub: 'Accessories',
-          image: './static/img/seriesb.png',
-          imageClass: 'seriesb',
-          class: 'indent-3 tr'
-        },
-        {
-          id: 3,
-          title: 'Series',
-          series: 'A',
-          sub: 'Accessories',
-          image: './static/img/seriesa.png',
-          imageClass: 'seriesa',
-          class: 'indent-2 tr'
-        },
-        {
-          id: 4,
-          title: 'Seed',
-          sub: 'Accessories',
-          image: './static/img/seed.png',
-          imageClass: 'seed',
-          class: 'indent-1 tb'
-        }
-      ],
+      invests: this.getInvest(),
       prev: {
         title: 'Where We Invest',
         url: 'whereweinvest'
@@ -130,6 +96,106 @@ export default {
       next: {
         title: 'Why Work With Us',
         url: 'whyworkwithus'
+      }
+    }
+  },
+
+  methods: {
+    isMobile: function () {
+      if (navigator.userAgent.match(/Android/i) ||
+          navigator.userAgent.match(/webOS/i) ||
+          navigator.userAgent.match(/iPhone/i) ||
+          navigator.userAgent.match(/iPad/i) ||
+          navigator.userAgent.match(/iPod/i) ||
+          navigator.userAgent.match(/BlackBerry/i) ||
+          navigator.userAgent.match(/Windows Phone/i)
+      ) {
+        return true
+      } else {
+        return false
+      }
+    },
+
+    getInvest: function () {
+      if (!this.isMobile()) {
+        var desktop = [
+          {
+            id: 1,
+            title: 'Growth',
+            sub: 'Post Seed',
+            image: './static/img/growth.png',
+            class: 'indent-4 tb',
+            imageClass: 'growth'
+          },
+          {
+            id: 2,
+            title: 'Series',
+            series: 'B',
+            sub: 'Accessories',
+            image: './static/img/seriesb.png',
+            imageClass: 'seriesb',
+            class: 'indent-3 tr'
+          },
+          {
+            id: 3,
+            title: 'Series',
+            series: 'A',
+            sub: 'Accessories',
+            image: './static/img/seriesa.png',
+            imageClass: 'seriesa',
+            class: 'indent-2 tr'
+          },
+          {
+            id: 4,
+            title: 'Seed',
+            sub: 'Accessories',
+            image: './static/img/seed.png',
+            imageClass: 'seed',
+            class: 'indent-1 tb'
+          }
+        ]
+
+        return desktop
+      } else {
+        var mobile = [
+          {
+            id: 4,
+            title: 'Seed',
+            sub: 'Accessories',
+            image: './static/img/seed.png',
+            imageClass: 'seed',
+            class: 'indent-1 tb'
+          },
+          {
+            id: 3,
+            title: 'Series',
+            series: 'A',
+            sub: 'Accessories',
+            image: './static/img/seriesa.png',
+            imageClass: 'seriesa',
+            class: 'indent-2 tr'
+          },
+          {
+            id: 2,
+            title: 'Series',
+            series: 'B',
+            sub: 'Accessories',
+            image: './static/img/seriesb.png',
+            imageClass: 'seriesb',
+            class: 'indent-3 tr'
+          },
+          {
+            id: 1,
+            title: 'Growth',
+            sub: 'Post Seed',
+            image: './static/img/growth.png',
+            class: 'indent-4 tb',
+            imageClass: 'growth'
+          }
+
+        ]
+
+        return mobile
       }
     }
   },

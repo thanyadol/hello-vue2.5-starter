@@ -13,6 +13,11 @@
               <ul>
                   <li v-for="s in subs" :key="s" >{{ s }}</li>
               </ul>
+                            <router-link to="pitchdesk">
+                 <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
+                 <span class="menu-btn__text">Pitch Desk</span>
+                </button>
+          </router-link>
           </h3>
         </div>
       </div>
@@ -22,7 +27,7 @@
       <div class="scroll-content">
 
         <div class="project__content">
-          <div class="project__body row grey">
+          <div class="project__body row grey | off-white">
             <section class="project__description col-md-8 red | ctn-content t">
               <h3 class="hidden-visually">Contact</h3>
               <div class="project__text | m-100 m-mr-0">
@@ -33,8 +38,8 @@
 
           </div>
 
-          <div class="project__body row grey">
-            <section class="project__description col-md-6 grey | ctn-content l">
+          <div class="project__body row grey off-white">
+            <section class="project__description col-md-6 grey off-white  | ctn-content l">
               <div class="project__text | m-100 m-mr-0 addr">
                 <p class="sub bold tb f-32">{{ addr.title }}</p>
                 <p class="sub tb py-0 my-0 ">{{ addr.sub }}</p>
@@ -42,7 +47,7 @@
               </div>
             </section>
 
-            <section class="project__description col-md-6 grey | ctn-content r">
+            <section class="project__description col-md-6 grey off-white | ctn-content r">
               <h3 class="hidden-visually">CV</h3>
               <div class="project__text cv | m-100 m-mr-0">
                 <p class="sub bold tr al-r ">{{ cv.title }}</p>
@@ -54,7 +59,7 @@
           </div>
 
         <div class="project__body row grey">
-            <section class="project__description col-12 grey | ctn-content m">
+            <section class="project__description col-12 grey off-white | ctn-content m">
               <h3 class="hidden-visually">Map</h3>
               <div class="project__text map fill">
                 <ggmap> </ggmap>
@@ -64,7 +69,7 @@
           </div>
 
         <div class="project__body pt-0">
-            <section class="project__description p-0 m-0 | ctn grey">
+            <section class="project__description p-0 m-0 | ctn grey off-white">
             <buttom :next="next" :prev="prev"></buttom>
           </section>
         </div>
@@ -219,9 +224,9 @@ export default {
   display: block;
 }
 
-.project__text p:not(:last-of-type) {
+/* .project__text p:not(:last-of-type) {
   margin-bottom: 1.5rem;
-}
+} */
 
 @media (min-width: 1200px) {
 
@@ -272,6 +277,91 @@ export default {
 
 .contact .m .fill {
   width: -webkit-fill-available;
+}
+
+}
+
+/* for mobiles */
+
+@media (max-width: 575.98px) {
+
+.contact .vue-map-container {
+    position: relative;
+    height: 300px !important;
+}
+
+  .contact .fill {
+    width: max-content;
+  }
+
+.contact .m .fill {
+  width: -webkit-fill-available;
+}
+      .contact .ctn-content.t {
+    flex-direction: unset;
+    padding-top: 46px !important;
+    /* width: 87.46666666666667vw; */
+    /* height: 200px; */
+    padding-left: 25px;
+    padding-right: 14px;
+      width: 74.66666666666667vw;
+
+  }
+
+        .contact .ctn-content.l  {
+    /* flex-direction: unset;
+    padding-top: 46px !important;
+    /* width: 87.46666666666667vw; */
+    /* height: 200px; */
+    padding-left: 25px;
+    padding-right: 13.333333333333334vw;
+    padding-bottom: 0;
+    padding-top: 45px;
+
+  }
+
+         .contact .ctn-content.r {
+    /* flex-direction: unset;
+    padding-top: 46px !important;
+    /* width: 87.46666666666667vw; */
+    /* height: 200px; */
+    padding-left: 15px;
+    padding-right: 13.333333333333334vw;
+      padding-bottom: 0;
+        padding-top: 45px;
+
+  }
+
+          .contact .ctn-content.m {
+    /* flex-direction: unset;
+    padding-top: 46px !important;
+    /* width: 87.46666666666667vw; */
+    /* height: 200px; */
+    padding-left: 7.466666666666667vw;
+    padding-right: 7.466666666666667vw;
+      padding-bottom: 35px;
+        padding-top: 35px;
+
+  }
+
+  .off-white
+  {
+    background-color: white;
+  }
+
+  .contact .addr .sub.f-32 {
+    font-size: 8vw;
+    line-height: 1.35;
+  }
+
+  .contact .addr .sub
+  {
+    font-size: 5.333333333333333vw;
+    line-height: 1.35;
+  }
+
+  .contact .udl {
+   float: right;
 }
 
 }

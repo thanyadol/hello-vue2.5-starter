@@ -878,7 +878,7 @@ ol {
   }
 
   .why .block .black {
-    width: 280px;
+    width: auto;
     height: 170px;
     margin-left: 15.133333333333333vw;
     padding: 10px 18px 20px 23px;
