@@ -22,7 +22,7 @@
               <h3 class="hidden-visually">Join</h3>
               <div class="project__text | m-100 m-mr-0">
                 <p class="title bold tb">{{ title }}</p>
-                <p class="sub bold tb">{{ sub }}</p>
+                <p class="sub bold tb mb-45">{{ sub }}</p>
                 <p class="cv bold tr">{{ cv }}</p>
                 <router-link to=""> <p class="email bold tb udl">{{ email }}</p> </router-link>
               </div>
@@ -55,7 +55,7 @@ export default {
       logo: './static/img/logo_sm.svg',
       sub:
         'We are looking energetic and passionate people to join our team and grow tofether.',
-      foot: 'Copyright 2018 AddVenture',
+      foot: 'Copyright 2018 AddVentures',
       cv: 'Please contact us or submit your CV to',
       email: 'contact@addventures.co.th'
     }
@@ -277,5 +277,35 @@ opacity: 0.5;
     padding-bottom: 35px;
   }*/
 
+}
+
+@media (max-width: 575.98px) {
+
+      .join .ctn.c{
+    flex-direction: unset;
+    padding-top: 18.49112426035503vh !important;
+    /* width: 87.46666666666667vw; */
+    /* height: 200px; */
+    padding-left: 25px;
+    padding-right: 14.933333333333334vw;
+        padding-bottom: 36.98224852071006vh;
+
+  }
+
+  .join .ctn.c .cv {
+
+    font-size: 5.333333333333333vw;
+    line-height: 1.2;
+}
+
+.join .ctn.c .email {
+    font-size: 5.333333333333333vw;
+    line-height: 1.2;
+}
+
+.join .mb-45
+{
+      margin-bottom: 45px !important;
+}
 }
 </style>
