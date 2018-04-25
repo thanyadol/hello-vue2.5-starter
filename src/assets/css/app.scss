@@ -901,127 +901,127 @@ select {
     touch-action: pan-x
 }
 
-[data-scrollbar],
-[scrollbar],
-scrollbar {
-    display: block
-}
+// [data-scrollbar],
+// [scrollbar],
+// scrollbar {
+//     display: block
+// }
 
-[data-scrollbar] .scroll-content,
-[scrollbar] .scroll-content,
-scrollbar .scroll-content {
-    transform: translateZ(0);
-    will-change: transform
-}
+// [data-scrollbar] .scroll-content,
+// [scrollbar] .scroll-content,
+// scrollbar .scroll-content {
+//     transform: translateZ(0);
+//     will-change: transform
+// }
 
-[data-scrollbar].sticky .scrollbar-track,
-[scrollbar].sticky .scrollbar-track,
-scrollbar.sticky .scrollbar-track {
-    background: rgba(222, 222, 222, .75)
-}
+// [data-scrollbar].sticky .scrollbar-track,
+// [scrollbar].sticky .scrollbar-track,
+// scrollbar.sticky .scrollbar-track {
+//     background: rgba(222, 222, 222, .75)
+// }
 
-[data-scrollbar] .scrollbar-track,
-[scrollbar] .scrollbar-track,
-scrollbar .scrollbar-track {
-    position: absolute;
-    opacity: 0;
-    z-index: 1;
-    transition: opacity .5s ease-out, background .5s ease-out;
-    background: 0 0
-}
+// [data-scrollbar] .scrollbar-track,
+// [scrollbar] .scrollbar-track,
+// scrollbar .scrollbar-track {
+//     position: absolute;
+//     opacity: 0;
+//     z-index: 1;
+//     transition: opacity .5s ease-out, background .5s ease-out;
+//     background: 0 0
+// }
 
-[data-scrollbar] .scrollbar-track.show,
-[data-scrollbar] .scrollbar-track:hover,
-[scrollbar] .scrollbar-track.show,
-[scrollbar] .scrollbar-track:hover,
-scrollbar .scrollbar-track.show,
-scrollbar .scrollbar-track:hover {
-    opacity: 1
-}
+// [data-scrollbar] .scrollbar-track.show,
+// [data-scrollbar] .scrollbar-track:hover,
+// [scrollbar] .scrollbar-track.show,
+// [scrollbar] .scrollbar-track:hover,
+// scrollbar .scrollbar-track.show,
+// scrollbar .scrollbar-track:hover {
+//     opacity: 1
+// }
 
-[data-scrollbar] .scrollbar-track:hover,
-[scrollbar] .scrollbar-track:hover,
-scrollbar .scrollbar-track:hover {
-    background: rgba(222, 222, 222, .4)
-}
+// [data-scrollbar] .scrollbar-track:hover,
+// [scrollbar] .scrollbar-track:hover,
+// scrollbar .scrollbar-track:hover {
+//     background: rgba(222, 222, 222, .4)
+// }
 
-[data-scrollbar] .scrollbar-track-x,
-[scrollbar] .scrollbar-track-x,
-scrollbar .scrollbar-track-x {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 8px
-}
+// [data-scrollbar] .scrollbar-track-x,
+// [scrollbar] .scrollbar-track-x,
+// scrollbar .scrollbar-track-x {
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 8px
+// }
 
-[data-scrollbar] .scrollbar-track-y,
-[scrollbar] .scrollbar-track-y,
-scrollbar .scrollbar-track-y {
-    top: 0;
-    right: 15px;
-    width: 6px;
-    height: 100%
-}
+// [data-scrollbar] .scrollbar-track-y,
+// [scrollbar] .scrollbar-track-y,
+// scrollbar .scrollbar-track-y {
+//     top: 0;
+//     right: 15px;
+//     width: 6px;
+//     height: 100%
+// }
 
-@media only screen and (max-width:960px) {
-    [data-scrollbar] .scrollbar-track-y,
-    [scrollbar] .scrollbar-track-y,
-    scrollbar .scrollbar-track-y {
-        right: 0;
-        width: 4px
-    }
-}
+// @media only screen and (max-width:960px) {
+//     [data-scrollbar] .scrollbar-track-y,
+//     [scrollbar] .scrollbar-track-y,
+//     scrollbar .scrollbar-track-y {
+//         right: 0;
+//         width: 4px
+//     }
+// }
 
-[data-scrollbar] .scrollbar-thumb,
-[scrollbar] .scrollbar-thumb,
-scrollbar .scrollbar-thumb {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 6px;
-    height: 8px;
-    background: rgba(0, 0, 0, .5)
-}
+// [data-scrollbar] .scrollbar-thumb,
+// [scrollbar] .scrollbar-thumb,
+// scrollbar .scrollbar-thumb {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 6px;
+//     height: 8px;
+//     background: rgba(0, 0, 0, .5)
+// }
 
-@media only screen and (max-width:960px) {
-    [data-scrollbar] .scrollbar-thumb,
-    [scrollbar] .scrollbar-thumb,
-    scrollbar .scrollbar-thumb {
-        width: 4px
-    }
-}
+// @media only screen and (max-width:960px) {
+//     [data-scrollbar] .scrollbar-thumb,
+//     [scrollbar] .scrollbar-thumb,
+//     scrollbar .scrollbar-thumb {
+//         width: 4px
+//     }
+// }
 
-[data-scrollbar] .overscroll-glow,
-[scrollbar] .overscroll-glow,
-scrollbar .overscroll-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%
-}
+// [data-scrollbar] .overscroll-glow,
+// [scrollbar] .overscroll-glow,
+// scrollbar .overscroll-glow {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%
+// }
 
-*,
-::after,
-::before {
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent
-}
+// *,
+// ::after,
+// ::before {
+//     box-sizing: border-box;
+//     -webkit-tap-highlight-color: transparent
+// }
 
-.dragging *,
-.noselect,
-::after,
-::before {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none
-}
+// .dragging *,
+// .noselect,
+// ::after,
+// ::before {
+//     -webkit-touch-callout: none;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none
+// }
 
-.scrolling * {
-    pointer-events: none !important
-}
+// .scrolling * {
+//     pointer-events: none !important
+// }
 
 #frame,
 [data-page=home] .content__inner {
@@ -1069,13 +1069,13 @@ html {
     }
 }
 
-body {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 1.6rem;
-    line-height: 1.7
-}
+// body {
+//     text-rendering: optimizeLegibility;
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+//     font-size: 1.6rem;
+//     line-height: 1.7
+// }
 
 body.grabbing * {
     cursor: -webkit-grabbing !important;

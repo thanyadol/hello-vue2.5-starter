@@ -206,6 +206,30 @@ export default {
   },
   // life cycle of component
   created () {},
+  mounted: function () {
+    // update file of #app
+    /* var app = new Vue({
+      el: '#app'
+    })
+    app.showed() */
+    var vm = this
+    // alert(vm.show)
+    vm.$parent.show = false
+
+    var v = 'partner'
+    var div = document.getElementById(v)
+    // console.log(div)
+    if (!div) {
+      // vm.show = false
+      // vm.left = 'c'
+      // vm.right = 'c'
+      // vm.scroll = 'show'
+      // console.log('if')
+
+    }
+    scroll.init(div)
+  },
+
   beforeMount () {
     // var scrolled
     var vm = this

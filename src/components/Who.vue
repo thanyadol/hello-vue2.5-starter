@@ -146,6 +146,19 @@ export default {
     var vm = this
     // alert(vm.show)
     vm.$parent.show = false
+
+    var v = 'who'
+    var div = document.getElementById(v)
+    // console.log(div)
+    if (!div) {
+      // vm.show = false
+      // vm.left = 'c'
+      // vm.right = 'c'
+      // vm.scroll = 'show'
+      // console.log('if')
+
+    }
+    scroll.init(div)
   },
 
   methods: {
