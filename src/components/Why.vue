@@ -385,7 +385,7 @@ export default {
     }
   },
   beforeMount () {
-    var scrolled = 0
+    // var scrolled = 0
     var vm = this
 
     window.addEventListener('wheel', function (event) {
@@ -409,14 +409,14 @@ export default {
         vm.slide__sub = 'slide__sub__leave'
       }
 
-      if (event.deltaY < 0) {
-        scrolled++
-      }
-      if (event.deltaY > 0) {
-        scrolled--
-      }
+      // if (event.deltaY < 0) {
+      //   scrolled++
+      // }
+      // if (event.deltaY > 0) {
+      //   scrolled--
+      // }
 
-      console.log(scrolled)
+      // console.log(scrolled)
     })
   },
   destroyed () {

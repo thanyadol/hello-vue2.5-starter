@@ -207,7 +207,7 @@ export default {
   // life cycle of component
   created () {},
   beforeMount () {
-    var scrolled
+    // var scrolled
     var vm = this
 
     window.addEventListener('wheel', function (event) {
@@ -231,14 +231,14 @@ export default {
         vm.slide__sub = 'slide__sub__leave'
       }
 
-      if (event.deltaY < 0) {
-        scrolled++
-      }
-      if (event.deltaY > 0) {
-        scrolled--
-      }
+      // if (event.deltaY < 0) {
+      //   scrolled++
+      // }
+      // if (event.deltaY > 0) {
+      //   scrolled--
+      // }
 
-      console.log(scrolled)
+      // console.log(scrolled)
     })
   },
   beforeDestroy () {

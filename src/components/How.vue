@@ -34,11 +34,11 @@
               <!-- <p class="sub">{{ p.sub }}</p> -->
             </div>
           </section>
-          <section class="project__description col white | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+        <!--  <section class="project__description col white | ctn-content" v-for="p in posts" :key="p.id" v-bind:class="p.background">
             <div class="project__text | mrg-5 | m-100 m-mr-0">
               <p class="title bold tb">{{ p.title }}</p>
             </div>
-          </section>
+          </section> -->
           <section class="project__description col-12 tr white pb-0 | ctn-content invest">
             <ul class="">
               <li v-bind:class="v.class" v-for="v in invests" :key="v.id">
@@ -65,7 +65,7 @@
 
 <script>
 import scroll from 'smooth-scrollbar'
-import PartnerVue from './Partner.vue'
+// import PartnerVue from './Partner.vue'
 export default {
   name: 'How',
   data () {
@@ -204,7 +204,7 @@ export default {
     vm.$parent.show = false
   },
   beforeMount () {
-    var scrolled = 0
+    // var scrolled = 0
     var vm = this
 
     window.addEventListener('wheel', function (event) {
@@ -230,14 +230,14 @@ export default {
         vm.slide__sub = 'slide__sub__leave'
       }
 
-      if (event.deltaY < 0) {
-        scrolled++
-      }
-      if (event.deltaY > 0) {
-        scrolled--
-      }
+      // if (event.deltaY < 0) {
+      //   scrolled++
+      // }
+      // if (event.deltaY > 0) {
+      //   scrolled--
+      // }
 
-      console.log(scrolled)
+      // console.log(scrolled)
     })
   },
   destroyed () {

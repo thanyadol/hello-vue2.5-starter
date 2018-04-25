@@ -124,7 +124,7 @@ export default {
     left: 16.533333333333335vw;
   }
   .cover--r {
-    top: 43.2vw;
+    top: 24.28785607196402vh;
     /* position: absolute; */
     /* -webkit-transform: translate(-50%, -50%); */
     /* transform: translate(-50%, -50%); */
@@ -158,4 +158,29 @@ position: absolute;
       fill: crimson;
     } */
 }
+
+@media only screen
+    and (device-width : 375px)
+    and (device-height : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
+
+        .cover--r {
+          top: 28.287856vh;
+          /* position: absolute; */
+          /* -webkit-transform: translate(-50%, -50%); */
+          /* transform: translate(-50%, -50%); */
+          width: 45.333333333333336vw;
+          right: 16.8vw;;
+        }
+
+      .cover--l {
+     top: 34.334333vh;
+    /* position: absolute; */
+    /* -webkit-transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
+    width: 42.666666666666664vw;
+    left: 16.533333333333335vw;
+  }
+
+     }
 </style>

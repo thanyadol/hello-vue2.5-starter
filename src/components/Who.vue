@@ -155,7 +155,7 @@ export default {
   },
 
   beforeMount () {
-    var scrolled = 0
+    // var scrolled = 0
     var vm = this
 
     window.addEventListener('wheel', function (event) {
@@ -203,7 +203,7 @@ export default {
       } */
     })
 
-    console.log(scrolled)
+    // console.log(scrolled)
   },
   destroyed () {
     var vm = this
