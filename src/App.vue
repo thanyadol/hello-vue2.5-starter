@@ -1,5 +1,5 @@
 <template>
-  <div class="project">
+  <div class="project preload chrome">
     <header id="header" class="ctn noselect">
       <h1 class="header__title" v-show="!page().home">
           <img class="logo__sm" v-bind:src="logo"/>
@@ -244,6 +244,7 @@ export default {
 
     // var scrolled = 0
     // var scrolling
+
     var vm = this
 
     window.addEventListener('wheel', function (event) {

@@ -447,6 +447,7 @@ ul li.indent {
    .where .ctn-content.mapp__wrapper {
     padding: 0px;
     width: auto;
+    overflow-x: hidden;
   }
 
    .where .map {
