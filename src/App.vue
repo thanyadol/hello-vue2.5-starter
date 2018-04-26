@@ -1,5 +1,5 @@
 <template>
-  <div class="project preload chrome">
+  <div class="project">
     <header id="header" class="ctn noselect">
       <h1 class="header__title" v-show="!page().home">
           <img class="logo__sm" v-bind:src="logo"/>
@@ -8,7 +8,7 @@
       </h1>
       <nave v-show="!page().type != 'nave'" ></nave>
 
-      <!-- <framed :display="!show"> </framed> -->
+      <framed :display="!show"> </framed>
 
     </header>
     <cover :left="left" :right="right"> </cover>
@@ -102,7 +102,7 @@
 
 <script>
 // import your components here
-// import scroll from 'smooth-scrollbar'
+import scroll from 'smooth-scrollbar'
 // import { isNullOrUndefined } from 'util'
 // import Vue from 'vue'
 
@@ -125,7 +125,111 @@ export default {
 
     // alert('i was ready')
   },
+  mounted: function () {
+    // alert('i was mounth')
 
+    var vm = this
+    var scrollbarOptions = {
+      renderByPixels: true,
+      continuousScrolling: true
+    }
+
+    var v = vm.page().scroll
+    var div = document.getElementById(v)
+    // console.log(div)
+    if (!div) {
+      // vm.show = false
+      // vm.left = 'c'
+      // vm.right = 'c'
+      // vm.scroll = 'show'
+      // console.log('if')
+      return
+    }
+
+    // const scrollbar =
+    scroll.init(div, scrollbarOptions)
+
+    /* var Events = new Vue({})
+    var ListensForEvent = new Vue({
+      el: '#listener',
+      ready () {
+        Events.$on('eventFired', () => {
+          alert('event was heard')
+          this.msg = 'I heard an event.'
+        })
+      },
+      data: {
+        msg: 'I am listening for an event..'
+      }
+    })
+
+    var FiresEvent = new Vue({
+      el: '#dispatcher',
+      ready () {
+        setTimeout(
+          () => {
+            Events.$emit('eventFired')
+            this.msg = 'I fired an event.'
+          },
+          2500
+        )
+      },
+      data: {
+        msg: 'I am getting ready to fire an event.'
+      }
+    }) */
+
+    // var c = vm.page().type
+
+    // if (c === 'nave') {
+    //   // alert(c)
+
+    //   vm.show = true
+    //   vm.left = 'v'
+    //   vm.right = 'z'
+    //   vm.scroll = 'hide'
+    //   return
+    // }
+
+    // // get
+    // if (scrollbar.offset.y > 50) {
+    //   vm.show = true
+    //   vm.left = 'v'
+    //   vm.right = 'z'
+    //   vm.scroll = 'hide'
+    // } else {
+    //   vm.show = false
+    //   vm.left = 'c'
+    //   vm.right = 'c'
+    //   vm.scroll = 'show'
+    // }
+
+    /* var options = {
+                    wheelEventTarget: EventTarget,
+                  };
+
+                  var parent = new Vue({ el: '.team' })
+                  // access child component instance
+                  var child = parent.$refs.divx
+
+                  // var div = this.$children.refs.divx // this.$el.querySelector('div.team') // window.getElementById("scrollbar");
+                  // scrollbar.init(div);
+                  // console.log(this.$children)
+                  console.log(parent)
+
+                  // alert("scrolling") */
+    // var vm = this
+
+    /* var options = {
+                  wheelEventTarget: EventTarget
+                } */
+
+    // var div = document.getElementById('scrollbar')
+    // scroll.init(div)
+
+    // set
+    // vm.el = scroll
+  },
   beforeMount () {
     // alert('#app was mounted')
     // var parent = new Vue({ el: '.team#scrollbar' })
@@ -140,8 +244,7 @@ export default {
 
     // var scrolled = 0
     // var scrolling
-
-    /* var vm = this
+    var vm = this
 
     window.addEventListener('wheel', function (event) {
       var v = vm.page().scroll
@@ -161,9 +264,9 @@ export default {
       // alert(v)
       if (!div) {
         return
-      } */
+      }
 
-    /* if (isNullOrUndefined(v)) {
+      /* if (isNullOrUndefined(v)) {
                     vm.show = false
                     vm.left = 'c'
                     vm.right = 'c'
@@ -171,7 +274,7 @@ export default {
                     return
                   } */
 
-    /*  const scrollbar = scroll.get(div)
+      const scrollbar = scroll.get(div)
 
       if (!scrollbar) {
         return
@@ -190,9 +293,9 @@ export default {
         vm.left = 'c'
         vm.right = 'c'
         vm.mouse = 'hide'
-      } */
+      }
 
-    /* if (event.deltaY < 0) {
+      /* if (event.deltaY < 0) {
                     scrolled++
                     // scrolling = 'translate3d(0px, ' + scrolled + 'vh, 0px)'
 
@@ -205,7 +308,7 @@ export default {
                     // vm.scrolling = scrolling
                     console.log('scrolling down hanlde : ' + event.deltaY)
                   } */
-    // })
+    })
 
     // console.log(scrolled)
   },
