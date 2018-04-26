@@ -252,6 +252,7 @@ export default {
       vm.hideScrollDown = true
       vm.showPaging = false
       vm.showLogo = true
+      vm.showFrame = false
     },
 
     triggerIndexState: function () {

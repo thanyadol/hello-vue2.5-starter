@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import scroll from 'smooth-scrollbar'
+// import scroll from 'smooth-scrollbar'
 // import { isNullOrUndefined } from 'util'
 // import Vue from 'vue'
 export default {
@@ -67,45 +67,7 @@ export default {
   },
   // life cycle of component
   created () {},
-  beforeMount () {
-    // var vm = this
-    // const div1 = this.$refs['scrolled'] // querySelector('div#scrolled') // vm.$refs.scrolled
-    // var parent = new Vue({ el: 'div.deck' })
-    /* var el = document.getElementById('scrolled')
-        const s = scroll.init(el)
-        if (s.scrollTop > 50) {
 
-        }
-
-        console.log(s) */
-    // var scrolled = 0
-    // var vm = this
-
-    window.addEventListener('wheel', function (event) {
-      // event.preventDefault()
-      // event.returnValue = false
-      // return false
-
-      // var scrollOffset = 950
-
-      // var div = document.getElementById('scrollbar')
-      // const scrollbar = scroll.init(div)
-      var el = document.getElementById('join')
-      if (!el) {
-        return
-      }
-      // const s =
-      scroll.get(el)
-
-      // s.scrollTop = 750
-      // s.destroy()
-      // if (s.scrollTop < scrollOffset) {
-      //   s.scrollTop = scrollOffset
-      // }
-
-      // console.log(s.scrollTop)
-    })
-  },
   destroyed () {
     var vm = this
     vm.$parent.defaultState()

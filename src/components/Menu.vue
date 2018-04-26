@@ -155,19 +155,16 @@ export default {
   },
   // life cycle of component
   created () {},
-  beforeMount () {
+  /* beforeMount () {
     window.addEventListener('wheel', function (event) {
       var el = document.getElementById('menu')
       // const s =
       scroll.get(el)
     })
-  },
+  }, */
   destroyed () {
     var vm = this
     vm.$parent.defaultState()
-    // var el = document.getElementById('deck')
-    // const s = scroll.get(el)
-    // s.destroy()
   }
 }
 </script>

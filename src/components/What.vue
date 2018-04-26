@@ -172,7 +172,7 @@ export default {
   mounted: function () {
     var vm = this
     // alert(vm.show)
-    vm.$parent.show = false
+    vm.$parent.defaultState()
 
     var v = 'what'
     var div = document.getElementById(v)
@@ -220,7 +220,8 @@ export default {
   },
   destroyed () {
     var vm = this
-    vm.$parent.show = false
+    // alert(vm.show)
+    vm.$parent.defaultState()
   }
 }
 </script>

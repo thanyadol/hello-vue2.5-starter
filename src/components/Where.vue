@@ -144,7 +144,7 @@ export default {
   mounted: function () {
     var vm = this
     // alert(vm.show)
-    vm.$parent.show = false
+    vm.$parent.defaultState()
 
     var v = 'where'
     var div = document.getElementById(v)
@@ -277,7 +277,8 @@ export default {
   },
   destroyed () {
     var vm = this
-    vm.$parent.show = false
+    // alert(vm.show)
+    vm.$parent.defaultState()
   }
 }
 </script>
@@ -402,12 +403,13 @@ export default {
       padding-top: 0 !important;
     }
     .where img.rectang {
-      width: 180px;
-      height: 864px;
-      margin-left: 340px;
-      transform: translateY(-38%);
-      position: absolute;
-      z-index: -1;
+    width: 180px;
+    height: 864px;
+    margin-left: 340px;
+    /* -webkit-transform: translateY(-38%); */
+    transform: translatex(125%);
+    position: absolute;
+    z-index: 0;
     }
     .where svg.rectang {
       width: 180px;

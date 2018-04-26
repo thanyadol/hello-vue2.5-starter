@@ -200,24 +200,14 @@ export default {
     }
   },
   mounted: function () {
-    // update file of #app
-    /* var app = new Vue({
-      el: '#app'
-    })
-    app.showed() */
     var vm = this
     // alert(vm.show)
-    vm.$parent.show = false
+    vm.$parent.defaultState()
 
     var v = 'how'
     var div = document.getElementById(v)
     // console.log(div)
     if (!div) {
-      // vm.show = false
-      // vm.left = 'c'
-      // vm.right = 'c'
-      // vm.scroll = 'show'
-      // console.log('if')
 
     }
     scroll.init(div)
@@ -262,7 +252,8 @@ export default {
   },
   destroyed () {
     var vm = this
-    vm.$parent.show = false
+    // alert(vm.show)
+    vm.$parent.defaultState()
   }
 }
 </script>
