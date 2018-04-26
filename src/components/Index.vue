@@ -35,7 +35,18 @@ export default {
     }
   },
 
+  mounted: function () {
+    var vm = this
+    vm.$parent.triggerIndexState()
+    // console.log('i was mounthed')
+  },
+
   beforeMount () {
+  },
+
+  destroyed () {
+    var vm = this
+    vm.$parent.defaultState()
   }
 }
 </script>
@@ -51,29 +62,29 @@ export default {
     line-height: 1;
   }
 
-  .cls-1 {
+  .index .cls-1 {
     isolation: isolate;
   }
 
-  .cls-2 {
+  .index  .cls-2 {
     fill: #2f3c47;
   }
 
-  .cls-3 {
+  .index  .cls-3 {
     fill: #2f3c47;
   }
 
-  .cls-4 {
+  .index  .cls-4 {
     fill: url(#linear-gradient);
   }
 
-  .cls-5 {
+  .index  .cls-5 {
     fill: #e5e6e6;
     opacity: 0.8;
     mix-blend-mode: multiply;
   }
 
-  .cls-6 {
+  .index  .cls-6 {
     fill: url(#linear-gradient-2);
   }
 

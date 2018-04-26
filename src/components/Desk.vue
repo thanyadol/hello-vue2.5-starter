@@ -3,11 +3,11 @@
 
     <div class="top fixed col-12 white">
       <header id="header" class="">
-        <h1 class="header__title" v-show="true">
+        <!-- <h1 class="header__title" v-show="true">
           <img class="logo__sm" v-bind:src="logo" />
           <router-link to="/">
           </router-link>
-        </h1>
+        </h1> -->
         <div class="nav_wrapper">
           <nave></nave>
         </div>
@@ -275,77 +275,19 @@ export default {
   },
   mounted: function () {
     var vm = this
-    vm.$parent.show = true
-    // var vm = this
-
-    /* var scrollbarOptions = {
-                  renderByPixels: true,
-                  continuousScrolling: true
-                } */
-
-    // var scrollOffset = 0
-
-    var el = document.getElementById('desk')
-    // const s =
-    scroll.init(el)
-    // s.scrollTop = scrollOffset
-    // s.unregisterEvents(/./)
-    // s.destroy()
-    // s.destroy()
-    // s.setPosition(900, 900)
-    //  s.limit = { x: 200, y: 750 }
-
-    // s.addMomentum(100, 750)
-
-    /* scroll.scrollIntoView(el, {
-                  // offsetLeft: 34,
-                  // offsetBottom: 12,
-                  // alignToTop: true,
-                  onlyScrollIfNeeded: true
-                }) */
-
-    console.log('i was mounthed')
+    vm.$parent.triggerPitchState()
+    // console.log('i was mounthed')
   },
   // life cycle of component
   created () {},
   beforeMount () {
-    // var vm = this
-    // const div1 = this.$refs['scrolled'] // querySelector('div#scrolled') // vm.$refs.scrolled
-    // var parent = new Vue({ el: 'div.deck' })
-    /* var el = document.getElementById('scrolled')
-                const s = scroll.init(el)
-                if (s.scrollTop > 50) {
-
-                }
-
-                console.log(s) */
-    // var scrolled = 0
-    // var vm = this
-
-    // window.addEventListener('wheel', function (event) {
-    // event.preventDefault()
-    // event.returnValue = false
-    // return false
-    // var scrollOffset = 950
-
-    // var div = document.getElementById('scrollbar')
-    // const scrollbar = scroll.init(div)
     var el = document.getElementById('desk')
     // var s =
     scroll.init(el)
-
-    // s.scrollTop = 750
-    // s.destroy()
-    // if (s.scrollTop < scrollOffset) {
-    //   s.scrollTop = scrollOffset
-    // }
-
-    // console.log(s.scrollTop)
-    //   })
   },
   destroyed () {
     var vm = this
-    vm.$parent.show = false
+    vm.$parent.defaultState()
     // var el = document.getElementById('deck')
     // const s = scroll.get(el)
     // s.destroy()

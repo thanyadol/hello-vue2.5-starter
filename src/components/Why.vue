@@ -385,11 +385,6 @@ export default {
     }
   },
   mounted: function () {
-    // update file of #app
-    /* var app = new Vue({
-      el: '#app'
-    })
-    app.showed() */
     var vm = this
     // alert(vm.show)
     vm.$parent.show = false
@@ -398,11 +393,6 @@ export default {
     var div = document.getElementById(v)
     // console.log(div)
     if (!div) {
-      // vm.show = false
-      // vm.left = 'c'
-      // vm.right = 'c'
-      // vm.scroll = 'show'
-      // console.log('if')
 
     }
     scroll.init(div)
@@ -418,6 +408,13 @@ export default {
       }
       const scrollbar = scroll.init(div)
 
+      // hide
+      if (scrollbar.offset.y > 40) {
+        vm.$parent.triggerScrolled()
+      } else {
+        vm.$parent.defaultState()
+      }
+
       // slide title
       if (scrollbar.scrollTop > 50) {
         vm.slide__title = 'slide__title__active'
@@ -431,15 +428,6 @@ export default {
       } else {
         vm.slide__sub = 'slide__sub__leave'
       }
-
-      // if (event.deltaY < 0) {
-      //   scrolled++
-      // }
-      // if (event.deltaY > 0) {
-      //   scrolled--
-      // }
-
-      // console.log(scrolled)
     })
   },
   destroyed () {

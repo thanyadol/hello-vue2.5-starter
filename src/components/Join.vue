@@ -3,11 +3,11 @@
 
     <div class="top fixed col-12 white">
       <header id="header" class="">
-        <h1 class="header__title" v-show="true">
+        <!-- <h1 class="header__title" v-show="true">
           <img class="logo__sm" v-bind:src="logo" />
           <router-link to="/">
           </router-link>
-        </h1>
+        </h1> -->
          <div class="nav_wrapper">
           <nave flex=""></nave>
         </div>
@@ -61,38 +61,9 @@ export default {
     }
   },
   mounted: function () {
-    // var vm = this
     var vm = this
-    vm.$parent.show = true
-    /* var scrollbarOptions = {
-          renderByPixels: true,
-          continuousScrolling: true
-        } */
-
-    // var scrollOffset = 950
-
-    var el = document.getElementById('join')
-    if (!el) {
-      return
-    }
-    // const s =
-    scroll.init(el)
-    // s.scrollTop = scrollOffset
-
-    // s.destroy()
-    // s.setPosition(900, 900)
-    //  s.limit = { x: 200, y: 750 }
-
-    // s.addMomentum(100, 750)
-
-    /* scroll.scrollIntoView(el, {
-          // offsetLeft: 34,
-          // offsetBottom: 12,
-          // alignToTop: true,
-          onlyScrollIfNeeded: true
-        }) */
-
-    console.log('i was mounthed')
+    vm.$parent.triggerPitchState()
+    // console.log('i was mounthed')
   },
   // life cycle of component
   created () {},
@@ -137,7 +108,7 @@ export default {
   },
   destroyed () {
     var vm = this
-    vm.$parent.show = false
+    vm.$parent.defaultState()
     // var el = document.getElementById('deck')
     // const s = scroll.get(el)
     // s.destroy()
@@ -286,7 +257,7 @@ opacity: 0.5;
     padding-top: 18.49112426035503vh !important;
     /* width: 87.46666666666667vw; */
     /* height: 200px; */
-    padding-left: 25px;
+    padding-left: 35px;
     padding-right: 14.933333333333334vw;
         padding-bottom: 36.98224852071006vh;
 

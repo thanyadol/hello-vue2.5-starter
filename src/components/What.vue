@@ -170,11 +170,6 @@ export default {
   },
   // life cycle of component
   mounted: function () {
-    // update file of #app
-    /* var app = new Vue({
-      el: '#app'
-    })
-    app.showed() */
     var vm = this
     // alert(vm.show)
     vm.$parent.show = false
@@ -183,12 +178,6 @@ export default {
     var div = document.getElementById(v)
     // console.log(div)
     if (!div) {
-      // vm.show = false
-      // vm.left = 'c'
-      // vm.right = 'c'
-      // vm.scroll = 'show'
-      // console.log('if')
-
     }
     scroll.init(div)
   },
@@ -202,8 +191,14 @@ export default {
       if (!div) {
         return
       }
-
       const scrollbar = scroll.init(div)
+
+      // hide
+      if (scrollbar.scrollTop > 40) {
+        vm.$parent.triggerScrolled()
+      } else {
+        vm.$parent.defaultState()
+      }
 
       // slide title
       if (scrollbar.scrollTop > 50) {
@@ -218,15 +213,6 @@ export default {
       } else {
         vm.slide__sub = 'slide__sub__leave'
       }
-
-      // if (event.deltaY < 0) {
-      //   scrolled++
-      // }
-      // if (event.deltaY > 0) {
-      //   scrolled--
-      // }
-
-      // console.log(scrolled)
     })
   },
   beforeDestroy () {

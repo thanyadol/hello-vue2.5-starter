@@ -26,6 +26,10 @@ export default {
   background-color: #ec1e23;
 }
 
+    #frame {
+        z-index: 3;
+    }
+
 /* .border--l,
 .border--r {
     width: 6.3vw;

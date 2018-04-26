@@ -1,17 +1,28 @@
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
-@import url('https://fonts.googleapis.com/css?family=Pragati+Narrow');
+//@import url('https://fonts.googleapis.com/css?family=Pragati+Narrow');
+
+@import url('https://fonts.googleapis.com/css?family=Pragati+Narrow|Roboto:100');
 
 //@charset "UTF-8";
 
 //custom
+
+
+.menu-btn,
+body {
+    //font-family: Circular, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-family: 'Pragati Narrow', 'Roboto';
+     color: #fff
+}
+
 
 .red {
     background-color: #ec1e24;
   }
 
   .white {
-    background-color: #ffff;
+    background-color:#fff;
   }
 
 .ctn-content
@@ -415,13 +426,6 @@ ins {
 mark {
     font-style: italic;
     font-weight: 700
-}
-
-.menu-btn,
-body {
-    //font-family: Circular, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    font-family: 'Pragati Narrow', sans-serif;
-    color: #fff
 }
 
 del {

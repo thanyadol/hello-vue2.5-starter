@@ -24,7 +24,7 @@
 
         <div class="project__content">
           <div class="project__body">
-            <section class="project__description | ctn-content t" v-for="p in posts" :key="p.id" v-bind:class="p.background">
+            <section class="project__description | ctn-content col-md-12 t" v-for="p in posts" :key="p.id" v-bind:class="p.background">
               <h3 class="hidden-visually">Project</h3>
               <div class="project__text | col-12 mrg-2 p-0 | m-100 m-mr-0">
                 <p class="title bold tb" v-bind:class="p.text">{{ p.title }}</p>
@@ -145,20 +145,18 @@ export default {
     app.showed() */
     var vm = this
     // alert(vm.show)
-    vm.$parent.show = false
+    vm.$parent.defaultState()
 
+    var scrollbarOptions = {
+      renderByPixels: true,
+      continuousScrolling: false
+    }
     var v = 'who'
     var div = document.getElementById(v)
     // console.log(div)
     if (!div) {
-      // vm.show = false
-      // vm.left = 'c'
-      // vm.right = 'c'
-      // vm.scroll = 'show'
-      // console.log('if')
-
     }
-    scroll.init(div)
+    scroll.init(div, scrollbarOptions)
   },
 
   methods: {
@@ -178,50 +176,30 @@ export default {
         return
       }
       const scrollbar = scroll.init(div)
-      // scrollbar.scrollTop = 1
+
+      console.log(scrollbar.offset.y)
+
+      // hide
+      if (scrollbar.offset.y > 40) {
+        vm.$parent.triggerScrolled()
+      } else {
+        vm.$parent.defaultState()
+      }
 
       // slide title
       if (scrollbar.scrollTop > 50) {
         vm.slide__title = 'slide__title__active'
         vm.slide__sub = 'slide__sub__active'
-        /* vm.overrideStyles = {
-          transform: 'translate3d(0px, 0px, 0px)'
-        } */
       } else {
         vm.slide__title = 'slide__title__leave'
         vm.slide__sub = 'slide__sub__leave'
-        /* vm.overrideStyles = {
-          transform: 'translate3d(' + vm.offsetLeft.title + 'px, 0px, 0px)'
-        } */
       }
-
-      // slide sub
-      /* if (scrollbar.scrollTop > 55) {
-        vm.slide__sub = 'slide__sub__active'
-      } else {
-        vm.slide__sub = 'slide__sub__leave'
-      } */
-
-      /* if (event.deltaY < 0) {
-        scrolled++
-        vm.overrideStyles = {
-          transform: 'translate3d(' + scrolled + 'px, 0px, 0px)'
-        }
-      }
-      if (event.deltaY > 0) {
-        scrolled--
-        vm.overrideStyles = {
-          transform: 'translate3d(' + scrolled + 'px, 0px, 0px)'
-        }
-      } */
     })
-
     // console.log(scrolled)
   },
   destroyed () {
     var vm = this
-    vm.$parent.show = false
-    // window.removeEventListener('wheel', this.handleScroll)
+    vm.$parent.defaultState()
   }
 }
 </script>
@@ -308,6 +286,7 @@ export default {
 
 }
 
+/** for iphone serieds **/
  @media (max-width: 575.98px) {
 
       .who .fill {
@@ -319,6 +298,8 @@ padding-left: 6.933333333333334vw;
     padding-right: 8vw;
     padding-top: 46px !important;
     padding-bottom: 48px;
+    display: block;
+    flex-direction: unset;
   }
 
   .who .mb-5c {

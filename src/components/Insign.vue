@@ -178,30 +178,6 @@ export default {
       return moment(date).format('MMM')
     }
   },
-  // life cycle of component
-  mounted: function () {
-    // update file of #app
-    /* var app = new Vue({
-      el: '#app'
-    })
-    app.showed() */
-    var vm = this
-    // alert(vm.show)
-    vm.$parent.show = false
-
-    var v = 'insign'
-    var div = document.getElementById(v)
-    // console.log(div)
-    if (!div) {
-      // vm.show = false
-      // vm.left = 'c'
-      // vm.right = 'c'
-      // vm.scroll = 'show'
-      // console.log('if')
-
-    }
-    scroll.init(div)
-  },
 
   created () {},
   beforeMount () {
@@ -247,10 +223,31 @@ export default {
     var vm = this
     vm.$parent.show = false
   },
+  // life cycle of component
   mounted: function () {
+    // update file of #app
+    /* var app = new Vue({
+      el: '#app'
+    })
+    app.showed() */
     var vm = this
+    // alert(vm.show)
     vm.$parent.show = false
+
+    var v = 'insign'
+    var div = document.getElementById(v)
+    // console.log(div)
+    if (!div) {
+      // vm.show = false
+      // vm.left = 'c'
+      // vm.right = 'c'
+      // vm.scroll = 'show'
+      // console.log('if')
+
+    }
+    scroll.init(div)
   }
+
 }
 </script>
 
