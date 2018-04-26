@@ -25,6 +25,8 @@ import Cover from '@/components/Cover'
 import Mouse from '@/components/Mouse'
 import Head from '@/components/Head'
 
+import Pitch from '@/components/Pitch'
+
 import Fraction from '@/components/Fraction'
 
 // register DOM tag
@@ -36,6 +38,7 @@ Vue.component('social', Social)
 Vue.component('background', Background) */
 
 Vue.component('buttom', Buttom)
+Vue.component('pitch', Pitch)
 Vue.component('nave', Nave)
 Vue.component('axiom', Axiom)
 Vue.component('framed', Frame)

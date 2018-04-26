@@ -10,11 +10,6 @@
         </div>
         <div class="project__info col-md-12 mx-auto ct | m-ml-0 m-100 tb">
           <h3 class="project__intro sub tb bold info">{{ sub }}</h3>
-           <router-link to="pitchdesk">
-                 <button class="menu-btn mobile pitch" aria-label="" href="javascript:void(0);">
-                 <span class="menu-btn__text">Pitch Desk</span>
-                </button>
-          </router-link>
         </div>
       </div>
     </header>
@@ -53,6 +48,11 @@ export default {
 
 <style scoped>
   /*logo*/
+
+  a .hov
+  {
+    cursor: pointer;
+  }
 
   .index .logo {
     line-height: 1;

@@ -2,9 +2,9 @@
   <div class="project">
     <header id="header" class="ctn noselect">
       <h1 class="header__title" v-show="showLogo">
-          <img class="logo__sm" v-bind:src="logo"/>
+        <img class="logo__sm" v-bind:src="logo" />
         <router-link to="/">
-         </router-link>
+        </router-link>
       </h1>
       <nave :items="navs"></nave>
       <framed :display="showFrame"> </framed>
@@ -14,28 +14,28 @@
     <!-- header -->
     <main id="content" role="main" class="main">
       <div class="content__wrapper">
-        <div id="inner-nav" v-show="showPaging">
+        <div id="inner-nav"  v-show="showPaging">
           <ul class="inner-nav__list">
             <li class="inner-nav__item">
               <router-link :to="page().prev" class="">
                 <button class="inner-nav__btn inner-nav__btn--prev" aria-label="Backward" style="background-color: transparent;">
-                              <!-- <svg class="icon icon--arrow icon--arrow--left" viewBox="0 0 38 38">Backward
-                                <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
-                              </svg> -->
-                            <!-- <img class="bg" v-bind:src="prev"/> -->
-                            <svg xmlns="http://www.w3.org/2000/svg"  class="icon icon--arrow icon--arrow--left"  viewBox="0 0 25.8 45.82"><title>Cover_Previous</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="25.8 2.84 5.66 22.85 25.67 43 22.83 45.82 0 22.83 22.98 0 25.8 2.84"/></g></g></svg>
-                            </button>
+                                <!-- <svg class="icon icon--arrow icon--arrow--left" viewBox="0 0 38 38">Backward
+                                  <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
+                                </svg> -->
+                              <!-- <img class="bg" v-bind:src="prev"/> -->
+                              <svg xmlns="http://www.w3.org/2000/svg"  class="icon icon--arrow icon--arrow--left"  viewBox="0 0 25.8 45.82"><title>Cover_Previous</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="25.8 2.84 5.66 22.85 25.67 43 22.83 45.82 0 22.83 22.98 0 25.8 2.84"/></g></g></svg>
+                              </button>
               </router-link>
             </li>
             <li class="inner-nav__item">
               <router-link :to="page().next" class="">
                 <button class="inner-nav__btn inner-nav__btn--next swiper-button-disabled" aria-label="Forward" style="background-color: transparent;">
-                               <!-- <svg class="icon icon--arrow icon--arrow--right" viewBox="0 0 38 38">Forward
-                                <path class="st0" d="M27.7,19c0,0.6-0.2,1.3-0.7,1.7L14.6,33.6c-1,1-2.5,1-3.5,0.1s-1-2.5-0.1-3.5L21.7,19L11,7.9c-1-1-0.9-2.6,0.1-3.5c1-1,2.6-0.9,3.5,0.1L27,17.3C27.5,17.7,27.7,18.4,27.7,19z"></path>
-                                </svg> -->
-                                             <!-- <img class="bg" v-bind:src="next"/> -->
-                              <svg class="icon icon--arrow icon--arrow--right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.8 45.82"><title>Cover_Next</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="0 42.98 20.14 22.96 0.13 2.82 2.97 0 25.8 22.98 2.82 45.82 0 42.98"/></g></g></svg>
-                             </button>
+                                 <!-- <svg class="icon icon--arrow icon--arrow--right" viewBox="0 0 38 38">Forward
+                                  <path class="st0" d="M27.7,19c0,0.6-0.2,1.3-0.7,1.7L14.6,33.6c-1,1-2.5,1-3.5,0.1s-1-2.5-0.1-3.5L21.7,19L11,7.9c-1-1-0.9-2.6,0.1-3.5c1-1,2.6-0.9,3.5,0.1L27,17.3C27.5,17.7,27.7,18.4,27.7,19z"></path>
+                                  </svg> -->
+                                               <!-- <img class="bg" v-bind:src="next"/> -->
+                                <svg class="icon icon--arrow icon--arrow--right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.8 45.82"><title>Cover_Next</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="0 42.98 20.14 22.96 0.13 2.82 2.97 0 25.8 22.98 2.82 45.82 0 42.98"/></g></g></svg>
+                               </button>
               </router-link>
             </li>
           </ul>
@@ -84,7 +84,11 @@
 
     <canvas id="stage" width="1828" height="1332" style="touch-action: none; cursor: inherit;"></canvas>
     <!-- <svg class="down mx-a" viewBox="0 0 26.67 39.88"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M13.33,39.88A13.35,13.35,0,0,1,0,26.54V13.33a13.34,13.34,0,0,1,26.67,0V26.54A13.36,13.36,0,0,1,13.33,39.88ZM13.33,2A11.34,11.34,0,0,0,2,13.33V26.54a11.34,11.34,0,1,0,22.67,0V13.33A11.35,11.35,0,0,0,13.33,2Z"/><circle class="cls-1" cx="13.33" cy="10.83" r="2.92"/></g></g></svg> -->
-    <div class="down mx-a" v-show="!hideScrollDown">
+    <div class="pitch middle" v-show="!hideCenterPitch">
+      <pitch :zindex="scrollZIndex"> </pitch>
+    </div>
+
+    <div class="down mx-a" v-show="!hideScrollDown" >
       <div class='mouse-container'>
         <div class='mouse'>
           <span class='scroll-down'></span>
@@ -119,32 +123,33 @@ export default {
       coverLeft: 'c',
       coverRight: 'c',
       hideScrollDown: false,
+      hideCenterPitch: false,
       hiddenSocial: false,
       showPaging: true,
+      scrollZIndex: 3,
       logo: './static/img/logo.svg',
 
       prev: './static/img/back.png',
       next: './static/img/go.png',
 
-      navs: [
-        {
-          id: 1,
-          title: 'Join us',
-          url: 'joinus',
-          class: 'join'
-        },
-        {
-          id: 2,
-          title: 'Menu',
-          url: 'menu',
-          class: 'menu'
-        },
-        {
-          id: 3,
-          title: 'Pitch Desk',
-          url: 'pitchdesk',
-          class: 'mobile pitch'
-        }
+      navs: [{
+        id: 1,
+        title: 'Join us',
+        url: 'joinus',
+        class: 'join'
+      },
+      {
+        id: 2,
+        title: 'Menu',
+        url: 'menu',
+        class: 'menu'
+      },
+      {
+        id: 3,
+        title: 'Pitch Desk',
+        url: 'pitchdesk',
+        class: 'mobile pitch'
+      }
       ]
 
     }
@@ -194,28 +199,29 @@ export default {
       vm.coverLeft = 'c'
       vm.coverRight = 'c'
       vm.hideScrollDown = false
+      vm.hideCenterPitch = false
       vm.showPaging = true
+      vm.scrollZIndex = 3
       vm.logo = './static/img/logo.svg'
 
-      vm.navs = [
-        {
-          id: 1,
-          title: 'Join us',
-          url: 'joinus',
-          class: 'join'
-        },
-        {
-          id: 2,
-          title: 'Menu',
-          url: 'menu',
-          class: 'menu'
-        },
-        {
-          id: 3,
-          title: 'Pitch Desk',
-          url: 'pitchdesk',
-          class: 'mobile pitch'
-        }
+      vm.navs = [{
+        id: 1,
+        title: 'Join us',
+        url: 'joinus',
+        class: 'join'
+      },
+      {
+        id: 2,
+        title: 'Menu',
+        url: 'menu',
+        class: 'menu'
+      },
+      {
+        id: 3,
+        title: 'Pitch Desk',
+        url: 'pitchdesk',
+        class: 'mobile pitch'
+      }
       ]
     },
 
@@ -228,6 +234,12 @@ export default {
       vm.coverRight = 'z'
       vm.hideScrollDown = true
       vm.showPaging = false
+      vm.scrollZIndex = 0
+    },
+
+    triggerHidePitch: function () {
+      var vm = this
+      vm.hideCenterPitch = true
     },
 
     triggerMenuState: function () {
@@ -235,15 +247,14 @@ export default {
       vm.hideScrollDown = true
       vm.showPaging = false
       vm.showLogo = true
-      vm.navs = [
-        {
-          id: 1,
-          title: 'Close',
-          url: '/',
-          class: 'close',
-          image: './static/img/close.svg'
-        }
-      ]
+      vm.hideCenterPitch = true
+      vm.navs = [{
+        id: 1,
+        title: 'Close',
+        url: '/',
+        class: 'close',
+        image: './static/img/close.svg'
+      }]
       vm.logo = './static/img/logow.svg'
     },
 
@@ -252,6 +263,7 @@ export default {
       vm.hideScrollDown = true
       vm.showPaging = false
       vm.showLogo = true
+      vm.hideCenterPitch = true
       vm.showFrame = false
     },
 
@@ -263,6 +275,7 @@ export default {
     mobileState: function () {
       var vm = this
       vm.hiddenSocial = true
+      vm.hideCenterPitch = false
     },
 
     isMobile: function () {
@@ -384,256 +397,243 @@ export default {
 </script>
 
 <style scoped>
-.project .social-list {
-  bottom: 60px;
-}
+  .project .social-list {
+    bottom: 60px;
+  }
 
-.project .inner-nav__btn {
-  display: block;
-}
+  .project .inner-nav__btn {
+    display: block;
+  }
 
-.project .cls-1 {
-  fill: #2f3c47;
-}
+  .project .cls-1 {
+    fill: #2f3c47;
+  }
 
-.project .mx-a {
-  margin-left: calc(50% - 23px);
-}
+  .project .mx-a {
+    margin-left: calc(50% - 23px);
+  }
 
-.project .bg {
-  width: 24px;
-}
+  .project .bg {
+    width: 24px;
+  }
 
-.down {
-  bottom: 60px;
-  /* left: auto; */
-  position: fixed;
-  /* top: 00px; */
-  width: 5vh;
-  z-index: 2;
-}
+  .down {
+    bottom: 60px;
+    /* left: auto; */
+    position: fixed;
+    /* top: 00px; */
+    width: 5vh;
+    z-index: 2;
+  }
 
-.project .header__title {
+  .project .header__title {
     top: 53px;
     left: 81px;
     z-index: 3 !important;
     width: 176px;
-}
-
-nav
-{
-  z-index: 3;
-}
-
-.top
-{
-  z-index: 1;
-}
-
-.behide
-{
-  z-index: 2;
-}
-
-.down:hover {
-  cursor: pointer;
-}
-
-/*
-@-webkit-keyframes scroll-inner {
-  from {
-    margin-top: 15%;
   }
-  to {
-    margin-top: 50%;
+
+  nav {
+    z-index: 3;
   }
-}
 
-@keyframes scroll-inner {
-  from {
-    margin-top: 15%;
+  .top {
+    z-index: 1;
   }
-  to {
-    margin-top: 50%;
+
+  .behide {
+    z-index: 2;
   }
-}
 
-@-webkit-keyframes scroll-mouse {
-  from {
-    margin-top: 0;
+  .down:hover {
+    cursor: pointer;
   }
-  to {
-    margin-top: 15px;
+
+  /*
+  @-webkit-keyframes scroll-inner {
+    from {
+      margin-top: 15%;
+    }
+    to {
+      margin-top: 50%;
+    }
   }
-}
 
-@keyframes scroll-mouse {
-  from {
-    margin-top: 0;
+  @keyframes scroll-inner {
+    from {
+      margin-top: 15%;
+    }
+    to {
+      margin-top: 50%;
+    }
   }
-  to {
-    margin-top: 15px;
+
+  @-webkit-keyframes scroll-mouse {
+    from {
+      margin-top: 0;
+    }
+    to {
+      margin-top: 15px;
+    }
   }
-}*/
 
-div.mouse-container {
-  position: relative;
-  display: block;
-  /* height: 80px; */
-}
+  @keyframes scroll-mouse {
+    from {
+      margin-top: 0;
+    }
+    to {
+      margin-top: 15px;
+    }
+  }*/
 
-div.mouse {
-  position: relative;
-  margin: 0 auto;
-  display: block;
-  width: 27px;
-  height: 40px;
-  border: solid 2px #495057;
-  border-radius: 25px;
-}
-
-/*div.mouse:hover {
-  -webkit-animation: scroll-mouse 1.5s;
-  animation: scroll-mouse 1.5s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}*/
-
-div.mouse span.scroll-down {
-  display: block;
-  width: 7px;
-  height: 7px;
-  background: #495057;
-  border-radius: 50%;
-  margin: 25% auto auto auto;
-}
-
-div.mouse:hover span.scroll-down {
-  -webkit-animation: scroll-inner 1s;
-  animation: scroll-inner 1s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-}
-
-/* mouse animation */
-
-.vertical {
-  width: 40%;
-  position: absolute;
-  top: -50px;
-  left: 8px;
-}
-
-/* remove reboot*/
-
-button:focus {
-  outline: none;
-}
-
-/* arrow nav */
-
-.project .inner-nav__btn .icon--arrow {
-  width: 44px;
-  height: 44px;
-  fill: #495057;
-}
-
-.project .inner-nav__list {
-  z-index: 3;
-  bottom: 60px;
-  width: -42px;
-  position: fixed;
-}
-
-.project .icon {
-  fill: #495057;
-  width: 24px;
-  height: 24px;
-  left: 0;
-  top: 10px;
-}
-
-.project .social-list__item .square {
-  fill: #495057;
-  width: 30px;
-  height: 30px;
-  left: 0;
-  top: 0;
-}
-
-@media (min-width: 1200px) {
-  .project .social-list {
-    bottom: 67px;
-}
-
- /* .down .mouse-container:before {
-      content: "Scroll";
-      color: #2f3c47;
-      font-size: 18px;
-      font-weight: bold;
-    left: 5px;
-    letter-spacing: 0.5px;
+  div.mouse-container {
     position: relative;
-  } */
-
-  .project .down
-  {
-    bottom: 67px;
+    display: block;
+    /* height: 80px; */
   }
+
+  div.mouse {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: 27px;
+    height: 40px;
+    border: solid 2px #495057;
+    border-radius: 25px;
+  }
+
+  /*div.mouse:hover {
+    -webkit-animation: scroll-mouse 1.5s;
+    animation: scroll-mouse 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }*/
+
+  div.mouse span.scroll-down {
+    display: block;
+    width: 7px;
+    height: 7px;
+    background: #495057;
+    border-radius: 50%;
+    margin: 25% auto auto auto;
+  }
+
+  div.mouse:hover span.scroll-down {
+    -webkit-animation: scroll-inner 1s;
+    animation: scroll-inner 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+  }
+
+  /* mouse animation */
+
+  .vertical {
+    width: 40%;
+    position: absolute;
+    top: -50px;
+    left: 8px;
+  }
+
+  /* remove reboot*/
+
+  button:focus {
+    outline: none;
+  }
+
+  /* arrow nav */
 
   .project .inner-nav__btn .icon--arrow {
-    width: 40px;
-    height: 40px;
-}
-
-}
-
-@media (max-width: 575.98px) {
-
-  .project .header__title {
-  top: 31px;
-    left: 36px;
-}
-
-    div.mouse {
-width: 21px;
-    height: 30px;
-    }
-
-    div.mouse span.scroll-down {
-    width: 5px;
-    height: 5px;
+    width: 44px;
+    height: 44px;
+    fill: #495057;
   }
 
-    .down {
-    bottom: 25px;
-    }
+  .project .inner-nav__list {
+    z-index: 3;
+    bottom: 60px;
+    width: -42px;
+    position: fixed;
+  }
 
+  .project .icon {
+    fill: #495057;
+    width: 24px;
+    height: 24px;
+    left: 0;
+    top: 10px;
+  }
+
+  .project .social-list__item .square {
+    fill: #495057;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 0;
+  }
+
+  @media (min-width: 1200px) {
+    .project .social-list {
+      bottom: 67px;
+    }
+    /* .down .mouse-container:before {
+        content: "Scroll";
+        color: #2f3c47;
+        font-size: 18px;
+        font-weight: bold;
+      left: 5px;
+      letter-spacing: 0.5px;
+      position: relative;
+    } */
+    .project .down {
+      bottom: 67px;
+    }
     .project .inner-nav__btn .icon--arrow {
-    width: 18px;
-    height: 18px;
+      width: 40px;
+      height: 40px;
     }
 
-    .project  .inner-nav__list {
-    display: flex !important;
-        justify-content: center;
-    bottom: 0;
-    right: -20px;
-    /* width: 96px; */
-    }
-
-    .project .inner-nav__btn {
-        position: relative;
-        width: 40px;
-        height: 40px;
-    }
-
-    .social-list
+    .pitch.middle
     {
       display: none;
     }
+  }
 
-}
+  @media (max-width: 575.98px) {
+    .project .header__title {
+      top: 31px;
+      left: 36px;
+    }
+    div.mouse {
+      width: 21px;
+      height: 30px;
+    }
+    div.mouse span.scroll-down {
+      width: 5px;
+      height: 5px;
+    }
+    .down {
+      bottom: 25px;
+    }
+    .project .inner-nav__btn .icon--arrow {
+      width: 18px;
+      height: 18px;
+    }
+    .project .inner-nav__list {
+      display: flex !important;
+      justify-content: center;
+      bottom: 0;
+      right: -20px;
+      /* width: 96px; */
+    }
+    .project .inner-nav__btn {
+      position: relative;
+      width: 40px;
+      height: 40px;
+    }
+    .social-list {
+      display: none;
+    }
+  }
 </style>

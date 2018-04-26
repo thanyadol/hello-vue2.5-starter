@@ -10,11 +10,6 @@
             </h2>
         </div> <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold slide__sub">{{ sub }}</h3>
-               <router-link to="pitchdesk">
-                 <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
-                 <span class="menu-btn__text">Pitch Desk</span>
-                </button>
-          </router-link>
         </div>
       </div>
     </header>
@@ -182,6 +177,9 @@ export default {
       // hide
       if (scrollbar.offset.y > 40) {
         vm.$parent.triggerScrolled()
+      }
+      if (scrollbar.offset.y > 90) {
+        vm.$parent.triggerHidePitch()
       } else {
         vm.$parent.defaultState()
       }
