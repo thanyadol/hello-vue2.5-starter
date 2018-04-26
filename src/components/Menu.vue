@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import scroll from 'smooth-scrollbar'
+// import scroll from 'smooth-scrollbar'
 // import { isNullOrUndefined } from 'util'
 // import Vue from 'vue'
 export default {

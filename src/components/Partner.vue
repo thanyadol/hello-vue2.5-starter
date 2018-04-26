@@ -13,11 +13,11 @@
               <li v-for="s in subs" :key="s">{{ s }}</li>
             </ul>
 
-              <router-link to="pitchdesk">
+              <!-- <router-link to="pitchdesk">
                  <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
                  <span class="menu-btn__text">Pitch Desk</span>
                 </button>
-          </router-link></h3>
+          </router-link>--></h3>
         </div>
       </div>
     </header>

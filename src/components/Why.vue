@@ -9,11 +9,11 @@
             </h2>
         </div>  <div class="project__info col-md-12 mx-auto ct shift | m-ml-0 m-100 tb">
           <h3 v-bind:class="slide__sub" class="project__intro sub bold">{{ sub }}</h3>
-                         <router-link to="pitchdesk">
+                         <!-- <router-link to="pitchdesk">
                  <button class="menu-btn pitch" aria-label="" href="javascript:void(0);">
                  <span class="menu-btn__text">Pitch Desk</span>
                 </button>
-          </router-link>
+          </router-link> -->
         </div>
       </div>
     </header>

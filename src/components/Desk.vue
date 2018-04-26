@@ -279,7 +279,17 @@ export default {
   mounted: function () {
     var vm = this
     vm.$parent.triggerPitchState()
-    // console.log('i was mounthed')
+
+    var scrollbarOptions = {
+      renderByPixels: true,
+      continuousScrolling: false
+    }
+    var v = 'desk'
+    var div = document.getElementById(v)
+    // console.log(div)
+    if (!div) {
+    }
+    scroll.init(div, scrollbarOptions)
   },
   // life cycle of component
   created () {},
