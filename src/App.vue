@@ -9,7 +9,7 @@
       <nave :items="navs"></nave>
       <framed :display="showFrame"> </framed>
     </header>
-    <cover :left="coverLeft" :right="coverRight" :display="coverDisplay"> </cover>
+    <cover :left="coverLeft" :right="coverRight" :display="coverDisplay" :image="page().image"> </cover>
     <left :left="coverLeft" :right="coverRight"> </left>
 
     <!-- header -->
@@ -89,7 +89,7 @@
       <pitch :zindex="scrollZIndex"> </pitch>
     </div>
 
-    <div class="down mx-a" v-show="!hideScrollDown" >
+    <div class="down mx-a" >
       <div class='mouse-container'>
         <div class='mouse'>
           <span class='scroll-down'></span>
@@ -320,25 +320,29 @@ export default {
           next: 'whatweinvest',
           prev: '/',
           scroll: 'who',
-          type: 'home'
+          type: 'home',
+          image: './static/img/reed_le-voyagist_cover.jpg'
         },
         whatweinvest: {
           next: 'whereweinvest',
           prev: 'whoweare',
           scroll: 'what',
-          type: 'page'
+          type: 'page',
+          image: './static/img/reed_vr-sessions_cover.jpg'
         },
         whereweinvest: {
           next: 'howweinvest',
           prev: 'whatweinvest',
           scroll: 'where',
-          type: 'page'
+          type: 'page',
+          image: './static/img/reed_riftworld_cover.jpg'
         },
         howweinvest: {
           next: 'whyworkwithus',
           prev: 'whereweinvest',
           scroll: 'how',
-          type: 'page'
+          type: 'page',
+          image: './static/img/reed_ginventory_cover.jpg'
         },
         whyworkwithus: {
           next: 'ourpartners',

@@ -1,5 +1,5 @@
 <template>
-  <div id="cover" v-bind:class="display">
+  <div id="cover" v-bind:class="display" v-bind:style="{ backgroundImage: 'url(' + image + ')' }" >
     <div class="cover__container col-md-12 mx-auto ct">
        <!-- <div  v-bind:class="left" class="c cover--l">
         <svg viewBox="0 0 316.22 375.79"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="173.44 375.79 0 375.79 142.78 0 316.22 0 173.44 375.79"/></g></g></svg>
@@ -25,7 +25,7 @@
 
 export default {
   name: 'Cover',
-  props: ['left', 'right', 'display']
+  props: ['left', 'right', 'display', 'image']
 }
 </script>
 
@@ -52,7 +52,7 @@ export default {
   #cover
   {
     opacity: 1;
-    background-image: url('/static/img/reed_vr-sessions_cover.jpg');
+    /* background-image: url('/static/img/reed_vr-sessions_cover.jpg'); */
     width: 100vw;
     height: 100vh;
   }
