@@ -10,6 +10,7 @@
       <framed :display="showFrame"> </framed>
     </header>
     <cover :left="coverLeft" :right="coverRight" :display="coverDisplay"> </cover>
+    <left :left="coverLeft" :right="coverRight"> </left>
 
     <!-- header -->
     <main id="content" role="main" class="main">

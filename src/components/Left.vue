@@ -1,9 +1,9 @@
 <template>
-  <div id="cover" v-bind:class="display">
+  <div id="left">
     <div class="cover__container col-md-12 mx-auto ct">
-       <!-- <div  v-bind:class="left" class="c cover--l">
+      <div v-bind:class="left" class="c cover--l">
         <svg viewBox="0 0 316.22 375.79"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="173.44 375.79 0 375.79 142.78 0 316.22 0 173.44 375.79"/></g></g></svg>
-      </div> -->
+      </div>
       <!-- <div v-bind:class="right" v-show="display == 'l'" class="c cover--r">
         <svg viewBox="0 0 339.02 433.6"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="165.58 433.6 339.02 433.6 173.44 0 0 0 165.58 433.6"/></g></g></svg>
       </div> -->
@@ -24,18 +24,17 @@
 // import scrollbar from "smooth-scrollbar";
 
 export default {
-  name: 'Cover',
+  name: 'Left',
   props: ['left', 'right', 'display']
 }
 </script>
 
 <style scoped>
   .cls-1 {
-    fill:  red;
-     opacity: 0.5;
+    fill:  #f7f7f7;
   }
 
-  #cover::after {
+ /* #cover::after {
     content: "";
     position: absolute;
     top: 0;
@@ -49,17 +48,19 @@ export default {
       opacity:  0;
   }
 
-  #cover
+  /* #cover
   {
+        clip-path: polygon(505px 0, 950px  0, 950px 700px, 505px 700px);
+
     opacity: 1;
     background-image: url('/static/img/reed_vr-sessions_cover.jpg');
     width: 100vw;
     height: 100vh;
   }
 
-  /* #cover.clip
+  #cover.clip
   {
-        /* clip-path: polygon(615px 217px, 784px  217px, 950px 651px, 781px 650px); *
+        clip-path: polygon(615px 217px, 784px  217px, 950px 651px, 781px 650px);
           transition: all 1300ms ease-out;
   }
 
@@ -73,14 +74,14 @@ export default {
     position: relative;
   }
 
- .cover--l .fade
+ .cover--l.fade
  {
-   animation: faded 1600ms linear;  /* , Pulsate 4s linear infinite; */
+   animation: faded .8s linear;  /* , Pulsate 4s linear infinite; */
  }
 
- .cover--l .enter
+ .cover--l.enter
  {
-   animation: faded 1600ms linear;  /* , Pulsate 4s linear infinite; */
+   animation: enter .8s linear;  /* , Pulsate 4s linear infinite; */
  }
 
  @keyframes rotrate
@@ -113,7 +114,7 @@ export default {
 
       #cover.clip
   {
-         clip-path: polygon(615px 217px, 784px  217px, 950px 651px, 781px 650px);
+        clip-path: polygon(615px 217px, 784px  217px, 950px 651px, 781px 650px);
           transition: all .8s ease-out;
   }
 
@@ -124,13 +125,14 @@ export default {
   }
 
     .cover--l {
-      position: absolute;
+      position: fixed;
       left: calc(50% + -92px);
       /* top: calc(50% + 520px); */
-      top: calc(50% + 57.77777777777778vh);
+      top: calc(0% + 57.77777777777778vh);
       width: 318px;
       transform: translate(-50%, -50%);
-      opacity: 1;
+      z-index: 2;
+
     }
     .cover--r {
       position: absolute;

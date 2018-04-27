@@ -23,6 +23,7 @@ import Frame from '@/components/Frame'
 import Flip from '@/components/Flip'
 import Map from '@/components/Map'
 import Cover from '@/components/Cover'
+import Left from '@/components/Left'
 import Mouse from '@/components/Mouse'
 import Head from '@/components/Head'
 
@@ -46,6 +47,7 @@ Vue.component('framed', Frame)
 Vue.component('flip', Flip)
 Vue.component('ggmap', Map)
 Vue.component('cover', Cover)
+Vue.component('left', Left)
 Vue.component('mouse', Mouse)
 Vue.component('heading', Head)
 Vue.component('fraction', Fraction)
