@@ -67,7 +67,7 @@ export default {
 
   #cover.full
   {
-           clip-path: polygon(610px 0, 784px  0, 950px 900px, 777px 900px);
+           clip-path: polygon(526px -5px, 1500px  -5px, 1500px 1000px, 912px 1000px);
             transition: all 1600ms ease-out;
   }
 
