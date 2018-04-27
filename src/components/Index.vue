@@ -81,11 +81,15 @@ export default {
       }
       const scrollbar = scroll.init(div)
 
-      console.log(scrollbar.offset.y)
+      // console.log(scrollbar.offset.y)
 
       // hide
-      if (scrollbar.offset.y > 1) {
+      // hide
+      if (scrollbar.offset.y > 40) {
         vm.$router.push('whoweare')
+      }
+
+      if (scrollbar.offset.y > 1) {
         vm.slider = 'leave'
       }
     })
@@ -103,7 +107,7 @@ export default {
 
   .leave
   {
-     transform: translateX(-1400px);
+     /* transform: translateX(-1400px); */
      transition-duration: 1600ms;
   }
 
