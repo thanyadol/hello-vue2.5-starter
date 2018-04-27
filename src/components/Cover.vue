@@ -1,12 +1,12 @@
 <template>
-  <div id="cover">
+  <div id="cover" v-bind:class="display">
     <div class="cover__container col-md-12 mx-auto ct">
-      <div v-bind:class="left" class="c cover--l">
+      <!-- <div v-bind:class="left" class="c cover--l">
         <svg viewBox="0 0 316.22 375.79"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="173.44 375.79 0 375.79 142.78 0 316.22 0 173.44 375.79"/></g></g></svg>
-      </div>
-      <div v-bind:class="right" class="c cover--r">
+      </div> -->
+      <!-- <div v-bind:class="right" class="c cover--r">
         <svg viewBox="0 0 339.02 433.6"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="165.58 433.6 339.02 433.6 173.44 0 0 0 165.58 433.6"/></g></g></svg>
-      </div>
+      </div> -->
     </div>
 
     <!-- <div class="cover__container col-md-12 mx-auto ct">
@@ -25,13 +25,50 @@
 
 export default {
   name: 'Cover',
-  props: ['left', 'right']
+  props: ['left', 'right', 'display']
 }
 </script>
 
 <style scoped>
   .cls-1 {
-    fill: #f7f7f7;
+    fill:  #222222;
+     opacity: 0.5;
+  }
+
+  #cover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+  #cover.hide::before, #cover.hide::after {
+      background-color: #fff !important;
+      opacity:  0;
+  }
+
+  #cover
+  {
+        clip-path: polygon(505px 0, 950px  0, 950px 700px, 505px 700px);
+
+    opacity: 1;
+    background-image: url('/static/img/reed_vr-sessions_cover.jpg');
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #cover.clip
+  {
+        clip-path: polygon(610px 217px, 784px  217px, 950px 651px, 777px 650px);
+          transition: all 1600ms ease-out;
+  }
+
+  #cover.full
+  {
+           clip-path: polygon(610px 0, 784px  0, 950px 900px, 777px 900px);
+            transition: all 1600ms ease-out;
   }
 
   .cover__container {
@@ -82,6 +119,7 @@ export default {
       top: calc(50% + 57.77777777777778vh);
       width: 318px;
       transform: translate(-50%, -50%);
+      opacity: 1;
     }
     .cover--r {
       position: absolute;
@@ -90,6 +128,7 @@ export default {
       top: calc(50% + 48.333333333333336vh);
       width: 339px;
       transform: translate(-50%, -50%);
+      opacity: 1;
     }
     .v {
       /* transition-duration: 1600ms; */

@@ -226,13 +226,12 @@ export default {
 
       const scrollbar = scroll.init(div)
 
-      // slide title
-      if (scrollbar.scrollTop > 50) {
-        vm.slide__title = 'slide__title__active'
+      // hide
+      if (scrollbar.offset.y > 40) {
+        vm.$parent.triggerScrolled()
       } else {
-        vm.slide__title = 'slide__title__leave'
+        vm.$parent.defaultState()
       }
-
       // slide sub
       if (scrollbar.scrollTop > 55) {
         vm.slide__sub = 'slide__sub__active'

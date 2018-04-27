@@ -172,7 +172,7 @@ export default {
       }
       const scrollbar = scroll.init(div)
 
-      console.log(scrollbar.offset.y)
+      // console.log(scrollbar.offset.y)
 
       // hide
       if (scrollbar.offset.y > 40) {

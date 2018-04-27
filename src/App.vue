@@ -9,7 +9,7 @@
       <nave :items="navs"></nave>
       <framed :display="showFrame"> </framed>
     </header>
-    <cover :left="coverLeft" :right="coverRight"> </cover>
+    <cover :left="coverLeft" :right="coverRight" :display="coverDisplay"> </cover>
 
     <!-- header -->
     <main id="content" role="main" class="main">
@@ -125,6 +125,7 @@ export default {
       hideScrollDown: false,
       hideCenterPitch: false,
       hiddenSocial: false,
+      coverDisplay: false,
       showPaging: true,
       scrollZIndex: 3,
       logo: './static/img/logo.svg',
@@ -196,6 +197,9 @@ export default {
       vm.showLogo = true
       vm.showFrame = true
       vm.fixContent = false
+
+      vm.coverDisplay = 'clip'
+
       // vm.coverLeft = 'c'
       vm.coverLeft = 'enter'
       vm.coverRight = 'c'
@@ -237,6 +241,7 @@ export default {
       vm.hideScrollDown = true
       vm.showPaging = false
       vm.scrollZIndex = 0
+      vm.coverDisplay = 'full'
     },
 
     triggerHidePitch: function () {
