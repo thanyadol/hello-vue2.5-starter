@@ -177,12 +177,15 @@ export default {
       // hide
       if (scrollbar.offset.y > 40) {
         vm.$parent.triggerScrolled()
-      }
-      if (scrollbar.offset.y > 90) {
-        vm.$parent.triggerHidePitch()
       } else {
         vm.$parent.defaultState()
       }
+
+      /* if (scrollbar.offset.y > 90) {
+        vm.$parent.triggerHidePitch()
+      } else {
+        vm.$parent.defaultState()
+      } */
 
       // slide title
       if (scrollbar.scrollTop > 50) {

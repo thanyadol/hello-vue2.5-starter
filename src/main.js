@@ -7,6 +7,7 @@ import router from './router'
 import './assets/css/app.scss'
 import './assets/css/mobile.scss'
 import './assets/css/default.scss'
+// import './assets/css/alter.scss'
 
 // custom component
 /* import RightHref from '@/components/RightHref'
