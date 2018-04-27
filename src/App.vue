@@ -51,7 +51,7 @@
 
         <div class="content__inner container" v-bind:class="fixContent == true ? 'top' : 'behind' ">
           <article class="project">
-            <transition name="fade">
+            <transition name="slide-fade">
               <router-view></router-view>
               <!-- route view here !!! -->
             </transition>
@@ -399,6 +399,21 @@ export default {
 </script>
 
 <style scoped>
+
+  /* Enter and leave animations can use different */
+  /* durations and timing functions.              */
+  .slide-fade-enter-active {
+    transition: all 1.3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all 1.8s reverse;
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+
   .project .social-list {
     bottom: 60px;
   }

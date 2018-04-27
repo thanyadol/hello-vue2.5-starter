@@ -66,6 +66,14 @@ export default {
   to { opacity: 1; }
 }
 
+@media (min-width: 90.063em)/* min-width 1441px, xlarge screens */
+{
+       .cover--r.z
+    {
+      transform: scale(32) translateX(4.791666666666667vw);
+    }
+}
+
   @media (min-width: 1200px) {
     .cover--l {
       position: absolute;
@@ -98,7 +106,7 @@ export default {
     .z {
       transition-duration: 1600ms;
        /* transition-delay: 50ms; */
-      transform: scale(10) translateX(69px);
+      transform: scale(10) translateX(4.791666666666667vw);
     }
 
   }

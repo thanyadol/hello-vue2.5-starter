@@ -44,6 +44,7 @@
 
             <!-- loop with invests -->
             <section class="inv t">
+              <div class="container">
               <div class="pb-0 row | ctn-content pb-48" v-for="i in invests" :key="i.id">
                 <div class="col-md-6 | col-xs-12 | m-0 p-0 ne" v-bind:class="{ right: i.id%2 == 0 }">
                   <img class="project__image" :src="i.image">
@@ -58,6 +59,7 @@
                     <li class="tb sub ne" v-for="l in i.lists" :key="l.list"> {{ l }}</li>
                   </ul>
                 </div>
+              </div>
               </div>
             </section>
           </div>
@@ -333,6 +335,12 @@ export default {
   /*top: -180px;*/
   width: 34.72vw;
   position: relative;
+}
+
+.what .container
+{
+    max-width: 1440px;
+
 }
 
 @media (min-width: 1200px) {
