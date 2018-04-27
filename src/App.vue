@@ -196,7 +196,8 @@ export default {
       vm.showLogo = true
       vm.showFrame = true
       vm.fixContent = false
-      vm.coverLeft = 'c'
+      // vm.coverLeft = 'c'
+      vm.coverLeft = 'enter'
       vm.coverRight = 'c'
       vm.hideScrollDown = false
       vm.hideCenterPitch = false
@@ -230,7 +231,8 @@ export default {
 
       // vm.showLogo = true
       vm.showFrame = false
-      vm.coverLeft = 'v'
+      // vm.coverLeft = 'v'
+      vm.coverLeft = 'fade'
       vm.coverRight = 'z'
       vm.hideScrollDown = true
       vm.showPaging = false
@@ -423,7 +425,7 @@ export default {
     position: fixed;
     /* top: 00px; */
     width: 5vh;
-    z-index: 2;
+    z-index: 1;
   }
 
   .project .header__title {

@@ -38,25 +38,55 @@ export default {
     position: relative;
   }
 
+ .cover--l .fade
+ {
+   animation: faded 1600ms linear;  /* , Pulsate 4s linear infinite; */
+ }
+
+ .cover--l .enter
+ {
+   animation: faded 1600ms linear;  /* , Pulsate 4s linear infinite; */
+ }
+
+ @keyframes rotrate
+{
+    from { transform: rotate(0deg) translateX(150px) rotate(0deg) }
+    to   { transform: rotate(360deg) translateX(150px) rotate(-360deg) }
+}
+
+@keyframes faded {
+  from { opacity: 1; }
+  50% { opacity: 0.5; }
+  to { opacity: 0; }
+}
+
+@keyframes enter {
+  from { opacity: 0; }
+  50% { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
   @media (min-width: 1200px) {
     .cover--l {
       position: absolute;
       left: calc(50% + -92px);
-      top: calc(50% + 520px);
+      /* top: calc(50% + 520px); */
+      top: calc(50% + 57.77777777777778vh);
       width: 318px;
       transform: translate(-50%, -50%);
     }
     .cover--r {
       position: absolute;
       left: calc(50% + 64px);
-      top: calc(50% + 435px);
+      /* top: calc(50% + 435px); */
+      top: calc(50% + 48.333333333333336vh);
       width: 339px;
       transform: translate(-50%, -50%);
     }
     .v {
-      transition-duration: 1600ms;
+      /* transition-duration: 1600ms; */
       /* transition-delay: 50ms; */
-      transform: translateX(-9999px);
+      /* transform: translateX(-9999px); */
     }
 
     .c

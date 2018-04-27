@@ -689,7 +689,7 @@ export default {
     }
     .desk .deck {
       width: 51.3px;
-      top: 35px;
+      top: 55px;
       position: relative;
       margin-right: 10px;
     }
@@ -699,7 +699,8 @@ export default {
     .desk .top.fixed {
       display: block;
       position: absolute;
-      height: 90px;
+      /* height: 90px; */
+      height: 13.493253373313344vh;
       z-index: 5;
     }
     .desk .desktop {
@@ -845,7 +846,7 @@ export default {
       padding-left: 0;
       margin: 0;
       font-size: 10.666666666666666vw;
-      width: 355px;
+      width: calc(100vw - 20px);
       height: 101px;
       text-align: right;
       color: #f0f0f0f0;

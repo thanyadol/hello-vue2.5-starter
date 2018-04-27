@@ -40,7 +40,8 @@ export default {
         /* padding-bottom: 10px; */
         position: fixed;
         padding-top: 2px;
-        font-size: 5.866666666666666vw;
+        /* font-size: 5.866666666666666vw; */
+        font-size: 22px;
         /* width: 110px; */
         height: 45px;
 

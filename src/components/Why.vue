@@ -57,6 +57,8 @@
                   <p class="sub bold tb">{{ res.sub }}</p>
                 </div>
               </section> -->
+
+            <div class="container row  fixed | mx-0">
             <section class="project__description col-md-4 block | ctn-block" v-for="r in res.list" :key="r.id" v-bind:class="r.boxClass">
               <div class="project__text |  mrg-2c | m-100 m-mr-0">
                 <ul class="bus">
@@ -85,6 +87,7 @@
                 </ul>
               </div>
             </section>
+              </div>
           </div>
         </div>
         <div class="project__body p-0 m-0">
@@ -135,7 +138,7 @@ export default {
           bold: '',
           detail: [],
           regular:
-            'With our resources and extensive business network along SCG business value chain, We believe that we can help startups scale fast through our proprietary resources and access to 300+ SCG subsidiaries and 1,000+ business partners across Southeast Asia Region. We are flexible and open to various collaborationPrograms ranging from commercial partnership,Licensing, JV, minority investment or M&A.',
+            'With our resources and extensive business network along SCG business value chain, We believe that we can help startups scale fast through our proprietary resources and access to 300+ SCG subsidiaries and 1,000+ business partners across Southeast Asia Region. We are flexible and open to various collaboration Programs ranging from commercial partnership,Licensing, JV, minority investment or M&A.',
 
           class: 'col white none longterm',
           titleClass: 'tr indent longterm',
@@ -619,10 +622,11 @@ ol {
     left: 0;
   }
   .why .down {
-    transform: translateY(125%);
+    /* transform: translateY(125%); */
     /* border-top: solid #f0f0f0 350px !important; */
     /* border-left: solid #f0f0f0 158px !important; */
-    padding: 134px 98px 69px 74px;
+        padding: 19.88888888888889vh 98px 69px 74px;
+        margin-top: 400px;
     /* padding-top: 123.5px;
       padding-left: 0;
       /* text-align: right; */
@@ -686,11 +690,12 @@ ol {
     margin: 0 !important;
   }
   .why .ctn-content.blog {
-    padding-left: 140px;
+       padding-left: 140px;
     padding-right: 140px;
     /* justify-content: left; */
     display: flex;
     /* content: close-quote; */
+    justify-content: center;
   }
   .why .block {
     margin: 0;
@@ -763,6 +768,11 @@ ol {
 
   .why .fill {
     width: max-content;
+  }
+
+  .why .container.fixed
+  {
+    justify-content: center;
   }
 }
 

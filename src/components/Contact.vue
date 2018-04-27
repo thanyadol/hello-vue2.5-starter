@@ -131,12 +131,12 @@ export default {
     // alert(vm.show)
     vm.$parent.defaultState()
 
-    /* var v = 'contact'
+    var v = 'contact'
     var div = document.getElementById(v)
     // console.log(div)
     if (!div) {
     }
-    scroll.init(div) */
+    scroll.init(div)
   },
 
   beforeMount () {
