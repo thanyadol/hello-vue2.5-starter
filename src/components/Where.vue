@@ -522,4 +522,534 @@ export default {
       display: none;
     }
   }
+
+  @media (min-width: 992px) and (max-width: 1199.98px)
+{
+
+  .ctn-content {
+    padding-left: 10.52777777777778vw;
+    padding-right: 10.52777777777778vw;
+}
+
+  .where
+   .ctn {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+    .where .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+        .where .tags__wrapper {
+      margin-top: 295px;
+      z-index: 6;
+      position: fixed;
+      height: auto;
+      padding-top: 0 !important;
+    }
+    .where img.rectang {
+width: 147px;
+    height: 864px;
+    margin-left: 23.61111111111111vw;
+    /* -webkit-transform: translateY(-38%); */
+    -webkit-transform: translatex(125%);
+    transform: translatex(125%);
+    position: absolute;
+    z-index: 0;
+    }
+    .where svg.rectang {
+      width: 180px;
+      margin-left: 815px;
+      z-index: 3;
+      height: 863px;
+      fill: #ec1e24;
+    }
+    .where .mlg-2 {
+      margin-left: 0;
+    }
+    .f-30 {
+      font-size: 30px;
+      line-height: 1.7;
+      letter-spacing: normal;
+    }
+    .where .map {
+      width: 956px;
+      z-index: 4;
+      overflow: hidden;
+    }
+    .where .mapp__wrapper {
+      z-index: 5;
+      margin-top: 61px;
+       overflow: hidden;
+    }
+    .where .tags span {
+      font-size: 22px;
+      line-height: 1.6;
+    }
+    .where .tags {
+      width: 80px;
+      height: 40px;
+      padding: 3px 0px 2px 0px;
+      text-align: center;
+      /* padding-top: 3px; */
+    }
+    .where .tags.custom {
+      background: linear-gradient( to right, black 0%, black 50%, #000000 50%, #dc3545 50%, #dc3545 100%);
+    }
+    .where .project__body ul {
+      list-style-type: square;
+      font-size: 30px;
+    }
+    .where ul li.fix {
+      height: 40px;
+    }
+    .where .ctn-content.focus {
+      padding-left: 220px;
+      padding-top: 137.5px;
+    }
+    .where .pt-10c {
+      padding-top: 110px;
+    }
+    .where .fill {
+      width: max-content
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .where .ctn-content {
+      padding: 0 27px 0 27px;
+    }
+    .where img.rectang {
+      width: 26.133333333333333vw;
+      height: 810px;
+      position: fixed;
+      z-index: 2;
+      right: 37px;
+    }
+    .where .ctn-content.t {
+      padding-top: 46px !important;
+    }
+    .where .ctn-content.focus {
+      margin-top: 17px;
+      margin-bottom: 95px;
+    }
+    .where .ctn-content.mapp__wrapper {
+      padding: 0px;
+      width: auto;
+      overflow-x: hidden;
+    }
+    .where .map {
+      height: 483.3px;
+      /* width: 339px; */
+      z-index: 2;
+      position: relative;
+    }
+    .where .mlg-2 {
+      margin-left: 0;
+      line-height: 1.2;
+    }
+    .where .down {
+      margin-left: 20px;
+    }
+    .where .w-154 {
+      width: 41.06666666666667vw;
+      line-height: 1;
+    }
+    .where .tags {
+      width: 80px;
+      height: 40px;
+      padding: 3px 0px 2px 0px;
+      text-align: center;
+      z-index: 5;
+      /* padding-top: 3px; */
+    }
+    .where .sm {
+      line-height: unset;
+    }
+    .where .mobile {
+      display: none;
+    }
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+ .where
+   .ctn {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+        .where .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+       .ctn-content {
+    padding-left: 10.52777777777778vw;
+    padding-right: 10.52777777777778vw;
+}
+
+  .where
+   .ctn {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+    .where .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+        .where .tags__wrapper {
+      margin-top: 295px;
+      z-index: 6;
+      position: fixed;
+      height: auto;
+      padding-top: 0 !important;
+    }
+    .where img.rectang {
+width: 147px;
+    height: 864px;
+    margin-left: 23.61111111111111vw;
+    /* -webkit-transform: translateY(-38%); */
+    -webkit-transform: translatex(125%);
+    transform: translatex(125%);
+    position: absolute;
+    z-index: 0;
+    }
+    .where svg.rectang {
+      width: 180px;
+      margin-left: 815px;
+      z-index: 3;
+      height: 863px;
+      fill: #ec1e24;
+    }
+    .where .mlg-2 {
+      margin-left: 0;
+    }
+    .f-30 {
+      font-size: 30px;
+      line-height: 1.7;
+      letter-spacing: normal;
+    }
+    .where .map {
+      width: 956px;
+      z-index: 4;
+      overflow: hidden;
+    }
+    .where .mapp__wrapper {
+      z-index: 5;
+      margin-top: 61px;
+       overflow: hidden;
+    }
+    .where .tags span {
+      font-size: 22px;
+      line-height: 1.6;
+    }
+    .where .tags {
+      width: 80px;
+      height: 40px;
+      padding: 3px 0px 2px 0px;
+      text-align: center;
+      /* padding-top: 3px; */
+    }
+    .where .tags.custom {
+      background: linear-gradient( to right, black 0%, black 50%, #000000 50%, #dc3545 50%, #dc3545 100%);
+    }
+    .where .project__body ul {
+      list-style-type: square;
+      font-size: 30px;
+    }
+    .where ul li.fix {
+      height: 40px;
+    }
+    .where .ctn-content.focus {
+      padding-left: 220px;
+      padding-top: 137.5px;
+    }
+    .where .pt-10c {
+      padding-top: 110px;
+    }
+    .where .fill {
+      width: max-content
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .where .ctn-content {
+      padding: 0 27px 0 27px;
+    }
+    .where img.rectang {
+      width: 26.133333333333333vw;
+      height: 810px;
+      position: fixed;
+      z-index: 2;
+      right: 37px;
+    }
+    .where .ctn-content.t {
+      padding-top: 46px !important;
+    }
+    .where .ctn-content.focus {
+      margin-top: 17px;
+      margin-bottom: 95px;
+    }
+    .where .ctn-content.mapp__wrapper {
+      padding: 0px;
+      width: auto;
+      overflow-x: hidden;
+    }
+    .where .map {
+      height: 483.3px;
+      /* width: 339px; */
+      z-index: 2;
+      position: relative;
+    }
+    .where .mlg-2 {
+      margin-left: 0;
+      line-height: 1.2;
+    }
+    .where .down {
+      margin-left: 20px;
+    }
+    .where .w-154 {
+      width: 41.06666666666667vw;
+      line-height: 1;
+    }
+    .where .tags {
+      width: 80px;
+      height: 40px;
+      padding: 3px 0px 2px 0px;
+      text-align: center;
+      z-index: 5;
+      /* padding-top: 3px; */
+    }
+    .where .sm {
+      line-height: unset;
+    }
+    .where .mobile {
+      display: none;
+    }
+
+ }
+
+ /* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+ .where
+   .ctn {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+      .where .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+       .ctn-content {
+    padding-left: 10.52777777777778vw;
+    padding-right: 10.52777777777778vw;
+}
+
+  .where
+   .ctn {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+    .where .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+        .where .tags__wrapper {
+      margin-top: 295px;
+      z-index: 6;
+      position: fixed;
+      height: auto;
+      padding-top: 0 !important;
+    }
+    .where img.rectang {
+width: 147px;
+    height: 100%;
+    margin-left: 23.61111111111111vw;
+    /* -webkit-transform: translateY(-38%); */
+    -webkit-transform: translatex(125%);
+    transform: translatex(125%);
+    position: absolute;
+    z-index: 0;
+    }
+    .where svg.rectang {
+      width: 180px;
+      margin-left: 815px;
+      z-index: 3;
+      height: 863px;
+      fill: #ec1e24;
+    }
+
+    .project__text {
+    font-size: 2.1rem;
+    line-height: 1.62;
+    width: 250px;
+}
+
+    .where .mlg-2 {
+      margin-left: 0;
+    }
+    .f-30 {
+      font-size: 30px;
+      line-height: 1.7;
+      letter-spacing: normal;
+    }
+    .where .map {
+      width: 956px;
+      z-index: 4;
+      overflow: hidden;
+    }
+    .where .mapp__wrapper {
+      z-index: 5;
+      margin-top: 61px;
+       overflow: hidden;
+    }
+    .where .tags span {
+      font-size: 22px;
+      line-height: 1.6;
+    }
+    .where .tags {
+      width: 80px;
+      height: 40px;
+      padding: 3px 0px 2px 0px;
+      text-align: center;
+      /* padding-top: 3px; */
+    }
+    .where .tags.custom {
+      background: linear-gradient( to right, black 0%, black 50%, #000000 50%, #dc3545 50%, #dc3545 100%);
+    }
+    .where .project__body ul {
+      list-style-type: square;
+      font-size: 30px;
+    }
+    .where ul li.fix {
+      height: 40px;
+    }
+    .where .ctn-content.focus {
+      padding-left: 100px;
+      padding-top: 0px;
+    }
+    .where .pt-10c {
+      padding-top: 110px;
+    }
+    .where .fill {
+      width: max-content
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .where .ctn-content {
+      padding: 0 27px 0 27px;
+    }
+    .where img.rectang {
+      width: 26.133333333333333vw;
+      height: 810px;
+      position: fixed;
+      z-index: 2;
+      right: 37px;
+    }
+    .where .ctn-content.t {
+      padding-top: 46px !important;
+    }
+    .where .ctn-content.focus {
+      margin-top: 17px;
+      margin-bottom: 95px;
+    }
+    .where .ctn-content.mapp__wrapper {
+      padding: 0px;
+      width: auto;
+      overflow-x: hidden;
+    }
+    .where .map {
+      height: 483.3px;
+      /* width: 339px; */
+      z-index: 2;
+      position: relative;
+    }
+    .where .mlg-2 {
+      margin-left: 0;
+      line-height: 1.2;
+    }
+    .where .down {
+      margin-left: 20px;
+    }
+    .where .w-154 {
+      width: 41.06666666666667vw;
+      line-height: 1;
+    }
+    .where .tags {
+      width: 80px;
+      height: 40px;
+      padding: 3px 0px 2px 0px;
+      text-align: center;
+      z-index: 5;
+      /* padding-top: 3px; */
+    }
+    .where .sm {
+      line-height: unset;
+    }
+    .where .mobile {
+      display: none;
+    }
+
+ }
 </style>

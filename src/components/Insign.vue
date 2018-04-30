@@ -353,7 +353,7 @@ hr.separate {
 }
 
   .insign .project__body .bg__block {
-    width: 450px;
+    width: 31.25vw;
     height: 280px;
     z-index: 2;
     padding: 0;
@@ -524,4 +524,306 @@ hr.separate  {
     margin-right: 26px;
 }
 }
+
+@media (min-width: 992px) and (max-width: 1199.98px)
+{
+
+  .col-md
+  {
+    display: block;
+  }
+
+  .insign .project__text .date  {
+    left: -3.4722222222222223vw;
+    position: absolute;
+    top: 0;
+}
+
+.container {
+    max-width: 1440px;
+}
+
+  .insign .project__body .bg__block {
+   width: 34.25vw;
+    height: auto;
+    z-index: 2;
+    padding: 0;
+  }
+  .insign .project__text .sub {
+   font-size: 2.922222vw;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    width: 43.722222vw;
+  }
+  .insign .project__text .sub.sm {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.94;
+    letter-spacing: normal;
+    margin-bottom: 20px;
+    margin-top: 23px;
+  }
+  .insign .project__text .sub.readmore {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.68;
+  }
+  .insign .date .day {
+    font-size: 80px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.88;
+  }
+  .insign .date .month {
+    font-size: 50px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+  }
+  .insign .arrow {
+    width: 55px;
+    padding-top: 3px;
+    margin-left: 36px;
+  }
+  .insign .b.block {
+    padding-bottom: 0 !important;
+    padding-top: 60px;
+  }
+  .insign .fixed-top {
+    position: absolute;
+    top: 0;
+    height: 800px;
+    z-index: 2;
+  }
+  .insign .ctn-content.blog {
+    z-index: 9;
+    background: transparent;
+    padding-bottom: 41px;
+  }
+  .insign .fill {
+    width: max-content;
+  }
+  .pb-73 {
+    padding-bottom: 73px !important;
+  }
+
+  hr.separate  {
+    display: none;
+}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  .col-md-12
+  {
+    display: block;
+
+  }
+
+  .col-md
+  {
+    display: block;
+      margin-left: 10px !important;
+  }
+
+  .insign .project__text .date  {
+    left: -3.4722222222222223vw;
+    position: absolute;
+    top: 45px;
+}
+
+.container {
+    max-width: 1440px;
+}
+
+  .insign .project__body .bg__block {
+   width: 60.25vw;
+    height: auto;
+    z-index: 2;
+    padding: 0;
+  }
+  .insign .project__text .sub {
+   font-size: 3.922222vw;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    width: 100%;
+  }
+  .insign .project__text .sub.sm {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.94;
+    letter-spacing: normal;
+    margin-bottom: 20px;
+    margin-top: 23px;
+  }
+  .insign .project__text .sub.readmore {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.68;
+  }
+  .insign .date .day {
+    font-size: 80px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.88;
+  }
+  .insign .date .month {
+    font-size: 50px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+  }
+  .insign .arrow {
+    width: 55px;
+    padding-top: 3px;
+    margin-left: 36px;
+  }
+  .insign .b.block {
+    padding-bottom: 0 !important;
+    padding-top: 60px;
+  }
+  .insign .fixed-top {
+    position: absolute;
+    top: 0;
+    height: 800px;
+    z-index: 2;
+  }
+  .insign .ctn-content.blog {
+    z-index: 9;
+    background: transparent;
+    padding-bottom: 41px;
+  }
+  .insign .fill {
+    width: max-content;
+  }
+  .pb-73 {
+    padding-bottom: 73px !important;
+  }
+
+  hr.separate  {
+    display: none;
+}
+ }
+
+ /* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+   .col-md-12
+  {
+    display: block;
+
+  }
+
+  .col-md
+  {
+    display: block;
+      margin-left: 10px !important;
+  }
+
+  .insign .project__text .date  {
+    left: -3.4722222222222223vw;
+    position: absolute;
+    top: 45px;
+}
+
+.container {
+    max-width: 1440px;
+}
+
+  .insign .project__body .bg__block {
+   width: 60.25vw;
+    height: auto;
+    z-index: 2;
+    padding: 0;
+  }
+  .insign .project__text .sub {
+   font-size: 3.922222vw;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    width: 100%;
+  }
+  .insign .project__text .sub.sm {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.94;
+    letter-spacing: normal;
+    margin-bottom: 20px;
+    margin-top: 23px;
+  }
+  .insign .project__text .sub.readmore {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.68;
+  }
+  .insign .date .day {
+    font-size: 80px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.88;
+  }
+  .insign .date .month {
+    font-size: 50px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+  }
+  .insign .arrow {
+    width: 55px;
+    padding-top: 3px;
+    margin-left: 36px;
+  }
+  .insign .b.block {
+    padding-bottom: 0 !important;
+    padding-top: 60px;
+  }
+  .insign .fixed-top {
+    position: absolute;
+    top: 0;
+    height: 800px;
+    z-index: 2;
+  }
+  .insign .ctn-content.blog {
+    z-index: 9;
+    background: transparent;
+    padding-bottom: 41px;
+  }
+  .insign .fill {
+    width: max-content;
+  }
+  .pb-73 {
+    padding-bottom: 73px !important;
+  }
+
+  hr.separate  {
+    display: none;
+}
+ }
 </style>
