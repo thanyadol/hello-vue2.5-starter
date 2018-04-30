@@ -347,8 +347,8 @@ label {
           font-size: 30px;
   content: 'USD';
   right: 30px;
-    height: 41px;
-    line-height: 41px;
+    height: 45px;
+    line-height: 45px;
   position: absolute;
   top: 7px;
   color: #8d9399;
