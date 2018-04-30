@@ -294,9 +294,10 @@ export default {
   // life cycle of component
   created () {},
   beforeMount () {
-    var el = document.getElementById('desk')
-    // var s =
-    scroll.init(el)
+    /* var el = document.getElementById('desk')
+    if (!el) {
+    }
+    scroll.init(el) */
   },
   destroyed () {
     var vm = this

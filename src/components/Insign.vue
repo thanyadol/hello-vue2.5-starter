@@ -28,6 +28,8 @@
 
         <div class="project__content">
           <div class="project__body white">
+
+            <div class="container">
             <section class="project__description grey row |  ctn-content blog | pb-73 | t">
               <h3 class="hidden-visually">Blog</h3>
               <div class="project__text | col-md-6 mrg-2 ml-0 mr-0 pr-0 pl-0 | m-100 m-mr-0">
@@ -93,7 +95,7 @@
               </div>
 
             </div>
-            <!-- </section> -->
+            <!-- </section> --> </div>
 
           </div>
         </div>
@@ -345,6 +347,11 @@ hr.separate {
 }
 
 @media (min-width: 1200px) {
+
+.container {
+    max-width: 1440px;
+}
+
   .insign .project__body .bg__block {
     width: 450px;
     height: 280px;

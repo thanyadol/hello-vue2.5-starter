@@ -113,13 +113,13 @@ export default {
 
       #cover.clip
   {
-         clip-path: polygon(615px 217px, 784px  217px, 950px 651px, 781px 650px);
+         clip-path: polygon(42.708333333333336vw 24.11111111111111vh, 54.44444444444444vw  24.11111111111111vh, 65.97222222222221vw 72.33333333333333vh, 54.44444444444444vw 72.33333333333333vh);
           transition: all .8s ease-out;
   }
 
   #cover.full
   {
-           clip-path: polygon(532px 0px, 1462px  0px, 1823px 1000px, 916px 1000px);
+              clip-path: polygon(532px 0px, 1762px 0px, 2123px 1000px, 916px 1000px);
             transition: all .8s ease-out;
   }
 
