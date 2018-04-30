@@ -25,7 +25,7 @@ export default {
   top: 0;
   right: -45%;
   bottom: 0;
-  left: -45%;
+  left: -47%;
   height: 100%;
   z-index: -99;
 }

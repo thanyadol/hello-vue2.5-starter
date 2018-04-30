@@ -147,7 +147,7 @@ export default {
     },
 
     getStaff: function () {
-      if (!this.isMobile) {
+      if (!this.isMobile()) {
         var desktopList = [
           {
             id: 1,
@@ -323,7 +323,7 @@ export default {
     },
 
     getBlog: function () {
-      if (!this.isMobile) {
+      if (!this.isMobile()) {
         var d = [
           {
             id: 1,
@@ -378,6 +378,7 @@ export default {
         return d
       } else {
         var m = [
+
           {
             id: 2,
             title: 'Investment Committee',
@@ -386,6 +387,7 @@ export default {
             class: 'grey custom',
             fontClass: 'tr'
           },
+
           {
             id: 1,
             title: '',
@@ -424,7 +426,7 @@ export default {
             title: '',
             name: '',
             position: '',
-            class: 'grey',
+            class: 'white',
             fontClass: 'tw'
           }
         ]

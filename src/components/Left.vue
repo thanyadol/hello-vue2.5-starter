@@ -84,6 +84,17 @@ export default {
    animation: enter .8s linear;  /* , Pulsate 4s linear infinite; */
  }
 
+   /* .cover--l {
+      position: fixed;
+      left: calc(50% + -92px);
+      /* top: calc(50% + 520px); *
+      top: calc(0% + 57.77777777777778vh);
+      width: 318px;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+
+    }*/
+
  @keyframes rotrate
 {
     from { transform: rotate(0deg) translateX(150px) rotate(0deg) }

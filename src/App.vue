@@ -9,9 +9,11 @@
       <nave :items="navs"></nave>
       <framed :display="showFrame"> </framed>
     </header>
-    <cover :left="coverLeft" :right="coverRight" :display="coverDisplay" :image="page().image"> </cover>
-    <left :left="coverLeft" :right="coverRight"> </left>
 
+    <div class="container cove">
+      <cover :left="coverLeft" :right="coverRight" :display="coverDisplay" :image="page().image"> </cover>
+      <left :left="coverLeft" :right="coverRight"> </left>
+    </div>
     <!-- header -->
     <main id="content" role="main" class="main">
       <div class="content__wrapper">
@@ -430,15 +432,14 @@ export default {
 
 #mice span
 {
-  display: block;
-  width: 9px;
-  height: 9px;
-  -ms-transform: rotate(45deg); /* IE 9 */
-  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-  transform: rotate(45deg);
-  border-right: 2px solid #343a40;;
-  border-bottom: 2px solid #343a40;;
-  margin: 5px 0 3px 6px;
+display: block;
+    width: 10px;
+    height: 10px;
+    /* -webkit-transform: rotate(45deg); */
+    transform: rotate(45deg);
+    border-right: 2px solid #343a40;
+    border-bottom: 2px solid #343a40;
+    margin: 5px 0 3px 8px;
 }
 
 .unu
@@ -475,13 +476,12 @@ export default {
 
 .mouse
 {
-height: 30px;
-width: 22px;
-  border-radius: 10px;
-  transform: none;
-  border: 2px solid#343a40;;
-  top: 170px;
-
+    height: 40px;
+    width: 27px;
+    border-radius: 15px;
+    transform: none;
+    border: 2px solid#343a40;
+    top: 170px;
 }
 
 .wheel
@@ -489,7 +489,7 @@ width: 22px;
 height: 5px;
     width: 5px;
     display: block;
-    margin: 7px 7px;
+    margin: 7px 9px;
     border-radius: 3px;
     background: #343a40;
     position: relative;
@@ -501,6 +501,7 @@ height: 5px;
   -moz-animation: mouse-wheel 1.2s ease infinite;
 }
 
+/*
 @-webkit-keyframes mouse-wheel
 {
    0% {
@@ -548,11 +549,19 @@ height: 5px;
   0%   { opacity: 0; }
   50%  { opacity: .5; }
   100% { opacity: 1; }
-}
+}*/
 
 /*****************/
 
   /* durations and timing functions.              */
+
+  .container.cove
+  {
+    max-width: 100%;
+    max-height: 900px;
+    padding: 0;
+    margin: auto;
+  }
 
   .slide-fade-enter-active {
     transition: all 1.3s ease;
