@@ -403,4 +403,175 @@ export default {
       display: block;
     }
   }
+
+@media (min-width: 992px) and (max-width: 1199.98px)
+{
+      .header__title {
+      top: 53px;
+      left: 80px;
+      z-index: 2 !important;
+      width: 176px;
+    }
+    /* .desk {
+          height: 150vh;
+          background-color: #f0f0f0;
+        }
+
+        .desk header
+        {
+          background-color: white;
+        }*/
+    .menu .top.fixed {
+      display: block;
+      position: absolute;
+      height: 130px;
+      z-index: 100;
+    }
+    .menu .site {
+      height: 57px;
+      line-height: 57px;
+      font-size: 34px;
+    }
+    .menu .site.index {
+      height: 41px;
+      font-size: 24px;
+      line-height: 41px;
+      margin-right: 35px;
+    }
+    .pt-130 {
+      padding-top: 130px;
+      padding-left: 37.277778vw;
+      padding-bottom: 18px;
+    }
+    .menu .logo__sm {
+      width: 180px;
+      height: 50.8px;
+    }
+    .menu .footy .sub {
+      font-size: 20px;
+      line-height: 1.25;
+      opacity: 0.5;
+    }
+    .menu .ctn .c {
+      padding-left: 39.277778vw;
+      padding-bottom: 35px;
+      padding-left: 42vw;
+      /* padding-left: 39.5%; */
+      padding-right: 0;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header__title {
+      top: 53px;
+      left: 80px;
+      z-index: 2 !important;
+      width: 176px;
+    }
+    /* .desk {
+          height: 150vh;
+          background-color: #f0f0f0;
+        }
+
+        .desk header
+        {
+          background-color: white;
+        }*/
+    .menu .top.fixed {
+      display: block;
+      position: absolute;
+      height: 130px;
+      z-index: 100;
+    }
+    .menu .site {
+      height: 57px;
+      line-height: 57px;
+      font-size: 34px;
+    }
+    .menu .site.index {
+      height: 41px;
+      font-size: 24px;
+      line-height: 41px;
+      margin-right: 35px;
+    }
+    .pt-130 {
+      padding-top: 130px;
+      padding-left: 36.277778vw;
+      padding-bottom: 18px;
+    }
+    .menu .logo__sm {
+      width: 180px;
+      height: 50.8px;
+    }
+    .menu .footy .sub {
+      font-size: 20px;
+      line-height: 1.25;
+      opacity: 0.5;
+    }
+    .menu .ctn .c {
+      padding-left: 39.277778vw;
+      padding-bottom: 35px;
+      padding-left: 28vw;
+      /* padding-left: 39.5%; */
+      padding-right: 0;
+    }
+ }
+
+ /* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+       .header__title {
+      top: 53px;
+      left: 80px;
+      z-index: 2 !important;
+      width: 176px;
+    }
+    /* .desk {
+          height: 150vh;
+          background-color: #f0f0f0;
+        }
+
+        .desk header
+        {
+          background-color: white;
+        }*/
+    .menu .top.fixed {
+      display: block;
+      position: absolute;
+      height: 130px;
+      z-index: 100;
+    }
+    .menu .site {
+      height: 57px;
+      line-height: 57px;
+      font-size: 34px;
+    }
+    .menu .site.index {
+      height: 41px;
+      font-size: 24px;
+      line-height: 41px;
+      margin-right: 35px;
+    }
+    .pt-130 {
+          padding-top: 23.277778vw;
+    padding-left: 31.277778vw;
+    padding-bottom: 18px;
+    }
+    .menu .logo__sm {
+      width: 180px;
+      height: 50.8px;
+    }
+    .menu .footy .sub {
+      font-size: 20px;
+      line-height: 1.25;
+      opacity: 0.5;
+    }
+    .menu .ctn .c {
+      padding-left: 39.277778vw;
+      padding-bottom: 35px;
+      padding-left: 27vw;
+      /* padding-left: 39.5%; */
+      padding-right: 0;
+    }
+ }
 </style>

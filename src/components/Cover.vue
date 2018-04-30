@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
   .cls-1 {
-    fill: dodgerblue;
+    fill: #f7f7f7;
     opacity: 0.5;
   }
 

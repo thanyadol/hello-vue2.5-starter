@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
   .cls-1 {
-    fill: crimson;
+    fill: #f7f7f7;
   }
 
  /* #cover::after {
