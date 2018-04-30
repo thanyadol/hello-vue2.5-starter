@@ -78,6 +78,14 @@ a:hover {
   text-shadow: none;
 }
 
+  .nav {
+    display: block;
+    position: fixed;
+    z-index: 3 !important;
+    right: 81px;
+    top: 52px;
+  }
+
 /*.menu-btn.pitch:hover {
           background-color: #ec1e23;
           color: #2f3c47;

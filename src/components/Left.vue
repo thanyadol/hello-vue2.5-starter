@@ -178,16 +178,17 @@ export default {
 
     .cover--l {
        top: 31.334332833583208vh;
-       position: absolute;
+       position: fixed;
     /* -webkit-transform: translate(-50%, -50%); */
     /* transform: translate(-50%, -50%); */
     width: 42.666666666666664vw;
     left: 16.533333333333335vw;
+    z-index: 1;
   }
 
   .cover--r {
     top: 24.28785607196402vh;
-     position: absolute;
+     position: fixed;
     /* -webkit-transform: translate(-50%, -50%); */
     /* transform: translate(-50%, -50%); */
     width: 45.333333333333336vw;

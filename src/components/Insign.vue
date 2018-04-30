@@ -268,10 +268,10 @@ export default {
 
 /***/
 
-.insign .date {
+/* .insign .date {
   padding-top: 20px;
   transform: translateX(30%);
-}
+} */
 
 .insign .date .day {
   font-size: 5.5vw !important;
@@ -431,6 +431,31 @@ hr.separate {
 }
 
 @media (max-width: 575.98px) {
+
+  .insign .date .day {
+  font-size: 16vw !important;
+  line-height: 1;
+}
+
+.insign .date .month {
+  font-size: 9.333333333333334vw !important;
+  line-height: 1;
+}
+
+  .insign .project__text .date  {
+    left: -5.2vw;
+    position: absolute;
+    top: 2vh;
+}
+
+  .container {
+    width: 100%;
+     padding-right: 0;
+     padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
   .insign .fill {
     width: max-content;
   }

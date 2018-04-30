@@ -4,7 +4,7 @@
       <!-- <div  v-bind:class="left" class="c cover--l">
           <svg viewBox="0 0 316.22 375.79"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="173.44 375.79 0 375.79 142.78 0 316.22 0 173.44 375.79"/></g></g></svg>
         </div> -->
-      <!-- <div v-bind:class="right" v-show="display == 'l'" class="c cover--r">
+      <!-- <div v-bind:class="right" class="c cover--r">
           <svg viewBox="0 0 339.02 433.6"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="165.58 433.6 339.02 433.6 173.44 0 0 0 165.58 433.6"/></g></g></svg>
         </div> -->
     </div>
@@ -252,6 +252,23 @@ export default {
       /* transition-delay: 50ms; */
       transform: translateX(125px) scale(4);
     }
+
+    #cover.clip {
+              clip-path: polygon(142px 162px, 229px 162px, 312px 379px, 226px 379px);
+      /* clip-path: polygon(42.708333333333336vw 24.11111111111111vh, 54.44444444444444vw  24.11111111111111vh, 65.97222222222221vw 72.33333333333333vh, 54.44444444444444vw 72.33333333333333vh); */
+      transition: all 0.8s ease-out;
+      /* top: 0;
+      right: -45%;
+      bottom: 0;
+      left: -47%; */
+    }
+    #cover.full {
+      clip-path: polygon(81px 0, 370px 0, 600px 667px, 337px 668px);
+      transition: all 0.8s ease-out;
+      top: 0;
+      /* left: -19%; */
+    }
+
   }
 
   @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {

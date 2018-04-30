@@ -633,6 +633,10 @@ height: 5px;
     cursor: pointer;
   }
 
+   .pitch.middle {
+      display: none;
+    }
+
   /*
     @-webkit-keyframes scroll-inner {
       from {
@@ -783,6 +787,29 @@ height: 5px;
   }
 
   @media (max-width: 575.98px) {
+
+      .wheel  {
+    height: 5px;
+    width: 5px;
+    display: block;
+    margin: 7px 6px;
+    border-radius: 3px;
+    background: #343a40;
+    position: relative;
+}
+
+#mice span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    /* -webkit-transform: rotate(45deg); */
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-right: 2px solid #343a40;
+    border-bottom: 2px solid #343a40;
+    margin: 5px 0 3px 6px;
+}
+
     .project .header__title {
       top: 31px;
       left: 36px;
