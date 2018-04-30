@@ -152,8 +152,8 @@ export default {
     /* padding-left: 8.1%; */
     padding-bottom: 328px;
     padding-top: 131px;
-    padding-left: 140px;
-    padding-right: 790px;
+    padding-left: 9.722222222222221vw;
+    padding-right: 54.86111111111111vw;
 }
 
 .join .ctn.c .title
@@ -240,5 +240,215 @@ opacity: 0.5;
 {
       margin-bottom: 45px !important;
 }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px)
+{
+  .scrollarea {
+  height: 100vh;
+  display: block;
+}
+
+  .footy
+  {
+    bottom: 0;
+        margin-bottom: 58px;
+  }
+
+  .join .top.fixed {
+    display: block;
+    position: absolute;
+    height: 130px;
+    z-index: 100;
+  }
+
+  .pt-130 {
+
+    padding-top: 130px;
+    padding-left: 567px;
+    padding-bottom: 18px;
+  }
+
+  .join .ctn.c {
+    /* padding-left: 8.1%; */
+    padding-bottom: 328px;
+    padding-top: 131px;
+    padding-left: 9.722222222222221vw;
+    padding-right: 34.86111111111111vw;
+}
+
+.join .ctn.c .title
+{
+  height: 118px;
+  font-size: 70px;
+  line-height: 118px;
+}
+
+.join .ctn.c .sub
+{
+height: 79px;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.join .ctn.c .cv
+{
+  height: 54px;
+  font-size: 32px;
+  line-height: 54px;
+}
+
+.join .ctn.c .email
+{
+  height: 54px;
+  font-size: 32px;
+  line-height: 54px;
+}
+
+  .join .footy .sub
+  {
+  font-size: 20px;
+line-height: 1.25;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+.scrollarea {
+  height: 100vh;
+  display: block;
+}
+
+  .footy
+  {
+    bottom: 0;
+        margin-bottom: 58px;
+  }
+
+  .join .top.fixed {
+    display: block;
+    position: absolute;
+    height: 130px;
+    z-index: 100;
+  }
+
+  .pt-130 {
+
+    padding-top: 130px;
+    padding-left: 567px;
+    padding-bottom: 18px;
+  }
+
+  .join .ctn.c {
+    /* padding-left: 8.1%; */
+    padding-bottom: 328px;
+    padding-top: 131px;
+    padding-left: 9.722222222222221vw;
+    padding-right: 34.86111111111111vw;
+}
+
+.join .ctn.c .title
+{
+  height: 118px;
+  font-size: 70px;
+  line-height: 118px;
+}
+
+.join .ctn.c .sub
+{
+height: 79px;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.join .ctn.c .cv
+{
+  height: 54px;
+  font-size: 32px;
+  line-height: 54px;
+}
+
+.join .ctn.c .email
+{
+  height: 54px;
+  font-size: 32px;
+  line-height: 54px;
+}
+
+  .join .footy .sub
+  {
+  font-size: 20px;
+line-height: 1.25;
+  }
+ }
+
+ /* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+.scrollarea {
+  height: 100vh;
+  display: block;
+}
+
+  .footy
+  {
+    bottom: 0;
+        margin-bottom: 58px;
+  }
+
+  .join .top.fixed {
+    display: block;
+    position: absolute;
+    height: 130px;
+    z-index: 100;
+  }
+
+  .pt-130 {
+
+    padding-top: 130px;
+    padding-left: 567px;
+    padding-bottom: 18px;
+  }
+
+  .join .ctn.c {
+    /* padding-left: 8.1%; */
+    padding-bottom: 328px;
+    padding-top: 131px;
+    padding-left: 9.722222222222221vw;
+    padding-right: 34.86111111111111vw;
+}
+
+.join .ctn.c .title
+{
+  height: 118px;
+  font-size: 70px;
+  line-height: 118px;
+}
+
+.join .ctn.c .sub
+{
+height: 79px;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.join .ctn.c .cv
+{
+  height: 54px;
+  font-size: 32px;
+  line-height: 54px;
+}
+
+.join .ctn.c .email
+{
+  height: 54px;
+  font-size: 32px;
+  line-height: 54px;
+}
+
+  .join .footy .sub
+  {
+  font-size: 20px;
+line-height: 1.25;
+  }
 }
 </style>

@@ -375,4 +375,156 @@ export default {
 }
 
 }
+
+@media (min-width: 992px) and (max-width: 1199.98px)
+{
+
+    .contact .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+        .contact .ctn-content.t {
+    width: 55.55555555555556vw;
+    height: 350px;
+  }
+  .contact .ctn-content.m {
+     padding-top: 60px;
+    width: 866px;
+    height: 320px;
+    padding-left: 12.6vw;
+    padding-right: 12.6vw;
+    padding-bottom: 0;
+}
+
+  .contact .ctn-content.l
+  {
+        padding-right: 5.902777777777778vw;
+    padding-left: 5.902777777777778vw;
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
+
+ .contact .ctn-content.r
+  {
+        padding-right: 6.52777777777778vw;
+    padding-left: 0px;
+
+    justify-content: flex-end;
+    padding-bottom: 0;
+  }
+
+  .contact .f-32
+  {
+      font-size: 26px;
+  line-height: 1.35;
+  }
+
+  .contact .al-r
+  {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+.contact .fill {
+  width: max-content
+}
+
+.contact .m .fill {
+  width: -webkit-fill-available;
+}
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+        .contact .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+      .contact .fill {
+  width: max-content
+}
+
+.contact .m .fill {
+  width: -webkit-fill-available;
+}
+
+.project__content .sub {
+    font-size: 26px;
+    text-align: left;
+    line-height: 1.35;
+    letter-spacing: normal;
+}
+
+.ctn-content {
+    padding-left: 6.52777777777778vw;
+    padding-right: 6.52777777777778vw;
+    padding-top: 66.5px;
+    padding-bottom: 0;
+}
+ }
+
+ /* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+      .contact .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+      .contact .fill {
+  width: max-content
+}
+
+.contact .m .fill {
+  width: -webkit-fill-available;
+}
+
+.project__content .sub {
+    font-size: 26px;
+    text-align: left;
+    line-height: 1.35;
+    letter-spacing: normal;
+}
+
+.ctn-content {
+    padding-left: 6.52777777777778vw;
+    padding-right: 6.52777777777778vw;
+    padding-top: 66.5px;
+    padding-bottom: 0;
+}
+ }
 </style>

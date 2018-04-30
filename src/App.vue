@@ -793,6 +793,14 @@ height: 5px;
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+    .project .inner-nav__list {
+    z-index: 3;
+    bottom: 51px;
+    width: -42px;
+    position: fixed;
+    display: inline-flex;
+}
+
      .header__title .logo__sm
     {
       width: 25vw;
@@ -806,6 +814,15 @@ height: 5px;
 
   /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+
+  .project .inner-nav__list {
+    z-index: 3;
+    bottom: 51px;
+    width: -42px;
+    position: fixed;
+    display: inline-flex;
+}
+
    .header__title .logo__sm
     {
       width: 25vw;
