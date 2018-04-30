@@ -257,6 +257,457 @@ div svg .separate {
 
 /*Extra large devices (large desktops, 1200px and up)*/
 
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+ .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  .project__footer {
+    padding-top: 102px;
+  }
+  .project__footer .left {
+    font-size: 30px;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-align: right;
+    top: 5px;
+    position: relative;
+  }
+  .project__footer .right {
+    font-size: 30px;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-align: left;
+    top: 5px;
+    position: relative;
+  }
+  /*
+    .footy
+    {
+      margin-top: 60px !important;
+    }*/
+  .ft {
+    margin-top: 100px !important;
+    margin-bottom: 109px !important;
+  }
+  .ol {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 1.8;
+  }
+  .footy .sep {
+    position: relative;
+    top: 0;
+    /* left: calc(50% - 40px); */
+    /* font-size: 5.6rem; */
+    /* font-weight: 100; */
+  }
+  .footy .sep img {
+    height: 60px;
+  }
+  a.hel {
+    position: fixed;
+    /* margin-left: 20%; */
+    right: calc(50% + 30px);
+  }
+  a.her {
+    position: fixed;
+    /* margin-left: 20%; */
+    left: calc(50% + 30px);
+  }
+  .footy .chev.r {
+    margin-left: 50px;
+  }
+  .footy .chev.l {
+    margin-right: 50px;
+  }
+  .footy img.bg {
+    top: 12px;
+    position: relative;
+  }
+  .footy img.r {
+    width: 55px;
+    margin-left: 30px;
+  }
+  .footy img.l {
+    width: 55px;
+    margin-right: 30px;
+  }
+  .sep {
+    height: 60px;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mobile {
+    display: block;
+        margin-top: 27px;
+    margin-bottom: 35px;
+  }
+  .desktop {
+    display: none;
+  }
+  .project__footer {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+  .footy.mobile hr {
+    margin-top: 12px !important;
+    margin-bottom: 15px !important;
+  }
+  .footy span.left,
+  .footy span.right {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+    .footy span.right
+  {
+    padding-left: 16px;
+  }
+
+      .footy span.left
+  {
+    padding-right: 16px;
+  }
+
+  .footy .bg {
+    width: 35.2px;
+    height: 19.7px;
+        top: 5px;
+    position: relative;
+  }
+
+  h3.ol
+  {
+    margin-top: 0;
+    height: 31px;
+    /* font-family: PragatiNarrow; */
+    font-size: 18px;
+    font-weight: bold;
+    /* font-style: normal; */
+    /* font-stretch: normal; */
+    line-height: 31px;
+    /* margin-bottom: 49px; */
+  }
+
+  .ct {
+    margin: auto;
+    margin-bottom: 50px;
+}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  .project__footer {
+    padding-top: 102px;
+  }
+  .project__footer .left {
+    font-size: 30px;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-align: right;
+    top: 5px;
+    position: relative;
+  }
+  .project__footer .right {
+    font-size: 30px;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-align: left;
+    top: 5px;
+    position: relative;
+  }
+  /*
+    .footy
+    {
+      margin-top: 60px !important;
+    }*/
+  .ft {
+    margin-top: 100px !important;
+    margin-bottom: 109px !important;
+  }
+  .ol {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 1.8;
+  }
+  .footy .sep {
+    position: relative;
+    top: 0;
+    /* left: calc(50% - 40px); */
+    /* font-size: 5.6rem; */
+    /* font-weight: 100; */
+  }
+  .footy .sep img {
+    height: 60px;
+  }
+  a.hel {
+    position: fixed;
+    /* margin-left: 20%; */
+    right: calc(50% + 50px);
+  }
+  a.her {
+    position: fixed;
+    /* margin-left: 20%; */
+    left: calc(50% + 50px);
+  }
+  .footy .chev.r {
+    margin-left: 50px;
+  }
+  .footy .chev.l {
+    margin-right: 50px;
+  }
+  .footy img.bg {
+    top: 12px;
+    position: relative;
+  }
+  .footy img.r {
+    width: 55px;
+    margin-left: 50px;
+  }
+  .footy img.l {
+    width: 55px;
+    margin-right: 50px;
+  }
+  .sep {
+    height: 60px;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mobile {
+    display: block;
+        margin-top: 27px;
+    margin-bottom: 35px;
+  }
+  .desktop {
+    display: none;
+  }
+  .project__footer {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+  .footy.mobile hr {
+    margin-top: 12px !important;
+    margin-bottom: 15px !important;
+  }
+  .footy span.left,
+  .footy span.right {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+    .footy span.right
+  {
+    padding-left: 16px;
+  }
+
+      .footy span.left
+  {
+    padding-right: 16px;
+  }
+
+  .footy .bg {
+    width: 35.2px;
+    height: 19.7px;
+        top: 5px;
+    position: relative;
+  }
+
+  h3.ol
+  {
+    margin-top: 0;
+    height: 31px;
+    /* font-family: PragatiNarrow; */
+    font-size: 18px;
+    font-weight: bold;
+    /* font-style: normal; */
+    /* font-stretch: normal; */
+    line-height: 31px;
+    /* margin-bottom: 49px; */
+  }
+
+  .ct {
+    margin: auto;
+    margin-bottom: 50px;
+}
+ }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+ .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  .project__footer {
+    padding-top: 102px;
+  }
+  .project__footer .left {
+    font-size: 30px;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-align: right;
+    top: 5px;
+    position: relative;
+  }
+  .project__footer .right {
+    font-size: 30px;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-align: left;
+    top: 5px;
+    position: relative;
+  }
+  /*
+    .footy
+    {
+      margin-top: 60px !important;
+    }*/
+  .ft {
+    margin-top: 100px !important;
+    margin-bottom: 109px !important;
+  }
+  .ol {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 1.8;
+  }
+  .footy .sep {
+    position: relative;
+    top: 0;
+    /* left: calc(50% - 40px); */
+    /* font-size: 5.6rem; */
+    /* font-weight: 100; */
+  }
+  .footy .sep img {
+    height: 60px;
+  }
+  a.hel {
+    position: fixed;
+    /* margin-left: 20%; */
+    right: calc(50% + 50px);
+  }
+  a.her {
+    position: fixed;
+    /* margin-left: 20%; */
+    left: calc(50% + 50px);
+  }
+  .footy .chev.r {
+    margin-left: 50px;
+  }
+  .footy .chev.l {
+    margin-right: 50px;
+  }
+  .footy img.bg {
+    top: 12px;
+    position: relative;
+  }
+  .footy img.r {
+    width: 55px;
+    margin-left: 50px;
+  }
+  .footy img.l {
+    width: 55px;
+    margin-right: 50px;
+  }
+  .sep {
+    height: 60px;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mobile {
+    display: block;
+        margin-top: 27px;
+    margin-bottom: 35px;
+  }
+  .desktop {
+    display: none;
+  }
+  .project__footer {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+  .footy.mobile hr {
+    margin-top: 12px !important;
+    margin-bottom: 15px !important;
+  }
+  .footy span.left,
+  .footy span.right {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+    .footy span.right
+  {
+    padding-left: 16px;
+  }
+
+      .footy span.left
+  {
+    padding-right: 16px;
+  }
+
+  .footy .bg {
+    width: 35.2px;
+    height: 19.7px;
+        top: 5px;
+    position: relative;
+  }
+
+  h3.ol
+  {
+    margin-top: 0;
+    height: 31px;
+    /* font-family: PragatiNarrow; */
+    font-size: 18px;
+    font-weight: bold;
+    /* font-style: normal; */
+    /* font-stretch: normal; */
+    line-height: 31px;
+    /* margin-bottom: 49px; */
+  }
+
+  .ct {
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+}
+
 @media (min-width: 1200px) {
   .mobile {
     display: none;

@@ -180,6 +180,29 @@ export default {
     }
   }
 
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+      .logo
+      {
+        width: 60.638888888888886vw;
+      }
+  }
+
+  /* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+     .logo
+      {
+        width: 60.638888888888886vw;
+      }
+ }
+
+ /* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+     .logo
+      {
+        width: 60.638888888888886vw;
+      }
+ }
+
   @media (max-width: 575.98px) {
     .index .project__intro {
       margin-top: 11.3px;

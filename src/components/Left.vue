@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
   .cls-1 {
-    fill:  #f7f7f7;
+    fill: crimson;
   }
 
  /* #cover::after {
@@ -173,6 +173,46 @@ export default {
     }
 
   }
+
+    /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .cover--l {
+      position: fixed;
+      left: calc(50% + -92px);
+      /* top: calc(50% + 520px); */
+      top: calc(0% + 54.77777777777778vh);
+      width: 214.6px;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+  }
+
+  /* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+        .cover--l {
+      position: fixed;
+      left: calc(50% + -92px);
+      /* top: calc(50% + 520px); */
+      top: calc(0% + 54.77777777777778vh);
+      width: 214.6px;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+ }
+
+ /* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+      .cover--l {
+      position: fixed;
+      left: calc(50% + -92px);
+      /* top: calc(50% + 520px); */
+      top: calc(0% + 484px);
+      width: 214.6px;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+ }
 
   @media (max-width: 575.98px) {
 

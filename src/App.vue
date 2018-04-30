@@ -761,7 +761,7 @@ height: 5px;
     top: 0;
   }
 
-  @media (min-width: 1200px) {
+@media (min-width: 1200px) {
     .project .social-list {
       bottom: 67px;
     }
@@ -785,6 +785,37 @@ height: 5px;
       display: none;
     }
   }
+
+  /* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+     .header__title .logo__sm
+    {
+      width: 25vw;
+      display: none;
+    }
+
+    .social-list {
+    left: calc(5vw - 0px);
+  }
+}
+
+  /* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+   .header__title .logo__sm
+    {
+      width: 25vw;
+      display: none;
+    }
+
+      .social-list {
+    left: calc(5vw - 0px);
+  }
+}
 
   @media (max-width: 575.98px) {
 

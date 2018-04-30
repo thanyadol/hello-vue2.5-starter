@@ -68,7 +68,23 @@ top: -60px;
     width: 23px;
 }
 
-  @media (min-width: 1200px) {}
+  @media (min-width: 1200px) {
+
+  }
+
+@media (min-width: 575px) and (max-width: 1199.98px)
+  {
+    .timeline-paging{
+    position: absolute;
+    /* font-family: Conv_AkzidGroCFFMdEx,Conv_AkzidGroCFFEx; */
+    top: -60px;
+    width: 50px;
+    height: 103px;
+    font-size: 2.5vw;
+    font-weight: bold;
+    line-height: 1;
+}
+  }
 
   @media (max-width: 575.98px) {
 

@@ -286,6 +286,75 @@ export default {
 
 }
 
+@media (min-width: 992px) and (max-width: 1199.98px)
+{
+
+  .who .ctn-content.c  {
+    padding-top: 45px !important;
+}
+
+    .who .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+   .who .ctn-content.c  {
+    padding-top: 45px !important;
+}
+
+        .who .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+ }
+
+ /* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+   .who .ctn-content.c  {
+    padding-top: 45px !important;
+}
+      .who .fill {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+      }
+      .project__title.t {
+          position: relative;
+          font-size: 11.666666666666666vw;
+          font-weight: 600;
+          line-height: 1.69;
+          opacity: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+ }
+
 /** for iphone serieds **/
  @media (max-width: 575.98px) {
 

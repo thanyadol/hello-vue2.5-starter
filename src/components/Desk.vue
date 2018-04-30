@@ -718,6 +718,11 @@ label {
 
   }
 
+    /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+
+  }
+
   @media (max-width: 575.98px) {
 
           label:after {
