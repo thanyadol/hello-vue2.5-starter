@@ -90,14 +90,18 @@
                 </li>
 
                 <li v-if="f.type == 'number'" v-for="f in pitch.forms" :key="f.id">
+                  <div>
                   <p class="sub tb bold">{{ f.title }}</p>
-                  <input class="form-control flg w-684" :v-model="f.name" :placeholder="f.placeholder">
+                  <label>
+                  <input class="form-control flg w-684" :v-model="f.name" :placeholder="f.placeholder" >
+                  </label>
+                  </div>
                 </li>
 
                 <li v-if="f.type == 'check'" v-for="f in pitch.forms" :key="f.id">
                   <p class="sub tb bold">{{ f.title }}</p>
                   <div :v-model="f.name" class="btn-group jc" role="group" aria-label="">
-                    <button :v-model="b.name" :value="b.id" v-for="b in f.buttons" :key="b.id" type="button" class="btn btn-default">{{ b.title }}</button>
+                    <button  :v-model="b.name" :value="b.id" v-for="b in f.buttons" :key="b.id" type="button" class="btn btn-default">{{ b.title }}</button>
                   </div>
                 </li>
 
@@ -326,6 +330,31 @@ export default {
         z-index: 4;
       } */
 
+      .masked
+      {
+            font-size: 16px;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    color: #000;
+      }
+label {
+  position: relative;
+  width: 100%;
+}
+
+      label:after {
+          font-size: 30px;
+  content: 'USD';
+  right: 30px;
+    height: 41px;
+    line-height: 41px;
+  position: absolute;
+  top: 7px;
+  color: #8d9399;
+  z-index: 9;
+}
+
         .btn.focus,
     .btn:focus {
       outline: 0;
@@ -404,6 +433,7 @@ export default {
       } */
 
   .btn-group>.btn:hover,
+  .btn-group>.btn:focus,
   .btn-group>.btn:visited,
   .btn-group>.btn:active {
     z-index: 1;
@@ -513,6 +543,13 @@ export default {
   }
 
   @media (min-width: 1200px) {
+
+   .btn-group .btn.active {
+    z-index: 1;
+    color: #ec1e24;
+    border: 1px solid #ec1e24;
+  }
+
     .desk .flg {
       /* padding-left: 2rem; */
       padding: 9.5px 29px;
@@ -682,6 +719,14 @@ export default {
   }
 
   @media (max-width: 575.98px) {
+
+          label:after {
+    font-size: 5.333333333333333vw;
+    right: 20px;
+    height: 35px;
+    line-height: 35px;
+}
+
     .desk .you {
       width: 63.5px;
       top: 40px;
