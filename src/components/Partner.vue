@@ -199,7 +199,7 @@ export default {
         url: 'whyworkwithus'
       },
       next: {
-        title: 'Insign',
+        title: 'Insights',
         url: 'insign'
       }
     }

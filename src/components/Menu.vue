@@ -35,7 +35,7 @@
         <section class="project__description red row mt-0 pt-0 pb-0 mb-0  mx-0 px-0 | ctn mobile">
           <div class="project__text | pt-0 mx-0 | footy ctn c">
             <div class="page | m-100 m-ml-0">
-              <h3 class="bold sub"> {{ last }}</h3>
+              <h3 class="sub"> {{ last }}</h3>
               <h3 class="bold sub">&copy; {{ foot }}</h3>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default {
       title: '',
       foot: 'Copyright 2018 AddVentures',
       logo: './static/img/logow.png',
-      last: 'We are partnering with startups and transform industries together',
+      last: 'We are partnering with startups to transform industries together',
       list: [{
         id: 1,
         index: '01',
@@ -124,7 +124,7 @@ export default {
       {
         id: 8,
         index: '07',
-        title: 'Insign',
+        title: 'Insights',
         url: 'insign'
       },
       {

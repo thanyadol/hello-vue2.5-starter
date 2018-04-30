@@ -289,24 +289,17 @@ export default {
             image: '',
             type: 'black'
           },
+
           {
-            id: 98,
-            country: 'Indonesia',
-            year: '1995',
+            id: 7,
+            country: 'Philippines',
+            year: '1994',
             bold: null,
             regular: '',
             title: null,
             sub: null,
-            bu: [
-              'SCG Cement - Building Materials',
-              'SCG Chemicals',
-              'SCG Packaging'
-            ],
-            imageList: [
-              './static/img/cement.png',
-              './static/img/chem.png',
-              './static/img/pack.png'
-            ],
+            bu: ['SCG Cement - Building Materials', 'SCG Packaging'],
+            imageList: ['./static/img/cement.svg', './static/img/pack.svg'],
             boxClass: 'center',
             image: ''
           },
@@ -329,18 +322,27 @@ export default {
           },
 
           {
-            id: 7,
-            country: 'Philippines',
-            year: '1994',
+            id: 98,
+            country: 'Indonesia',
+            year: '1995',
             bold: null,
             regular: '',
             title: null,
             sub: null,
-            bu: ['SCG Cement - Building Materials', 'SCG Packaging'],
-            imageList: ['./static/img/cement.svg', './static/img/pack.svg'],
+            bu: [
+              'SCG Cement - Building Materials',
+              'SCG Chemicals',
+              'SCG Packaging'
+            ],
+            imageList: [
+              './static/img/cement.png',
+              './static/img/chem.png',
+              './static/img/pack.png'
+            ],
             boxClass: 'center',
             image: ''
           },
+
           {
             id: 8,
             country: '',

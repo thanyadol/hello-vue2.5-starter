@@ -54,7 +54,7 @@ export default {
 
       logo: './static/img/logo_sm.svg',
       sub:
-        'We are looking energetic and passionate people to join our team and grow tofether.',
+        'We are looking for energetic and passionate people to join our team and growth together.',
       foot: 'Copyright 2018 AddVentures',
       cv: 'Please contact us or submit your CV to',
       email: 'contact@addventures.co.th'

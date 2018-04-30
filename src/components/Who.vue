@@ -80,9 +80,9 @@ export default {
       posts: [{
         id: 1,
         title: 'You Innovate, We Scale',
-        sub: 'We are partnering with startups and transfrom industries together',
+        sub: 'We are partnering with startups to transfrom industries together',
         bold: 'At Addventure',
-        regular: 'we aim to accelerate and scale technologies, inovations and companies with strategic fit and share our core value',
+        regular: 'we aim to accelerate and scale technologies, innovation, and companies with strategic fit and share our core values',
         detail: [],
         background: 'red',
         text: 'tw',
@@ -95,8 +95,7 @@ export default {
         bold: '',
         regular: '',
         detail: [
-          'Addenture provides unrivaled access to a global network of SCG experies and resources.',
-          'We partner and invest in the best digital innovations in Industrial - Enterprise - B2B verticals.'
+          'AddVentures provides unrivaled access to a global network of SCG expertise and resources. We partner and invest in the best digital innovations in Industrial - B2B - Enterprise verticals.'
         ],
         background: 'white pt-5 pb-0',
         subClass: 'tb mb-2'
@@ -108,9 +107,9 @@ export default {
         bold: '',
         regular: '',
         detail: [
-          'AddVentures is subsidiary of SCG (The Siam Cement PLC).',
-          "Southeast Asia's leading Industrial conglomerate estabilished in 1913.",
-          'We believe open innovation is part of our roadmap to success in the next centernnial.'
+          'AddVentures is a subsidiary of SCG (The Siam Cement PLC),',
+          'Southeast Asia’s leading Industrial conglomerate established in 1913.',
+          'We believe open innovation is part of our roadmap to success in the next centennial.'
         ],
         background: 'white pt-5 pb-0',
         subClass: 'tb mb-2'
@@ -175,7 +174,7 @@ export default {
       // console.log(scrollbar.offset.y)
 
       // hide
-      if (scrollbar.offset.y > 40) {
+      if (scrollbar.offset.y > 1) {
         vm.$parent.triggerScrolled()
       } else {
         vm.$parent.defaultState()

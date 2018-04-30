@@ -15,28 +15,28 @@
     <!-- header -->
     <main id="content" role="main" class="main">
       <div class="content__wrapper">
-        <div id="inner-nav"  v-show="showPaging">
+        <div id="inner-nav" v-show="showPaging">
           <ul class="inner-nav__list">
             <li class="inner-nav__item">
               <router-link :to="page().prev" class="">
                 <button class="inner-nav__btn inner-nav__btn--prev" aria-label="Backward" style="background-color: transparent;">
-                                <!-- <svg class="icon icon--arrow icon--arrow--left" viewBox="0 0 38 38">Backward
-                                  <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
-                                </svg> -->
-                              <!-- <img class="bg" v-bind:src="prev"/> -->
-                              <svg xmlns="http://www.w3.org/2000/svg"  class="icon icon--arrow icon--arrow--left"  viewBox="0 0 25.8 45.82"><title>Cover_Previous</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="25.8 2.84 5.66 22.85 25.67 43 22.83 45.82 0 22.83 22.98 0 25.8 2.84"/></g></g></svg>
-                              </button>
+                                  <!-- <svg class="icon icon--arrow icon--arrow--left" viewBox="0 0 38 38">Backward
+                                    <path class="st0" d="M10.3,19c0-0.6,0.2-1.3,0.7-1.7L23.4,4.4c1-1,2.5-1,3.5-0.1s1,2.5,0.1,3.5L16.3,19L27,30.1c1,1,0.9,2.6-0.1,3.5c-1,1-2.6,0.9-3.5-0.1L11,20.7C10.5,20.3,10.3,19.6,10.3,19z"></path>
+                                  </svg> -->
+                                <!-- <img class="bg" v-bind:src="prev"/> -->
+                                <svg xmlns="http://www.w3.org/2000/svg"  class="icon icon--arrow icon--arrow--left"  viewBox="0 0 25.8 45.82"><title>Cover_Previous</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="25.8 2.84 5.66 22.85 25.67 43 22.83 45.82 0 22.83 22.98 0 25.8 2.84"/></g></g></svg>
+                                </button>
               </router-link>
             </li>
             <li class="inner-nav__item">
               <router-link :to="page().next" class="">
                 <button class="inner-nav__btn inner-nav__btn--next swiper-button-disabled" aria-label="Forward" style="background-color: transparent;">
-                                 <!-- <svg class="icon icon--arrow icon--arrow--right" viewBox="0 0 38 38">Forward
-                                  <path class="st0" d="M27.7,19c0,0.6-0.2,1.3-0.7,1.7L14.6,33.6c-1,1-2.5,1-3.5,0.1s-1-2.5-0.1-3.5L21.7,19L11,7.9c-1-1-0.9-2.6,0.1-3.5c1-1,2.6-0.9,3.5,0.1L27,17.3C27.5,17.7,27.7,18.4,27.7,19z"></path>
-                                  </svg> -->
-                                               <!-- <img class="bg" v-bind:src="next"/> -->
-                                <svg class="icon icon--arrow icon--arrow--right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.8 45.82"><title>Cover_Next</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="0 42.98 20.14 22.96 0.13 2.82 2.97 0 25.8 22.98 2.82 45.82 0 42.98"/></g></g></svg>
-                               </button>
+                                   <!-- <svg class="icon icon--arrow icon--arrow--right" viewBox="0 0 38 38">Forward
+                                    <path class="st0" d="M27.7,19c0,0.6-0.2,1.3-0.7,1.7L14.6,33.6c-1,1-2.5,1-3.5,0.1s-1-2.5-0.1-3.5L21.7,19L11,7.9c-1-1-0.9-2.6,0.1-3.5c1-1,2.6-0.9,3.5,0.1L27,17.3C27.5,17.7,27.7,18.4,27.7,19z"></path>
+                                    </svg> -->
+                                                 <!-- <img class="bg" v-bind:src="next"/> -->
+                                  <svg class="icon icon--arrow icon--arrow--right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.8 45.82"><title>Cover_Next</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="0 42.98 20.14 22.96 0.13 2.82 2.97 0 25.8 22.98 2.82 45.82 0 42.98"/></g></g></svg>
+                                 </button>
               </router-link>
             </li>
           </ul>
@@ -89,11 +89,18 @@
       <pitch :zindex="scrollZIndex"> </pitch>
     </div>
 
-    <div class="down mx-a" >
+    <div class="down mx-a">
       <div class='mouse-container'>
-        <div class='mouse'>
-          <span class='scroll-down'></span>
+
+        <div id="mice">
+          <a href="#scroll">
+            <div class="mouse">
+              <div class="wheel"></div>
+            </div>
+            <div><span class="unu"></span> <span class="doi"></span></div>
+          </a>
         </div>
+
       </div>
     </div>
 
@@ -148,7 +155,7 @@ export default {
       },
       {
         id: 3,
-        title: 'Pitch Desk',
+        title: 'Pitch Deck',
         url: 'pitchdesk',
         class: 'mobile pitch'
       }
@@ -308,13 +315,15 @@ export default {
           next: 'whoweare',
           prev: '/',
           scroll: null,
-          type: 'home'
+          type: 'home',
+          image: './static/img/reed_le-voyagist_cover.jpg'
         },
         index: {
           next: 'whoweare',
           prev: '/',
           scroll: null,
-          type: 'home'
+          type: 'home',
+          image: './static/img/reed_le-voyagist_cover.jpg'
         },
         whoweare: {
           next: 'whatweinvest',
@@ -328,51 +337,56 @@ export default {
           prev: 'whoweare',
           scroll: 'what',
           type: 'page',
-          image: './static/img/reed_vr-sessions_cover.jpg'
+          image: './static/img/what.jpg'
         },
         whereweinvest: {
           next: 'howweinvest',
           prev: 'whatweinvest',
           scroll: 'where',
           type: 'page',
-          image: './static/img/reed_riftworld_cover.jpg'
+          image: './static/img/where.jpg'
         },
         howweinvest: {
           next: 'whyworkwithus',
           prev: 'whereweinvest',
           scroll: 'how',
           type: 'page',
-          image: './static/img/reed_ginventory_cover.jpg'
+          image: './static/img/how.jpg'
         },
         whyworkwithus: {
           next: 'ourpartners',
           prev: 'howweinvest',
           scroll: 'why',
-          type: 'page'
+          type: 'page',
+          image: './static/img/why.jpg'
         },
         ourpartners: {
           next: 'insign',
           prev: 'whyworkwithus',
           scroll: 'partner',
-          type: 'page'
+          type: 'page',
+          image: './static/img/partner.jpg'
         },
         insign: {
           next: 'theteam',
           prev: 'ourpartners',
           scroll: 'insign',
-          type: 'page'
+          type: 'page',
+          image: './static/img/insign.jpg'
         },
         theteam: {
           next: 'contact',
           prev: 'insign',
           scroll: 'team',
-          type: 'page'
+          type: 'page',
+          image: './static/img/team.jpg'
         },
         contact: {
           next: '',
           prev: 'theteam',
           scroll: 'contact',
-          type: 'page'
+          type: 'page',
+          image: './static/img/contact.jpg'
         },
         pitchdesk: {
           next: 'pitchdesk',
@@ -409,21 +423,154 @@ export default {
 </script>
 
 <style scoped>
+  /* Enter and leave animations can use different */
 
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all 1.3s ease;
+/* mice panel */
+#mice { margin: 0 auto; padding-bottom: 8em;  padding-top: 5.5em; text-align: center; width: 20px; height: 9px; }
+
+#mice span
+{
+  display: block;
+  width: 9px;
+  height: 9px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+  border-right: 2px solid #343a40;;
+  border-bottom: 2px solid #343a40;;
+  margin: 5px 0 3px 6px;
 }
-.slide-fade-leave-active {
-  /* transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0); */
+
+.unu
+{
+  margin-top: 6px;
+}
+
+.unu, .doi, .trei
+{
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+}
+
+.unu
+{
+  -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s;
+  -webkit-animation-direction: alternate;
+}
+
+.doi
+{
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -webkit-animation-direction: alternate;
+}
+
+.trei
+{
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  -webkit-animation-direction: alternate;
+}
+
+.mouse
+{
+height: 30px;
+width: 22px;
+  border-radius: 10px;
+  transform: none;
+  border: 2px solid#343a40;;
+  top: 170px;
+
+}
+
+.wheel
+{
+height: 5px;
+    width: 5px;
+    display: block;
+    margin: 7px 7px;
+    border-radius: 3px;
+    background: #343a40;
+    position: relative;
+}
+
+.wheel
+{
+  -webkit-animation: mouse-wheel 1.2s ease infinite;
+  -moz-animation: mouse-wheel 1.2s ease infinite;
+}
+
+@-webkit-keyframes mouse-wheel
+{
+   0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+@-moz-keyframes mouse-wheel
+{
+  0% { top: 1px; }
+  50% { top: 2px; }
+  100% { top: 3px;}
+}
+
+@-webkit-keyframes mouse-scroll {
+
+  0%   { opacity: 0;}
+  50%  { opacity: .5;}
+  100% { opacity: 1;}
+}
+@-moz-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@-o-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+
+/*****************/
+
+  /* durations and timing functions.              */
+
+  .slide-fade-enter-active {
+    transition: all 1.3s ease;
+  }
+
+  .slide-fade-leave-active {
+    /* transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0); */
     transition: all 1.8s reverse;
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
+  }
+
+  .slide-fade-enter,
+  .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */
+
+  {
+    transform: translateX(10px);
+    opacity: 0;
+  }
 
   .project .social-list {
     bottom: 60px;
@@ -478,41 +625,41 @@ export default {
   }
 
   /*
-  @-webkit-keyframes scroll-inner {
-    from {
-      margin-top: 15%;
+    @-webkit-keyframes scroll-inner {
+      from {
+        margin-top: 15%;
+      }
+      to {
+        margin-top: 50%;
+      }
     }
-    to {
-      margin-top: 50%;
-    }
-  }
 
-  @keyframes scroll-inner {
-    from {
-      margin-top: 15%;
+    @keyframes scroll-inner {
+      from {
+        margin-top: 15%;
+      }
+      to {
+        margin-top: 50%;
+      }
     }
-    to {
-      margin-top: 50%;
-    }
-  }
 
-  @-webkit-keyframes scroll-mouse {
-    from {
-      margin-top: 0;
+    @-webkit-keyframes scroll-mouse {
+      from {
+        margin-top: 0;
+      }
+      to {
+        margin-top: 15px;
+      }
     }
-    to {
-      margin-top: 15px;
-    }
-  }
 
-  @keyframes scroll-mouse {
-    from {
-      margin-top: 0;
-    }
-    to {
-      margin-top: 15px;
-    }
-  }*/
+    @keyframes scroll-mouse {
+      from {
+        margin-top: 0;
+      }
+      to {
+        margin-top: 15px;
+      }
+    }*/
 
   div.mouse-container {
     position: relative;
@@ -520,7 +667,7 @@ export default {
     /* height: 80px; */
   }
 
-  div.mouse {
+  /* div.mouse {
     position: relative;
     margin: 0 auto;
     display: block;
@@ -528,14 +675,14 @@ export default {
     height: 40px;
     border: solid 2px #495057;
     border-radius: 25px;
-  }
+  } */
 
   /*div.mouse:hover {
-    -webkit-animation: scroll-mouse 1.5s;
-    animation: scroll-mouse 1.5s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-  }*/
+      -webkit-animation: scroll-mouse 1.5s;
+      animation: scroll-mouse 1.5s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+    }*/
 
   div.mouse span.scroll-down {
     display: block;
@@ -606,24 +753,22 @@ export default {
       bottom: 67px;
     }
     /* .down .mouse-container:before {
-        content: "Scroll";
-        color: #2f3c47;
-        font-size: 18px;
-        font-weight: bold;
-      left: 5px;
-      letter-spacing: 0.5px;
-      position: relative;
-    } */
+          content: "Scroll";
+          color: #2f3c47;
+          font-size: 18px;
+          font-weight: bold;
+        left: 5px;
+        letter-spacing: 0.5px;
+        position: relative;
+      } */
     .project .down {
-      bottom: 67px;
+      bottom: 40px;
     }
     .project .inner-nav__btn .icon--arrow {
       width: 40px;
       height: 40px;
     }
-
-    .pitch.middle
-    {
+    .pitch.middle {
       display: none;
     }
   }

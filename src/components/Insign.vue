@@ -118,19 +118,19 @@ export default {
   name: 'Insign',
   data () {
     return {
-      title: 'Insigns',
+      title: 'Insights',
       index: '07',
       subs: ['Be in the know with AddVenture'],
       arrow: './static/img/next.png',
       post: {
-        title: 'Insigns',
-        sub: 'Be in the know with AddVenture',
+        title: 'Insights',
+        sub: 'Be in the know with AddVentures',
         blogs: [
           {
             id: 1,
             title:
               'AddVentures reveals the global trend focuses on B2B startups, Plus giving three success factors for startups',
-            author: 'Addventure by SCG',
+            author: 'Addventures by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
@@ -138,7 +138,7 @@ export default {
             id: 2,
             title:
               'AddVentures reveals the global trend focuses on B2B startups, Plus giving three success factors for startups',
-            author: 'Addventure by SCG',
+            author: 'Addventures by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
@@ -146,7 +146,7 @@ export default {
             id: 3,
             title:
               'AddVentures reveals the global trend focuses on B2B startups, Plus giving three success factors for startups',
-            author: 'Addventure by SCG',
+            author: 'Addventures by SCG',
             image: './static/img/img3.jpg',
             date: new Date()
           },
@@ -154,7 +154,7 @@ export default {
             id: 4,
             title:
               'AddVentures reveals the global trend focuses on B2B startups, Plus giving three success factors for startups',
-            author: 'Addventure by SCG',
+            author: 'Addventures by SCG',
             image: './static/img/img3.jpg',
             date: new Date(),
             isLast: true

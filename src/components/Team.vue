@@ -115,7 +115,7 @@ export default {
       slide__title: false,
       slide__sub: false,
       prev: {
-        title: 'Insign',
+        title: 'Insights',
         url: 'insign'
       },
       next: {
