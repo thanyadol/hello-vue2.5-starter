@@ -449,6 +449,12 @@ export default {
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
 
+  .contact .project__text {
+    font-size: 2.1rem;
+    line-height: 1.62;
+    padding-bottom: 70px;
+}
+
         .contact .fill {
     width: -webkit-max-content;
     width: -moz-max-content;
@@ -489,6 +495,12 @@ export default {
 
  /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+
+  .contact .project__text {
+    font-size: 2.1rem;
+    line-height: 1.62;
+    padding-bottom: 70px;
+}
 
       .contact .fill {
     width: -webkit-max-content;
