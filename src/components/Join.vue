@@ -344,7 +344,7 @@ line-height: 1.25;
     padding-bottom: 328px;
     padding-top: 131px;
     padding-left: 9.722222222222221vw;
-    padding-right: 34.86111111111111vw;
+    padding-right: 30.861111vw
 }
 
 .join .ctn.c .title

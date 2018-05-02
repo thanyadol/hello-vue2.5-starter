@@ -1,13 +1,13 @@
 <template>
-  <!-- <div id="cover" v-bind:class="display" v-bind:style="{ backgroundImage: 'url(' + image + ')' }"> -->
-     <div id="cover" v-bind:class="display">
+  <div id="cover" v-bind:class="display" v-bind:style="{ backgroundImage: 'url(' + image + ')' }">
+     <!-- <div id="cover" v-bind:class="display"> -->
     <div class="cover__container col-md-12 mx-auto ct">
       <!-- <div  v-bind:class="left" class="c cover--l">
           <svg viewBox="0 0 316.22 375.79"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="173.44 375.79 0 375.79 142.78 0 316.22 0 173.44 375.79"/></g></g></svg>
         </div> -->
-      <div v-bind:class="right" class="c cover--r">
+      <!-- <div v-bind:class="right" class="c cover--r">
           <svg viewBox="0 0 339.02 433.6"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="165.58 433.6 339.02 433.6 173.44 0 0 0 165.58 433.6"/></g></g></svg>
-        </div>
+        </div> -->
     </div>
 
     <!-- <div class="cover__container col-md-12 mx-auto ct">
@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
   .cls-1 {
-    fill: #f7f7f7;
+    fill: crimson;
     opacity: 0.5;
   }
 
@@ -157,19 +157,24 @@ export default {
   }
 
   @media (min-width: 1200px) {
-    /* #cover.clip {
+     #cover.clip {
       clip-path: polygon(615px 217px, 784px 217px, 950px 651px, 781px 650px);
-      /* clip-path: polygon(42.708333333333336vw 24.11111111111111vh, 54.44444444444444vw  24.11111111111111vh, 65.97222222222221vw 72.33333333333333vh, 54.44444444444444vw 72.33333333333333vh); *
+      /* clip-path: polygon(42.708333333333336vw 24.11111111111111vh, 54.44444444444444vw  24.11111111111111vh, 65.97222222222221vw 72.33333333333333vh, 54.44444444444444vw 72.33333333333333vh); */
       transition: all 0.8s ease-out;
       top: 0;
       left: 0;
+        display: block;
     }
     #cover.full {
-      clip-path: polygon(532px 0px, 1762px 0px, 2123px 1000px, 916px 1000px);
+      /* clip-path: polygon(532px 0px, 1762px 0px, 2123px 1000px, 916px 1000px); */
+
+       clip-path: polygon(532px 0, 100vw 0, 130vw 100vh, 916px 100vh);
       transition: all 0.8s ease-out;
       top: 0;
       left: 0;
-    } */
+        display: block;
+    }
+
     .cover--l {
       position: absolute;
       left: calc(50% + -92px);
@@ -205,21 +210,20 @@ export default {
   }
 
   @media (min-width: 992px) and (max-width: 1199.98px) {
-    /* #cover.clip {
-      clip-path: polygon(615px 217px, 784px 217px, 950px 651px, 781px 650px);
-      /* clip-path: polygon(42.708333333333336vw 24.11111111111111vh, 54.44444444444444vw  24.11111111111111vh, 65.97222222222221vw 72.33333333333333vh, 54.44444444444444vw 72.33333333333333vh); *
-      transition: all 0.8s ease-out;
+
+     #cover.clip {
+      clip-path: polygon(42.708333vw 286px, 54.444444vw 286px, 65.372222vw 581px, 53.72222vw 581px); transition: all 0.8s ease-out;
       top: 0;
-      right: -45%;
-      bottom: 0;
-      left: -47%;
+      left: 0;
+      display: block;
     }
     #cover.full {
-      clip-path: polygon(532px 0px, 1762px 0px, 2123px 1000px, 916px 1000px);
+      clip-path: polygon(32.708333vw 0, 100vw 0, 130vw 100vh, 65.72222vw 100vh); transition: all 0.8s ease-out;
       transition: all 0.8s ease-out;
       top: 0;
-      left: -19%;
-    } */
+      left: 0;
+          display: block;
+    }
 
         .cover--r {
 position: absolute;
@@ -250,7 +254,23 @@ position: absolute;
  }
 
  /* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 768px) {
+
+       #cover.clip {
+      clip-path: polygon(40.708333vw 286px, 55.944444vw 286px, 70.572222vw 581px, 54.92222vw 581px);
+      transition: all 0.8s ease-out;
+      top: 0;
+      left: 0;
+      display: block;
+    }
+    #cover.full {
+      clip-path: polygon(25.908333vw 0, 100vw 0, 130vw 100vh, 70.72222vw 100vh); transition: all 0.8s ease-out;
+      transition: all 0.8s ease-out;
+      top: 0;
+      left: 0;
+          display: block;
+    }
+
        .cover--r {
 position: absolute;
     left: calc(50% + 41px);
