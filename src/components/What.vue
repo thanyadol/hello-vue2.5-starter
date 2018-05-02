@@ -651,7 +651,7 @@ width: 60px;
   }
   .ctn-content.jf {
     position: absolute;
-        height: 500px;
+        height: auto;
     padding-right: 8.583333333333334vw;
     padding-bottom: 71px;
     top: 0;
@@ -728,7 +728,7 @@ width: 60px;
   }
   .what .inv
   {
-    padding-top: 330px;
+    padding-top: 250px;
   }
 
   .what .fill {
@@ -758,6 +758,13 @@ width: 60px;
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+
+  .col-md-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
 
    .what .ctn-content.c  {
     padding-top: 45px !important;
@@ -925,6 +932,13 @@ width: 60px;
  /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
 
+  .col-md-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
    .what .ctn-content.c  {
     padding-top: 45px !important;
 }
@@ -982,11 +996,11 @@ width: 60px;
   }
   .ctn-content.jf {
     position: absolute;
-        height: 500px;
+        height: auto;
     padding-right: 8.583333333333334vw;
     padding-bottom: 71px;
     top: 0;
-    max-width: 80%;
+    /* max-width: 80%; */
   }
 
 .what .inv {
@@ -1060,7 +1074,7 @@ width: 60px;
   }
   .what .inv
   {
-    padding-top: 330px;
+    padding-top: 230px;
   }
 
   .what .fill {

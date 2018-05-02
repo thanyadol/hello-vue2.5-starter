@@ -635,7 +635,7 @@ ul li.indent-4 {
     /* width: 11vw; */
     height: 63px;
     z-index: 2;
-    bottom: -2px;
+    bottom: -3px;
   }
   /* .how .project__body .bg.seed {
                  bottom: -0.45rem;
