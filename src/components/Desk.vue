@@ -82,10 +82,17 @@
                   <input class="form-control flg w-684" :v-model="f.name" :placeholder="f.placeholder">
                 </li>
 
-                <li v-if="f.type == 'button-group'" v-for="f in pitch.forms" :key="f.id">
+                <li :id="f.id" v-if="f.type == 'button-group-business'" v-for="f in pitch.forms" :key="f.id">
                   <p class="sub tb bold">{{ f.title }}</p>
-                  <div :v-model="f.name" class="btn-group jc" role="group" aria-label="">
-                    <button :v-model="b.name" :value="b.id" v-for="b in f.buttons" :key="b.id" type="button" class="btn btn-default f-16" v-bind:class="f.buttonClass">{{ b.title }}</button>
+                  <div :id="f.id" :v-model="f.name" class="btn-group jc" role="group" aria-label="">
+                    <button @click.prevent="activeBusiness(b.id)" :class="{ active: b.id === selectBusiness }" :v-model="b.name" :value="b.id" v-for="b in f.buttons" :key="b.id" type="button" class="btn btn-default f-16" >{{ b.title }}</button>
+                  </div>
+                </li>
+
+                <li :id="f.id" v-if="f.type == 'button-group-fund'" v-for="f in pitch.forms" :key="f.id">
+                  <p class="sub tb bold">{{ f.title }}</p>
+                  <div :id="f.id" :v-model="f.name" class="btn-group jc" role="group" aria-label="">
+                    <button @click.prevent="activeFund(b.id)" :class="{ active: b.id === selectFund }" :v-model="b.name" :value="b.id" v-for="b in f.buttons" :key="b.id" type="button" class="btn btn-default f-16" >{{ b.title }}</button>
                   </div>
                 </li>
 
@@ -101,7 +108,7 @@
                 <li v-if="f.type == 'check'" v-for="f in pitch.forms" :key="f.id">
                   <p class="sub tb bold">{{ f.title }}</p>
                   <div :v-model="f.name" class="btn-group jc" role="group" aria-label="">
-                    <button  :v-model="b.name" :value="b.id" v-for="b in f.buttons" :key="b.id" type="button" class="btn btn-default">{{ b.title }}</button>
+                    <button @click.prevent="activeRobot(b.id)" :class="{ active: b.id === selectRobot }"  :v-model="b.name" :value="b.id" v-for="b in f.buttons" :key="b.id" type="button" class="btn btn-default">{{ b.title }}</button>
                   </div>
                 </li>
 
@@ -144,6 +151,18 @@ export default {
       /* if (event) {
                     alert(event.target.tagName)
                   } */
+    },
+    activeRobot: function (val) {
+      // alert(val)
+      this.selectRobot = val
+    },
+    activeBusiness: function (val) {
+      // alert(val)
+      this.selectBusiness = val
+    },
+    activeFund: function (val) {
+      // alert(val)
+      this.selectFund = val
     }
   },
   // el: '#deck',
@@ -154,6 +173,9 @@ export default {
       foot: 'Copyright 2018 AddVentures',
       arrow: './static/img/sub.png',
       url: '/api/pitch/create',
+      selectBusiness: null,
+      selectFund: null,
+      selectRobot: null,
       about: {
         title: 'About You',
         sub: 'Step 1',
@@ -187,6 +209,7 @@ export default {
         ]
       },
       pitch: {
+        id: 99,
         title: 'Pitch Desk',
         sub: 'Step 2',
         image: './static/img/deck.png',
@@ -205,7 +228,7 @@ export default {
           name: 'business',
           title: 'Type of business',
           placeholder: '',
-          type: 'button-group',
+          type: 'button-group-business',
           buttonClass: 'w-161',
           buttons: [{
             id: 99,
@@ -234,7 +257,7 @@ export default {
           name: 'stage',
           title: 'Your most recent fund raising stage',
           placeholder: '',
-          type: 'button-group',
+          type: 'button-group-fund',
           buttons: [{
             id: 99,
             name: 'never',
@@ -274,7 +297,13 @@ export default {
             id: 99,
             name: 'notrobot',
             title: 'Yes'
-          }]
+          },
+          {
+            id: 98,
+            name: 'robot',
+            title: 'No'
+          }
+          ]
         }
         ]
       }
@@ -439,6 +468,12 @@ label {
     z-index: 1;
     color: #ec1e24;
     border: 1px solid #ec1e24;
+  }
+
+  .btn.active {
+    z-index: 1;
+    color: #ec1e24 !important;
+    border: 1px solid #ec1e24 !important;
   }
 
   .form.ctn {
