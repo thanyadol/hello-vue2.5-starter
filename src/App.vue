@@ -8,6 +8,7 @@
       </h1>
       <nave :items="navs"></nave>
       <framed :display="showFrame"> </framed>
+      <top :display="!showFrame"> </top>
     </header>
 
     <div class="container cove">
@@ -613,7 +614,7 @@ height: 5px;
   .project .header__title {
     top: 53px;
     left: 81px;
-    z-index: 3 !important;
+    z-index: 99 !important;
     width: 176px;
   }
 

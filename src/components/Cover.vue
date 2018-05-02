@@ -43,6 +43,8 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
+
+    background-color: rgba(250, 248, 248, 0.5);
   }
 
   #cover.hide::before,
@@ -168,7 +170,7 @@ export default {
     #cover.full {
       /* clip-path: polygon(532px 0px, 1762px 0px, 2123px 1000px, 916px 1000px); */
 
-       clip-path: polygon(532px 0, 100vw 0, 130vw 100vh, 916px 100vh);
+       clip-path: polygon(532px 0, 100vw 0, 130vw 100vh, 879px 100vh);
       transition: all 0.8s ease-out;
       top: 0;
       left: 0;

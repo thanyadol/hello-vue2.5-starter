@@ -163,7 +163,7 @@ button:hover:before {
   .nav {
     display: block;
     position: fixed;
-    z-index: 3 !important;
+    z-index: 99 !important;
     right: 81px;
     top: 52px;
   }

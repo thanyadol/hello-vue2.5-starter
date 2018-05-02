@@ -28,6 +28,7 @@ import Mouse from '@/components/Mouse'
 import Head from '@/components/Head'
 
 import Pitch from '@/components/Pitch'
+import Top from '@/components/Top'
 
 import Fraction from '@/components/Fraction'
 
@@ -51,6 +52,7 @@ Vue.component('left', Left)
 Vue.component('mouse', Mouse)
 Vue.component('heading', Head)
 Vue.component('fraction', Fraction)
+Vue.component('top', Top)
 
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // require('../node_modules/bootstrap/dist/css/bootstrap.min.css')
