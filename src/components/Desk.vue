@@ -138,6 +138,7 @@
 
 <script>
 import scroll from 'smooth-scrollbar'
+import axios from 'axios'
 // import { isNullOrUndefined } from 'util'
 // import Vue from 'vue'
 export default {
@@ -146,11 +147,28 @@ export default {
   methods: {
     submit: function (event) {
       // `this` inside methods points to the Vue instance
-      alert('Hello ' + this.url)
+      console.info(this.baseUrl + this.url)
       // `event` is the native DOM event
       /* if (event) {
                     alert(event.target.tagName)
-                  } */
+                  }
+       axios
+      .get(his.baseUrl + this.url)
+      .then(response => (this.info = response)) */
+      axios
+        .get(this.baseUrl + this.url, {
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
+        .then(response => {
+          console.log(response.data)
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+        })
+        // .finally(() => this.loading = false)
     },
     activeRobot: function (val) {
       // alert(val)
@@ -172,7 +190,8 @@ export default {
       logo: './static/img/logo_sm.svg',
       foot: 'Copyright 2018 AddVentures',
       arrow: './static/img/sub.png',
-      url: '/api/pitch/create',
+      baseUrl: 'http://localhost:5000',
+      url: '/api/hello',
       selectBusiness: null,
       selectFund: null,
       selectRobot: null,

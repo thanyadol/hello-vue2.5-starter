@@ -60,7 +60,7 @@
               <!-- route view here !!! -->
             </transition>
           </article>
-        </div>
+        </div>b
 
       </div>
     </main>
@@ -94,7 +94,6 @@
 
     <div class="down mx-a">
       <div class='mouse-container'>
-
         <div id="mice">
           <a href="#scroll">
             <div class="mouse">
@@ -103,10 +102,8 @@
             <div><span class="unu"></span> <span class="doi"></span></div>
           </a>
         </div>
-
       </div>
     </div>
-
     <axiom> </axiom>
     <!-- <mouse> </mouse> -->
   </div>
@@ -140,10 +137,8 @@ export default {
       showPaging: true,
       scrollZIndex: 3,
       logo: './static/img/logo.svg',
-
       prev: './static/img/back.png',
       next: './static/img/go.png',
-
       navs: [{
         id: 1,
         title: 'Join us',
